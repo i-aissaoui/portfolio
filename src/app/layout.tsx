@@ -29,7 +29,6 @@ export default function RootLayout({
     <html lang='en'>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
-        style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
       >
         {/* Global liquid ether background (placed behind content but visible) */}
         <div

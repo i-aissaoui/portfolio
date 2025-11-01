@@ -69,100 +69,47 @@ PyQt
 
 ### Career Connect | Plateforme IA de Recommandation d'Emplois (2024-2025)
 
-Plateforme IA qui extrait les compétences des CV, construit des embeddings denses et fournit des recommandations classées aux recruteurs tout en offrant des conseils d'emploi personnalisés aux candidats.
+Plateforme de recrutement IA à double usage servant recruteurs et chercheurs d'emploi. Extrait les compétences des CV via NLP, construit des embeddings denses avec sentence-transformers, et fournit des recommandations classées via Graph Neural Networks et apprentissage d'ensemble (XGBoost, LightGBM). MRR de 0.947 sur les datasets combinés O*NET, ESCO et Stack Overflow.
 
-**Caractéristiques Principales:**
-- Plateforme de recrutement IA connectant candidats et opportunités d'emploi via matching intelligent
-- Sert à la fois les recruteurs (recommandations de candidats) et les chercheurs d'emploi (suggestions personnalisées)
-- Traitement du Langage Naturel: Extraction automatique de compétences et compréhension de texte
-- Matching Sémantique: Similarité basée sur des embeddings denses pour le matching candidat-emploi
-- Réseaux de Neurones Graphiques: Apprentissage basé sur des graphes pour les recommandations d'emploi
-- Apprentissage d'Ensemble: Approche quad-ensemble pour la classification des rôles
-
-**Performance du Modèle:**
-- Mean Reciprocal Rank (MRR): 0.947
-- Haute précision@k sur tous les ensembles de test
-- Entraîné sur des ensembles de données combinés: O*NET, ESCO, Stack Overflow Developer Survey
-
-**Technologies:** Python, FastAPI, React, TypeScript, PostgreSQL, Docker, PyTorch, PyTorch Geometric, sentence-transformers (SBERT), FAISS, SpaCy, scikit-learn, XGBoost, LightGBM, Graph Neural Networks
+**Technologies:** Python, FastAPI, React, TypeScript, PostgreSQL, Docker, PyTorch, PyTorch Geometric, SBERT, FAISS, SpaCy, XGBoost, LightGBM
 
 ---
 
 ### Mini-GPT (Décodeur seul) (2025)
 
-Développement d'un transformer décodeur-seul au niveau caractère, avec self-attention causale, pour générer du texte à la manière de Shakespeare.
+Construction d'un transformer de style GPT au niveau caractère depuis zéro avec self-attention causale et mécanismes multi-head attention. Entraîné sur le corpus Shakespeare pour générer du texte cohérent via modélisation de langage autorégressif.
 
-**Caractéristiques Principales:**
-- Construction d'un transformer de style GPT depuis zéro pour la génération de texte
-- Tokenisation au niveau caractère pour l'apprentissage de motifs fins
-- Modélisation de Langage Autorégressif: Prédiction du caractère suivant selon le contexte
-- Self-Attention Causale: Mécanisme d'attention décodeur-seul empêchant les fuites d'information future
-- Multi-Head Attention: Attention parallèle pour capturer différents aspects de représentation
-- Génération réussie de texte cohérent de style Shakespeare
-
-**Technologies:** Python, PyTorch, Transformers, NLP, GPT Architecture, GELU, AdamW
+**Technologies:** Python, PyTorch, Transformers, NLP, GELU, AdamW
 
 ---
 
 ### BERT (Encodeur seul) (2025)
 
-Mise en œuvre d'un encodeur type BERT pour l'analyse de sentiments, avec pipeline de pré-entraînement et de fine-tuning.
+Implémentation d'encodeur BERT depuis zéro avec attention bidirectionnelle, Masked Language Modeling (masquage à 15%) et Next Sentence Prediction. Pipeline complet de pré-entraînement et fine-tuning pour l'analyse de sentiments avec performance solide sur les benchmarks.
 
-**Caractéristiques Principales:**
-- Implémentation de l'architecture encodeur BERT depuis zéro
-- Pipeline complet de pré-entraînement et fine-tuning
-- Modélisation de Langage Bidirectionnelle: Apprentissage du contexte dans les deux directions
-- Masked Language Modeling (MLM): Prédiction de tokens masqués aléatoirement (masquage à 15%)
-- Next Sentence Prediction (NSP): Compréhension des relations entre phrases
-- Transfer Learning: Pré-entraînement sur un large corpus, fine-tuning pour des tâches spécifiques
-- Performance solide sur les benchmarks de classification de sentiments
-
-**Technologies:** Python, PyTorch, Transformers, BERT, NLP, MLM, GELU, AdamW
+**Technologies:** Python, PyTorch, Transformers, BERT, NLP, MLM, AdamW
 
 ---
 
 ### Vision Transformer (ViT) (2025)
 
-Création d'un ViT depuis zéro, incluant l'embedding de patchs et l'encodage positionnel, entraîné pour la classification d'images.
+Construction de Vision Transformer depuis zéro avec patch embedding, encodages positionnels apprenables et self-attention globale sur les patchs d'image. Entraîné pour la classification d'images avec techniques d'augmentation de données.
 
-**Caractéristiques Principales:**
-- Implémentation de l'architecture Vision Transformer depuis zéro
-- Application des transformers aux tâches de vision par ordinateur
-- Patch Embedding: Traitement des patchs d'image comme des tokens de séquence
-- Self-Attention pour la Vision: Attention globale sur tous les patchs d'image
-- Encodage Positionnel: Encodages 1D apprenables pour les relations spatiales
-- Augmentation de Données: Recadrages aléatoires, retournements, jitter de couleur pour la robustesse
-
-**Technologies:** Python, PyTorch, Computer Vision, Transformers, ViT, GELU, AdamW
+**Technologies:** Python, PyTorch, Computer Vision, Transformers, ViT, AdamW
 
 ---
 
 ### Geo RAG | Démo RAG Cartographique (2025)
 
-Geo RAG est une application complète qui intègre une recherche vectorielle Chroma persistée, des embeddings sentence-transformers, une interface Streamlit et un LLM local pour produire des résumés concis et contextualisés pour des lieux géographiques.
+Application de Retrieval-Augmented Generation combinant recherche vectorielle Chroma, embeddings sentence-transformers et LLM local (Ollama) pour générer des résumés contextualisés de lieux géographiques. Interface Streamlit interactive avec carte Folium affichant les réponses du LLM dans les popups des marqueurs.
 
-**Caractéristiques Principales:**
-- Documents vectorisés avec sentence-transformers et persistés dans un vector store Chroma
-- Plusieurs stratégies de récupération pour assurer la compatibilité entre les versions de LangChain
-- Prompts par lieu synthétisés à partir du contexte récupéré et envoyés au LLM local
-- Interface Streamlit affichant les résultats sur une carte Folium interactive
-- Popups des marqueurs contenant des résumés concis générés par le LLM
-
-**Technologies:** Chroma, sentence-transformers, Streamlit, Folium, Ollama, Python, Pandas, GeoPandas, PyTorch
+**Technologies:** Chroma, sentence-transformers, Streamlit, Folium, Ollama, Python, Pandas, GeoPandas
 
 ---
 
 ### Recognizini | Système de Reconnaissance Faciale en Temps Réel (2025)
 
-Application web de reconnaissance faciale semi-supervisée (frontend: Next.js) qui identifie des visages à partir d'images/vidéo et apprend de nouvelles identités en ligne. Combine CV traditionnel et modèles profonds avec réduction de dimension pour l'efficacité.
-
-**Caractéristiques Principales:**
-- Pipeline semi-supervisé pour améliorer la reconnaissance faciale en utilisant des données étiquetées et non étiquetées
-- PCA pour la réduction de dimension afin d'accélérer le matching tout en conservant les caractéristiques discriminantes
-- Label Propagation (graphe) pour étendre les étiquettes depuis un petit jeu étiqueté aux embeddings non étiquetés
-- Flux de mise à jour en ligne qui intègre les labels confirmés par l'utilisateur pour étendre la galerie en temps réel
-- Interaction en temps réel (upload d'images/vidéo, étiquetage)
-- Comparaison de performances entre CNN+PCA (précision supérieure, 95% variance) et HOG+PCA (plus rapide, 90% variance)
+Application web de reconnaissance faciale semi-supervisée avec frontend Next.js qui identifie des visages à partir d'images/vidéo et apprend de nouvelles identités en ligne. Utilise PCA pour la réduction de dimension et Label Propagation pour propager les labels aux embeddings non étiquetés. Compare les approches CNN+PCA (95% variance) vs HOG+PCA (90% variance).
 
 **Technologies:** Next.js, TypeScript, Tailwind CSS, FastAPI, Python, OpenCV, PCA, Label Propagation, PyTorch
 
@@ -170,58 +117,33 @@ Application web de reconnaissance faciale semi-supervisée (frontend: Next.js) q
 
 ### Détection d'Équipement de Sécurité avec YOLOv8 (2025)
 
-Système de surveillance de sécurité en temps réel utilisant YOLOv8 pour détecter les casques de sécurité et gilets réfléchissants dans les environnements de travail, fournissant un retour instantané sur l'équipement manquant pour chaque personne détectée.
+Système de surveillance de sécurité en temps réel utilisant YOLOv8 fine-tuné pour détecter personnes, casques de sécurité et gilets réfléchissants. Association de boîtes englobantes basée sur IoU pour associer l'équipement aux individus, fournissant un retour instantané sur l'équipement manquant.
 
-**Caractéristiques Principales:**
-- Système de vision par ordinateur pour la surveillance de la sécurité au travail
-- Détecte les personnes, casques de sécurité et gilets réfléchissants en temps réel
-- Détection d'Objets: YOLOv8 pour la détection multi-classes (personne, casque, gilet)
-- Association de Boîtes Englobantes: Matching basé sur IoU pour associer l'équipement aux personnes
-- Traitement en Temps Réel: Analyse vidéo image par image avec visualisation en direct
-- Transfer Learning: Fine-tuning de YOLOv8 pré-entraîné sur un dataset de sécurité personnalisé
-
-**Technologies:** Python, YOLOv8, Ultralytics, OpenCV, PyTorch, CUDA, NumPy, Computer Vision, Object Detection, Jupyter
+**Technologies:** Python, YOLOv8, Ultralytics, OpenCV, PyTorch, CUDA, NumPy
 
 ---
 
 ### Système de Caméra de Trafic IA (2025)
 
-Système complet de vision par ordinateur pour la surveillance intelligente du trafic avec détection, suivi, comptage de véhicules, estimation de vitesse et reconnaissance de plaques d'immatriculation. Analyse en temps réel avec transformation de perspective pour un calcul précis de la vitesse.
+Système de surveillance de trafic intelligent avec YOLOv8x pour la détection de véhicules, ByteTrack pour le suivi multi-objets, et transformation de perspective pour l'estimation précise de vitesse. Inclut comptage par ligne virtuelle pour l'analyse du flux de trafic et EasyOCR pour la reconnaissance de plaques.
 
-**Caractéristiques Principales:**
-- Système de surveillance de trafic intelligent multi-phases
-- YOLOv8x: Détection de véhicules de pointe (voitures, motos, bus, camions)
-- ByteTrack: Suivi multi-objets robuste avec attribution d'ID unique
-- Comptage par Ligne Virtuelle: Tripwire virtuel pour l'analyse du flux de trafic
-- Transformation de Perspective: Mapping pixel-vers-monde utilisant une matrice d'homographie
-- Calcul de Vitesse: Distance parcourue dans le temps avec suivi basé sur les frames
-- Intégration EasyOCR: Extraction de texte basée sur le deep learning pour les plaques
-
-**Technologies:** Python, YOLOv8, Ultralytics, OpenCV, ByteTrack, EasyOCR, PyTorch, CUDA, NumPy, Pandas, Computer Vision, Object Detection, Object Tracking, OCR
+**Technologies:** Python, YOLOv8, Ultralytics, OpenCV, ByteTrack, EasyOCR, PyTorch, CUDA, NumPy, Pandas
 
 ---
 
 ### Système de Gestion du Hajj (2024)
 
-Conception d'une plateforme web complète pour gérer la logistique des pèlerins: sélection des groupes, voyages et planning médical. Base de données et UI centralisées pour des relations complexes (vols, hôtels, infos pèlerins).
+Plateforme web complète gérant la logistique des pèlerins du Hajj incluant sélection des groupes, arrangements de voyage et planification médicale. Base de données centralisée gérant les relations complexes entre vols, hôtels et informations des pèlerins.
 
-**Technologies:** Web, Database, Scheduling
+**Technologies:** Développement Web, Gestion de Bases de Données, Systèmes de Planification
 
 ---
 
 ### Système Hybride POS & E-commerce (2025)
 
-Conception d'un POS desktop synchronisé avec un site e-commerce. Architecture hybride avec bases locales (SQLite) et cloud (PostgreSQL) pour un fonctionnement hors-ligne/en ligne.
+Application POS desktop synchronisée avec plusieurs sites e-commerce (Shiakati Store, Celtic Wear, Jet7). Architecture hybride avec bases de données SQLite locales et PostgreSQL cloud permettant opérations offline-first avec synchronisation en arrière-plan, résolution de conflits et consistance éventuelle.
 
-**Caractéristiques Principales:**
-- Application POS desktop s'intégrant avec plusieurs sites e-commerce (Shiakati Store, Celtic Wear, Jet7)
-- Synchronisation des stocks, traitement des commandes et gestion client
-- Service de synchronisation en arrière-plan qui batch les transactions locales
-- Opérations offline-first avec stratégies de résolution de conflits et consistance éventuelle
-- Authentification sécurisée pour les tableaux de bord marchands
-- Suite de monitoring pour la santé de la synchronisation
-
-**Technologies:** SQLite, PostgreSQL, Desktop, Web
+**Technologies:** SQLite, PostgreSQL, Applications Desktop, Développement Web
 
 ---
 

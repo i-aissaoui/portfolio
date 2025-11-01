@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { site, type Locale } from "@/data/site";
 import ProjectModal from "@/components/ProjectModal";
 import MagicBento from "@/components/MagicBento";
+import TextType from "@/components/TextType";
+import SplitText from "@/components/SplitText";
 
 function L(str: unknown, locale: Locale) {
   if (!str) return "";
@@ -146,22 +148,42 @@ export default function Home() {
               <span className='text-xl'>👋</span>
             </div>
 
-            {/* Name with I'm prefix */}
+            {/* Name with I'm prefix and TextType animation */}
             <h1 className='text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 leading-tight'>
               {locale === "fr" ? "Je suis " : locale === "de" ? "Ich bin " : "I'm "}
-              <span className='block md:inline'>{L(site.name, locale)}</span>
+              <span className='block md:inline'>
+                <TextType
+                  text={L(site.name, locale)}
+                  as="span"
+                  typingSpeed={100}
+                  pauseDuration={2000}
+                  showCursor={false}
+                  loop={false}
+                  className=""
+                />
+              </span>
             </h1>
 
-            {/* Role/Title with 'A' prefix */}
+            {/* Role/Title with SplitText animation - NO 'A' prefix */}
             <h2 className='text-xl md:text-3xl lg:text-4xl font-medium mb-6'>
-              {locale === "fr" ? "Un " : locale === "de" ? "Ein " : "A "}
-              <span className='text-[#00d9ff] font-bold'>
-                {locale === "fr" 
+              <SplitText
+                text={locale === "fr" 
                   ? "Ingénieur en IA & Data Science"
                   : locale === "de" 
                   ? "KI & Data Science Ingenieur"
                   : "AI & Data Science Engineer"}
-              </span>
+                tag="span"
+                className="text-[#00d9ff] font-bold"
+                delay={50}
+                duration={0.5}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 20 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="0px"
+                textAlign="left"
+              />
             </h2>
 
             {/* Description */}

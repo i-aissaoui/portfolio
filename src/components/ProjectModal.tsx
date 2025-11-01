@@ -107,7 +107,7 @@ export default function ProjectModal({
         ref={containerRef}
         className='relative z-10 max-w-5xl w-full max-h-[95vh] overflow-hidden bg-[#060010] text-white rounded-2xl shadow-2xl border border-white/10'
       >
-        <div className='flex items-center justify-between p-6 border-b border-white/10 bg-gradient-to-r from-[#12002b]/80 to-[#1a0a3a]/70'>
+        <div className='flex items-center justify-between p-6 border-b border-white/10 bg-[#0a0015]/90'>
           <h2 className='text-3xl font-extrabold text-white'>{title}</h2>
           <button
             aria-label='Close'
