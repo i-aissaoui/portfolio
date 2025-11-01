@@ -239,7 +239,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='relative h-[800px] md:h-[1000px] lg:h-[1200px] rounded-3xl overflow-hidden mx-auto'>
+          <div className='relative min-h-[800px] md:min-h-[1000px] lg:min-h-[1200px] rounded-3xl overflow-visible mx-auto'>
             <MagicBento
               textAutoHide={false}
               enableStars={true}
