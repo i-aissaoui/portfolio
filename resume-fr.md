@@ -69,7 +69,8 @@ PyQt
 
 ### Career Connect | Plateforme IA de Recommandation d'Emplois (2024-2025)
 
-Plateforme de recrutement IA à double usage servant recruteurs et chercheurs d'emploi. Extrait les compétences des CV via NLP, construit des embeddings denses avec sentence-transformers, et fournit des recommandations classées via Graph Neural Networks et apprentissage d'ensemble (XGBoost, LightGBM). MRR de 0.947 sur les datasets combinés O*NET, ESCO et Stack Overflow.
+- Plateforme de recrutement à double usage connectant chercheurs d'emploi et recruteurs pour trouver candidats qualifiés
+- Analyse automatiquement les CV et descriptions de postes pour fournir des correspondances intelligentes et recommandations classées
 
 **Technologies:** Python, FastAPI, React, TypeScript, PostgreSQL, Docker, PyTorch, PyTorch Geometric, SBERT, FAISS, SpaCy, XGBoost, LightGBM
 
@@ -77,7 +78,8 @@ Plateforme de recrutement IA à double usage servant recruteurs et chercheurs d'
 
 ### Mini-GPT (Décodeur seul) (2025)
 
-Construction d'un transformer de style GPT au niveau caractère depuis zéro avec self-attention causale et mécanismes multi-head attention. Entraîné sur le corpus Shakespeare pour générer du texte cohérent via modélisation de langage autorégressif.
+- Construction d'un modèle de génération de texte depuis zéro qui apprend les motifs d'écriture au niveau caractère
+- Entraîné sur les œuvres de Shakespeare pour générer du texte créatif dans un style similaire
 
 **Technologies:** Python, PyTorch, Transformers, NLP, GELU, AdamW
 
@@ -85,7 +87,8 @@ Construction d'un transformer de style GPT au niveau caractère depuis zéro ave
 
 ### BERT (Encodeur seul) (2025)
 
-Implémentation d'encodeur BERT depuis zéro avec attention bidirectionnelle, Masked Language Modeling (masquage à 15%) et Next Sentence Prediction. Pipeline complet de pré-entraînement et fine-tuning pour l'analyse de sentiments avec performance solide sur les benchmarks.
+- Implémentation d'un modèle de compréhension du langage depuis zéro pour analyser les sentiments dans le texte
+- Développement d'un pipeline d'entraînement complet avec performance solide sur les benchmarks standards
 
 **Technologies:** Python, PyTorch, Transformers, BERT, NLP, MLM, AdamW
 
@@ -93,7 +96,8 @@ Implémentation d'encodeur BERT depuis zéro avec attention bidirectionnelle, Ma
 
 ### Vision Transformer (ViT) (2025)
 
-Construction de Vision Transformer depuis zéro avec patch embedding, encodages positionnels apprenables et self-attention globale sur les patchs d'image. Entraîné pour la classification d'images avec techniques d'augmentation de données.
+- Construction d'un modèle de classification d'images depuis zéro qui traite les images comme séquences de patches
+- Entraîné pour reconnaître et catégoriser les images avec haute précision
 
 **Technologies:** Python, PyTorch, Computer Vision, Transformers, ViT, AdamW
 
@@ -101,7 +105,8 @@ Construction de Vision Transformer depuis zéro avec patch embedding, encodages 
 
 ### Geo RAG | Démo RAG Cartographique (2025)
 
-Application de Retrieval-Augmented Generation combinant recherche vectorielle Chroma, embeddings sentence-transformers et LLM local (Ollama) pour générer des résumés contextualisés de lieux géographiques. Interface Streamlit interactive avec carte Folium affichant les réponses du LLM dans les popups des marqueurs.
+- Application cartographique interactive qui génère des résumés intelligents sur des lieux géographiques
+- Récupère des informations pertinentes et produit des réponses contextualisées affichées sur une carte interactive
 
 **Technologies:** Chroma, sentence-transformers, Streamlit, Folium, Ollama, Python, Pandas, GeoPandas
 
@@ -109,7 +114,8 @@ Application de Retrieval-Augmented Generation combinant recherche vectorielle Ch
 
 ### Recognizini | Système de Reconnaissance Faciale en Temps Réel (2025)
 
-Application web de reconnaissance faciale semi-supervisée avec frontend Next.js qui identifie des visages à partir d'images/vidéo et apprend de nouvelles identités en ligne. Utilise PCA pour la réduction de dimension et Label Propagation pour propager les labels aux embeddings non étiquetés. Compare les approches CNN+PCA (95% variance) vs HOG+PCA (90% variance).
+- Application web qui identifie les personnes à partir d'images et vidéos en temps réel
+- Apprend et s'améliore continuellement en intégrant les retours utilisateurs sur les nouveaux visages
 
 **Technologies:** Next.js, TypeScript, Tailwind CSS, FastAPI, Python, OpenCV, PCA, Label Propagation, PyTorch
 
@@ -117,7 +123,8 @@ Application web de reconnaissance faciale semi-supervisée avec frontend Next.js
 
 ### Détection d'Équipement de Sécurité avec YOLOv8 (2025)
 
-Système de surveillance de sécurité en temps réel utilisant YOLOv8 fine-tuné pour détecter personnes, casques de sécurité et gilets réfléchissants. Association de boîtes englobantes basée sur IoU pour associer l'équipement aux individus, fournissant un retour instantané sur l'équipement manquant.
+- Système de surveillance en temps réel qui détecte si les travailleurs portent l'équipement de sécurité requis
+- Fournit des alertes instantanées lorsque les casques de sécurité ou gilets réfléchissants sont manquants
 
 **Technologies:** Python, YOLOv8, Ultralytics, OpenCV, PyTorch, CUDA, NumPy
 
@@ -125,7 +132,8 @@ Système de surveillance de sécurité en temps réel utilisant YOLOv8 fine-tun�
 
 ### Système de Caméra de Trafic IA (2025)
 
-Système de surveillance de trafic intelligent avec YOLOv8x pour la détection de véhicules, ByteTrack pour le suivi multi-objets, et transformation de perspective pour l'estimation précise de vitesse. Inclut comptage par ligne virtuelle pour l'analyse du flux de trafic et EasyOCR pour la reconnaissance de plaques.
+- Système complet de surveillance du trafic qui détecte, suit et compte les véhicules tout en estimant leur vitesse
+- Inclut la reconnaissance de plaques d'immatriculation et l'analyse du flux de trafic
 
 **Technologies:** Python, YOLOv8, Ultralytics, OpenCV, ByteTrack, EasyOCR, PyTorch, CUDA, NumPy, Pandas
 
@@ -133,7 +141,8 @@ Système de surveillance de trafic intelligent avec YOLOv8x pour la détection d
 
 ### Système de Gestion du Hajj (2024)
 
-Plateforme web complète gérant la logistique des pèlerins du Hajj incluant sélection des groupes, arrangements de voyage et planification médicale. Base de données centralisée gérant les relations complexes entre vols, hôtels et informations des pèlerins.
+- Plateforme web pour gérer tous les aspects de la logistique et des arrangements de voyage des pèlerins du Hajj
+- Coordonne la sélection des groupes, réservations de vols, hébergements hôteliers et planification médicale
 
 **Technologies:** Développement Web, Gestion de Bases de Données, Systèmes de Planification
 
@@ -141,7 +150,8 @@ Plateforme web complète gérant la logistique des pèlerins du Hajj incluant s�
 
 ### Système Hybride POS & E-commerce (2025)
 
-Application POS desktop synchronisée avec plusieurs sites e-commerce (Shiakati Store, Celtic Wear, Jet7). Architecture hybride avec bases de données SQLite locales et PostgreSQL cloud permettant opérations offline-first avec synchronisation en arrière-plan, résolution de conflits et consistance éventuelle.
+- Système de point de vente desktop qui se synchronise avec plusieurs boutiques en ligne en temps réel
+- Fonctionne parfaitement hors ligne et se synchronise automatiquement lorsque la connexion internet est rétablie
 
 **Technologies:** SQLite, PostgreSQL, Applications Desktop, Développement Web
 

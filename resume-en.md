@@ -69,7 +69,8 @@ PyQt
 
 ### Career Connect | AI Job Recommendation Platform (2024-2025)
 
-Dual-purpose AI recruitment platform serving both recruiters and job seekers. Extracts skills from CVs using NLP, builds dense embeddings with sentence-transformers, and delivers ranked recommendations using Graph Neural Networks and ensemble learning (XGBoost, LightGBM). Achieved MRR of 0.947 on combined O*NET, ESCO, and Stack Overflow datasets.
+- Dual-purpose recruitment platform connecting job seekers with opportunities and helping recruiters find qualified candidates
+- Automatically analyzes resumes and job descriptions to provide intelligent matching and ranked recommendations
 
 **Technologies:** Python, FastAPI, React, TypeScript, PostgreSQL, Docker, PyTorch, PyTorch Geometric, SBERT, FAISS, SpaCy, XGBoost, LightGBM
 
@@ -77,7 +78,8 @@ Dual-purpose AI recruitment platform serving both recruiters and job seekers. Ex
 
 ### Mini-GPT (Decoder-only) (2025)
 
-Built a character-level GPT-style transformer from scratch with causal self-attention and multi-head attention mechanisms. Trained on Shakespeare corpus to generate coherent text through autoregressive language modeling.
+- Built a text generation model from scratch that learns writing patterns at the character level
+- Trained on Shakespeare's works to generate creative text in similar style
 
 **Technologies:** Python, PyTorch, Transformers, NLP, GELU, AdamW
 
@@ -85,7 +87,8 @@ Built a character-level GPT-style transformer from scratch with causal self-atte
 
 ### BERT (Encoder-only) (2025)
 
-Implemented BERT encoder from scratch with bidirectional attention, Masked Language Modeling (15% masking), and Next Sentence Prediction. Complete pre-training and fine-tuning pipeline for sentiment analysis with strong benchmark performance.
+- Implemented a language understanding model from scratch for analyzing sentiment in text
+- Developed complete training pipeline with strong performance on standard benchmarks
 
 **Technologies:** Python, PyTorch, Transformers, BERT, NLP, MLM, AdamW
 
@@ -93,7 +96,8 @@ Implemented BERT encoder from scratch with bidirectional attention, Masked Langu
 
 ### Vision Transformer (ViT) (2025)
 
-Built Vision Transformer from scratch with patch embedding, learnable positional encodings, and global self-attention across image patches. Trained for image classification with data augmentation techniques.
+- Built an image classification model from scratch that processes images as sequences of patches
+- Trained to recognize and categorize images with high accuracy
 
 **Technologies:** Python, PyTorch, Computer Vision, Transformers, ViT, AdamW
 
@@ -101,7 +105,8 @@ Built Vision Transformer from scratch with patch embedding, learnable positional
 
 ### Geo RAG | Map-based RAG Demo (2025)
 
-Retrieval-Augmented Generation application combining Chroma vector search, sentence-transformers embeddings, and local LLM (Ollama) to generate context-aware summaries for geographic locations. Interactive Streamlit interface with Folium map displays LLM-generated answers in marker popups.
+- Interactive map application that generates intelligent summaries about geographic locations
+- Retrieves relevant information and produces context-aware answers displayed on an interactive map
 
 **Technologies:** Chroma, sentence-transformers, Streamlit, Folium, Ollama, Python, Pandas, GeoPandas
 
@@ -109,7 +114,8 @@ Retrieval-Augmented Generation application combining Chroma vector search, sente
 
 ### Recognizini | Real-Time Facial Recognition System (2025)
 
-Semi-supervised face recognition web app with Next.js frontend that identifies faces from images/video and learns new identities online. Uses PCA for dimensionality reduction and Label Propagation for spreading labels across unlabeled embeddings. Compares CNN+PCA (95% variance) vs HOG+PCA (90% variance) approaches.
+- Web application that identifies people from images and videos in real-time
+- Continuously learns and improves by incorporating user feedback on new faces
 
 **Technologies:** Next.js, TypeScript, Tailwind CSS, FastAPI, Python, OpenCV, PCA, Label Propagation, PyTorch
 
@@ -117,7 +123,8 @@ Semi-supervised face recognition web app with Next.js frontend that identifies f
 
 ### Safety Equipment Detection with YOLOv8 (2025)
 
-Real-time workplace safety monitoring system using fine-tuned YOLOv8 to detect persons, safety helmets, and reflective jackets. IoU-based bounding box association matches equipment to individuals, providing instant feedback on missing safety gear.
+- Real-time monitoring system that detects whether workers are wearing required safety equipment
+- Provides instant alerts when safety helmets or reflective jackets are missing
 
 **Technologies:** Python, YOLOv8, Ultralytics, OpenCV, PyTorch, CUDA, NumPy
 
@@ -125,7 +132,8 @@ Real-time workplace safety monitoring system using fine-tuned YOLOv8 to detect p
 
 ### AI Traffic Camera System (2025)
 
-Intelligent traffic monitoring system with YOLOv8x for vehicle detection, ByteTrack for multi-object tracking, and perspective transformation for accurate speed estimation. Includes line-zone counting for traffic flow analysis and EasyOCR for license plate recognition.
+- Comprehensive traffic monitoring system that detects, tracks, and counts vehicles while estimating their speed
+- Includes license plate recognition and traffic flow analysis capabilities
 
 **Technologies:** Python, YOLOv8, Ultralytics, OpenCV, ByteTrack, EasyOCR, PyTorch, CUDA, NumPy, Pandas
 
@@ -133,7 +141,8 @@ Intelligent traffic monitoring system with YOLOv8x for vehicle detection, ByteTr
 
 ### Hadj Management System (2024)
 
-Comprehensive web platform managing Hajj pilgrim logistics including group selection, travel arrangements, and medical scheduling. Centralized database handles complex relationships between flights, hotels, and pilgrim information.
+- Web platform for managing all aspects of Hajj pilgrim logistics and travel arrangements
+- Coordinates group selection, flight bookings, hotel accommodations, and medical scheduling
 
 **Technologies:** Web Development, Database Management, Scheduling Systems
 
@@ -141,7 +150,8 @@ Comprehensive web platform managing Hajj pilgrim logistics including group selec
 
 ### Hybrid POS & E-commerce System (2025)
 
-Desktop POS application synchronized with multiple e-commerce websites (Shiakati Store, Celtic Wear, Jet7). Hybrid architecture with local SQLite and cloud PostgreSQL databases enables offline-first operations with background synchronization, conflict resolution, and eventual consistency.
+- Desktop point-of-sale system that synchronizes with multiple online stores in real-time
+- Works seamlessly offline and automatically syncs when internet connection is restored
 
 **Technologies:** SQLite, PostgreSQL, Desktop Applications, Web Development
 
