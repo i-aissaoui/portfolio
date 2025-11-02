@@ -68,7 +68,7 @@ export default function Home() {
               className='text-xl font-bold text-white hover:text-[#00d9ff] transition-colors'
             >
               <span className='text-[#00d9ff]'>&lt;</span>
-              Ɪsmaɪl
+              ismail
               <span className='text-[#00d9ff]'>/&gt;</span>
             </a>
 
@@ -91,7 +91,7 @@ export default function Home() {
                 <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-300'></span>
               </a>
               <a 
-                href='#skills' 
+                href='#expertise' 
                 className='text-sm font-medium text-white/70 hover:text-[#00d9ff] transition-colors relative group'
                 style={{ backgroundColor: 'transparent', background: 'none' }}
               >
@@ -195,28 +195,54 @@ export default function Home() {
                 : "Full-Stack Developer and AI enthusiast, specializing in building modern web applications and machine learning models. Creating innovative solutions with React, Next.js, FastAPI, and transformer architectures (BERT, GPT, RAG) for intelligent user experiences."}
             </p>
 
-            {/* CTA Button */}
-            <a
-              href='#contact'
-              className='group inline-flex items-center gap-3 px-8 py-4 bg-white/[0.05] border border-white/20 backdrop-blur-md text-white font-semibold rounded-xl hover:bg-white/10 hover:border-[#00d9ff]/50 transition-all duration-300 relative overflow-hidden'
-            >
-              <div className='absolute inset-0 bg-gradient-to-r from-[#00d9ff]/0 via-[#00d9ff]/10 to-[#00d9ff]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700'></div>
-              <span className='relative z-10'>
-                {locale === "fr"
-                  ? "Me Contacter"
-                  : locale === "de"
-                  ? "Kontaktieren"
-                  : "Get in Touch"}
-              </span>
-              <svg className='w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M13 7l5 5m0 0l-5 5m5-5H6'
-                />
-              </svg>
-            </a>
+            {/* CTA Buttons */}
+            <div className='flex flex-wrap items-center gap-4'>
+              <a
+                href='#contact'
+                className='group inline-flex items-center gap-3 px-8 py-4 bg-white/[0.05] border border-white/20 backdrop-blur-md text-white font-semibold rounded-xl hover:bg-white/10 hover:border-[#00d9ff]/50 transition-all duration-300 relative overflow-hidden'
+              >
+                <div className='absolute inset-0 bg-gradient-to-r from-[#00d9ff]/0 via-[#00d9ff]/10 to-[#00d9ff]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700'></div>
+                <span className='relative z-10'>
+                  {locale === "fr"
+                    ? "Me Contacter"
+                    : locale === "de"
+                    ? "Kontaktieren"
+                    : "Get in Touch"}
+                </span>
+                <svg className='w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M13 7l5 5m0 0l-5 5m5-5H6'
+                  />
+                </svg>
+              </a>
+
+              {/* Download Resume Button */}
+              <a
+                href={locale === "fr" ? "/aissaoui-ismail-fr.pdf" : "/aissaoui-ismail-en.pdf"}
+                download
+                className='group inline-flex items-center gap-3 px-8 py-4 bg-[#00d9ff]/10 border border-[#00d9ff]/30 backdrop-blur-md text-[#00d9ff] font-semibold rounded-xl hover:bg-[#00d9ff]/20 hover:border-[#00d9ff]/50 transition-all duration-300 relative overflow-hidden'
+              >
+                <div className='absolute inset-0 bg-gradient-to-r from-[#00d9ff]/0 via-[#00d9ff]/20 to-[#00d9ff]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700'></div>
+                <svg className='w-5 h-5 relative z-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'
+                  />
+                </svg>
+                <span className='relative z-10'>
+                  {locale === "fr"
+                    ? "Télécharger CV"
+                    : locale === "de"
+                    ? "Lebenslauf herunterladen"
+                    : "Download Resume"}
+                </span>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -545,17 +571,19 @@ export default function Home() {
                 : "Feel free to reach out for opportunities or collaborations"}
             </p>
 
-            <div className='flex items-center gap-4 justify-center mb-12'>
+            <div className='flex flex-wrap items-center gap-4 justify-center mb-12'>
               <a
                 href={`mailto:${site.email}`}
-                className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm'
+                className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm flex-shrink-0'
                 aria-label='Email'
               >
                 <svg
-                  className='w-6 h-6 text-white/80 group-hover:text-white transition-colors'
+                  className='w-6 h-6 min-w-[24px] min-h-[24px] text-white/80 group-hover:text-white transition-colors'
                   viewBox='0 0 24 24'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
                 >
                   <path
                     d='M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13a2.5 2.5 0 0 0 2.5-2.5v-7'
@@ -575,14 +603,16 @@ export default function Home() {
               </a>
               <a
                 href={`tel:${site.phone}`}
-                className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm'
+                className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm flex-shrink-0'
                 aria-label='Phone'
               >
                 <svg
-                  className='w-6 h-6 text-white/80 group-hover:text-white transition-colors'
+                  className='w-6 h-6 min-w-[24px] min-h-[24px] text-white/80 group-hover:text-white transition-colors'
                   viewBox='0 0 24 24'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
                 >
                   <path
                     d='M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.1.37 2.17.74 3.18a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6 6l1.06-1.06a2 2 0 0 1 2.11-.45c1 .37 2.08.62 3.18.74A2 2 0 0 1 22 16.92z'
@@ -610,13 +640,16 @@ export default function Home() {
                     href={s.href}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm'
+                    className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm flex-shrink-0'
                     aria-label={s.label}
                   >
                     <img
                       src={`/${logoFile}`}
                       alt={s.label}
-                      className='w-6 h-6 brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity'
+                      width='24'
+                      height='24'
+                      className='w-6 h-6 min-w-[24px] min-h-[24px] brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity'
+                      style={{ display: 'block', width: '24px', height: '24px' }}
                     />
                   </a>
                 );

@@ -25,7 +25,8 @@ Skilled in applying this core AI expertise to build and deploy robust applicatio
 
 **High School of Computer Science (ESI-SBA)**  
 *Sidi Bel Abbès, Algeria*  
-**Master of Engineering in Computer Science (Ingénieur d'État)** | 2021 – 2026  
+**Master's Degree in Computer Science** | 2021 – 2026  
+**Engineering Degree in Computer Science (Ingénieur d'État)** | 2021 – 2026  
 Specialization: Artificial Intelligence & Data Science
 
 ---

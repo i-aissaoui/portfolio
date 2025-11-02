@@ -25,6 +25,7 @@ Compétent dans l'application de cette expertise en IA pour construire et déplo
 
 **École Supérieure d'Informatique (ESI-SBA)**  
 *Sidi Bel Abbès, Algérie*  
+**Master en Informatique** | 2021 – 2026  
 **Diplôme d'Ingénieur d'État en Informatique** | 2021 – 2026  
 Spécialisation : Intelligence Artificielle et Science des Données
 
@@ -69,8 +70,8 @@ PyQt
 
 ### Career Connect | Plateforme IA de Recommandation d'Emplois (2024-2025)
 
-- Plateforme de recrutement à double usage connectant chercheurs d'emploi et recruteurs pour trouver candidats qualifiés
-- Analyse automatiquement les CV et descriptions de postes pour fournir des correspondances intelligentes et recommandations classées
+- Plateforme de recrutement connectant chercheurs d'emploi et recruteurs
+- Analyse automatiquement CV et offres pour fournir correspondances intelligentes et recommandations
 
 **Technologies:** Python, FastAPI, React, TypeScript, PostgreSQL, Docker, PyTorch, PyTorch Geometric, SBERT, FAISS, SpaCy, XGBoost, LightGBM
 
@@ -78,8 +79,8 @@ PyQt
 
 ### Mini-GPT (Décodeur seul) (2025)
 
-- Construction d'un modèle de génération de texte depuis zéro qui apprend les motifs d'écriture au niveau caractère
-- Entraîné sur les œuvres de Shakespeare pour générer du texte créatif dans un style similaire
+- Modèle de génération de texte depuis zéro apprenant les motifs d'écriture au niveau caractère
+- Entraîné sur Shakespeare pour générer du texte créatif en style similaire
 
 **Technologies:** Python, PyTorch, Transformers, NLP, GELU, AdamW
 
@@ -87,26 +88,17 @@ PyQt
 
 ### BERT (Encodeur seul) (2025)
 
-- Implémentation d'un modèle de compréhension du langage depuis zéro pour analyser les sentiments dans le texte
-- Développement d'un pipeline d'entraînement complet avec performance solide sur les benchmarks standards
+- Modèle de compréhension du langage depuis zéro pour analyser les sentiments
+- Pipeline d'entraînement complet avec performance solide sur benchmarks standards
 
 **Technologies:** Python, PyTorch, Transformers, BERT, NLP, MLM, AdamW
 
 ---
 
-### Vision Transformer (ViT) (2025)
-
-- Construction d'un modèle de classification d'images depuis zéro qui traite les images comme séquences de patches
-- Entraîné pour reconnaître et catégoriser les images avec haute précision
-
-**Technologies:** Python, PyTorch, Computer Vision, Transformers, ViT, AdamW
-
----
-
 ### Geo RAG | Démo RAG Cartographique (2025)
 
-- Application cartographique interactive qui génère des résumés intelligents sur des lieux géographiques
-- Récupère des informations pertinentes et produit des réponses contextualisées affichées sur une carte interactive
+- Application cartographique interactive générant des résumés intelligents sur lieux géographiques
+- Récupère informations pertinentes et produit réponses contextualisées sur carte interactive
 
 **Technologies:** Chroma, sentence-transformers, Streamlit, Folium, Ollama, Python, Pandas, GeoPandas
 
@@ -114,8 +106,8 @@ PyQt
 
 ### Recognizini | Système de Reconnaissance Faciale en Temps Réel (2025)
 
-- Application web qui identifie les personnes à partir d'images et vidéos en temps réel
-- Apprend et s'améliore continuellement en intégrant les retours utilisateurs sur les nouveaux visages
+- Application web identifiant personnes à partir d'images et vidéos en temps réel
+- Apprend continuellement en intégrant retours utilisateurs sur nouveaux visages
 
 **Technologies:** Next.js, TypeScript, Tailwind CSS, FastAPI, Python, OpenCV, PCA, Label Propagation, PyTorch
 
@@ -123,8 +115,8 @@ PyQt
 
 ### Détection d'Équipement de Sécurité avec YOLOv8 (2025)
 
-- Système de surveillance en temps réel qui détecte si les travailleurs portent l'équipement de sécurité requis
-- Fournit des alertes instantanées lorsque les casques de sécurité ou gilets réfléchissants sont manquants
+- Système de surveillance temps réel détectant si travailleurs portent équipement de sécurité requis
+- Alertes instantanées quand casques de sécurité ou gilets réfléchissants manquants
 
 **Technologies:** Python, YOLOv8, Ultralytics, OpenCV, PyTorch, CUDA, NumPy
 
@@ -132,8 +124,8 @@ PyQt
 
 ### Système de Caméra de Trafic IA (2025)
 
-- Système complet de surveillance du trafic qui détecte, suit et compte les véhicules tout en estimant leur vitesse
-- Inclut la reconnaissance de plaques d'immatriculation et l'analyse du flux de trafic
+- Système de surveillance trafic détectant, suivant et comptant véhicules avec estimation vitesse
+- Inclut reconnaissance plaques d'immatriculation et analyse flux de trafic
 
 **Technologies:** Python, YOLOv8, Ultralytics, OpenCV, ByteTrack, EasyOCR, PyTorch, CUDA, NumPy, Pandas
 
@@ -141,8 +133,8 @@ PyQt
 
 ### Système de Gestion du Hajj (2024)
 
-- Plateforme web pour gérer tous les aspects de la logistique et des arrangements de voyage des pèlerins du Hajj
-- Coordonne la sélection des groupes, réservations de vols, hébergements hôteliers et planification médicale
+- Plateforme web gérant logistique et arrangements de voyage des pèlerins du Hajj
+- Coordonne sélection groupes, réservations vols, hébergements hôteliers et planification médicale
 
 **Technologies:** Développement Web, Gestion de Bases de Données, Systèmes de Planification
 
@@ -150,8 +142,8 @@ PyQt
 
 ### Système Hybride POS & E-commerce (2025)
 
-- Système de point de vente desktop qui se synchronise avec plusieurs boutiques en ligne en temps réel
-- Fonctionne parfaitement hors ligne et se synchronise automatiquement lorsque la connexion internet est rétablie
+- Système point de vente desktop synchronisé avec boutiques en ligne en temps réel
+- Fonctionne hors ligne et synchronise automatiquement au retour de connexion internet
 
 **Technologies:** SQLite, PostgreSQL, Applications Desktop, Développement Web
 
