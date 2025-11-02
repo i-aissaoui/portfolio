@@ -94,15 +94,6 @@ PyQt
 
 ---
 
-### Vision Transformer (ViT) (2025)
-
-- Built an image classification model from scratch that processes images as sequences of patches
-- Trained to recognize and categorize images with high accuracy
-
-**Technologies:** Python, PyTorch, Computer Vision, Transformers, ViT, AdamW
-
----
-
 ### Geo RAG | Map-based RAG Demo (2025)
 
 - Interactive map application that generates intelligent summaries about geographic locations

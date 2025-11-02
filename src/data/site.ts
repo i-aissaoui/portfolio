@@ -278,31 +278,6 @@ export const site = {
       ],
       link: "#",
     },
-    // 7) Vision Transformer (ViT) (2025)
-    {
-      title: {
-        en: "Vision Transformer (ViT) (2025)",
-        fr: "Vision Transformer (ViT) (2025)",
-        de: "Vision Transformer (ViT) (2025)",
-      },
-      description: {
-        en: "Built a ViT from scratch, including patch embedding and positional encoding, trained for image classification tasks.",
-        fr: "Création d'un ViT depuis zéro, incluant l'embedding de patchs et l'encodage positionnel, entraîné pour la classification d'images.",
-        de: "ViT von Grund auf erstellt, inklusive Patch‑Einbettung und Positionskodierung, für Bildklassifikation trainiert.",
-      },
-      details: {
-        en: "Project Overview:\n• Implemented Vision Transformer architecture from scratch\n• Applied transformers to computer vision tasks\n• Trained for image classification on standard datasets\n\nCore Concepts:\n• Patch Embedding: Treating image patches as sequence tokens\n• Self-Attention for Vision: Global attention across all image patches\n• Positional Encoding: Learnable 1D encodings for spatial relationships\n• Class Token: Special token for aggregating image-level information\n• Transfer from NLP: Adapting transformer architecture for computer vision\n\nTraining Techniques:\n• Data Augmentation: Random crops, flips, color jitter for robustness\n• Regularization: Dropout and stochastic depth to prevent overfitting\n• Learning Rate Scheduling: Cosine annealing with warmup phase\n• Mixed Precision Training: FP16 for computational efficiency\n\nKey Insights:\n• Transformers can match CNN performance on vision tasks\n• Requires substantial data or pre-training for optimal results\n• Attention maps provide model interpretability\n• Scalable architecture adaptable to various image sizes\n\nTechnologies Used:\n• Framework: (PyTorch) for implementation\n• Optimization: (AdamW) with weight decay\n• Activation: (GELU) in feed-forward networks\n• Architecture: Multi-layer encoder with pre-norm configuration",
-        fr: "Aperçu:\n• Implémentation Vision Transformer\n• Application des transformers à la vision\n• Entraîné pour classification d'images",
-        de: "Übersicht:\n• Vision Transformer Implementierung\n• Anwendung von Transformern auf Computer Vision\n• Trainiert für Bildklassifikation"
-      },
-      tech: ["Python", "PyTorch", "Computer Vision", "Transformers", "ViT", "GELU", "AdamW"],
-      images: [
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600" /* code */,
-        "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1600" /* abstract pattern */,
-        "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?w=1600" /* visual data */,
-      ],
-      link: "#",
-    },
 
     // Geo RAG — Streamlit RAG demo (localized)
     {
