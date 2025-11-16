@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { readdir } from "fs/promises";
 
@@ -6,10 +6,11 @@ const PUBLIC_DIR = path.join(process.cwd(), "public");
 const SUPPORTED_EXT = /\.(png|jpe?g|webp|gif|svg)$/i;
 
 export async function GET(
-  _request: Request,
-  { params }: { params: { folder: string } }
+  _request: NextRequest,
+  context: { params: Promise<{ folder: string }> }
 ) {
-  const folder = params.folder || "";
+  const resolvedParams = await context.params;
+  const folder = resolvedParams?.folder ?? "";
   const targetDir = path.join(PUBLIC_DIR, folder);
 
   try {
@@ -21,6 +22,6 @@ export async function GET(
 
     return NextResponse.json({ images });
   } catch (error) {
-    return NextResponse.json({ images: [], error: "folder_not_found" });
+    return NextResponse.json({ images: [], error: "folder_not_found", details: String(error) });
   }
 }

@@ -50,7 +50,7 @@ export default function ProjectModal({
         const fetched: string[] = Array.isArray(data.images) ? data.images : [];
         setGallery(fetched.length ? fetched : images);
         setActiveIndex(0);
-      } catch (_err) {
+      } catch {
         if (!isCancelled) {
           setGallery(images);
           setActiveIndex(0);
