@@ -24,6 +24,14 @@ type SkillCategory = {
   items: string[];
 };
 
+type Experience = {
+  company: string;
+  role: string;
+  location: string;
+  period: string;
+  achievements: string[];
+};
+
 type Project = {
   title: string;
   period: string;
@@ -46,6 +54,8 @@ type ResumeContent = {
   };
   summaryTitle: string;
   summary: string;
+  experienceTitle: string;
+  experience: Experience[];
   educationTitle: string;
   education: Education[];
   skillsTitle: string;
@@ -69,6 +79,7 @@ const resumeContent: Record<Locale, ResumeContent> = {
         { label: "Email", value: "ismail.aissaoui.pro@gmail.com", href: "mailto:ismail.aissaoui.pro@gmail.com" },
         { label: "Academic Email", value: "i.aissaoui@esi-sba.dz", href: "mailto:i.aissaoui@esi-sba.dz" },
         { label: "Phone", value: "+213 660 70 77 96", href: "tel:+213660707796" },
+        { label: "Portfolio", value: "ismail-aissaoui.vercel.app", href: "https://ismail-aissaoui.vercel.app" },
         { label: "Location", value: "Chlef, Algeria" },
         { label: "LinkedIn", value: "linkedin.com/in/aissaoui-ismail-6a77a92a7", href: "https://linkedin.com/in/aissaoui-ismail-6a77a92a7" },
         { label: "GitHub", value: "github.com/i-aissaoui", href: "https://github.com/i-aissaoui" },
@@ -76,7 +87,17 @@ const resumeContent: Record<Locale, ResumeContent> = {
     },
     summaryTitle: "Professional Summary",
     summary:
-      "Final-year AI & Data Science engineer with a proven track record of shipping production-grade machine learning systems across healthcare, HR, education, and public infrastructure. Specializes in transformer architectures, graph neural networks, multi-objective optimization, and full-stack delivery with modern MLOps practices. Bridges machine learning research with business strategy, mentoring cross-functional teams on experimentation, deployment, and observability.",
+      "Final-year AI & Data Science engineer crafting end-to-end AI products across recruitment, HR tech, mobility, retail, and education. Lead initiatives such as graph-powered talent matching, multilingual moderation, hybrid exam scheduling, real-time traffic intelligence, and offline-first POS systems. Blend research with engineering rigor, align delivery with business goals, and uphold reliable MLOps practices for every stakeholder.",
+    experienceTitle: "Professional Experience",
+    experience: [
+      {
+        company: "Algeria Telecom",
+        role: "Network Engineering Intern",
+        location: "Algiers, Algeria",
+        period: "Sep 2024",
+        achievements: [],
+      },
+    ],
     educationTitle: "Education",
     education: [
       {
@@ -85,22 +106,21 @@ const resumeContent: Record<Locale, ResumeContent> = {
         period: "2021 – 2026",
         degree: "Master's Degree & State Engineering Degree (Ingénieur d'État) in Computer Science",
         highlights: [
-          "Advanced curriculum focused on Artificial Intelligence, Data Science, and Large-Scale Optimization",
-          "Thesis: Adaptive multi-agent scheduling with hybrid evolutionary strategies for university examinations",
-          "Led AI student society initiatives and mentored junior cohorts on research projects",
+          "Specialization: Artificial Intelligence & Computer Science",
         ],
       },
     ],
-    skillsTitle: "Technical Skills",
+    skillsTitle: "Skills",
     skills: [
       { category: "Programming", items: ["Python", "TypeScript", "JavaScript", "Java", "SQL"] },
-      { category: "ML / DL", items: ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Lightning"] },
+      { category: "ML / DL", items: ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Lightning", "ONNX"] },
       { category: "AI Techniques", items: ["Transformers", "BERT", "GPT", "RAG", "GNN", "GAN", "XGBoost", "LSTM"] },
       { category: "Optimization", items: ["PSO", "Genetic Algorithm", "ACO", "Simulated Annealing", "Bayesian Optimization"] },
       { category: "Web & APIs", items: ["Next.js", "React", "FastAPI", "Node.js", "TailwindCSS"] },
-      { category: "Data & MLOps", items: ["Pandas", "NumPy", "MLflow", "Airflow", "DVC", "Kubeflow"] },
+      { category: "Data & MLOps", items: ["Pandas", "NumPy", "MLflow", "Airflow", "DVC", "Kubeflow", "Great Expectations"] },
       { category: "Databases", items: ["PostgreSQL", "MongoDB", "MySQL", "Neo4j", "Cassandra"] },
-      { category: "Cloud & DevOps", items: ["Docker", "Linux", "Git", "CI/CD", "CUDA", "AWS"] },
+      { category: "Cloud & DevOps", items: ["Docker", "Linux", "Git", "CI/CD", "CUDA", "AWS", "Grafana"] },
+      { category: "Soft Skills", items: ["Stakeholder Management", "Technical Leadership", "Mentoring", "Cross-functional Communication", "Product Strategy"] },
     ],
     achievementsTitle: "Key Achievements",
     achievements: [
@@ -207,6 +227,7 @@ const resumeContent: Record<Locale, ResumeContent> = {
         { label: "Email", value: "ismail.aissaoui.pro@gmail.com", href: "mailto:ismail.aissaoui.pro@gmail.com" },
         { label: "Email académique", value: "i.aissaoui@esi-sba.dz", href: "mailto:i.aissaoui@esi-sba.dz" },
         { label: "Téléphone", value: "+213 660 70 77 96", href: "tel:+213660707796" },
+        { label: "Portfolio", value: "ismail-aissaoui.vercel.app", href: "https://ismail-aissaoui.vercel.app" },
         { label: "Localisation", value: "Chlef, Algérie" },
         { label: "LinkedIn", value: "linkedin.com/in/aissaoui-ismail-6a77a92a7", href: "https://linkedin.com/in/aissaoui-ismail-6a77a92a7" },
         { label: "GitHub", value: "github.com/i-aissaoui", href: "https://github.com/i-aissaoui" },
@@ -214,7 +235,17 @@ const resumeContent: Record<Locale, ResumeContent> = {
     },
     summaryTitle: "Résumé Professionnel",
     summary:
-      "Ingénieur IA & Data Science en dernière année avec une expérience solide dans l'industrialisation de systèmes de machine learning. Spécialisé dans les transformers, les graph neural networks, l'optimisation multi-objectifs et la livraison full-stack avec des pratiques MLOps modernes. Sert de passerelle entre la recherche en IA et la stratégie métier en accompagnant les équipes pluridisciplinaires sur l'expérimentation, le déploiement et l'observabilité.",
+      "Ingénieur IA & Data Science en dernière année, concevant des solutions IA de bout en bout pour le recrutement, les RH, la mobilité urbaine, le retail et l'enseignement. Pilote des projets comme le matching talent basé graphes, la modération multilingue, la planification d'examens hybride, l'analyse trafic temps réel et le POS offline-first. Allie recherche et exigence d'ingénierie, aligne la livraison sur les objectifs métier et garantit des pipelines MLOps robustes pour chaque partie prenante.",
+    experienceTitle: "Expérience Professionnelle",
+    experience: [
+      {
+        company: "Algérie Télécom",
+        role: "Stagiaire Ingénierie Réseau",
+        location: "Alger, Algérie",
+        period: "Sep 2024",
+        achievements: [],
+      },
+    ],
     educationTitle: "Formation",
     education: [
       {
@@ -223,22 +254,21 @@ const resumeContent: Record<Locale, ResumeContent> = {
         period: "2021 – 2026",
         degree: "Diplôme d'Ingénieur d'État et Master en Informatique",
         highlights: [
-          "Programme avancé orienté Intelligence Artificielle, Data Science et Optimisation à grande échelle",
-          "Mémoire : Planification d'examens multi-agents adaptative avec stratégies évolutives hybrides",
-          "Responsable du club IA et mentorat d'équipes étudiantes sur des projets de recherche",
+          "Spécialisation : Intelligence Artificielle & Informatique",
         ],
       },
     ],
-    skillsTitle: "Compétences Techniques",
+    skillsTitle: "Compétences",
     skills: [
       { category: "Programmation", items: ["Python", "TypeScript", "JavaScript", "Java", "SQL"] },
-      { category: "ML / DL", items: ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Lightning"] },
+      { category: "ML / DL", items: ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Lightning", "ONNX"] },
       { category: "Techniques IA", items: ["Transformers", "BERT", "GPT", "RAG", "GNN", "GAN", "XGBoost", "LSTM"] },
       { category: "Optimisation", items: ["PSO", "Algorithme génétique", "ACO", "Recuit simulé", "Optimisation bayésienne"] },
       { category: "Web & APIs", items: ["Next.js", "React", "FastAPI", "Node.js", "TailwindCSS"] },
-      { category: "Data & MLOps", items: ["Pandas", "NumPy", "MLflow", "Airflow", "DVC", "Kubeflow"] },
+      { category: "Data & MLOps", items: ["Pandas", "NumPy", "MLflow", "Airflow", "DVC", "Kubeflow", "Great Expectations"] },
       { category: "Bases de données", items: ["PostgreSQL", "MongoDB", "MySQL", "Neo4j", "Cassandra"] },
-      { category: "Cloud & DevOps", items: ["Docker", "Linux", "Git", "CI/CD", "CUDA", "AWS"] },
+      { category: "Cloud & DevOps", items: ["Docker", "Linux", "Git", "CI/CD", "CUDA", "AWS", "Grafana"] },
+      { category: "Compétences comportementales", items: ["Gestion des parties prenantes", "Leadership technique", "Mentorat", "Communication transverse", "Vision produit"] },
     ],
     achievementsTitle: "Réalisations Clés",
     achievements: [
@@ -268,7 +298,7 @@ const resumeContent: Record<Locale, ResumeContent> = {
       {
         title: "Pipeline NLP avancé multi-optimisation",
         period: "2025",
-        summary: "Modération multilingue avec DistilBERT auto-ajusté.",
+        summary: "Modération multilingue avec auto-tuning DistilBERT.",
         impact: "PSO, AG et optimisation bayésienne avec monitoring live.",
         tech: "DistilBERT, PyTorch, FastAPI, WebSocket",
       },
@@ -280,7 +310,7 @@ const resumeContent: Record<Locale, ResumeContent> = {
         tech: "FastAPI, NumPy, Pandas, Recuit simulé",
       },
       {
-        title: "Mini-GPT pour génération créative",
+        title: "Mini-GPT (Decoder-only)",
         period: "2025",
         summary: "Transformer décodeur pour texte contrôlé.",
         impact: "Tokenizer dédié, entraînement mixte, pilotage des prompts.",
@@ -345,6 +375,7 @@ const resumeContent: Record<Locale, ResumeContent> = {
         { label: "E-Mail", value: "ismail.aissaoui.pro@gmail.com", href: "mailto:ismail.aissaoui.pro@gmail.com" },
         { label: "Akademische E-Mail", value: "i.aissaoui@esi-sba.dz", href: "mailto:i.aissaoui@esi-sba.dz" },
         { label: "Telefon", value: "+213 660 70 77 96", href: "tel:+213660707796" },
+        { label: "Portfolio", value: "ismail-aissaoui.vercel.app", href: "https://ismail-aissaoui.vercel.app" },
         { label: "Standort", value: "Chlef, Algerien" },
         { label: "LinkedIn", value: "linkedin.com/in/aissaoui-ismail-6a77a92a7", href: "https://linkedin.com/in/aissaoui-ismail-6a77a92a7" },
         { label: "GitHub", value: "github.com/i-aissaoui", href: "https://github.com/i-aissaoui" },
@@ -352,7 +383,17 @@ const resumeContent: Record<Locale, ResumeContent> = {
     },
     summaryTitle: "Berufliches Profil",
     summary:
-      "Absolvent im letzten Studienjahr für KI & Data Science mit umfassender Erfahrung in der Produktionseinführung von Machine-Learning-Systemen. Spezialisiert auf Transformer-Architekturen, Graph Neural Networks, multi-kriterielle Optimierung sowie End-to-End-Lieferung mit modernen MLOps-Praktiken. Verbindet ML-Forschung mit Geschäftsstrategien und coacht interdisziplinäre Teams bei Experimenten, Deployment und Observability.",
+      "KI- & Data-Science-Ingenieur im letzten Studienjahr, der End-to-End-KI-Lösungen für Recruiting, HR-Tech, Mobilität, Handel und Bildung realisiert. Verantwortete Projekte wie graphenbasiertes Talent-Matching, mehrsprachige Moderation, hybride Prüfungsplanung, städtische Verkehrsanalysen und offline-fähige POS-Systeme. Verbindet Forschung mit praxisnaher Umsetzung, richtet Lieferungen an Geschäftsziele aus und stellt verlässliche MLOps-Prozesse für alle Stakeholder sicher.",
+    experienceTitle: "Berufserfahrung",
+    experience: [
+      {
+        company: "Algeria Telecom",
+        role: "Praktikant Netzwerktechnik",
+        location: "Algier, Algerien",
+        period: "Sep 2024",
+        achievements: [],
+      },
+    ],
     educationTitle: "Ausbildung",
     education: [
       {
@@ -361,22 +402,21 @@ const resumeContent: Record<Locale, ResumeContent> = {
         period: "2021 – 2026",
         degree: "Master- und Ingenieurabschluss (Ingénieur d'État) in Informatik",
         highlights: [
-          "Vertiefung in Künstlicher Intelligenz, Data Science und großskaliger Optimierung",
-          "Abschlussarbeit: Adaptive, hybride evolutionäre Strategien für die universitäre Prüfungsplanung",
-          "Leitung des KI-Studentenclubs und Mentoring von Projektteams",
+          "Schwerpunkt: Künstliche Intelligenz & Informatik",
         ],
       },
     ],
-    skillsTitle: "Technische Fähigkeiten",
+    skillsTitle: "Kompetenzen",
     skills: [
       { category: "Programmierung", items: ["Python", "TypeScript", "JavaScript", "Java", "SQL"] },
-      { category: "ML / DL", items: ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Lightning"] },
+      { category: "ML / DL", items: ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Lightning", "ONNX"] },
       { category: "KI-Techniken", items: ["Transformers", "BERT", "GPT", "RAG", "GNN", "GAN", "XGBoost", "LSTM"] },
       { category: "Optimierung", items: ["PSO", "Genetischer Algorithmus", "ACO", "Simulated Annealing", "Bayesian Optimization"] },
       { category: "Web & APIs", items: ["Next.js", "React", "FastAPI", "Node.js", "TailwindCSS"] },
-      { category: "Data & MLOps", items: ["Pandas", "NumPy", "MLflow", "Airflow", "DVC", "Kubeflow"] },
+      { category: "Data & MLOps", items: ["Pandas", "NumPy", "MLflow", "Airflow", "DVC", "Kubeflow", "Great Expectations"] },
       { category: "Datenbanken", items: ["PostgreSQL", "MongoDB", "MySQL", "Neo4j", "Cassandra"] },
-      { category: "Cloud & DevOps", items: ["Docker", "Linux", "Git", "CI/CD", "CUDA", "AWS"] },
+      { category: "Cloud & DevOps", items: ["Docker", "Linux", "Git", "CI/CD", "CUDA", "AWS", "Grafana"] },
+      { category: "Soft Skills", items: ["Stakeholder-Management", "Technische Führung", "Mentoring", "Kommunikation", "Produktstrategie"] },
     ],
     achievementsTitle: "Wichtige Erfolge",
     achievements: [
@@ -512,10 +552,10 @@ export default function ResumePDF() {
       </div>
 
       <div className="resume-container mx-auto py-15">
-        <div className="page front-page p-5 pt-6 flex flex-col gap-1.5 text-[1.05rem]">
-          <header className="border-b-2 border-blue-700 pb-3">
-            <h1 className="text-2xl font-bold text-gray-900 text-center">{t.header.name}</h1>
-            <p className="text-base font-semibold text-blue-700 text-center">{t.header.role}</p>
+        <div className="page front-page p-5 pt-5 flex flex-col gap-1.1 text-[0.95rem]">
+          <header className="border-b-2 border-blue-700 pb-2.5">
+            <h1 className="text-[1.75rem] font-bold text-gray-900 text-center">{t.header.name}</h1>
+            <p className="text-[0.9rem] font-semibold text-blue-700 text-center">{t.header.role}</p>
             <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 justify-center text-[0.82rem] text-gray-700">
               {t.header.contacts.map((contact) => {
                 const content = (
@@ -542,21 +582,45 @@ export default function ResumePDF() {
             </div>
           </header>
 
-          <section className="space-y-1.5">
+          <section className="space-y-1.2">
             <h2 className={headingClass}>{t.summaryTitle}</h2>
-            <p className="text-[0.96rem] leading-7 text-gray-800">{t.summary}</p>
+            <p className="text-[0.88rem] leading-6 text-gray-800">{t.summary}</p>
           </section>
 
-          <section className="space-y-1.25 text-[0.9rem]">
+          <section className="space-y-1.1 text-[0.86rem]">
+            <h2 className={headingClass}>{t.experienceTitle}</h2>
+            {t.experience.map((exp) => (
+              <div
+                key={`${exp.company}-${exp.role}`}
+                className="rounded-md border border-blue-100/70 bg-white p-2.5 text-[0.82rem] text-gray-800 shadow-sm"
+              >
+                <div className="flex flex-wrap justify-between gap-2 font-semibold text-gray-900 text-base">
+                  <span>{exp.company}</span>
+                  <span>{exp.period}</span>
+                </div>
+                <div className="flex flex-wrap justify-between gap-2 text-[0.8rem] text-blue-700 font-semibold">
+                  <span>{exp.role}</span>
+                  <span>{exp.location}</span>
+                </div>
+                <ul className="mt-1.5 list-disc space-y-1 pl-5 text-gray-700 text-[0.78rem] leading-[1.35]">
+                  {exp.achievements.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </section>
+
+          <section className="space-y-1.05 text-[0.84rem]">
             <h2 className={headingClass}>{t.educationTitle}</h2>
             {t.education.map((edu) => (
-              <div key={edu.institution} className="rounded-md border border-blue-100/60 bg-blue-50/30 p-3 text-sm text-gray-800">
-                <div className="flex justify-between font-semibold text-gray-900 text-base">
+              <div key={edu.institution} className="rounded-md border border-blue-100/60 bg-blue-50/30 p-2.5 text-[0.8rem] text-gray-800">
+                <div className="flex justify-between font-semibold text-gray-900 text-[0.9rem]">
                   <span>{edu.institution}</span>
                   <span>{edu.period}</span>
                 </div>
-                <p className="mt-1 italic text-blue-700 font-semibold">{edu.degree}</p>
-                <ul className="mt-2 list-disc space-y-1 pl-6 text-gray-700">
+                <p className="mt-0.5 italic text-blue-700 font-semibold text-[0.78rem]">{edu.degree}</p>
+                <ul className="mt-1.5 list-disc space-y-0.75 pl-5 text-gray-700 text-[0.76rem] leading-[1.35]">
                   {edu.highlights.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -565,21 +629,21 @@ export default function ResumePDF() {
             ))}
           </section>
 
-          <section className="space-y-1.25 text-[0.88rem]">
+          <section className="space-y-1.05 text-[0.82rem]">
             <h2 className={headingClass}>{t.skillsTitle}</h2>
-            <div className="grid grid-cols-2 gap-3 text-[0.78rem] text-gray-800">
+            <div className="grid grid-cols-2 gap-2.5 text-[0.72rem] text-gray-800">
               {t.skills.map((skill) => (
                 <div key={skill.category}>
-                  <p className="font-semibold text-blue-700 uppercase text-[0.7rem] tracking-wide">{skill.category}</p>
-                  <p className="mt-1 leading-[1.55]">{skill.items.join(", ")}</p>
+                  <p className="font-semibold text-blue-700 uppercase text-[0.64rem] tracking-wide">{skill.category}</p>
+                  <p className="mt-0.5 leading-[1.45]">{skill.items.join(", ")}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <section className="space-y-1.25 text-[0.84rem]">
+          <section className="space-y-1 text-[0.78rem]">
             <h2 className={headingClass}>{t.achievementsTitle}</h2>
-            <ul className="list-disc space-y-1 pl-6 leading-6 text-gray-800">
+            <ul className="list-disc space-y-0.75 pl-5 leading-[1.45] text-gray-800">
               {t.achievements.map((achievement) => (
                 <li key={achievement}>{achievement}</li>
               ))}
