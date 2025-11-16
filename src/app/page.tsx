@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { site, type Locale } from "@/data/site";
+import SiteNav from "@/components/SiteNav";
 import ProjectModal from "@/components/ProjectModal";
 import MagicBento from "@/components/MagicBento";
 import TextType from "@/components/TextType";
@@ -57,84 +58,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='relative w-full text-foreground overflow-x-hidden min-h-screen'>
-      {/* Modern Navigation Bar */}
-      <nav className='fixed top-0 left-0 right-0 z-50 bg-white/[0.02] backdrop-blur-xl border-b border-white/10' style={{ backgroundColor: 'rgba(255, 255, 255, 0.02)' }}>
-        <div className='max-w-[1920px] mx-auto px-6 sm:px-8 lg:px-12' style={{ backgroundColor: 'transparent' }}>
-          <div className='flex items-center justify-between h-20' style={{ backgroundColor: 'transparent' }}>
-            {/* Logo / Name */}
-            <a 
-              href='#home' 
-              className='text-xl font-bold text-white hover:text-[#00d9ff] transition-colors'
-            >
-              <span className='text-[#00d9ff]'>&lt;</span>
-              ismail
-              <span className='text-[#00d9ff]'>/&gt;</span>
-            </a>
-
-            {/* Navigation Links */}
-            <div className='hidden md:flex items-center gap-8' style={{ backgroundColor: 'transparent', background: 'transparent' }}>
-              <a 
-                href='#home' 
-                className='text-sm font-medium text-white/70 hover:text-[#00d9ff] transition-colors relative group'
-                style={{ backgroundColor: 'transparent', background: 'none' }}
-              >
-                {locale === "fr" ? "Accueil" : locale === "de" ? "Startseite" : "Home"}
-                <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-300'></span>
-              </a>
-              <a 
-                href='#projects' 
-                className='text-sm font-medium text-white/70 hover:text-[#00d9ff] transition-colors relative group'
-                style={{ backgroundColor: 'transparent', background: 'none' }}
-              >
-                {locale === "fr" ? "Projets" : locale === "de" ? "Projekte" : "Projects"}
-                <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-300'></span>
-              </a>
-              <a 
-                href='#expertise' 
-                className='text-sm font-medium text-white/70 hover:text-[#00d9ff] transition-colors relative group'
-                style={{ backgroundColor: 'transparent', background: 'none' }}
-              >
-                {locale === "fr" ? "Compétences" : locale === "de" ? "Fähigkeiten" : "Skills"}
-                <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-300'></span>
-              </a>
-              <a 
-                href='#education' 
-                className='text-sm font-medium text-white/70 hover:text-[#00d9ff] transition-colors relative group'
-                style={{ backgroundColor: 'transparent', background: 'none' }}
-              >
-                {locale === "fr" ? "Formation" : locale === "de" ? "Ausbildung" : "Education"}
-                <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-300'></span>
-              </a>
-              <a 
-                href='#contact' 
-                className='text-sm font-medium text-white/70 hover:text-[#00d9ff] transition-colors relative group'
-                style={{ backgroundColor: 'transparent', background: 'none' }}
-              >
-                Contact
-                <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-300'></span>
-              </a>
-            </div>
-
-            {/* Language Switcher */}
-            <div className='flex items-center gap-2 bg-white/[0.05] backdrop-blur-md p-1.5 rounded-lg border border-white/10'>
-              {["en", "fr", "de"].map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => setLocale(lang as Locale)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-bold uppercase transition-all ${
-                    locale === lang
-                      ? "bg-[#00d9ff]/20 text-[#00d9ff] border border-[#00d9ff]/30"
-                      : "text-white/60 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  {lang}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
+    <div className='relative w-full text-foreground overflow-x-hidden min-h-screen pt-24'>
+      <SiteNav locale={locale} onLocaleChange={(lang) => setLocale(lang)} />
 
       <main className='relative z-10 mx-auto w-full max-w-[1920px] px-6 sm:px-8 lg:px-12'>
         {/* Hero Section - Developer Style */}
@@ -221,8 +146,7 @@ export default function Home() {
 
               {/* Download Resume Button */}
               <a
-                href={locale === "fr" ? "/aissaoui-ismail-fr.pdf" : "/aissaoui-ismail-en.pdf"}
-                download
+                href="/resume"
                 className='group inline-flex items-center gap-3 px-8 py-4 bg-[#00d9ff]/10 border border-[#00d9ff]/30 backdrop-blur-md text-[#00d9ff] font-semibold rounded-xl hover:bg-[#00d9ff]/20 hover:border-[#00d9ff]/50 transition-all duration-300 relative overflow-hidden'
               >
                 <div className='absolute inset-0 bg-gradient-to-r from-[#00d9ff]/0 via-[#00d9ff]/20 to-[#00d9ff]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700'></div>

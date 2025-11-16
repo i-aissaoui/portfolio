@@ -17,6 +17,7 @@ export type Project = {
   details?: LocalizedString;
   tech: string[];
   images?: string[]; // image URLs
+  imageFolder?: string; // optional folder within public for auto-loading images
   link?: string; // demo or GitHub
 };
 
@@ -180,42 +181,19 @@ export const site = {
     },
   ] as SkillsGroup[],
   projects: [
-    // 10) Career Connect - AI-Powered Career Platform (2024-2025)
+    // 1) AI-Powered Recruitment Platform with Graph Neural Networks (2024-2025)
     {
       title: {
-        en: "Career Connect — AI Job Recommendation Platform",
-        fr: "Career Connect — Plateforme IA de recommandation d'emplois",
-        de: "Career Connect — KI‑Jobempfehlungsplattform",
+        en: "AI-Powered Recruitment Platform with Graph Neural Networks",
+        fr: "Plateforme de Recrutement IA avec Réseaux de Neurones Graphiques",
+        de: "KI-gestützte Rekrutierungsplattform mit Graph Neural Networks",
       },
       description: {
-        en: "AI‑powered platform that extracts skills from CVs, builds dense embeddings and delivers ranked candidate recommendations for recruiters while providing personalized job guidance for candidates.",
-        fr: "Plateforme IA qui extrait les compétences des CV, construit des embeddings denses et fournit des recommandations classées aux recruteurs tout en offrant des conseils d'emploi personnalisés aux candidats.",
-        de: "KI‑gestützte Plattform, die Fähigkeiten aus Lebensläufen extrahiert, dichte Embeddings erstellt und Recruitern klassifizierte Kandidatenempfehlungen liefert sowie Bewerbern personalisierte Job‑Empfehlungen anbietet.",
+        en: "Built intelligent job matching system using Graph Neural Networks to connect candidates with opportunities and rank CVs based on custom criteria for HR teams. Combines advanced AI techniques for both job seekers and recruiters.",
+        fr: "Système intelligent de matching d'emplois utilisant des réseaux de neurones graphiques pour connecter les candidats aux opportunités et classer les CV selon des critères personnalisés pour les équipes RH.",
+        de: "Intelligentes Job-Matching-System mit Graph Neural Networks zur Verbindung von Kandidaten mit Chancen und CV-Ranking nach benutzerdefinierten Kriterien für HR-Teams.",
       },
-      details: {
-        en: "Project Overview:\n• AI-powered recruitment platform connecting candidates with job opportunities through intelligent matching\n• Serves both recruiters (candidate recommendations) and job seekers (personalized job suggestions)\n• End-to-end system from CV parsing to deployment\n\nCore AI Concepts:\n• Natural Language Processing: Automated skill extraction and text understanding\n• Semantic Matching: Dense embedding-based similarity for candidate-job matching\n• Graph Neural Networks: Graph-based learning for job recommendations\n• GCN Autoencoders: Graph convolutional networks for semantic matching\n• Ensemble Learning: Quad-ensemble approach for role classification\n• Hybrid Ranking: Multi-signal ranking combining learned and rule-based methods\n\nModel Performance:\n• Mean Reciprocal Rank (MRR): 0.947\n• High precision@k across all test sets\n• Mean Average Precision (MAP) optimized for top recommendations\n• Trained on combined datasets: O*NET, ESCO, Stack Overflow Developer Survey\n\nTechnologies Used:\n• ML Frameworks: (PyTorch, PyTorch Geometric, scikit-learn, XGBoost, LightGBM)\n• NLP Tools: (SpaCy, sentence-transformers, FAISS)\n• Backend: (FastAPI) with asynchronous processing\n• Frontend: (React + TypeScript) dashboard\n• Deployment: (Docker) containerization",
-        fr: "Présentation :\n• Système de bout en bout combinant analyse de CV et NLP (SpaCy, PyPDF2) avec recherche par embeddings (sentence‑transformers + FAISS) et modèles de classement hybrides.\n• Recommandation d'emploi par réseaux de neurones graphiques (PyTorch Geometric) et auto‑encodeur GCN pour l'appariement sémantique.\n• Classifieurs en quad‑ensemble (XGBoost, Random Forest, LightGBM, NN) pour la classification des rôles et pipeline de classement des CV hybride (règle + apprentissage).\n• Entraîné et évalué sur O*NET, ESCO et l'enquête Stack Overflow ; métriques : MRR, precision@k, MAP (ex. MRR≈0.947).\n• Stack de production : backend Python (FastAPI), PostgreSQL, dashboard frontend (React + TypeScript), containerisé avec Docker.\n\nContributions principales : conception du système, implémentation des modèles (GNN, GCN), évaluation et intégration frontend.",
-        de: "Kurzbeschreibung :\n• End‑to‑end System, das CV‑Parsing und NLP (SpaCy, PyPDF2) mit embeddingbasierter Suche (sentence‑transformers + FAISS) und hybriden Ranking‑Modellen kombiniert.\n• Job‑Empfehlung mittels Graph Neural Networks (PyTorch Geometric) und einem GCN Autoencoder für semantisches Matching.\n• Quad‑Ensemble Klassifizierer (XGBoost, Random Forest, LightGBM, NN) für Rollenklassifikation sowie ein hybrider Lebenslauf‑Ranking‑Workflow.\n• Trainiert und evaluiert auf O*NET, ESCO und Stack Overflow Survey; Metriken: MRR, precision@k, MAP (z. B. MRR≈0.947).\n• Produktionsstack: Python‑Backend (FastAPI), PostgreSQL, Frontend‑Dashboard (React + TypeScript), containerisiert mit Docker.\n\nHauptbeiträge: System‑Design, Implementierung der Modelle (GNN, GCN), Evaluation und Frontend‑Integration.",
-      },
-      tech: [
-        "Python",
-        "FastAPI",
-        "React",
-        "TypeScript",
-        "PostgreSQL",
-        "Docker",
-        "PyTorch",
-        "PyTorch Geometric",
-        "sentence-transformers (SBERT)",
-        "FAISS",
-        "SpaCy",
-        "scikit-learn",
-        "XGBoost",
-        "LightGBM",
-        "Graph Neural Networks",
-        "Pandas",
-        "NumPy",
-      ],
+      tech: ["Graph Neural Networks", "PyTorch Geometric", "SBERT", "FAISS", "XGBoost", "LightGBM", "FastAPI", "React", "TypeScript", "PostgreSQL", "Docker"],
       images: [
         "/carrer-connect/1.png",
         "/carrer-connect/2.png",
@@ -225,6 +203,46 @@ export const site = {
         "/carrer-connect/6.png",
         "/carrer-connect/7.png",
         "/carrer-connect/8.png",
+      ],
+    },
+
+    // 2) Advanced NLP System with Multi-Algorithm Optimization (2025)
+    {
+      title: {
+        en: "Advanced NLP System with Multi-Algorithm Optimization",
+        fr: "Système NLP Avancé avec Optimisation Multi-Algorithmes",
+        de: "Fortgeschrittenes NLP-System mit Multi-Algorithmus-Optimierung",
+      },
+      description: {
+        en: "Developed hate speech detection system comparing three optimization algorithms (Particle Swarm, Genetic, Bayesian) with real-time performance tracking and interactive visualizations. Full-stack application with production-ready deployment.",
+        fr: "Système de détection de discours haineux comparant trois algorithmes d'optimisation (Essaim Particulaire, Génétique, Bayésien) avec suivi des performances en temps réel et visualisations interactives.",
+        de: "Hate-Speech-Erkennungssystem mit Vergleich von drei Optimierungsalgorithmen (Partikelschwarm, Genetisch, Bayesianisch) mit Echtzeit-Leistungsverfolgung und interaktiven Visualisierungen.",
+      },
+      tech: ["DistilBERT", "PyTorch", "PSO", "Genetic Algorithm", "Bayesian Optimization", "FastAPI", "Next.js", "TypeScript", "WebSocket", "Recharts"],
+      images: [
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600",
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600",
+      ],
+    },
+
+    // 3) Intelligent University Scheduling System (2025)
+    {
+      title: {
+        en: "Intelligent University Scheduling System",
+        fr: "Système Intelligent de Planification Universitaire",
+        de: "Intelligentes Universitäts-Planungssystem",
+      },
+      description: {
+        en: "Created automated exam timetabling system using multiple optimization algorithms (Genetic, Swarm, Ant Colony, Simulated Annealing) to satisfy complex scheduling constraints. Handles hard and soft constraints with hybrid optimization approaches.",
+        fr: "Système automatisé de planification d'examens utilisant plusieurs algorithmes d'optimisation (Génétique, Essaim, Colonie de Fourmis, Recuit Simulé) pour satisfaire des contraintes complexes.",
+        de: "Automatisiertes Prüfungsplanungssystem mit mehreren Optimierungsalgorithmen (Genetisch, Schwarm, Ameisenkolonie, Simuliertes Glühen) zur Erfüllung komplexer Planungseinschränkungen.",
+      },
+      tech: ["Genetic Algorithm", "PSO", "ACO", "Simulated Annealing", "Hybrid Algorithms", "FastAPI", "Next.js", "TypeScript", "NumPy", "Pandas"],
+      images: [
+        "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1600",
+        "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1600",
+        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1600",
       ],
     },
 
@@ -247,10 +265,9 @@ export const site = {
       },
       tech: ["Python", "PyTorch", "Transformers", "NLP", "GPT Architecture", "GELU", "AdamW"],
       images: [
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600" /* neon tech */,
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600" /* gradient */,
-        "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1600" /* data viz */,
+        "/mini-gpt/mini-gpt-01.png",
       ],
+      imageFolder: "mini-gpt",
       link: "#",
     },
     // 8) BERT (Encoder‑only) (2025)
@@ -272,10 +289,9 @@ export const site = {
       },
       tech: ["Python", "PyTorch", "Transformers", "BERT", "NLP", "MLM", "GELU", "AdamW"],
       images: [
-        "https://images.unsplash.com/photo-1542751110-97427bbecf20?w=1600" /* neural network */,
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600" /* neon servers */,
-        "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1600" /* abstract */,
+        "/bert-sentiment/bert-sentiment-01.png",
       ],
+      imageFolder: "bert-sentiment",
       link: "#",
     },
 
@@ -459,8 +475,9 @@ export const site = {
       },
       tech: ["SQLite", "PostgreSQL", "Desktop", "Web"],
       images: [
-        "https://images.unsplash.com/photo-1515165562835-c3b8c8d0b78f?w=1200",
+        "/hybrid-pos/hybrid-pos-01.png",
       ],
+      imageFolder: "hybrid-pos",
       link: "#",
     },
   ] as Project[],

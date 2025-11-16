@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 type ProjectModalProps = {
   open: boolean;
   onClose: () => void;
   title: string;
   images?: string[];
+  imageFolder?: string;
   details?: string;
   tech?: string[];
   originRect?: DOMRect | null;
@@ -17,12 +18,58 @@ export default function ProjectModal({
   onClose,
   title,
   images = [],
+  imageFolder,
   details = "",
   tech = [],
   originRect = null,
 }: ProjectModalProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
+  const [gallery, setGallery] = useState<string[]>(images);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    setGallery(images);
+  }, [images]);
+
+  useEffect(() => {
+    if (!open) return;
+    if (!imageFolder) {
+      setActiveIndex(0);
+      return;
+    }
+
+    let isCancelled = false;
+
+    const loadImages = async () => {
+      try {
+        const res = await fetch(`/api/project-images/${imageFolder}`);
+        if (!res.ok) throw new Error("failed_to_fetch");
+        const data = await res.json();
+        if (isCancelled) return;
+        const fetched: string[] = Array.isArray(data.images) ? data.images : [];
+        setGallery(fetched.length ? fetched : images);
+        setActiveIndex(0);
+      } catch (_err) {
+        if (!isCancelled) {
+          setGallery(images);
+          setActiveIndex(0);
+        }
+      }
+    };
+
+    loadImages();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [imageFolder, open, images]);
+
+  useEffect(() => {
+    if (!imageFolder) {
+      setActiveIndex(0);
+    }
+  }, [gallery.length, imageFolder]);
 
   useEffect(() => {
     if (!open) return;
@@ -105,7 +152,7 @@ export default function ProjectModal({
 
       <div
         ref={containerRef}
-        className='relative z-10 max-w-5xl w-full max-h-[95vh] overflow-hidden bg-[#060010] text-white rounded-2xl shadow-2xl border border-white/10'
+        className='relative z-10 w-full max-w-6xl max-h-[95vh] overflow-hidden bg-[#060010] text-white rounded-2xl shadow-2xl border border-white/10'
       >
         <div className='flex items-center justify-between p-6 border-b border-white/10 bg-[#0a0015]/90'>
           <h2 className='text-3xl font-extrabold text-white'>{title}</h2>
@@ -120,18 +167,51 @@ export default function ProjectModal({
 
         {/* scrollable body - images can remain large and the body will scroll */}
         <div className='modal-body overflow-auto p-8 space-y-8 max-h-[80vh] bg-gradient-to-b from-transparent to-[#0a0015]/50'>
-          {images.length > 0 && (
-            <div className='space-y-6'>
-              <h3 className='text-xl font-bold text-white mb-4'>📸 Project Screenshots</h3>
-              {images.map((src, i) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={i}
-                  src={src}
-                  alt={`screenshot-${i}`}
-                  className='w-full h-auto max-h-[56vh] object-cover rounded-xl border border-white/10 shadow-2xl'
-                />
-              ))}
+          {gallery.length > 0 && (
+            <div className='space-y-4'>
+              <h3 className='text-xl font-bold text-white'>📸 Project Screenshots</h3>
+              <div className='flex items-center justify-center gap-4'>
+                <button
+                  type='button'
+                  aria-label='Previous image'
+                  onClick={() => setActiveIndex((prev) => (prev === 0 ? gallery.length - 1 : prev - 1))}
+                  className='inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#00d9ff]/40 bg-[#00d9ff]/10 text-[#00d9ff] text-lg font-semibold hover:bg-[#00d9ff]/20 hover:border-[#00d9ff]/60 transition'
+                >
+                  ‹
+                </button>
+
+                <div className='w-full max-w-4xl rounded-2xl border border-white/10 bg-black/20 overflow-hidden shadow-2xl'>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={gallery[activeIndex]}
+                    alt={`screenshot-${activeIndex}`}
+                    className='w-full h-auto max-h-[58vh] object-cover'
+                  />
+                </div>
+
+                <button
+                  type='button'
+                  aria-label='Next image'
+                  onClick={() => setActiveIndex((prev) => (prev === gallery.length - 1 ? 0 : prev + 1))}
+                  className='inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#00d9ff]/40 bg-[#00d9ff]/10 text-[#00d9ff] text-lg font-semibold hover:bg-[#00d9ff]/20 hover:border-[#00d9ff]/60 transition'
+                >
+                  ›
+                </button>
+              </div>
+
+              <div className='flex items-center justify-center gap-2 pt-2'>
+                {gallery.map((_, i) => (
+                  <button
+                    key={i}
+                    type='button'
+                    onClick={() => setActiveIndex(i)}
+                    className={`h-2.5 w-2.5 rounded-full border border-[#00d9ff]/50 transition ${
+                      i === activeIndex ? 'bg-[#00d9ff]' : 'bg-white/10 hover:bg-white/20'
+                    }`}
+                    aria-label={`Go to image ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           )}
 
