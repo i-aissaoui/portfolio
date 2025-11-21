@@ -154,7 +154,7 @@ export default function ProjectModal({
 
       <div
         ref={containerRef}
-        className='relative z-10 w-full max-w-6xl max-h-[95vh] overflow-hidden bg-[#060010] text-white rounded-2xl shadow-2xl border border-white/10'
+        className='relative z-10 w-[94vw] md:w-[92vw] lg:w-[90vw] xl:w-[86vw] max-w-none h-[92vh] overflow-hidden bg-[#060010] text-white rounded-2xl shadow-2xl border border-white/10'
       >
         <div className='flex items-center justify-between p-6 border-b border-white/10 bg-[#0a0015]/90'>
           <h2 className='text-3xl font-extrabold text-white'>{title}</h2>
@@ -168,7 +168,7 @@ export default function ProjectModal({
         </div>
 
         {/* scrollable body - images can remain large and the body will scroll */}
-        <div className='modal-body overflow-auto p-8 space-y-8 max-h-[80vh] bg-gradient-to-b from-transparent to-[#0a0015]/50'>
+        <div className='modal-body overflow-auto p-8 space-y-8 max-h-[84vh] bg-gradient-to-b from-transparent to-[#0a0015]/50'>
           {gallery.length > 0 && (
             <div className='space-y-4'>
               <h3 className='text-xl font-bold text-white'>📸 Project Screenshots</h3>
@@ -182,7 +182,7 @@ export default function ProjectModal({
                   ‹
                 </button>
 
-                <div className='w-full max-w-4xl rounded-2xl border border-white/10 bg-black/20 overflow-hidden shadow-2xl'>
+                <div className='w-full max-w-[88vw] md:max-w-[86vw] lg:max-w-[82vw] xl:max-w-[78vw] rounded-2xl border border-white/10 bg-black overflow-hidden shadow-2xl'>
                   {(() => {
                     const src = gallery[activeIndex];
                     const isLocal = src?.startsWith("/");
@@ -196,9 +196,9 @@ export default function ProjectModal({
                           alt={`screenshot-${activeIndex}`}
                           width={1600}
                           height={900}
-                          sizes="(max-width: 1280px) 100vw, 1280px"
+                          sizes="(max-width: 1024px) 100vw, 78vw"
                           priority={activeIndex === 0}
-                          className='w-full h-auto max-h-[58vh] object-cover'
+                          className='w-full h-auto max-h-[72vh] object-contain bg-black'
                         />
                       );
                     }
@@ -208,7 +208,7 @@ export default function ProjectModal({
                         src={src}
                         alt={`screenshot-${activeIndex}`}
                         loading='lazy'
-                        className='w-full h-auto max-h-[58vh] object-cover'
+                        className='w-full h-auto max-h-[72vh] object-contain bg-black'
                       />
                     );
                   })()}
@@ -240,7 +240,7 @@ export default function ProjectModal({
             </div>
           )}
 
-          <div className='text-sm leading-relaxed text-gray-200 space-y-6'>
+          <div className='text-base md:text-lg leading-relaxed text-gray-200 space-y-6'>
             {details.split('\n\n').map((section, sectionIdx) => {
               const lines = section.split('\n').filter((l) => l.trim());
               if (lines.length === 0) return null;

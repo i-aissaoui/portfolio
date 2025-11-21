@@ -257,10 +257,11 @@ export const site = {
       },
       tech: ["Genetic Algorithm", "PSO", "ACO", "Simulated Annealing", "Hybrid Algorithms", "FastAPI", "Next.js", "TypeScript", "NumPy", "Pandas"],
       images: [
-        "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1600",
-        "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1600",
-        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1600",
+        "/intelligent-scheduling/Screenshot from 2025-11-21 09-45-25.png",
+        "/intelligent-scheduling/Screenshot from 2025-11-21 09-46-38.png",
+        "/intelligent-scheduling/Screenshot from 2025-11-21 09-46-48.png",
       ],
+      imageFolder: "intelligent-scheduling",
     },
 
     // 9) Mini‑GPT (Decoder‑only) (2025)
