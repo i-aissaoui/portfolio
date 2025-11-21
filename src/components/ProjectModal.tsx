@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 type ProjectModalProps = {
   open: boolean;
@@ -48,7 +49,8 @@ export default function ProjectModal({
         const data = await res.json();
         if (isCancelled) return;
         const fetched: string[] = Array.isArray(data.images) ? data.images : [];
-        setGallery(fetched.length ? fetched : images);
+        const encoded = fetched.map((p) => encodeURI(p));
+        setGallery(encoded.length ? encoded : images);
         setActiveIndex(0);
       } catch {
         if (!isCancelled) {
@@ -181,12 +183,35 @@ export default function ProjectModal({
                 </button>
 
                 <div className='w-full max-w-4xl rounded-2xl border border-white/10 bg-black/20 overflow-hidden shadow-2xl'>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={gallery[activeIndex]}
-                    alt={`screenshot-${activeIndex}`}
-                    className='w-full h-auto max-h-[58vh] object-cover'
-                  />
+                  {(() => {
+                    const src = gallery[activeIndex];
+                    const isLocal = src?.startsWith("/");
+                    const isUnsplash = src?.startsWith("https://images.unsplash.com/");
+                    const canUseNextImage = isLocal || isUnsplash;
+
+                    if (canUseNextImage) {
+                      return (
+                        <Image
+                          src={src}
+                          alt={`screenshot-${activeIndex}`}
+                          width={1600}
+                          height={900}
+                          sizes="(max-width: 1280px) 100vw, 1280px"
+                          priority={activeIndex === 0}
+                          className='w-full h-auto max-h-[58vh] object-cover'
+                        />
+                      );
+                    }
+                    return (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={src}
+                        alt={`screenshot-${activeIndex}`}
+                        loading='lazy'
+                        className='w-full h-auto max-h-[58vh] object-cover'
+                      />
+                    );
+                  })()}
                 </div>
 
                 <button

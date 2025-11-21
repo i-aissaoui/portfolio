@@ -146,7 +146,8 @@ export default function Home() {
 
               {/* Download Resume Button */}
               <a
-                href="/resume"
+                href={locale === "fr" ? "/resume_fr.pdf" : locale === "de" ? "/resume_de.pdf" : "/resume_en.pdf"}
+                download
                 className='group inline-flex items-center gap-3 px-8 py-4 bg-[#00d9ff]/10 border border-[#00d9ff]/30 backdrop-blur-md text-[#00d9ff] font-semibold rounded-xl hover:bg-[#00d9ff]/20 hover:border-[#00d9ff]/50 transition-all duration-300 relative overflow-hidden'
               >
                 <div className='absolute inset-0 bg-gradient-to-r from-[#00d9ff]/0 via-[#00d9ff]/20 to-[#00d9ff]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700'></div>
@@ -607,6 +608,7 @@ export default function Home() {
           onClose={() => setOpen(false)}
           title={L(site.projects[active].title, locale)}
           images={site.projects[active].images}
+          imageFolder={site.projects[active].imageFolder}
           details={
             site.projects[active].details?.[locale] ??
             site.projects[active].description[locale]

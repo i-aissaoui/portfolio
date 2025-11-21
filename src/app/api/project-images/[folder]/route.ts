@@ -9,8 +9,8 @@ export async function GET(
   _request: NextRequest,
   context: { params: Promise<{ folder: string }> }
 ) {
-  const resolvedParams = await context.params;
-  const folder = resolvedParams?.folder ?? "";
+  const resolved = await context.params;
+  const folder = resolved?.folder ?? "";
   const targetDir = path.join(PUBLIC_DIR, folder);
 
   try {

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
+// removed usePathname as it's unused
 import type { Locale } from "@/data/site";
 
 const navItems = [
@@ -12,11 +12,7 @@ const navItems = [
   { id: "contact", label: { en: "Contact", fr: "Contact", de: "Kontakt" } },
 ];
 
-const resumeLabels: Record<Locale, string> = {
-  en: "Resume",
-  fr: "CV",
-  de: "Lebenslauf",
-};
+// no resume item in navbar
 
 type SiteNavProps = {
   locale: Locale;
@@ -24,16 +20,14 @@ type SiteNavProps = {
 };
 
 export default function SiteNav({ locale, onLocaleChange }: SiteNavProps) {
-  const pathname = usePathname();
-  const isResumePage = pathname?.startsWith("/resume");
-  const getSectionHref = (id: string) => (isResumePage ? `/#${id}` : `#${id}`);
+  const getSectionHref = (id: string) => `#${id}`;
 
   return (
     <nav className='print:hidden fixed top-0 left-0 right-0 z-50 bg-white/[0.02] backdrop-blur-xl border-b border-white/10'>
       <div className='max-w-[1920px] mx-auto px-6 sm:px-8 lg:px-12'>
         <div className='flex items-center justify-between h-20'>
           <a
-            href={isResumePage ? "/" : "#home"}
+            href="#home"
             className='text-xl font-bold text-white hover:text-[#00d9ff] transition-colors'
           >
             <span className='text-[#00d9ff]'>&lt;</span>
@@ -52,15 +46,7 @@ export default function SiteNav({ locale, onLocaleChange }: SiteNavProps) {
                 <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-300'></span>
               </a>
             ))}
-            <a
-              href={isResumePage ? "#home" : "/resume"}
-              className={`text-sm font-medium transition-colors relative group ${
-                isResumePage ? "text-[#00d9ff]" : "text-white/70 hover:text-[#00d9ff]"
-              }`}
-            >
-              {resumeLabels[locale] ?? resumeLabels.en}
-              <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-300'></span>
-            </a>
+            {/* Resume link removed as requested */}
           </div>
 
           <div className='flex items-center gap-2 bg-white/[0.05] backdrop-blur-md p-1.5 rounded-lg border border-white/10'>
