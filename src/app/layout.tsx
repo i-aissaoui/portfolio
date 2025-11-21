@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SplashCursor from "@/components/SplashCursor";
 import TopNav from "@/components/TopNav";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -48,6 +49,7 @@ export default function RootLayout({
         <main style={{ position: "relative", zIndex: 10, padding: 0 }}>
           {children}
         </main>
+        <SpeedInsights />
       </body>
     </html>
   );
