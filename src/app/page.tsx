@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { site, type Locale } from "@/data/site";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import ProjectModal from "@/components/ProjectModal";
 import MagicBento from "@/components/MagicBento";
@@ -32,7 +33,7 @@ export default function Home() {
   useEffect(() => {
     // Wait for DOM to be ready
     let observer: IntersectionObserver | null = null;
-    
+
     const timer = setTimeout(() => {
       observer = new IntersectionObserver(
         (entries) => {
@@ -92,11 +93,11 @@ export default function Home() {
             {/* Role/Title with SplitText animation - NO 'A' prefix */}
             <h2 className='text-xl md:text-3xl lg:text-4xl font-medium mb-6'>
               <SplitText
-                text={locale === "fr" 
+                text={locale === "fr"
                   ? "Ingénieur en IA & Data Science"
-                  : locale === "de" 
-                  ? "KI & Data Science Ingenieur"
-                  : "AI & Data Science Engineer"}
+                  : locale === "de"
+                    ? "KI & Data Science Ingenieur"
+                    : "AI & Data Science Engineer"}
                 tag="span"
                 className="text-[#00d9ff] font-bold"
                 delay={50}
@@ -116,8 +117,8 @@ export default function Home() {
               {locale === "fr"
                 ? "Développeur Full-Stack passionné par l'IA, spécialisé dans la création d'applications web modernes et de modèles de Machine Learning. Construction de solutions innovantes avec React, Next.js, FastAPI, et des architectures transformer (BERT, GPT, RAG) pour des expériences utilisateur intelligentes."
                 : locale === "de"
-                ? "Full-Stack-Entwickler mit Leidenschaft für KI, spezialisiert auf moderne Webanwendungen und Machine Learning-Modelle. Entwicklung innovativer Lösungen mit React, Next.js, FastAPI und Transformer-Architekturen (BERT, GPT, RAG) für intelligente Benutzererlebnisse."
-                : "Full-Stack Developer and AI enthusiast, specializing in building modern web applications and machine learning models. Creating innovative solutions with React, Next.js, FastAPI, and transformer architectures (BERT, GPT, RAG) for intelligent user experiences."}
+                  ? "Full-Stack-Entwickler mit Leidenschaft für KI, spezialisiert auf moderne Webanwendungen und Machine Learning-Modelle. Entwicklung innovativer Lösungen mit React, Next.js, FastAPI und Transformer-Architekturen (BERT, GPT, RAG) für intelligente Benutzererlebnisse."
+                  : "Full-Stack Developer and AI enthusiast, specializing in building modern web applications and machine learning models. Creating innovative solutions with React, Next.js, FastAPI, and transformer architectures (BERT, GPT, RAG) for intelligent user experiences."}
             </p>
 
             {/* CTA Buttons */}
@@ -131,8 +132,8 @@ export default function Home() {
                   {locale === "fr"
                     ? "Me Contacter"
                     : locale === "de"
-                    ? "Kontaktieren"
-                    : "Get in Touch"}
+                      ? "Kontaktieren"
+                      : "Get in Touch"}
                 </span>
                 <svg className='w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                   <path
@@ -163,8 +164,8 @@ export default function Home() {
                   {locale === "fr"
                     ? "Télécharger CV"
                     : locale === "de"
-                    ? "Lebenslauf herunterladen"
-                    : "Download Resume"}
+                      ? "Lebenslauf herunterladen"
+                      : "Download Resume"}
                 </span>
               </a>
             </div>
@@ -178,15 +179,15 @@ export default function Home() {
               {locale === "fr"
                 ? "Domaines d'Expertise"
                 : locale === "de"
-                ? "Fachgebiete"
-                : "Areas of Expertise"}
+                  ? "Fachgebiete"
+                  : "Areas of Expertise"}
             </h2>
             <p className='text-white/60 text-base'>
               {locale === "fr"
                 ? "Explorez mes compétences interactives"
                 : locale === "de"
-                ? "Erkunden Sie meine interaktiven Fähigkeiten"
-                : "Explore my interactive capabilities"}
+                  ? "Erkunden Sie meine interaktiven Fähigkeiten"
+                  : "Explore my interactive capabilities"}
             </p>
           </div>
 
@@ -269,15 +270,15 @@ export default function Home() {
               {locale === "fr"
                 ? "Projets Sélectionnés"
                 : locale === "de"
-                ? "Ausgewählte Projekte"
-                : "Featured Projects"}
+                  ? "Ausgewählte Projekte"
+                  : "Featured Projects"}
             </h2>
             <p className='text-white/60 text-base'>
               {locale === "fr"
                 ? "Découvrez mes réalisations récentes"
                 : locale === "de"
-                ? "Entdecken Sie meine neuesten Arbeiten"
-                : "Explore my recent work"}
+                  ? "Entdecken Sie meine neuesten Arbeiten"
+                  : "Explore my recent work"}
             </p>
           </div>
 
@@ -294,12 +295,24 @@ export default function Home() {
                   className='project-card group rounded-2xl overflow-hidden bg-[#12002b]/60 border border-[#22104a] hover:border-[#3a1558] backdrop-blur-sm opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:scale-[1.02]'
                 >
                   <div className='relative h-48 overflow-hidden'>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={image}
-                      alt={title}
-                      className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
-                    />
+                    {image.startsWith("/") ||
+                      image.startsWith("https://images.unsplash.com") ? (
+                      <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className='object-cover transition-transform duration-500 group-hover:scale-110'
+                      />
+                    ) : (
+                      // Fallback for external images not in remotePatterns
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={image}
+                        alt={title}
+                        className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+                      />
+                    )}
                     <div className='absolute inset-0 bg-gradient-to-t from-[#12002b] via-[#12002b]/50 to-transparent'></div>
                   </div>
 
@@ -336,8 +349,8 @@ export default function Home() {
                       {locale === "fr"
                         ? "Voir le projet"
                         : locale === "de"
-                        ? "Projekt ansehen"
-                        : "View Project"}
+                          ? "Projekt ansehen"
+                          : "View Project"}
                     </button>
                   </div>
                 </article>
@@ -354,15 +367,15 @@ export default function Home() {
               {locale === "fr"
                 ? "Formation"
                 : locale === "de"
-                ? "Ausbildung"
-                : "Education"}
+                  ? "Ausbildung"
+                  : "Education"}
             </h2>
             <p className='text-white/60 text-base'>
               {locale === "fr"
                 ? "Mon parcours académique"
                 : locale === "de"
-                ? "Mein akademischer Werdegang"
-                : "My academic journey"}
+                  ? "Mein akademischer Werdegang"
+                  : "My academic journey"}
             </p>
           </div>
 
@@ -378,15 +391,15 @@ export default function Home() {
                     <div className='text-base font-bold text-[#00d9ff]'>2026</div>
                   </div>
                 </div>
-                
+
                 {/* Content */}
                 <div className='flex-1 space-y-3'>
                   <h3 className='text-2xl font-bold text-white leading-tight'>
                     {locale === "fr"
                       ? "Diplôme d'ingénieur en IA et Science des Données"
                       : locale === "de"
-                      ? "Ingenieurabschluss in KI und Data Science"
-                      : "Engineering Degree in AI and Data Science"}
+                        ? "Ingenieurabschluss in KI und Data Science"
+                        : "Engineering Degree in AI and Data Science"}
                   </h3>
                   <div>
                     <span className='inline-block px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-md text-white/90 bg-white/5 border border-white/10'>
@@ -397,8 +410,8 @@ export default function Home() {
                     {locale === "fr"
                       ? "École supérieure d'informatique (ESI-SBA)"
                       : locale === "de"
-                      ? "Höhere Schule für Informatik (ESI-SBA)"
-                      : "Higher School of Computer Science (ESI-SBA)"}
+                        ? "Höhere Schule für Informatik (ESI-SBA)"
+                        : "Higher School of Computer Science (ESI-SBA)"}
                   </p>
                   <p className='text-sm text-white/50 flex items-center gap-2'>
                     📍 Algeria
@@ -416,15 +429,15 @@ export default function Home() {
                     <div className='text-base font-bold text-[#00d9ff]'>2021</div>
                   </div>
                 </div>
-                
+
                 {/* Content */}
                 <div className='flex-1 space-y-3'>
                   <h3 className='text-2xl font-bold text-white leading-tight'>
                     {locale === "fr"
                       ? "Baccalauréat en génie mathématique"
                       : locale === "de"
-                      ? "Abitur in Mathematischer Ingenieurwissenschaft"
-                      : "Baccalaureate in Mathematical Engineering"}
+                        ? "Abitur in Mathematischer Ingenieurwissenschaft"
+                        : "Baccalaureate in Mathematical Engineering"}
                   </h3>
                   <div>
                     <span className='inline-block px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-md text-white/90 bg-white/5 border border-white/10'>
@@ -439,8 +452,8 @@ export default function Home() {
                       🏆 {locale === "fr"
                         ? "Mention Très Bien"
                         : locale === "de"
-                        ? "Sehr Gut"
-                        : "Honors (Très Bien)"}
+                          ? "Sehr Gut"
+                          : "Honors (Très Bien)"}
                     </span>
                     <span className='text-white/30'>•</span>
                     <span className='text-white/50'>📍 Algeria</span>
@@ -458,8 +471,8 @@ export default function Home() {
               {locale === "fr"
                 ? "Langues Parlées"
                 : locale === "de"
-                ? "Gesprochene Sprachen"
-                : "Spoken Languages"}
+                  ? "Gesprochene Sprachen"
+                  : "Spoken Languages"}
             </h2>
             <div className='flex flex-wrap gap-3 justify-center'>
               {(() => {
@@ -481,125 +494,125 @@ export default function Home() {
       {/* Footer - Blurry Transparent Full Width */}
       <footer id='contact' className='mt-20 py-16 bg-white/[0.02] backdrop-blur-xl border-t border-white/10'>
         <div className='max-w-4xl mx-auto px-6 text-center'>
-            <h2 className='text-3xl md:text-4xl font-bold text-white mb-3'>
-              {locale === "fr"
-                ? "Restons en contact"
-                : locale === "de"
+          <h2 className='text-3xl md:text-4xl font-bold text-white mb-3'>
+            {locale === "fr"
+              ? "Restons en contact"
+              : locale === "de"
                 ? "Lass uns verbinden"
                 : "Let's Connect"}
-            </h2>
-            <p className='text-white/60 text-base mb-10'>
-              {locale === "fr"
-                ? "N'hésitez pas à me contacter pour toute opportunité ou collaboration"
-                : locale === "de"
+          </h2>
+          <p className='text-white/60 text-base mb-10'>
+            {locale === "fr"
+              ? "N'hésitez pas à me contacter pour toute opportunité ou collaboration"
+              : locale === "de"
                 ? "Kontaktieren Sie mich gerne für Gelegenheiten oder Zusammenarbeit"
                 : "Feel free to reach out for opportunities or collaborations"}
-            </p>
+          </p>
 
-            <div className='flex flex-wrap items-center gap-4 justify-center mb-12'>
-              <a
-                href={`mailto:${site.email}`}
-                className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm flex-shrink-0'
-                aria-label='Email'
+          <div className='flex flex-wrap items-center gap-4 justify-center mb-12'>
+            <a
+              href={`mailto:${site.email}`}
+              className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm flex-shrink-0'
+              aria-label='Email'
+            >
+              <svg
+                className='w-6 h-6 min-w-[24px] min-h-[24px] text-white/80 group-hover:text-white transition-colors'
+                viewBox='0 0 24 24'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
               >
-                <svg
-                  className='w-6 h-6 min-w-[24px] min-h-[24px] text-white/80 group-hover:text-white transition-colors'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                >
-                  <path
-                    d='M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13a2.5 2.5 0 0 0 2.5-2.5v-7'
-                    stroke='currentColor'
-                    strokeWidth='1.5'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                  <path
-                    d='M21 6.5a2.5 2.5 0 0 0-2.5-2.5h-13A2.5 2.5 0 0 0 3 6.5v.5l9 6 9-6v-.5z'
-                    stroke='currentColor'
-                    strokeWidth='1.5'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                </svg>
-              </a>
-              <a
-                href={`tel:${site.phone}`}
-                className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm flex-shrink-0'
-                aria-label='Phone'
+                <path
+                  d='M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13a2.5 2.5 0 0 0 2.5-2.5v-7'
+                  stroke='currentColor'
+                  strokeWidth='1.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                />
+                <path
+                  d='M21 6.5a2.5 2.5 0 0 0-2.5-2.5h-13A2.5 2.5 0 0 0 3 6.5v.5l9 6 9-6v-.5z'
+                  stroke='currentColor'
+                  strokeWidth='1.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                />
+              </svg>
+            </a>
+            <a
+              href={`tel:${site.phone}`}
+              className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm flex-shrink-0'
+              aria-label='Phone'
+            >
+              <svg
+                className='w-6 h-6 min-w-[24px] min-h-[24px] text-white/80 group-hover:text-white transition-colors'
+                viewBox='0 0 24 24'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
               >
-                <svg
-                  className='w-6 h-6 min-w-[24px] min-h-[24px] text-white/80 group-hover:text-white transition-colors'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                >
-                  <path
-                    d='M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.1.37 2.17.74 3.18a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6 6l1.06-1.06a2 2 0 0 1 2.11-.45c1 .37 2.08.62 3.18.74A2 2 0 0 1 22 16.92z'
-                    stroke='currentColor'
-                    strokeWidth='1.5'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                </svg>
-              </a>
-              {site.socials.map((s) => {
-                // Map social label to logo filename
-                const logoMap: { [key: string]: string } = {
-                  'GitHub': 'github.svg',
-                  'LinkedIn': 'linkedin.svg',
-                  'Twitter': 'twitter.svg',
-                  'Instagram': 'instagram.svg',
-                  'WhatsApp': 'whatsapp.svg'
-                };
-                const logoFile = logoMap[s.label] || 'globe.svg';
-                
-                return (
-                  <a
-                    key={s.href}
-                    href={s.href}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm flex-shrink-0'
-                    aria-label={s.label}
-                  >
-                    <img
-                      src={`/${logoFile}`}
-                      alt={s.label}
-                      width='24'
-                      height='24'
-                      className='w-6 h-6 min-w-[24px] min-h-[24px] brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity'
-                      style={{ display: 'block', width: '24px', height: '24px' }}
-                    />
-                  </a>
-                );
-              })}
-            </div>
+                <path
+                  d='M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.1.37 2.17.74 3.18a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6 6l1.06-1.06a2 2 0 0 1 2.11-.45c1 .37 2.08.62 3.18.74A2 2 0 0 1 22 16.92z'
+                  stroke='currentColor'
+                  strokeWidth='1.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                />
+              </svg>
+            </a>
+            {site.socials.map((s) => {
+              // Map social label to logo filename
+              const logoMap: { [key: string]: string } = {
+                'GitHub': 'github.svg',
+                'LinkedIn': 'linkedin.svg',
+                'Twitter': 'twitter.svg',
+                'Instagram': 'instagram.svg',
+                'WhatsApp': 'whatsapp.svg'
+              };
+              const logoFile = logoMap[s.label] || 'globe.svg';
 
-            <div className='border-t border-white/10 pt-8 mt-8'>
-              <p className='text-sm text-white/60 mb-4'>
-                {locale === "fr"
-                  ? "« La créativité résout les problèmes. La communication construit l'avenir. »"
-                  : locale === "de"
+              return (
+                <a
+                  key={s.href}
+                  href={s.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm flex-shrink-0'
+                  aria-label={s.label}
+                >
+                  <img
+                    src={`/${logoFile}`}
+                    alt={s.label}
+                    width='24'
+                    height='24'
+                    className='w-6 h-6 min-w-[24px] min-h-[24px] brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity'
+                    style={{ display: 'block', width: '24px', height: '24px' }}
+                  />
+                </a>
+              );
+            })}
+          </div>
+
+          <div className='border-t border-white/10 pt-8 mt-8'>
+            <p className='text-sm text-white/60 mb-4'>
+              {locale === "fr"
+                ? "« La créativité résout les problèmes. La communication construit l'avenir. »"
+                : locale === "de"
                   ? "„Kreativität löst Probleme. Kommunikation baut Zukunft.“"
                   : "\"Creativity solves problems. Communication builds futures.\""}
-              </p>
-              <p className='text-xs text-white/40'>
-                © 2025 Ismail Aissaoui •{" "}
-                {locale === "fr"
-                  ? "Construit avec Next.js & TailwindCSS"
-                  : locale === "de"
+            </p>
+            <p className='text-xs text-white/40'>
+              © 2025 Ismail Aissaoui •{" "}
+              {locale === "fr"
+                ? "Construit avec Next.js & TailwindCSS"
+                : locale === "de"
                   ? "Gebaut mit Next.js & TailwindCSS"
                   : "Built with Next.js & TailwindCSS"}
-              </p>
-            </div>
+            </p>
           </div>
-        </footer>
+        </div>
+      </footer>
 
       {active !== null && (
         <ProjectModal

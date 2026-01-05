@@ -23,14 +23,14 @@ export type Project = {
 
 export type SkillsGroup = {
   key:
-    | "spoken"
-    | "prog"
-    | "webdev"
-    | "aiml"
-    | "bigdata"
-    | "databases"
-    | "tools"
-    | "desktop";
+  | "spoken"
+  | "prog"
+  | "webdev"
+  | "aiml"
+  | "bigdata"
+  | "databases"
+  | "tools"
+  | "desktop";
   title: LocalizedString;
   items: string[];
 };
@@ -181,6 +181,35 @@ export const site = {
     },
   ] as SkillsGroup[],
   projects: [
+    // 0) Enterprise AI Trading System (2025)
+    {
+      title: {
+        en: "Enterprise AI Trading System",
+        fr: "Système de Trading IA d'Entreprise",
+        de: "Enterprise AI Trading System",
+      },
+      description: {
+        en: "Next-Generation Cryptocurrency Trading Bot powered by Hybrid LSTM + Deep Q-Learning Architecture. A full-stack automated trading platform designed for research and algorithmic trading development.",
+        fr: "Bot de trading de crypto-monnaies de nouvelle génération propulsé par une architecture hybride LSTM + Deep Q-Learning. Une plateforme de trading automatisée complète conçue pour la recherche et le développement de trading algorithmique.",
+        de: "Kryptowährungs-Trading-Bot der nächsten Generation, angetrieben durch eine hybride LSTM + Deep Q-Learning Architektur. Eine Full-Stack-Plattform für automatisierten Handel, entwickelt für Forschung und Entwicklung im Bereich algorithmisches Trading.",
+      },
+      details: {
+        en: "Overview:\n• Dual-Core AI Engine (LSTM + DQN) for trend forecasting and optimal entry/exit strategies.\n• Advanced Feature Engineering with 18+ institutional-grade technical indicators.\n• Interactive \"Time Machine\" Backtesting with gamified replay.\n• Real-Time Dashboard with WebSocket streaming and glassmorphism UI.\n\nTech Stack:\n• Backend: Python 3.11, FastAPI, TensorFlow, Keras.\n• Frontend: Next.js 14, TypeScript, Tailwind CSS, Recharts.\n• Data: Pandas, NumPy, TA-Lib.\n• Infrastructure: WebSocket, Background Workers.",
+        fr: "Aperçu :\n• Moteur IA à double cœur (LSTM + DQN) pour la prévision des tendances et des stratégies d'entrée/sortie optimales.\n• Ingénierie des fonctionnalités avancée avec plus de 18 indicateurs techniques de niveau institutionnel.\n• Backtesting interactif \"Time Machine\" avec relecture ludifiée.\n• Tableau de bord en temps réel avec streaming WebSocket et interface utilisateur en glassmorphism.\n\nStack Tech :\n• Backend : Python 3.11, FastAPI, TensorFlow, Keras.\n• Frontend : Next.js 14, TypeScript, Tailwind CSS, Recharts.\n• Données : Pandas, NumPy, TA-Lib.\n• Infrastructure : WebSocket, Background Workers.",
+        de: "Überblick:\n• Dual-Core AI Engine (LSTM + DQN) zur Trendprognose und für optimale Ein-/Ausstiegsstrategien.\n• Fortgeschrittenes Feature Engineering mit 18+ institutionellen technischen Indikatoren.\n• Interaktives \"Zeitmaschinen\"-Backtesting mit gamifizierter Wiedergabe.\n• Echtzeit-Dashboard mit WebSocket-Streaming und Glassmorphismus-UI.\n\nTech Stack:\n• Backend: Python 3.11, FastAPI, TensorFlow, Keras.\n• Frontend: Next.js 14, TypeScript, Tailwind CSS, Recharts.\n• Daten: Pandas, NumPy, TA-Lib.\n• Infrastruktur: WebSocket, Background Workers.",
+      },
+      tech: ["Python", "TypeScript", "TensorFlow", "FastAPI", "Next.js", "Tailwind CSS", "Keras", "Pandas", "WebSocket"],
+      imageFolder: "trading",
+      images: [
+        "/trading/1.png",
+        "/trading/2.png",
+        "/trading/3.png",
+        "/trading/4.png",
+        "/trading/5.png",
+      ],
+      link: "#",
+    },
+
     // 1) AI-Powered Recruitment Platform with Graph Neural Networks (2024-2025)
     {
       title: {
