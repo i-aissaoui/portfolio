@@ -257,6 +257,12 @@ export default function Home() {
                   title: locale === 'fr' ? 'Applications Desktop' : locale === 'de' ? 'Desktop Apps' : 'Desktop Apps',
                   description: 'PyQt',
                   label: locale === 'fr' ? '🖥️ Desktop' : locale === 'de' ? '🖥️ Desktop' : '🖥️ Desktop'
+                },
+                {
+                  color: '#0a0020',
+                  title: locale === 'fr' ? 'Apprentissage par Renforcement' : locale === 'de' ? 'Bestärkendes Lernen' : 'Reinforcement Learning',
+                  description: 'Qlearning • DQlearning • Policy Gradient • Actor Critic & PPO • Proximal Policy Optimization',
+                  label: locale === 'fr' ? '🤖 RL' : locale === 'de' ? '🤖 RL' : '🤖 RL'
                 }
               ]}
             />

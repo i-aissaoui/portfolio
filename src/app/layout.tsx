@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import SplashCursor from "@/components/SplashCursor";
-import TopNav from "@/components/TopNav";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
@@ -30,22 +28,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
-        {/* Global liquid ether background (placed behind content but visible) */}
-        <div
-          style={{
-            position: "fixed",
-            left: 0,
-            top: 0,
-            right: 0,
-            bottom: 0,
-            pointerEvents: "none",
-            zIndex: 0,
-          }}
-        >
-          <SplashCursor />
-        </div>
-
-        {/* Page content wrapper: ensure it sits above the background */}
+        {/* Page content wrapper */}
         <main style={{ position: "relative", zIndex: 10, padding: 0 }}>
           {children}
         </main>

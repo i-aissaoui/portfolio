@@ -25,7 +25,7 @@ export interface BentoProps {
   customCards?: BentoCardProps[];
 }
 
-const DEFAULT_PARTICLE_COUNT = 12;
+const DEFAULT_PARTICLE_COUNT = 6;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
 const DEFAULT_GLOW_COLOR = '132, 0, 255';
 const MOBILE_BREAKPOINT = 768;
@@ -91,17 +91,6 @@ const calculateSpotlightValues = (radius: number) => ({
   proximity: radius * 0.5,
   fadeDistance: radius * 0.75
 });
-
-const updateCardGlowProperties = (card: HTMLElement, mouseX: number, mouseY: number, glow: number, radius: number) => {
-  const rect = card.getBoundingClientRect();
-  const relativeX = ((mouseX - rect.left) / rect.width) * 100;
-  const relativeY = ((mouseY - rect.top) / rect.height) * 100;
-
-  card.style.setProperty('--glow-x', `${relativeX}%`);
-  card.style.setProperty('--glow-y', `${relativeY}%`);
-  card.style.setProperty('--glow-intensity', glow.toString());
-  card.style.setProperty('--glow-radius', `${radius}px`);
-};
 
 const ParticleCard: React.FC<{
   children: React.ReactNode;
@@ -364,7 +353,6 @@ const GlobalSpotlight: React.FC<{
   glowColor = DEFAULT_GLOW_COLOR,
 }) => {
     const spotlightRef = useRef<HTMLDivElement | null>(null);
-    const isInsideSection = useRef(false);
     const rafRef = useRef<number | null>(null);
     const mousePos = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
     const cardRects = useRef<Map<HTMLElement, { left: number; top: number; width: number; height: number }>>(new Map());
@@ -445,7 +433,6 @@ const GlobalSpotlight: React.FC<{
 
         const { proximity, fadeDistance } = calculateSpotlightValues(spotlightRadius);
         let minDistance = Infinity;
-        let anyInside = false;
 
         // Iterate cached rects (no DOM read)
         cardRects.current.forEach((rect, card) => {
@@ -668,7 +655,12 @@ const MagicBento: React.FC<BentoProps> = ({
             }
             
             .card-responsive .card:nth-child(9) {
-              grid-column: 3 / 5;
+              grid-column: 3;
+              grid-row: 4;
+            }
+
+            .card-responsive .card:nth-child(10) {
+              grid-column: 4;
               grid-row: 4;
             }
           }
