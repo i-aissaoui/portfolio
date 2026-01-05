@@ -64,8 +64,9 @@ export default function Home() {
 
       <main className='relative z-10 mx-auto w-full max-w-[1920px] px-6 sm:px-8 lg:px-12'>
         {/* Hero Section - Developer Style */}
-        <section id='home' className='pt-32 pb-20'>
-          <div className='mx-auto max-w-5xl'>
+        <section id='home' className='relative pt-32 pb-20 overflow-hidden'>
+
+          <div className='relative z-10 mx-auto max-w-5xl'>
             {/* Greeting */}
             <div className='flex items-center gap-2 mb-4'>
               <span className='text-white/70 text-base md:text-lg'>

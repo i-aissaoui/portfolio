@@ -142,14 +142,14 @@ a:hover {
 }
 
 .card {
-  background: rgba(11, 18, 32, 0.04);
+  background: rgba(11, 18, 32, 0.75);
   border: 1px solid rgba(11, 18, 32, 0.06);
   border-radius: 16px;
   padding: 1rem;
   position: relative;
   overflow: hidden;
   transition: transform 220ms ease, box-shadow 220ms ease;
-  backdrop-filter: blur(8px) saturate(120%);
+  /* backdrop-filter: removed for performance */
 }
 
 .card::before {
