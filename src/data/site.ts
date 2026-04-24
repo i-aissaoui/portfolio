@@ -22,6 +22,14 @@ export type Project = {
   link?: string; // demo or GitHub
 };
 
+export type Experience = {
+  title: LocalizedString;
+  company: string;
+  location: string;
+  period: string;
+  description: LocalizedString;
+};
+
 export type SkillsGroup = {
   key:
   | "spoken"
@@ -60,6 +68,38 @@ export const site = {
     { label: "Instagram", href: "https://www.instagram.com/sma3il.sm" },
     { label: "WhatsApp", href: "https://wa.me/213660707796" },
   ] as SocialLink[],
+  experiences: [
+    {
+      title: {
+        en: "AI Engineer Intern — Digital Twin & Predictive Maintenance",
+        fr: "Stagiaire Ingénieur IA — Jumeau Numérique & Maintenance Prédictive",
+        de: "KI-Ingenieur Praktikant — Digitaler Zwilling & Prädiktive Wartung"
+      },
+      company: "Sonatrach",
+      location: "Algeria",
+      period: "2026 (6 Months)",
+      description: {
+        en: "Developed a Digital Twin for gas turbines to enable real-time monitoring and predictive maintenance. Implemented advanced anomaly detection and RUL (Remaining Useful Life) estimation using deep learning models.",
+        fr: "Développement d'un jumeau numérique pour turbines à gaz pour permettre une surveillance en temps réel et une maintenance prédictive. Implémentation d'une détection d'anomalies avancée et estimation de la RUL (durée de vie résiduelle) à l'aide de modèles de deep learning.",
+        de: "Entwicklung eines digitalen Zwillings für Gasturbinen zur Echtzeitüberwachung und vorausschauenden Wartung. Implementierung einer fortschrittlichen Anomalieerkennung und RUL-Schätzung (Restlebensdauer) mittels Deep-Learning-Modellen."
+      }
+    },
+    {
+      title: {
+        en: "Network Engineering Intern",
+        fr: "Stagiaire Ingénieur Réseau",
+        de: "Praktikant Netzwerktechnik"
+      },
+      company: "Algérie Télécom RMC Center",
+      location: "Chlef, Algeria",
+      period: "Sep 2024",
+      description: {
+        en: "Gained hands-on experience in network infrastructure management and optimization within a regional telecommunications center.",
+        fr: "Expérience pratique dans la gestion et l'optimisation de l'infrastructure réseau au sein d'un centre régional de télécommunications.",
+        de: "Praktische Erfahrung im Management und in der Optimierung von Netzwerkinfrastrukturen in einem regionalen Telekommunikationszentrum."
+      }
+    }
+  ] as Experience[],
   skills: [],
   skillsGrouped: [
     {

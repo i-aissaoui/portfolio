@@ -7,7 +7,8 @@ import type { Locale } from "@/data/site";
 const navItems = [
   { id: "home", label: { en: "Home", fr: "Accueil", de: "Startseite" } },
   { id: "projects", label: { en: "Projects", fr: "Projets", de: "Projekte" } },
-  { id: "expertise", label: { en: "Skills", fr: "Compétences", de: "Fähigkeiten" } },
+  { id: "expertise", label: { en: "Expertise", fr: "Expertise", de: "Expertise" } },
+  { id: "experience", label: { en: "Experience", fr: "Expérience", de: "Erfahrung" } },
   { id: "education", label: { en: "Education", fr: "Formation", de: "Ausbildung" } },
   { id: "contact", label: { en: "Contact", fr: "Contact", de: "Kontakt" } },
 ];
@@ -23,49 +24,57 @@ export default function SiteNav({ locale, onLocaleChange }: SiteNavProps) {
   const getSectionHref = (id: string) => `#${id}`;
 
   return (
-    <nav className='print:hidden fixed top-0 left-0 right-0 z-50 bg-white/[0.02] backdrop-blur-xl border-b border-white/10'>
-      <div className='max-w-[1920px] mx-auto px-6 sm:px-8 lg:px-12'>
+    <nav className='print:hidden fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl'>
+      <div className='bg-[#0c0c0c]/80 backdrop-blur-2xl border border-white/5 rounded-2xl px-6 md:px-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]'>
         <div className='flex items-center justify-between h-20'>
           <a
             href="#home"
-            className='text-2xl font-bold text-white hover:text-[#00d9ff] transition-colors display-font'
+            className='text-2xl font-bold text-white hover:text-[#00d9ff] transition-all display-font tracking-tighter group'
           >
-            <span className='text-[#00d9ff]'>.</span>ismail
+            ISMAIL<span className='text-[#00d9ff] group-hover:pl-1 transition-all'>.</span>
           </a>
 
-          <div className='hidden md:flex items-center gap-8'>
+          <div className='hidden lg:flex items-center gap-10'>
             {navItems.map((item) => (
               <a
                 key={item.id}
                 href={getSectionHref(item.id)}
-                className='text-sm font-medium text-white/70 hover:text-[#00d9ff] transition-colors relative group'
+                className='text-[10px] font-bold text-white/40 hover:text-white uppercase tracking-[0.2em] transition-all relative group'
               >
                 {item.label[locale] ?? item.label.en}
-                <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-300'></span>
+                <span className='absolute -bottom-2 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-500'></span>
               </a>
             ))}
-            {/* Resume link removed as requested */}
           </div>
 
-          <div className='flex items-center gap-2 bg-white/[0.05] backdrop-blur-md p-1.5 rounded-lg border border-white/10'>
-            {["en", "fr", "de"].map((lang) => {
-              const typedLang = lang as Locale;
-              const isActive = locale === typedLang;
-              return (
-                <button
-                  key={lang}
-                  type='button'
-                  onClick={() => onLocaleChange?.(typedLang)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-bold uppercase transition-all ${isActive
-                      ? "bg-[#00d9ff]/20 text-[#00d9ff] border border-[#00d9ff]/30"
-                      : "text-white/60 hover:text-white hover:bg-white/5"
-                    }`}
-                  disabled={!onLocaleChange}
-                >
-                  {lang}
-                </button>
-              );
-            })}
+          <div className='flex items-center gap-4'>
+            <div className='flex items-center p-1 bg-white/5 rounded-full border border-white/5'>
+              {["en", "fr", "de"].map((lang) => {
+                const typedLang = lang as Locale;
+                const isActive = locale === typedLang;
+                return (
+                  <button
+                    key={lang}
+                    type='button'
+                    onClick={() => onLocaleChange?.(typedLang)}
+                    className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase transition-all ${isActive
+                      ? "bg-[#00d9ff] text-black"
+                      : "text-white/40 hover:text-white"
+                      }`}
+                    disabled={!onLocaleChange}
+                  >
+                    {lang}
+                  </button>
+                );
+              })}
+            </div>
+
+            <a
+              href="#contact"
+              className='hidden md:block px-6 py-2 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-[#00d9ff] transition-all'
+            >
+              Contact
+            </a>
           </div>
         </div>
       </div>

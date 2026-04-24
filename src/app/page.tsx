@@ -339,89 +339,83 @@ export default function Home() {
         </section>
 
 
-        {/* Education Section - Cerebral Tech Style */}
-        <section id='education' className='py-32 border-t border-white/5'>
-          <div className='max-w-6xl mx-auto mb-20'>
+        {/* Professional Experience Section */}
+        <section id='experience' className='py-32 bg-black/10'>
+          <div className='max-w-6xl mx-auto mb-20 px-6'>
             <div className='flex items-center gap-4 mb-4'>
               <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
-              <span className='text-[#00d9ff] font-bold uppercase tracking-widest text-xs'>
-                {locale === "fr" ? "Formation" : locale === "de" ? "Ausbildung" : "Background"}
+              <span className='text-[#00d9ff] font-bold uppercase tracking-widest text-xs display-font'>
+                {locale === "fr" ? "Expertise Industrielle" : locale === "de" ? "Industrielle Erfahrung" : "Industrial Intelligence"}
               </span>
             </div>
-            <h2 className='text-5xl md:text-7xl font-bold text-white display-font tracking-tighter'>
-              {locale === "fr" ? "Parcours Académique" : locale === "de" ? "Akademischer Weg" : "Legacy of Learning"}
+            <h2 className='text-5xl md:text-8xl font-bold text-white mb-20 display-font tracking-tighter'>
+              Experience
             </h2>
-          </div>
 
-          <div className='max-w-6xl mx-auto space-y-12'>
-            {/* Master's Degree */}
-            <div className='glass-card p-8 md:p-12 rounded-[40px] hover:border-[#00d9ff]/20'>
-              <div className='flex flex-col md:flex-row gap-8 md:items-center'>
-                <div className='flex-shrink-0'>
-                  <div className='text-5xl md:text-6xl font-bold text-white/10 display-font'>21—26</div>
+            <div className='space-y-12'>
+              {site.experiences.map((exp, idx) => (
+                <div key={idx} className='group relative glass-card p-10 md:p-16 overflow-hidden rounded-[3rem] hover:border-[#00d9ff]/30 transition-all bg-[#0c0c0c]/80 backdrop-blur-3xl'>
+                  <div className='absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none'>
+                    <span className='text-9xl font-bold display-font'>0{idx + 1}</span>
+                  </div>
+                  <div className='relative z-10'>
+                    <div className='flex flex-wrap items-center justify-between gap-6 mb-8'>
+                      <h3 className='text-3xl md:text-5xl font-bold text-white display-font tracking-tight'>{L(exp.title, locale)}</h3>
+                      <div className='flex items-center gap-4'>
+                        <span className='w-8 h-[1px] bg-white/20'></span>
+                        <span className='text-xl md:text-2xl font-medium text-white/40 display-font uppercase tracking-widest'>{exp.period}</span>
+                      </div>
+                    </div>
+                    <div className='flex flex-wrap items-center gap-6 mb-10 text-white/60'>
+                      <div className='flex items-center gap-2'>
+                        <span className='text-[#00d9ff] text-xl font-bold'>@</span>
+                        <span className='text-2xl font-bold text-white/90 underline decoration-[#00d9ff]/30 decoration-2 underline-offset-8'>{exp.company}</span>
+                      </div>
+                      <span className='hidden md:block w-1.5 h-1.5 rounded-full bg-[#00d9ff]/40'></span>
+                      <span className='text-xl font-light italic'>{exp.location}</span>
+                    </div>
+                    <p className='text-white/50 text-xl md:text-2xl leading-relaxed max-w-5xl font-light'>
+                      {L(exp.description, locale)}
+                    </p>
+                  </div>
                 </div>
-                <div className='flex-1'>
-                  <h3 className='text-3xl md:text-4xl font-bold text-white mb-4 display-font'>
-                    {locale === "fr"
-                      ? "Diplôme d'Ingénieur en IA & Science des Données"
-                      : locale === "de"
-                        ? "Ingenieurabschluss in KI & Data Science"
-                        : "Engineering Degree in AI & Data Science"}
-                  </h3>
-                  <p className='text-[#00d9ff] text-xl font-medium mb-2'>
-                    {locale === "fr"
-                      ? "École Supérieure d'Informatique (ESI-SBA)"
-                      : locale === "de"
-                        ? "Höhere Schule für Informatik (ESI-SBA)"
-                        : "Higher School of Computer Science (ESI-SBA)"}
-                  </p>
-                  <p className='text-white/40 font-light flex items-center gap-2'>
-                    <span>📍 Algeria</span>
-                    <span className='w-1 h-1 rounded-full bg-white/20'></span>
-                    <span>{locale === "fr" ? "En cours" : locale === "de" ? "In Bearbeitung" : "Ongoing"}</span>
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
+          </div>
+        </section>
 
-            {/* Baccalaureate */}
-            <div className='group rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md p-8 hover:bg-white/[0.06] hover:border-white/20 transition-all'>
-              <div className='flex flex-col md:flex-row gap-8 md:items-center'>
-                {/* Date Badge */}
-                <div className='flex-shrink-0'>
-                  <div className='flex items-center justify-center w-24 h-24 rounded-xl bg-[#00d9ff]/10 border border-[#00d9ff]/20'>
-                    <div className='text-base font-bold text-[#00d9ff]'>2021</div>
-                  </div>
-                </div>
+        {/* Education Section */}
+        <section id='education' className='py-32'>
+          <div className='max-w-6xl mx-auto mb-20 px-6'>
+            <div className='flex items-center gap-4 mb-4'>
+              <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
+              <span className='text-[#00d9ff] font-bold uppercase tracking-widest text-xs display-font'>
+                {locale === "fr" ? "Héritage de l'Apprentissage" : locale === "de" ? "Erbe des Lernens" : "Legacy of Learning"}
+              </span>
+            </div>
+            <h2 className='text-5xl md:text-8xl font-bold text-white mb-20 display-font tracking-tighter'>
+              Education
+            </h2>
 
-                {/* Content */}
-                <div className='flex-1 space-y-3'>
-                  <h3 className='text-2xl font-bold text-white leading-tight'>
-                    {locale === "fr"
-                      ? "Baccalauréat en génie mathématique"
-                      : locale === "de"
-                        ? "Abitur in Mathematischer Ingenieurwissenschaft"
-                        : "Baccalaureate in Mathematical Engineering"}
-                  </h3>
-                  <div>
-                    <span className='inline-block px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-md text-white/90 bg-white/5 border border-white/10'>
-                      {locale === "fr" ? "Baccalauréat" : locale === "de" ? "Abitur" : "Baccalaureate"}
-                    </span>
-                  </div>
-                  <p className='text-base text-[#00d9ff] font-semibold'>
-                    {locale === "fr" ? "Lycée" : locale === "de" ? "Gymnasium" : "High School"}
-                  </p>
-                  <div className='flex flex-wrap items-center gap-3 text-sm'>
-                    <span className='flex items-center gap-1.5 text-white/70 font-medium'>
-                      🏆 {locale === "fr"
-                        ? "Mention Très Bien"
-                        : locale === "de"
-                          ? "Sehr Gut"
-                          : "Honors (Très Bien)"}
-                    </span>
-                    <span className='text-white/30'>•</span>
-                    <span className='text-white/50'>📍 Algeria</span>
-                  </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
+              <div className='relative glass-card p-12 md:p-16 rounded-[4rem] group overflow-hidden bg-[#0c0c0c]/80 backdrop-blur-2xl'>
+                <div className='absolute -top-10 -right-10 w-40 h-40 bg-[#00d9ff]/10 blur-[80px] group-hover:bg-[#00d9ff]/20 transition-all'></div>
+                <span className='text-[#00d9ff] font-bold text-sm tracking-[0.3em] uppercase block mb-6'>2021 — 2026</span>
+                <h3 className='text-4xl md:text-5xl font-bold text-white mb-6 leading-none display-font text-glow-cyan'>ESI-SBA</h3>
+                <p className='text-white/80 text-xl font-medium mb-6 uppercase tracking-wider'>Engineering \& Master’s Degree</p>
+                <div className='h-[1px] w-full bg-white/5 mb-6'></div>
+                <p className='text-white/40 text-lg leading-relaxed font-light'>
+                  Specialization in Artificial Intelligence and Informatics. High-intensity curriculum focused on deep neural networks, distributed systems, and real-world AI deployment.
+                </p>
+              </div>
+
+              <div className='relative glass-card p-12 md:p-16 rounded-[4rem] group overflow-hidden bg-[#0c0c0c]/80 backdrop-blur-2xl'>
+                <div className='absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 blur-[80px]'></div>
+                <span className='text-white/30 font-bold text-sm tracking-[0.3em] uppercase block mb-6'>2021</span>
+                <h3 className='text-4xl md:text-5xl font-bold text-white mb-6 leading-none display-font'>Baccalaureate</h3>
+                <p className='text-white/60 text-xl font-medium mb-6 uppercase tracking-wider'>Mathematical Engineering</p>
+                <div className='flex items-center gap-3'>
+                  <span className='px-4 py-2 rounded-full border border-white/10 text-white/50 text-sm font-bold tracking-widest uppercase'>High Distinction</span>
                 </div>
               </div>
             </div>

@@ -156,14 +156,14 @@ export default function ProjectModal({
         ref={containerRef}
         className='relative z-10 w-[94vw] md:w-[92vw] lg:w-[90vw] xl:w-[86vw] max-w-none h-[92vh] overflow-hidden bg-obsidian text-white rounded-3xl shadow-2xl border border-white/10'
       >
-        <div className='flex items-center justify-between p-8 border-b border-white/5 bg-[#0c0c0c]/90 backdrop-blur-xl'>
-          <h2 className='text-3xl md:text-5xl font-bold text-white display-font tracking-tighter'>{title}</h2>
+        <div className='flex items-center justify-between p-8 md:p-12 border-b border-white/5 bg-[#0c0c0c]/80 backdrop-blur-2xl'>
+          <h2 className='text-3xl md:text-6xl font-bold text-white display-font tracking-tighter leading-none'>{title}</h2>
           <button
             aria-label='Close'
-            className='inline-flex items-center justify-center w-10 h-10 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-all text-xl'
+            className='inline-flex items-center justify-center w-12 h-12 rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-all border border-white/5 hover:border-white/20'
             onClick={closeWithAnimation}
           >
-            ✕
+            <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M6 18L18 6M6 6l12 12' /></svg>
           </button>
         </div>
 
@@ -179,12 +179,12 @@ export default function ProjectModal({
                   type='button'
                   aria-label='Previous image'
                   onClick={() => setActiveIndex((prev) => (prev === 0 ? gallery.length - 1 : prev - 1))}
-                  className='p-4 rounded-full border border-white/10 bg-white/5 text-white hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all'
+                  className='p-5 rounded-full border border-white/5 bg-white/5 text-white/50 hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all backdrop-blur-md'
                 >
-                  <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M15 19l-7-7 7-7' /></svg>
+                  <svg className='w-8 h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M15 19l-7-7 7-7' /></svg>
                 </button>
 
-                <div className='w-full max-w-[88vw] md:max-w-[86vw] lg:max-w-[82vw] xl:max-w-[78vw] rounded-3xl border border-white/10 bg-black overflow-hidden shadow-2xl'>
+                <div className='w-full max-w-[88vw] md:max-w-[86vw] lg:max-w-[82vw] xl:max-w-[78vw] rounded-[3rem] border border-white/10 bg-black overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)]'>
                   {(() => {
                     const src = gallery[activeIndex];
                     const isLocal = src?.startsWith("/");
@@ -220,9 +220,9 @@ export default function ProjectModal({
                   type='button'
                   aria-label='Next image'
                   onClick={() => setActiveIndex((prev) => (prev === gallery.length - 1 ? 0 : prev + 1))}
-                  className='p-4 rounded-full border border-white/10 bg-white/5 text-white hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all'
+                  className='p-5 rounded-full border border-white/5 bg-white/5 text-white/50 hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all backdrop-blur-md'
                 >
-                  <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M9 5l7 7-7 7' /></svg>
+                  <svg className='w-8 h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M9 5l7 7-7 7' /></svg>
                 </button>
               </div>
 
