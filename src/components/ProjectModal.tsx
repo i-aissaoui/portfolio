@@ -154,10 +154,10 @@ export default function ProjectModal({
 
       <div
         ref={containerRef}
-        className='relative z-10 w-[94vw] md:w-[92vw] lg:w-[90vw] xl:w-[86vw] max-w-none h-[92vh] overflow-hidden bg-[#060010] text-white rounded-2xl shadow-2xl border border-white/10'
+        className='relative z-10 w-[94vw] md:w-[92vw] lg:w-[90vw] xl:w-[86vw] max-w-none h-[92vh] overflow-hidden bg-obsidian text-white rounded-3xl shadow-2xl border border-white/10'
       >
-        <div className='flex items-center justify-between p-6 border-b border-white/10 bg-[#0a0015]/90'>
-          <h2 className='text-3xl font-extrabold text-white'>{title}</h2>
+        <div className='flex items-center justify-between p-8 border-b border-white/5 bg-[#0c0c0c]/90 backdrop-blur-xl'>
+          <h2 className='text-3xl md:text-5xl font-bold text-white display-font tracking-tighter'>{title}</h2>
           <button
             aria-label='Close'
             className='inline-flex items-center justify-center w-10 h-10 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-all text-xl'
@@ -167,22 +167,24 @@ export default function ProjectModal({
           </button>
         </div>
 
-        {/* scrollable body - images can remain large and the body will scroll */}
-        <div className='modal-body overflow-auto p-8 space-y-8 max-h-[84vh] bg-gradient-to-b from-transparent to-[#0a0015]/50'>
+        <div className='modal-body overflow-auto p-12 space-y-12 max-h-[84vh] bg-gradient-to-b from-transparent to-[#00d9ff]/5'>
           {gallery.length > 0 && (
-            <div className='space-y-4'>
-              <h3 className='text-xl font-bold text-white'>📸 Project Screenshots</h3>
-              <div className='flex items-center justify-center gap-4'>
+            <div className='space-y-6'>
+              <div className='flex items-center gap-3'>
+                <span className='w-8 h-[1px] bg-[#00d9ff]'></span>
+                <h3 className='text-sm font-bold text-[#00d9ff] uppercase tracking-widest display-font'>Project Systems</h3>
+              </div>
+              <div className='flex items-center justify-center gap-6'>
                 <button
                   type='button'
                   aria-label='Previous image'
                   onClick={() => setActiveIndex((prev) => (prev === 0 ? gallery.length - 1 : prev - 1))}
-                  className='inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#00d9ff]/40 bg-[#00d9ff]/10 text-[#00d9ff] text-lg font-semibold hover:bg-[#00d9ff]/20 hover:border-[#00d9ff]/60 transition'
+                  className='p-4 rounded-full border border-white/10 bg-white/5 text-white hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all'
                 >
-                  ‹
+                  <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M15 19l-7-7 7-7' /></svg>
                 </button>
 
-                <div className='w-full max-w-[88vw] md:max-w-[86vw] lg:max-w-[82vw] xl:max-w-[78vw] rounded-2xl border border-white/10 bg-black overflow-hidden shadow-2xl'>
+                <div className='w-full max-w-[88vw] md:max-w-[86vw] lg:max-w-[82vw] xl:max-w-[78vw] rounded-3xl border border-white/10 bg-black overflow-hidden shadow-2xl'>
                   {(() => {
                     const src = gallery[activeIndex];
                     const isLocal = src?.startsWith("/");
@@ -198,7 +200,7 @@ export default function ProjectModal({
                           height={900}
                           sizes="(max-width: 1024px) 100vw, 78vw"
                           priority={activeIndex === 0}
-                          className='w-full h-auto max-h-[72vh] object-contain bg-black'
+                          className='w-full h-auto max-h-[72vh] object-contain transition-all duration-700'
                         />
                       );
                     }
@@ -208,7 +210,7 @@ export default function ProjectModal({
                         src={src}
                         alt={`screenshot-${activeIndex}`}
                         loading='lazy'
-                        className='w-full h-auto max-h-[72vh] object-contain bg-black'
+                        className='w-full h-auto max-h-[72vh] object-contain'
                       />
                     );
                   })()}
@@ -218,9 +220,9 @@ export default function ProjectModal({
                   type='button'
                   aria-label='Next image'
                   onClick={() => setActiveIndex((prev) => (prev === gallery.length - 1 ? 0 : prev + 1))}
-                  className='inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#00d9ff]/40 bg-[#00d9ff]/10 text-[#00d9ff] text-lg font-semibold hover:bg-[#00d9ff]/20 hover:border-[#00d9ff]/60 transition'
+                  className='p-4 rounded-full border border-white/10 bg-white/5 text-white hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all'
                 >
-                  ›
+                  <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M9 5l7 7-7 7' /></svg>
                 </button>
               </div>
 
@@ -230,9 +232,8 @@ export default function ProjectModal({
                     key={i}
                     type='button'
                     onClick={() => setActiveIndex(i)}
-                    className={`h-2.5 w-2.5 rounded-full border border-[#00d9ff]/50 transition ${
-                      i === activeIndex ? 'bg-[#00d9ff]' : 'bg-white/10 hover:bg-white/20'
-                    }`}
+                    className={`h-2.5 w-2.5 rounded-full border border-[#00d9ff]/50 transition ${i === activeIndex ? 'bg-[#00d9ff]' : 'bg-white/10 hover:bg-white/20'
+                      }`}
                     aria-label={`Go to image ${i + 1}`}
                   />
                 ))}
@@ -247,31 +248,26 @@ export default function ProjectModal({
 
               const firstLine = lines[0];
               const isHeading = firstLine.endsWith(':');
-              
               if (isHeading) {
-                // Section with heading
                 return (
-                  <div key={sectionIdx} className='space-y-3'>
-                    <h3 className='text-xl font-bold text-white mb-3'>{firstLine}</h3>
-                    <ul className='space-y-2 pl-4'>
+                  <div key={sectionIdx} className='space-y-4'>
+                    <div className='flex items-center gap-3 mb-2'>
+                      <span className='w-8 h-[1px] bg-[#00d9ff]'></span>
+                      <h3 className='text-sm font-bold text-[#00d9ff] uppercase tracking-widest display-font'>{firstLine}</h3>
+                    </div>
+                    <ul className='space-y-4 pl-4'>
                       {lines.slice(1).map((line, lineIdx) => {
                         const isBullet = line.trim().startsWith('•');
                         const content = isBullet ? line.replace(/^•\s*/, '') : line;
-                        
-                        // Bold text in parentheses
                         const parts = content.split(/(\([^)]+\))/g);
-                        
+
                         return (
-                          <li key={lineIdx} className={`${isBullet ? 'flex gap-3' : 'block'} text-white/80 leading-relaxed`}>
+                          <li key={lineIdx} className={`${isBullet ? 'flex gap-3' : 'block'} text-white/80 leading-relaxed font-light`}>
                             {isBullet && <span className='text-[#00d9ff] mt-1 flex-shrink-0'>•</span>}
                             <span className='flex-1'>
                               {parts.map((part, partIdx) => {
                                 if (part.match(/^\([^)]+\)$/)) {
-                                  return (
-                                    <span key={partIdx} className='font-semibold text-[#00d9ff]'>
-                                      {part}
-                                    </span>
-                                  );
+                                  return <span key={partIdx} className='font-bold text-[#00d9ff]'>{part}</span>;
                                 }
                                 return <span key={partIdx}>{part}</span>;
                               })}
@@ -283,11 +279,10 @@ export default function ProjectModal({
                   </div>
                 );
               } else {
-                // Plain paragraph
                 return (
                   <div key={sectionIdx} className='space-y-2'>
                     {lines.map((line, lineIdx) => (
-                      <p key={lineIdx} className='text-white/80 leading-relaxed'>
+                      <p key={lineIdx} className='text-white/80 leading-relaxed font-light'>
                         {line}
                       </p>
                     ))}
@@ -314,6 +309,6 @@ export default function ProjectModal({
           )}
         </div>
       </div>
-    </div>
+    </div >
   );
 }
