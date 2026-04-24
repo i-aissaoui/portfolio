@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 
 type ProjectModalProps = {
@@ -26,6 +26,7 @@ export default function ProjectModal({
 }: ProjectModalProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [gallery, setGallery] = useState<string[]>(images);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -68,17 +69,10 @@ export default function ProjectModal({
   }, [imageFolder, open, images]);
 
   useEffect(() => {
-    if (!imageFolder) {
-      setActiveIndex(0);
-    }
-  }, [gallery.length, imageFolder]);
-
-  useEffect(() => {
     if (!open) return;
     const modal = containerRef.current;
     if (!modal || !originRect) return;
 
-    // compute FLIP transform from originRect to modal final rect
     const finalRect = modal.getBoundingClientRect();
     const scaleX = originRect.width / finalRect.width;
     const scaleY = originRect.height / finalRect.height;
@@ -115,6 +109,17 @@ export default function ProjectModal({
     };
   }, [originRect, open]);
 
+  const handleScroll = useCallback(() => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const scrollLeft = container.scrollLeft;
+    const width = container.offsetWidth;
+    const newIndex = Math.round(scrollLeft / width);
+    if (newIndex !== activeIndex && newIndex >= 0 && newIndex < gallery.length) {
+      setActiveIndex(newIndex);
+    }
+  }, [activeIndex, gallery.length]);
+
   if (!open) return null;
 
   const closeWithAnimation = () => {
@@ -144,7 +149,6 @@ export default function ProjectModal({
       { duration: 300, easing: "cubic-bezier(.2,.9,.2,1)", fill: "forwards" }
     );
 
-    // fade overlay too
     if (overlayRef.current)
       overlayRef.current.animate([{ opacity: 1 }, { opacity: 0 }], {
         duration: 300,
@@ -152,6 +156,18 @@ export default function ProjectModal({
       });
 
     anim.onfinish = () => onClose();
+  };
+
+  const scrollToImage = (index: number) => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const width = container.offsetWidth;
+      container.scrollTo({
+        left: index * width,
+        behavior: "smooth"
+      });
+    }
+    setActiveIndex(index);
   };
 
   return (
@@ -167,82 +183,93 @@ export default function ProjectModal({
         className='relative z-10 w-full h-full overflow-hidden bg-obsidian text-white flex flex-col'
       >
         <div className='flex items-center justify-between p-8 md:p-12 lg:px-24 border-b border-white/5 bg-[#0c0c0c]/80 backdrop-blur-2xl'>
-          <h2 className='text-4xl md:text-7xl font-bold text-white display-font tracking-tighter leading-none'>{title}</h2>
+          <h2 className='text-3xl md:text-7xl font-bold text-white display-font tracking-tighter leading-none line-clamp-1'>{title}</h2>
           <button
             aria-label='Close'
-            className='inline-flex items-center justify-center px-10 py-4 rounded-full text-black bg-[#00d9ff] hover:bg-white transition-all shadow-[0_0_20px_rgba(0,217,255,0.4)] text-xs font-bold uppercase tracking-[0.2em]'
+            className='inline-flex items-center justify-center px-6 md:px-10 py-3 md:py-4 rounded-full text-black bg-[#00d9ff] hover:bg-white transition-all shadow-[0_0_20px_rgba(0,217,255,0.4)] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] whitespace-nowrap'
             onClick={closeWithAnimation}
           >
             Close Window
           </button>
         </div>
 
-        <div className='modal-body overflow-auto p-12 lg:p-24 space-y-16 flex-1 bg-gradient-to-b from-transparent to-[#00d9ff]/5'>
+        <div className='modal-body overflow-auto px-6 md:px-24 py-12 md:py-24 space-y-16 flex-1 bg-gradient-to-b from-transparent to-[#00d9ff]/5'>
           {gallery.length > 0 && (
-            <div className='space-y-6'>
-              <div className='flex items-center gap-3'>
-                <span className='w-8 h-[1px] bg-[#00d9ff]'></span>
-                <h3 className='text-sm font-bold text-[#00d9ff] uppercase tracking-widest display-font'>Project Systems</h3>
+            <div className='space-y-10'>
+              <div className='flex items-center gap-3 mb-6'>
+                <div className='w-2 h-2 rounded-full bg-[#00d9ff]'></div>
+                <span className='text-[10px] font-bold uppercase tracking-[0.3em] text-white/40'>Visual Signals — UI/Architecture</span>
               </div>
-              <div className='flex items-center justify-center gap-6'>
-                <button
-                  type='button'
-                  aria-label='Previous image'
-                  onClick={() => setActiveIndex((prev) => (prev === 0 ? gallery.length - 1 : prev - 1))}
-                  className='p-5 rounded-full border border-white/5 bg-white/5 text-white/50 hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all backdrop-blur-md'
-                >
-                  <svg className='w-8 h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M15 19l-7-7 7-7' /></svg>
-                </button>
 
-                <div className='w-full max-w-[88vw] md:max-w-[86vw] lg:max-w-[82vw] xl:max-w-[78vw] rounded-[3rem] border border-white/10 bg-black overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)]'>
-                  {(() => {
-                    const src = gallery[activeIndex];
+              <div className='relative group'>
+                <div
+                  ref={scrollContainerRef}
+                  onScroll={handleScroll}
+                  className='w-full overflow-x-auto md:overflow-hidden snap-x snap-mandatory flex md:block scrollbar-hide gap-6 pb-6'
+                >
+                  {gallery.map((src, i) => {
                     const isLocal = src?.startsWith("/");
                     const isUnsplash = src?.startsWith("https://images.unsplash.com/");
                     const canUseNextImage = isLocal || isUnsplash;
+                    const isActive = i === activeIndex;
 
-                    if (canUseNextImage) {
-                      return (
-                        <Image
-                          src={src}
-                          alt={`screenshot-${activeIndex}`}
-                          width={1600}
-                          height={900}
-                          sizes="(max-width: 1024px) 100vw, 78vw"
-                          priority={activeIndex === 0}
-                          className='w-full h-auto max-h-[80vh] object-contain transition-all duration-700'
-                        />
-                      );
-                    }
                     return (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={src}
-                        alt={`screenshot-${activeIndex}`}
-                        loading='lazy'
-                        className='w-full h-auto max-h-[80vh] object-contain'
-                      />
+                      <div
+                        key={i}
+                        className={`min-w-full md:min-w-0 snap-center transition-all duration-500 ${isActive ? 'opacity-100 scale-100' : 'opacity-20 scale-95 md:hidden'}`}
+                      >
+                        <div className='relative w-full max-h-[60vh] md:max-h-[75vh] glass-card border-white/5 rounded-2xl md:rounded-[3rem] overflow-hidden shadow-2xl bg-black flex items-center justify-center'>
+                          {canUseNextImage ? (
+                            <Image
+                              src={src}
+                              alt={`screenshot-${i}`}
+                              width={1920}
+                              height={1080}
+                              className='w-full h-auto max-h-full object-contain'
+                              sizes="(max-width: 1024px) 100vw, 80vw"
+                              priority={i === 0}
+                            />
+                          ) : (
+                            <img
+                              src={src}
+                              alt={`screenshot-${i}`}
+                              loading='lazy'
+                              className='w-full h-auto max-h-full object-contain'
+                            />
+                          )}
+                        </div>
+                      </div>
                     );
-                  })()}
+                  })}
                 </div>
 
-                <button
-                  type='button'
-                  aria-label='Next image'
-                  onClick={() => setActiveIndex((prev) => (prev === gallery.length - 1 ? 0 : prev + 1))}
-                  className='p-5 rounded-full border border-white/5 bg-white/5 text-white/50 hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all backdrop-blur-md'
-                >
-                  <svg className='w-8 h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M9 5l7 7-7 7' /></svg>
-                </button>
+                <div className='hidden md:flex absolute inset-0 items-center justify-between pointer-events-none px-6'>
+                  <button
+                    type='button'
+                    aria-label='Previous image'
+                    onClick={() => scrollToImage(activeIndex === 0 ? gallery.length - 1 : activeIndex - 1)}
+                    className='p-5 rounded-full border border-white/5 bg-[#0c0c0c]/80 text-white/50 hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all backdrop-blur-md pointer-events-auto'
+                  >
+                    <svg className='w-8 h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M15 19l-7-7 7-7' /></svg>
+                  </button>
+                  <button
+                    type='button'
+                    aria-label='Next image'
+                    onClick={() => scrollToImage(activeIndex === gallery.length - 1 ? 0 : activeIndex + 1)}
+                    className='p-5 rounded-full border border-white/5 bg-[#0c0c0c]/80 text-white/50 hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all backdrop-blur-md pointer-events-auto'
+                  >
+                    <svg className='w-8 h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M9 5l7 7-7 7' /></svg>
+                  </button>
+                </div>
               </div>
 
-              <div className='flex items-center justify-center gap-2 pt-2'>
+              <div className='flex items-center justify-center gap-3'>
                 {gallery.map((_, i) => (
                   <button
                     key={i}
                     type='button'
-                    onClick={() => setActiveIndex(i)}
-                    className={`h-2.5 w-2.5 rounded-full border border-[#00d9ff]/50 transition ${i === activeIndex ? 'bg-[#00d9ff]' : 'bg-white/10 hover:bg-white/20'
+                    onClick={() => scrollToImage(i)}
+                    className={`h-1.5 transition-all duration-500 rounded-full ${i === activeIndex ? 'w-16 bg-[#00d9ff]' : 'w-4 bg-white/10 hover:bg-white/20'
                       }`}
                     aria-label={`Go to image ${i + 1}`}
                   />
@@ -251,7 +278,7 @@ export default function ProjectModal({
             </div>
           )}
 
-          <div className='text-base md:text-lg leading-relaxed text-gray-200 space-y-6'>
+          <div className='text-base md:text-lg leading-relaxed text-gray-200 space-y-10 max-w-5xl'>
             {details.split('\n\n').map((section, sectionIdx) => {
               const lines = section.split('\n').filter((l) => l.trim());
               if (lines.length === 0) return null;
@@ -260,24 +287,24 @@ export default function ProjectModal({
               const isHeading = firstLine.endsWith(':');
               if (isHeading) {
                 return (
-                  <div key={sectionIdx} className='space-y-4'>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='w-8 h-[1px] bg-[#00d9ff]'></span>
-                      <h3 className='text-sm font-bold text-[#00d9ff] uppercase tracking-widest display-font'>{firstLine}</h3>
+                  <div key={sectionIdx} className='space-y-6'>
+                    <div className='flex items-center gap-4'>
+                      <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
+                      <h3 className='text-xs md:text-sm font-bold text-[#00d9ff] uppercase tracking-[0.3em] display-font'>{firstLine}</h3>
                     </div>
-                    <ul className='space-y-4 pl-4'>
+                    <ul className='space-y-6 pl-6 border-l border-white/5 ml-2'>
                       {lines.slice(1).map((line, lineIdx) => {
                         const isBullet = line.trim().startsWith('•');
                         const content = isBullet ? line.replace(/^•\s*/, '') : line;
                         const parts = content.split(/(\([^)]+\))/g);
 
                         return (
-                          <li key={lineIdx} className={`${isBullet ? 'flex gap-3' : 'block'} text-white/80 leading-relaxed font-light`}>
-                            {isBullet && <span className='text-[#00d9ff] mt-1 flex-shrink-0'>•</span>}
+                          <li key={lineIdx} className={`${isBullet ? 'flex gap-4' : 'block'} text-white/80 leading-relaxed font-light text-lg md:text-xl`}>
+                            {isBullet && <span className='text-[#00d9ff] mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#00d9ff]/40 shadow-[0_0_8px_#00d9ff66]'></span>}
                             <span className='flex-1'>
                               {parts.map((part, partIdx) => {
                                 if (part.match(/^\([^)]+\)$/)) {
-                                  return <span key={partIdx} className='font-bold text-[#00d9ff]'>{part}</span>;
+                                  return <span key={partIdx} className='font-bold text-[#00d9ff] tracking-tight'>{part}</span>;
                                 }
                                 return <span key={partIdx}>{part}</span>;
                               })}
@@ -290,9 +317,9 @@ export default function ProjectModal({
                 );
               } else {
                 return (
-                  <div key={sectionIdx} className='space-y-2'>
+                  <div key={sectionIdx} className='space-y-3'>
                     {lines.map((line, lineIdx) => (
-                      <p key={lineIdx} className='text-white/80 leading-relaxed font-light'>
+                      <p key={lineIdx} className='text-white/60 leading-relaxed font-light text-xl italic'>
                         {line}
                       </p>
                     ))}
@@ -303,16 +330,16 @@ export default function ProjectModal({
           </div>
 
           {tech.length > 0 && (
-            <div className='border-t border-white/10 pt-10'>
-              <div className='flex items-center gap-3 mb-6'>
-                <span className='w-8 h-[1px] bg-[#00d9ff]'></span>
-                <h3 className='text-sm font-bold text-[#00d9ff] uppercase tracking-widest display-font'>System Stack</h3>
+            <div className='border-t border-white/5 pt-12 max-w-5xl'>
+              <div className='flex items-center gap-4 mb-8'>
+                <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
+                <h3 className='text-xs md:text-sm font-bold text-[#00d9ff] uppercase tracking-[0.3em] display-font'>Industrial Stack</h3>
               </div>
-              <div className='flex flex-wrap gap-3'>
+              <div className='flex flex-wrap gap-4'>
                 {tech.map((t) => (
                   <span
                     key={t}
-                    className='px-5 py-2.5 text-[10px] font-bold uppercase tracking-widest rounded-full text-white bg-white/5 border border-white/10 hover:bg-[#00d9ff]/10 hover:border-[#00d9ff]/30 transition-all'
+                    className='px-6 py-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] rounded-xl text-[#00d9ff] bg-[#00d9ff]/5 border border-[#00d9ff]/10 hover:bg-[#00d9ff]/10 hover:border-[#00d9ff]/30 transition-all cursor-default'
                   >
                     {t}
                   </span>

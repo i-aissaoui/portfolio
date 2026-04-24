@@ -267,6 +267,15 @@ html {
   background: var(--cyber-cyan);
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @keyframes modalIn {
   from {
     transform: translateY(20px) scale(0.98);
