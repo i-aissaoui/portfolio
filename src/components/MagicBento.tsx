@@ -787,15 +787,15 @@ const MagicBento: React.FC<BentoProps> = ({
                   clickEffect={clickEffect}
                   enableMagnetism={enableMagnetism}
                 >
-                  <div className="card__header flex justify-between gap-3 relative text-white">
-                    <span className="card__label text-lg md:text-xl font-semibold">{card.label}</span>
+                  <div className="card__header flex justify-between gap-3 relative text-white/50 mb-10">
+                    <span className="card__label text-xs font-bold uppercase tracking-[0.2em] display-font">{card.label}</span>
                   </div>
-                  <div className="card__content flex flex-col relative text-white">
-                    <h3 className={`card__title font-bold text-xl md:text-2xl m-0 mb-3 ${textAutoHide ? 'text-clamp-1' : ''}`}>
+                  <div className="card__content flex flex-col relative text-white mt-auto">
+                    <h3 className={`card__title font-bold text-2xl md:text-3xl m-0 mb-4 display-font tracking-tighter leading-none ${textAutoHide ? 'text-clamp-1' : ''}`}>
                       {card.title}
                     </h3>
                     <p
-                      className={`card__description text-sm md:text-base leading-relaxed opacity-95 ${textAutoHide ? 'text-clamp-2' : ''}`}
+                      className={`card__description text-sm md:text-base leading-relaxed text-white/60 font-light ${textAutoHide ? 'text-clamp-2' : ''}`}
                     >
                       {card.description}
                     </p>
@@ -919,14 +919,14 @@ const MagicBento: React.FC<BentoProps> = ({
                   el.addEventListener('click', handleClick);
                 }}
               >
-                <div className="card__header flex justify-between gap-3 relative text-white">
-                  <span className="card__label text-lg md:text-xl font-semibold">{card.label}</span>
+                <div className="card__header flex justify-between gap-3 relative text-white/50 mb-10">
+                  <span className="card__label text-xs font-bold uppercase tracking-[0.2em] display-font">{card.label}</span>
                 </div>
-                <div className="card__content flex flex-col relative text-white">
-                  <h3 className={`card__title font-bold text-xl md:text-2xl m-0 mb-3 ${textAutoHide ? 'text-clamp-1' : ''}`}>
+                <div className="card__content flex flex-col relative text-white mt-auto">
+                  <h3 className={`card__title font-bold text-2xl md:text-3xl m-0 mb-4 display-font tracking-tighter leading-none ${textAutoHide ? 'text-clamp-1' : ''}`}>
                     {card.title}
                   </h3>
-                  <p className={`card__description text-sm md:text-base leading-relaxed opacity-95 ${textAutoHide ? 'text-clamp-2' : ''}`}>
+                  <p className={`card__description text-sm md:text-base leading-relaxed text-white/60 font-light ${textAutoHide ? 'text-clamp-2' : ''}`}>
                     {card.description}
                   </p>
                 </div>

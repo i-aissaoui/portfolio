@@ -182,27 +182,51 @@ export default function Home() {
               customCards={[
                 {
                   color: '#0c0c0c',
-                  title: locale === 'fr' ? 'Langages de Programmation' : locale === 'de' ? 'Programmiersprachen' : 'Programming Languages',
-                  description: 'Python • TypeScript • JavaScript • Java • SQL',
-                  label: locale === 'fr' ? '💻 CODE' : locale === 'de' ? '💻 CODE' : '💻 CODE'
+                  title: locale === 'fr' ? 'Langages' : locale === 'de' ? 'Sprachen' : 'Languages',
+                  description: 'Python • TypeScript • JavaScript • Java • SQL • C++',
+                  label: '💻 CODE'
                 },
                 {
                   color: '#0c0c0c',
                   title: locale === 'fr' ? 'Frameworks ML/DL' : locale === 'de' ? 'ML/DL Frameworks' : 'ML/DL Frameworks',
-                  description: 'PyTorch • TensorFlow • Keras • Scikit-learn',
-                  label: locale === 'fr' ? '🔧 STACK' : locale === 'de' ? '🔧 STACK' : '🔧 STACK'
+                  description: 'PyTorch • TensorFlow • Keras • Scikit-learn • JAX',
+                  label: '🧠 NEURAL'
                 },
                 {
                   color: '#0c0c0c',
-                  title: locale === 'fr' ? 'Concepts IA/ML' : locale === 'de' ? 'KI/ML-Konzepte' : 'AI/ML Concepts',
-                  description: 'Transformers • BERT • RAG • GANs • CNN • RNN • LSTM • XGBoost • Random Forest',
-                  label: locale === 'fr' ? '🧠 NEURAL' : locale === 'de' ? '🧠 NEURAL' : '🧠 NEURAL'
+                  title: locale === 'fr' ? 'Architecture IA' : locale === 'de' ? 'KI-Architektur' : 'AI Architecture',
+                  description: 'Transformers • RAG • LLMs • BERT • CNN • RNN • GANs',
+                  label: '🏗️ SYSTEMS'
                 },
                 {
                   color: '#0c0c0c',
-                  title: locale === 'fr' ? 'Bibliothèques Data Science' : locale === 'de' ? 'Data Science Bibliotheken' : 'Data Science Libraries',
-                  description: 'Pandas • NumPy • SciPy • Matplotlib • Plotly • OpenCV • MLflow',
-                  label: locale === 'fr' ? '📊 DATA' : locale === 'de' ? '📊 DATA' : '📊 DATA'
+                  title: locale === 'fr' ? 'Science des Données' : locale === 'de' ? 'Data Science' : 'Data Science',
+                  description: 'Pandas • NumPy • SciPy • Plotly • Matplotlib • OpenCV',
+                  label: '📊 DATA'
+                },
+                {
+                  color: '#0c0c0c',
+                  title: 'Full-Stack',
+                  description: 'React • Next.js • TailwindCSS • Node.js • FastAPI • Flask',
+                  label: '🌐 WEB'
+                },
+                {
+                  color: '#0c0c0c',
+                  title: locale === 'fr' ? 'Stockage' : locale === 'de' ? 'Speicher' : 'Storage',
+                  description: 'PostgreSQL • MongoDB • Redis • Pinecone • MySQL',
+                  label: '🗄️ INFRA'
+                },
+                {
+                  color: '#0c0c0c',
+                  title: 'Engineering',
+                  description: 'Spark • Hadoop • Kafka • Airflow • Docker • Git',
+                  label: '⚡ SPEED'
+                },
+                {
+                  color: '#0c0c0c',
+                  title: locale === 'fr' ? 'Apprentissage par Renforcement' : locale === 'de' ? 'Bestärkendes Lernen' : 'Reinforcement Learning',
+                  description: 'Deep Q-Learning • PPO • Actor-Critic • Policy Gradients',
+                  label: '🤖 AUTONOMY'
                 }
               ]}
             />
