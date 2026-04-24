@@ -63,30 +63,40 @@ export default function Home() {
       <SiteNav locale={locale} onLocaleChange={(lang) => setLocale(lang)} />
       <main className='relative z-10 mx-auto w-full max-w-[1920px] px-6 sm:px-8 lg:px-12'>
         {/* Hero Section - Elite AI Engineer Style */}
-        <section id='home' className='relative min-h-[90vh] flex items-center justify-center pt-20 pb-24 overflow-hidden bg-grid-slate-900 hero-glow-border'>
-          {/* Subtle Glow Overlay */}
-          <div className='absolute inset-0 bg-gradient-to-b from-[#0c0c0c] via-transparent to-[#0c0c0c] pointer-events-none'></div>
-          <div className='absolute inset-0 bg-gradient-to-r from-[#0c0c0c] via-transparent to-[#0c0c0c] pointer-events-none'></div>
+        <section id='home' className='relative pt-40 pb-24 overflow-hidden bg-grid-slate-900 hero-glow-border'>
+          {/* Ambient Glows */}
+          <div className='absolute top-0 right-0 w-[500px] h-[500px] bg-[#00d9ff]/10 blur-[120px] rounded-full pointer-events-none'></div>
 
-          <div className='relative z-10 w-full max-w-5xl mx-auto px-6 text-center'>
-            <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-40 pointer-events-none select-none overflow-hidden brain-visual-mask z-0'>
+          <div className='relative z-10 mx-auto px-6 sm:px-12 lg:px-24'>
+            {/* Status Chip - Pulse Interface */}
+            <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00d9ff]/5 border border-[#00d9ff]/20 mb-10'>
+              <span className='relative flex h-2 w-2'>
+                <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00d9ff] opacity-75'></span>
+                <span className='relative inline-flex rounded-full h-2 w-2 bg-[#00d9ff] shadow-[0_0_8px_#00d9ff]'></span>
+              </span>
+              <span className='text-[10px] font-bold uppercase tracking-[0.2em] text-[#00d9ff] display-font'>
+                System Active — Interface Online
+              </span>
+            </div>
+
+            <div className='absolute top-0 right-0 w-full lg:w-1/2 h-full opacity-40 pointer-events-none select-none overflow-hidden brain-visual-mask z-0'>
               <Image
                 src="/the_mind.png"
                 alt="Brain Visual"
                 fill
-                className='object-contain scale-150 opacity-50'
+                className='object-contain object-right transform translate-x-10 scale-110 lg:scale-125'
               />
             </div>
 
-            <div className='relative z-10'>
-              <h1 className='text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter text-white mb-6 leading-none display-font'>
-                <span className='block opacity-20 text-3xl md:text-5xl lg:text-6xl mb-4 font-normal tracking-wide'>
+            <div className='relative z-20 max-w-4xl'>
+              <h1 className='text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9] display-font'>
+                <span className='block opacity-30 text-4xl md:text-5xl lg:text-7xl mb-4 font-medium tracking-normal'>
                   {locale === "fr" ? "Je suis" : locale === "de" ? "Ich bin" : "I am"}
                 </span>
                 {L(site.name, locale)}
               </h1>
 
-              <h2 className='text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-12'>
+              <h2 className='text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-10'>
                 <span className='text-[#00d9ff]'>
                   {locale === "fr"
                     ? "Ingénieur en IA & Full-Stack"
@@ -96,18 +106,18 @@ export default function Home() {
                 </span>
               </h2>
 
-              <p className='text-white/40 text-lg md:text-2xl leading-relaxed mb-16 max-w-4xl mx-auto font-light'>
+              <p className='text-white/60 text-lg md:text-2xl leading-relaxed mb-16 max-w-2xl font-light text-left'>
                 {locale === "fr"
-                  ? "Conception de systèmes d'IA de pointe, des architectures Transformers aux écosystèmes d'entreprise robustes."
+                  ? "Conception de systèmes d'IA de pointe, des architectures Transformers aux écosystèmes d'entreprise robustes. Spécialisé en Deep Learning et ingénierie logicielle."
                   : locale === "de"
-                    ? "Entwicklung wegweisender KI-Systeme, von Transformer-Architekturen bis hin zu robusten Unternehmens-Ökosystemen."
-                    : "Architecting the next generation of intelligence, from foundational Transformer models to robust enterprise ecosystems."}
+                    ? "Entwicklung wegweisender KI-Systeme, von Transformer-Architekturen bis hin zu robusten Unternehmens-Ökosystemen. Spezialisiert auf Deep Learning und Software-Engineering."
+                    : "Architecting the next generation of intelligence, from foundational Transformer models to robust enterprise ecosystems. Specializing in Deep Learning and high-performance software engineering."}
               </p>
 
-              <div className='flex flex-wrap items-center justify-center gap-8'>
+              <div className='flex flex-wrap items-center gap-6'>
                 <a
                   href='#contact'
-                  className='px-12 py-5 bg-[#00d9ff] text-black font-bold rounded-full hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(0,217,255,0.4)]'
+                  className='px-10 py-5 bg-[#00d9ff] text-black font-bold rounded-full hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(0,217,255,0.3)]'
                 >
                   {L({ en: "Let's Collaborate", fr: "Collaborer", de: "Zusammenarbeiten" }, locale)}
                 </a>
@@ -115,7 +125,7 @@ export default function Home() {
                 <a
                   href={locale === "fr" ? "/resume_fr.pdf" : locale === "de" ? "/resume_de.pdf" : "/resume_en.pdf"}
                   download
-                  className='px-12 py-5 bg-white/5 backdrop-blur-md font-bold rounded-full hover:bg-white/10 transition-all duration-500 flex items-center gap-3 border border-white/10'
+                  className='px-10 py-5 glass-card font-bold rounded-full hover:bg-white/10 transition-all duration-500 flex items-center gap-3 border-white/20 text-white'
                 >
                   <span>{L({ en: "Download Resume", fr: "Curriculum Vitae", de: "Lebenslauf" }, locale)}</span>
                   <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>

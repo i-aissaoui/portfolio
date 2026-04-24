@@ -102,8 +102,14 @@ export default function ProjectModal({
       { duration: 320, easing: "cubic-bezier(.2,.9,.2,1)", fill: "forwards" }
     );
 
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeWithAnimation();
+    };
+    window.addEventListener("keydown", handleEsc);
+
     document.body.style.overflow = "hidden";
     return () => {
+      window.removeEventListener("keydown", handleEsc);
       document.body.style.overflow = "auto";
       anim.cancel();
     };
@@ -164,7 +170,7 @@ export default function ProjectModal({
           <h2 className='text-4xl md:text-7xl font-bold text-white display-font tracking-tighter leading-none'>{title}</h2>
           <button
             aria-label='Close'
-            className='inline-flex items-center justify-center px-8 py-3 rounded-full text-white/50 hover:text-black hover:bg-[#00d9ff] transition-all border border-white/10 hover:border-[#00d9ff] text-xs font-bold uppercase tracking-[0.2em]'
+            className='inline-flex items-center justify-center px-10 py-4 rounded-full text-black bg-[#00d9ff] hover:bg-white transition-all shadow-[0_0_20px_rgba(0,217,255,0.4)] text-xs font-bold uppercase tracking-[0.2em]'
             onClick={closeWithAnimation}
           >
             Close Window
