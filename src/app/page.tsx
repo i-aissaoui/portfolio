@@ -176,59 +176,15 @@ export default function Home() {
               enableTilt={true}
               enableMagnetism={true}
               clickEffect={true}
-              spotlightRadius={300}
-              particleCount={15}
+              spotlightRadius={200}
+              particleCount={4}
               glowColor="0, 217, 255"
-              customCards={[
-                {
-                  color: '#0c0c0c',
-                  title: locale === 'fr' ? 'Langages' : locale === 'de' ? 'Sprachen' : 'Languages',
-                  description: 'Python • TypeScript • JavaScript • Java • SQL • C++',
-                  label: '💻 CODE'
-                },
-                {
-                  color: '#0c0c0c',
-                  title: locale === 'fr' ? 'Frameworks ML/DL' : locale === 'de' ? 'ML/DL Frameworks' : 'ML/DL Frameworks',
-                  description: 'PyTorch • TensorFlow • Keras • Scikit-learn • JAX',
-                  label: '🧠 NEURAL'
-                },
-                {
-                  color: '#0c0c0c',
-                  title: locale === 'fr' ? 'Architecture IA' : locale === 'de' ? 'KI-Architektur' : 'AI Architecture',
-                  description: 'Transformers • RAG • LLMs • BERT • CNN • RNN • GANs',
-                  label: '🏗️ SYSTEMS'
-                },
-                {
-                  color: '#0c0c0c',
-                  title: locale === 'fr' ? 'Science des Données' : locale === 'de' ? 'Data Science' : 'Data Science',
-                  description: 'Pandas • NumPy • SciPy • Plotly • Matplotlib • OpenCV',
-                  label: '📊 DATA'
-                },
-                {
-                  color: '#0c0c0c',
-                  title: 'Full-Stack',
-                  description: 'React • Next.js • TailwindCSS • Node.js • FastAPI • Flask',
-                  label: '🌐 WEB'
-                },
-                {
-                  color: '#0c0c0c',
-                  title: locale === 'fr' ? 'Stockage' : locale === 'de' ? 'Speicher' : 'Storage',
-                  description: 'PostgreSQL • MongoDB • Redis • Pinecone • MySQL',
-                  label: '🗄️ INFRA'
-                },
-                {
-                  color: '#0c0c0c',
-                  title: 'Engineering',
-                  description: 'Spark • Hadoop • Kafka • Airflow • Docker • Git',
-                  label: '⚡ SPEED'
-                },
-                {
-                  color: '#0c0c0c',
-                  title: locale === 'fr' ? 'Apprentissage par Renforcement' : locale === 'de' ? 'Bestärkendes Lernen' : 'Reinforcement Learning',
-                  description: 'Deep Q-Learning • PPO • Actor-Critic • Policy Gradients',
-                  label: '🤖 AUTONOMY'
-                }
-              ]}
+              customCards={site.skillsGrouped.map(group => ({
+                color: '#0c0c0c',
+                title: L(group.title, locale),
+                description: group.items.join(' • '),
+                label: group.key.toUpperCase()
+              }))}
             />
           </div>
         </section>
@@ -290,7 +246,7 @@ export default function Home() {
                       ) : (
                         <img src={image} alt={title} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110' />
                       )}
-                      <div className='absolute inset-0 bg-gradient-to-t from-[#12002b] via-[#12002b]/50 to-transparent'></div>
+                      <div className='absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-transparent to-transparent'></div>
                     </div>
 
                     <div className='p-6'>
@@ -357,7 +313,7 @@ export default function Home() {
                       ) : (
                         <img src={image} alt={title} className='w-full h-full object-cover grayscale group-hover:grayscale-0' />
                       )}
-                      <div className='absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent'></div>
+                      <div className='absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-transparent to-transparent'></div>
                     </div>
 
                     <div className='p-8 flex flex-col flex-1'>

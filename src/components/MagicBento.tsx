@@ -25,8 +25,8 @@ export interface BentoProps {
   customCards?: BentoCardProps[];
 }
 
-const DEFAULT_PARTICLE_COUNT = 6;
-const DEFAULT_SPOTLIGHT_RADIUS = 300;
+const DEFAULT_PARTICLE_COUNT = 4;
+const DEFAULT_SPOTLIGHT_RADIUS = 250;
 const DEFAULT_GLOW_COLOR = '0, 217, 255';
 const MOBILE_BREAKPOINT = 768;
 
@@ -464,14 +464,8 @@ const GlobalSpotlight: React.FC<{
           card.style.setProperty("--glow-radius", `${spotlightRadius}px`);
         });
 
-        // Update spotlight position
-        gsap.to(spotlightRef.current, {
-          left: x,
-          top: y,
-          duration: 0.1,
-          ease: "power2.out",
-          overwrite: "auto"
-        });
+        // Update spotlight position with faster, simpler transformation
+        spotlightRef.current.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
 
         // Fade in/out
         const targetOpacity =
@@ -759,7 +753,7 @@ const MagicBento: React.FC<BentoProps> = ({
       )}
 
       <BentoCardGrid gridRef={gridRef}>
-        <div className="card-responsive grid gap-4 md:gap-6">
+        <div className="card-responsive grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
           {cards.map((card, index) => {
             const baseClassName = `card flex flex-col justify-between relative w-full max-w-full p-6 md:p-8 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${enableBorderGlow ? 'card--border-glow' : ''
               }`;
