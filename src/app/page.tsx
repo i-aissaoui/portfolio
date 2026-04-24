@@ -68,16 +68,6 @@ export default function Home() {
           <div className='absolute top-0 right-0 w-[500px] h-[500px] bg-[#00d9ff]/10 blur-[120px] rounded-full pointer-events-none'></div>
 
           <div className='relative z-10 mx-auto px-6 sm:px-12 lg:px-24'>
-            {/* Status Chip - Pulse Interface */}
-            <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00d9ff]/5 border border-[#00d9ff]/20 mb-10'>
-              <span className='relative flex h-2 w-2'>
-                <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00d9ff] opacity-75'></span>
-                <span className='relative inline-flex rounded-full h-2 w-2 bg-[#00d9ff] shadow-[0_0_8px_#00d9ff]'></span>
-              </span>
-              <span className='text-[10px] font-bold uppercase tracking-[0.2em] text-[#00d9ff] display-font'>
-                System Active — Interface Online
-              </span>
-            </div>
 
             <div className='absolute top-0 right-0 w-full lg:w-1/2 h-full opacity-40 pointer-events-none select-none overflow-hidden brain-visual-mask z-0'>
               <Image

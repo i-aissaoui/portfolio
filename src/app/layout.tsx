@@ -17,8 +17,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Ismail Aissaoui | AI & Full-Stack Developer",
-  description: "Full-Stack Developer and AI enthusiast, specializing in building modern web applications and machine learning models with React, Next.js, FastAPI, and transformer architectures.",
+  title: "Aissaoui Ismail | AI Engineer",
+  description: "Elite AI & Full-Stack Engineer specializing in Deep Learning and Enterprise Architectures.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/logo.png",
+  }
 };
 
 export default function RootLayout({
