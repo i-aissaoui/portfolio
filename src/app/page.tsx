@@ -370,66 +370,109 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Education Section */}
-        <section id='education' className='py-32'>
-          <div className='max-w-6xl mx-auto mb-20 px-6'>
-            <div className='flex items-center gap-4 mb-4'>
-              <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
-              <span className='text-[#00d9ff] font-bold uppercase tracking-widest text-xs display-font'>
-                {locale === "fr" ? "Héritage de l'Apprentissage" : locale === "de" ? "Erbe des Lernens" : "Legacy of Learning"}
-              </span>
+        <section id='timeline' className='py-32 border-t border-white/5 bg-[#0c0c0c]'>
+          <div className='max-w-6xl mx-auto px-6'>
+            <div className='mb-20'>
+              <h2 className='text-5xl md:text-7xl font-bold text-white mb-4 display-font tracking-tighter'>
+                Chronology & Signals
+              </h2>
+              <p className='text-white/40 text-xl font-light max-w-2xl'>
+                Mapping the temporal evolution of logical frameworks and communication bandwidth.
+              </p>
             </div>
-            <h2 className='text-5xl md:text-8xl font-bold text-white mb-20 display-font tracking-tighter'>
-              Education
-            </h2>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
-              <div className='relative glass-card p-12 md:p-16 rounded-[4rem] group overflow-hidden bg-[#0c0c0c]/80 backdrop-blur-2xl'>
-                <div className='absolute -top-10 -right-10 w-40 h-40 bg-[#00d9ff]/10 blur-[80px] group-hover:bg-[#00d9ff]/20 transition-all'></div>
-                <span className='text-[#00d9ff] font-bold text-sm tracking-[0.3em] uppercase block mb-6'>2021 — 2026</span>
-                <h3 className='text-4xl md:text-5xl font-bold text-white mb-6 leading-none display-font text-glow-cyan'>ESI-SBA</h3>
-                <p className='text-white/80 text-xl font-medium mb-6 uppercase tracking-wider'>Engineering \& Master’s Degree</p>
-                <div className='h-[1px] w-full bg-white/5 mb-6'></div>
-                <p className='text-white/40 text-lg leading-relaxed font-light'>
-                  Specialization in Artificial Intelligence and Informatics. High-intensity curriculum focused on deep neural networks, distributed systems, and real-world AI deployment.
-                </p>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20'>
+              {/* System Trajectory - Timeline */}
+              <div className='lg:col-span-2 relative glass-card p-10 md:p-12 rounded-[2.5rem] bg-[#111111]/50 border-white/5'>
+                <div className='flex items-center gap-3 mb-10 opacity-60'>
+                  <svg className='w-5 h-5 text-[#00d9ff]' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z' />
+                  </svg>
+                  <h3 className='text-sm font-bold uppercase tracking-[0.2em] text-white'>System Trajectory</h3>
+                </div>
+
+                <div className='relative pl-12 border-l border-white/10 space-y-16'>
+                  {/* Item 1 */}
+                  <div className='relative'>
+                    <div className='absolute -left-[3.25rem] top-0 w-10 h-10 rounded-full bg-[#0c0c0c] border border-[#00d9ff] flex items-center justify-center shadow-[0_0_15px_rgba(0,217,255,0.2)]'>
+                      <div className='w-2 h-2 rounded-full bg-[#00d9ff] animate-pulse'></div>
+                    </div>
+                    <div>
+                      <span className='text-[10px] font-bold text-[#00d9ff] uppercase tracking-widest block mb-1'>Target 2026</span>
+                      <h4 className='text-3xl md:text-5xl font-bold text-white mb-4 display-font'>Engineering Degree in AI</h4>
+                      <p className='text-white/40 text-lg leading-relaxed max-w-xl'>
+                        École Supérieure en Informatique de Sidi Bel-Abbès (ESI-SBA). Specializing in advanced neural architectures, machine learning methodologies, and scalable intelligent systems.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Item 2 */}
+                  <div className='relative'>
+                    <div className='absolute -left-[3.25rem] top-0 w-10 h-10 rounded-full bg-[#0c0c0c] border border-white/10 flex items-center justify-center'>
+                      <div className='w-2 h-2 rounded-full bg-white/20'></div>
+                    </div>
+                    <div>
+                      <span className='text-[10px] font-bold text-white/30 uppercase tracking-widest block mb-1'>Origin 2021</span>
+                      <h4 className='text-3xl md:text-4xl font-bold text-white/80 mb-4 display-font'>Baccalaureate</h4>
+                      <p className='text-white/30 text-base leading-relaxed max-w-xl'>
+                        Mathematical Engineering. Foundational training in pure mathematics, algorithmic logic, and rigorous analytical thinking.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className='relative glass-card p-12 md:p-16 rounded-[4rem] group overflow-hidden bg-[#0c0c0c]/80 backdrop-blur-2xl'>
-                <div className='absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 blur-[80px]'></div>
-                <span className='text-white/30 font-bold text-sm tracking-[0.3em] uppercase block mb-6'>2021</span>
-                <h3 className='text-4xl md:text-5xl font-bold text-white mb-6 leading-none display-font'>Baccalaureate</h3>
-                <p className='text-white/60 text-xl font-medium mb-6 uppercase tracking-wider'>Mathematical Engineering</p>
-                <div className='flex items-center gap-3'>
-                  <span className='px-4 py-2 rounded-full border border-white/10 text-white/50 text-sm font-bold tracking-widest uppercase'>High Distinction</span>
+              {/* Linguistic Nodes - Skills */}
+              <div className='relative glass-card p-10 md:p-12 rounded-[2.5rem] bg-[#111111]/50 border-white/5'>
+                <div className='flex items-center gap-3 mb-12 opacity-60'>
+                  <svg className='w-5 h-5 text-[#00d9ff]' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9' />
+                  </svg>
+                  <h3 className='text-sm font-bold uppercase tracking-[0.2em] text-white'>Linguistic Nodes</h3>
+                </div>
+
+                <div className='space-y-10'>
+                  {[
+                    { label: "Arabic", level: "Fluency", width: "100%" },
+                    { label: "English", level: "Fluency", width: "100%" },
+                    { label: "French", level: "Fluency", width: "100%" },
+                    { label: "German", level: "Intermediate", width: "65%" },
+                  ].map((lang) => (
+                    <div key={lang.label}>
+                      <div className='flex justify-between items-end mb-3'>
+                        <span className='text-xs font-bold uppercase tracking-widest text-white/80'>{lang.label}</span>
+                        <span className='text-[10px] font-bold uppercase tracking-[0.2em] text-white/30'>{lang.level}</span>
+                      </div>
+                      <div className='h-1.5 w-full bg-white/5 rounded-full overflow-hidden'>
+                        <div
+                          className='h-full bg-gradient-to-r from-[#00d9ff]/50 to-[#00d9ff] rounded-full shadow-[0_0_10px_#00d9ff33]'
+                          style={{ width: lang.width }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Communication Section - Cerebral Tech Style */}
-        <section id='languages' className='py-32 border-t border-white/5'>
-          <div className='max-w-6xl mx-auto text-center'>
-            <h2 className='text-3xl md:text-5xl font-bold text-white mb-16 display-font tracking-tighter'>
-              {locale === "fr"
-                ? "Systèmes de Communication"
-                : locale === "de"
-                  ? "Kommunikationssysteme"
-                  : "Communication Systems"}
-            </h2>
-            <div className='flex flex-wrap gap-6 justify-center'>
-              {(() => {
-                const spoken = site.skillsGrouped?.find((g) => g.key === "spoken");
-                return spoken?.items.map((lang) => (
-                  <span
-                    key={lang}
-                    className='px-10 py-5 text-xl font-bold uppercase rounded-[20px] text-white/90 glass-card border-white/10 hover:border-[#00d9ff]/30 transition-all'
-                  >
-                    {lang}
+            {/* Bottom Section - Quote & Connect */}
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-end pt-12 border-t border-white/5'>
+              <div>
+                <p className='text-4xl md:text-5xl font-bold text-white display-font tracking-tighter leading-tight'>
+                  &ldquo;Creativity solves problems. <br />
+                  <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#00d9ff] to-[#7c3aed]'>
+                    Communication builds legacy.&rdquo;
                   </span>
-                ));
-              })()}
+                </p>
+              </div>
+
+              <div className='flex flex-col gap-6 md:items-end'>
+                <span className='text-[10px] font-bold uppercase tracking-[0.3em] text-white/30'>Establish Connection</span>
+                <div className='flex flex-col gap-3 md:items-end'>
+                  <a href='mailto:init@ismail.dev' className='text-white hover:text-[#00d9ff] transition-all text-sm font-medium'>init@ismail.dev</a>
+                  <a href='https://github.com/ismail-ai' target='_blank' rel='noopener noreferrer' className='text-white hover:text-[#00d9ff] transition-all text-sm font-medium'>GitHub @ismail-ai</a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
