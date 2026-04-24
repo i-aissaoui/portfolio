@@ -63,8 +63,8 @@ export default function Home() {
       <SiteNav locale={locale} onLocaleChange={(lang) => setLocale(lang)} />
       <main className='relative z-10 mx-auto w-full max-w-[1920px] px-6 sm:px-8 lg:px-12'>
         {/* Hero Section - Elite AI Engineer Style */}
-        <section id='home' className='relative pt-40 pb-24 overflow-hidden border-b border-white/5'>
-          <div className='relative z-10 mx-auto max-w-6xl'>
+        <section id='home' className='relative pt-40 pb-24 overflow-hidden'>
+          <div className='relative z-10 mx-auto px-6 sm:px-12 lg:px-24'>
             {/* System Status Indicator */}
             <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00d9ff]/5 border border-[#00d9ff]/20 mb-8 animate-pulse'>
               <span className='w-2 h-2 rounded-full bg-[#00d9ff] shadow-[0_0_8px_#00d9ff]'></span>
