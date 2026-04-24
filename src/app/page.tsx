@@ -63,20 +63,30 @@ export default function Home() {
       <SiteNav locale={locale} onLocaleChange={(lang) => setLocale(lang)} />
       <main className='relative z-10 mx-auto w-full max-w-[1920px] px-6 sm:px-8 lg:px-12'>
         {/* Hero Section - Elite AI Engineer Style */}
-        <section id='home' className='relative pt-40 pb-24 overflow-hidden'>
-          <div className='relative z-10 mx-auto px-6 sm:px-12 lg:px-24'>
+        <section id='home' className='relative min-h-[90vh] flex items-center justify-center pt-20 pb-24 overflow-hidden bg-grid-slate-900 hero-glow-border'>
+          {/* Subtle Glow Overlay */}
+          <div className='absolute inset-0 bg-gradient-to-b from-[#0c0c0c] via-transparent to-[#0c0c0c] pointer-events-none'></div>
+          <div className='absolute inset-0 bg-gradient-to-r from-[#0c0c0c] via-transparent to-[#0c0c0c] pointer-events-none'></div>
 
-            {/* Name with Space Grotesk */}
-            <h1 className='text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9] display-font'>
-              <span className='block opacity-30 text-4xl md:text-5xl lg:text-7xl mb-2 font-medium tracking-normal'>
-                {locale === "fr" ? "Je suis" : locale === "de" ? "Ich bin" : "I am"}
-              </span>
-              {L(site.name, locale)}
-            </h1>
+          <div className='relative z-10 w-full max-w-5xl mx-auto px-6 text-center'>
+            <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-40 pointer-events-none select-none overflow-hidden brain-visual-mask z-0'>
+              <Image
+                src="/the_mind.png"
+                alt="Brain Visual"
+                fill
+                className='object-contain scale-150 opacity-50'
+              />
+            </div>
 
-            {/* Elite Role */}
-            <div className='mb-10'>
-              <h2 className='text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight'>
+            <div className='relative z-10'>
+              <h1 className='text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter text-white mb-6 leading-none display-font'>
+                <span className='block opacity-20 text-3xl md:text-5xl lg:text-6xl mb-4 font-normal tracking-wide'>
+                  {locale === "fr" ? "Je suis" : locale === "de" ? "Ich bin" : "I am"}
+                </span>
+                {L(site.name, locale)}
+              </h1>
+
+              <h2 className='text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-12'>
                 <span className='text-[#00d9ff]'>
                   {locale === "fr"
                     ? "Ingénieur en IA & Full-Stack"
@@ -85,43 +95,29 @@ export default function Home() {
                       : "AI & Full-Stack Engineer"}
                 </span>
               </h2>
-            </div>
 
-            {/* Premium Description */}
-            <p className='text-white/60 text-lg md:text-xl leading-relaxed mb-12 max-w-3xl font-light'>
-              {locale === "fr"
-                ? "Conception de systèmes d'IA de pointe, des architectures Transformers aux écosystèmes d'entreprise robustes. Spécialisé en Deep Learning, NLP et ingénierie logicielle haute performance."
-                : locale === "de"
-                  ? "Entwicklung wegweisender KI-Systeme, von Transformer-Architekturen bis hin zu robusten Unternehmens-Ökosystemen. Spezialisiert auf Deep Learning, NLP und Hochleistungs-Software-Engineering."
-                  : "Architecting the next generation of intelligence, from foundational Transformer models to robust enterprise ecosystems. Specializing in Deep Learning, NLP, and high-performance software engineering."}
-            </p>
+              <p className='text-white/40 text-lg md:text-2xl leading-relaxed mb-16 max-w-4xl mx-auto font-light'>
+                {locale === "fr"
+                  ? "Conception de systèmes d'IA de pointe, des architectures Transformers aux écosystèmes d'entreprise robustes."
+                  : locale === "de"
+                    ? "Entwicklung wegweisender KI-Systeme, von Transformer-Architekturen bis hin zu robusten Unternehmens-Ökosystemen."
+                    : "Architecting the next generation of intelligence, from foundational Transformer models to robust enterprise ecosystems."}
+              </p>
 
-            <div className='absolute top-0 -right-20 lg:right-0 w-full lg:w-3/5 h-[50vh] lg:h-full opacity-60 pointer-events-none select-none overflow-hidden brain-visual-mask'>
-              <Image
-                src="/the_mind.png"
-                alt="Brain Visual"
-                fill
-                className='object-contain lg:object-right transform scale-125 lg:scale-110 translate-y-20 lg:translate-y-0 translate-x-10 lg:translate-x-0'
-              />
-            </div>
-
-            <div className='relative z-20'>
-
-              {/* Glassmorphism CTAs */}
-              <div className='flex flex-wrap items-center gap-6'>
+              <div className='flex flex-wrap items-center justify-center gap-8'>
                 <a
                   href='#contact'
-                  className='px-10 py-5 bg-[#00d9ff] text-black font-bold rounded-full hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(0,217,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]'
+                  className='px-12 py-5 bg-[#00d9ff] text-black font-bold rounded-full hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(0,217,255,0.4)]'
                 >
-                  {locale === "fr" ? "Collaborer" : locale === "de" ? "Zusammenarbeiten" : "Let's Collaborate"}
+                  {L({ en: "Let's Collaborate", fr: "Collaborer", de: "Zusammenarbeiten" }, locale)}
                 </a>
 
                 <a
                   href={locale === "fr" ? "/resume_fr.pdf" : locale === "de" ? "/resume_de.pdf" : "/resume_en.pdf"}
                   download
-                  className='px-10 py-5 glass-card font-bold rounded-full hover:bg-white/10 transition-all duration-500 flex items-center gap-3 border-white/20'
+                  className='px-12 py-5 bg-white/5 backdrop-blur-md font-bold rounded-full hover:bg-white/10 transition-all duration-500 flex items-center gap-3 border border-white/10'
                 >
-                  <span>{locale === "fr" ? "Curriculum Vitae" : locale === "de" ? "Lebenslauf" : "Download Resume"}</span>
+                  <span>{L({ en: "Download Resume", fr: "Curriculum Vitae", de: "Lebenslauf" }, locale)}</span>
                   <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
                   </svg>
