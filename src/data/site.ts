@@ -16,6 +16,7 @@ export type Project = {
   description: LocalizedString;
   details?: LocalizedString;
   tech: string[];
+  category: "AI" | "Other";
   images?: string[]; // image URLs
   imageFolder?: string; // optional folder within public for auto-loading images
   link?: string; // demo or GitHub
@@ -181,24 +182,27 @@ export const site = {
     },
   ] as SkillsGroup[],
   projects: [
-    // 0) Enterprise AI Trading System (2025)
+    // --- MAIN AI ENGINEERING PROJECTS ---
+
+    // 0) Aura AI Trading Ecosystem
     {
+      category: "AI",
       title: {
-        en: "Enterprise AI Trading System",
-        fr: "Système de Trading IA d'Entreprise",
-        de: "Enterprise AI Trading System",
+        en: "Aura AI Trading Ecosystem",
+        fr: "Écosystème de Trading Aura AI",
+        de: "Aura AI Trading-System",
       },
       description: {
-        en: "Next-Generation Cryptocurrency Trading Bot powered by Hybrid LSTM + Deep Q-Learning Architecture. A full-stack automated trading platform designed for research and algorithmic trading development.",
-        fr: "Bot de trading de crypto-monnaies de nouvelle génération propulsé par une architecture hybride LSTM + Deep Q-Learning. Une plateforme de trading automatisée complète conçue pour la recherche et le développement de trading algorithmique.",
-        de: "Kryptowährungs-Trading-Bot der nächsten Generation, angetrieben durch eine hybride LSTM + Deep Q-Learning Architektur. Eine Full-Stack-Plattform für automatisierten Handel, entwickelt für Forschung und Entwicklung im Bereich algorithmisches Trading.",
+        en: "Institutional-grade dual-core AI trading platform (LSTM + DQN) for Cryptocurrency and Gold markets. Features a high-performance Python backend and a real-time Next.js dashboard.",
+        fr: "Plateforme de trading IA à double cœur (LSTM + DQN) pour les marchés de crypto-monnaies et de l'or. Comprend un backend Python haute performance et un tableau de bord Next.js en temps réel.",
+        de: "Institutionelles KI-Trading-System (LSTM + DQN) für Krypto- und Goldmärkte. Mit Hochleistungs-Python-Backend und Echtzeit-Next.js-Dashboard.",
       },
       details: {
         en: "Overview:\n• Dual-Core AI Engine (LSTM + DQN) for trend forecasting and optimal entry/exit strategies.\n• Advanced Feature Engineering with 18+ institutional-grade technical indicators.\n• Interactive \"Time Machine\" Backtesting with gamified replay.\n• Real-Time Dashboard with WebSocket streaming and glassmorphism UI.\n\nTech Stack:\n• Backend: Python 3.11, FastAPI, TensorFlow, Keras.\n• Frontend: Next.js 14, TypeScript, Tailwind CSS, Recharts.\n• Data: Pandas, NumPy, TA-Lib.\n• Infrastructure: WebSocket, Background Workers.",
         fr: "Aperçu :\n• Moteur IA à double cœur (LSTM + DQN) pour la prévision des tendances et des stratégies d'entrée/sortie optimales.\n• Ingénierie des fonctionnalités avancée avec plus de 18 indicateurs techniques de niveau institutionnel.\n• Backtesting interactif \"Time Machine\" avec relecture ludifiée.\n• Tableau de bord en temps réel avec streaming WebSocket et interface utilisateur en glassmorphism.\n\nStack Tech :\n• Backend : Python 3.11, FastAPI, TensorFlow, Keras.\n• Frontend : Next.js 14, TypeScript, Tailwind CSS, Recharts.\n• Données : Pandas, NumPy, TA-Lib.\n• Infrastructure : WebSocket, Background Workers.",
         de: "Überblick:\n• Dual-Core AI Engine (LSTM + DQN) zur Trendprognose und für optimale Ein-/Ausstiegsstrategien.\n• Fortgeschrittenes Feature Engineering mit 18+ institutionellen technischen Indikatoren.\n• Interaktives \"Zeitmaschinen\"-Backtesting mit gamifizierter Wiedergabe.\n• Echtzeit-Dashboard mit WebSocket-Streaming und Glassmorphismus-UI.\n\nTech Stack:\n• Backend: Python 3.11, FastAPI, TensorFlow, Keras.\n• Frontend: Next.js 14, TypeScript, Tailwind CSS, Recharts.\n• Daten: Pandas, NumPy, TA-Lib.\n• Infrastruktur: WebSocket, Background Workers.",
       },
-      tech: ["Python", "TypeScript", "TensorFlow", "FastAPI", "Next.js", "Tailwind CSS", "Keras", "Pandas", "WebSocket"],
+      tech: ["Python", "TensorFlow", "FastAPI", "Next.js", "LSTM", "DQN", "WebSocket"],
       imageFolder: "trading",
       images: [
         "/trading/1.png",
@@ -210,19 +214,25 @@ export const site = {
       link: "#",
     },
 
-    // 1) AI-Powered Recruitment Platform with Graph Neural Networks (2024-2025)
+    // 1) Career Connect: GNN-Powered Recruitment Intelligence
     {
+      category: "AI",
       title: {
-        en: "AI-Powered Recruitment Platform with Graph Neural Networks",
-        fr: "Plateforme de Recrutement IA avec Réseaux de Neurones Graphiques",
-        de: "KI-gestützte Rekrutierungsplattform mit Graph Neural Networks",
+        en: "Career Connect: GNN-Powered Recruitment Intelligence",
+        fr: "Career Connect : Intelligence de Recrutement Propulsée par GNN",
+        de: "Career Connect: GNN-gestützte Rekrutierungs-Intelligenz",
       },
       description: {
-        en: "Built intelligent job matching system using Graph Neural Networks to connect candidates with opportunities and rank CVs based on custom criteria for HR teams. Combines advanced AI techniques for both job seekers and recruiters.",
-        fr: "Système intelligent de matching d'emplois utilisant des réseaux de neurones graphiques pour connecter les candidats aux opportunités et classer les CV selon des critères personnalisés pour les équipes RH.",
-        de: "Intelligentes Job-Matching-System mit Graph Neural Networks zur Verbindung von Kandidaten mit Chancen und CV-Ranking nach benutzerdefinierten Kriterien für HR-Teams.",
+        en: "Advanced recruitment platform using Graph Neural Networks (GNN) and SBERT to semantically match candidates with job opportunities. Built with PyTorch Geometric and FAISS.",
+        fr: "Plateforme de recrutement avancée utilisant des réseaux de neurones graphiques (GNN) et SBERT pour faire correspondre sémantiquement les candidats aux offres d'emploi.",
+        de: "Fortgeschrittene Rekrutierungsplattform mit Graph Neural Networks (GNN) und SBERT für semantisches Matching von Kandidaten und Stellenangeboten.",
       },
-      tech: ["Graph Neural Networks", "PyTorch Geometric", "SBERT", "FAISS", "XGBoost", "LightGBM", "FastAPI", "React", "TypeScript", "PostgreSQL", "Docker"],
+      details: {
+        en: "Architecture & AI:\n• Graph Neural Networks (PyTorch Geometric) for structural skill modeling.\n• Semantic Search with SBERT and FAISS vector indexing.\n• High-performance ranking using XGBoost and LightGBM.\n• Automated CV parsing and O*NET standardized profile matching.",
+        fr: "Architecture et IA :\n• Réseaux de neurones graphiques (PyTorch Geometric) pour la modélisation structurelle des compétences.\n• Recherche sémantique avec SBERT et indexation vectorielle FAISS.\n• Classement haute performance utilisant XGBoost et LightGBM.",
+        de: "Architektur & KI:\n• Graph Neural Networks (PyTorch Geometric) für strukturelle Kompetenzmodellierung.\n• Semantische Suche mit SBERT und FAISS-Vektorindexierung.\n• Hochleistungs-Ranking mit XGBoost und LightGBM.",
+      },
+      tech: ["Graph Neural Networks", "PyTorch Geometric", "SBERT", "FAISS", "XGBoost", "FastAPI", "React", "PostgreSQL"],
       images: [
         "/carrer-connect/1.png",
         "/carrer-connect/2.png",
@@ -235,191 +245,74 @@ export const site = {
       ],
     },
 
-    // 2) Advanced NLP System with Multi-Algorithm Optimization (2025)
+    // 2) Elliptic++: Bitcoin Fraud Detection with GNNs
     {
+      category: "AI",
       title: {
-        en: "Advanced NLP System with Multi-Algorithm Optimization",
-        fr: "Système NLP Avancé avec Optimisation Multi‑Algorithmes",
-        de: "Fortgeschrittenes NLP‑System mit Multi‑Algorithmus‑Optimierung",
+        en: "Elliptic++: Bitcoin Fraud Detection with GNNs",
+        fr: "Elliptic++ : Détection de Fraude Bitcoin avec GNN",
+        de: "Elliptic++: Bitcoin-Betrugserkennung mit GNNs",
       },
       description: {
-        en: "Production‑ready DistilBERT app with hyperparameter tuning via PSO, GA, and Bayesian optimization. Real‑time dashboards, side‑by‑side algorithm comparison, and full‑data retraining.",
-        fr: "Application DistilBERT prête pour la production avec réglage d’hyperparamètres via PSO, GA et optimisation bayésienne. Tableaux de bord en temps réel, comparaison côte à côte et ré‑entraînement sur 100 % des données.",
-        de: "Produktionsreife DistilBERT‑App mit Hyperparameter‑Tuning per PSO, GA und Bayes‑Optimierung. Live‑Dashboards, Seiten‑an‑Seite‑Vergleich und Retraining auf 100 % der Daten.",
+        en: "Blockchain security project focused on detecting illicit actors and fraudulent transactions in the Bitcoin network using graph-based learning on over 200k transactions.",
+        fr: "Projet de sécurité blockchain axé sur la détection d'acteurs illicites et de transactions frauduleuses dans le réseau Bitcoin en utilisant l'apprentissage basé sur les graphes.",
+        de: "Blockchain-Sicherheitsprojekt zur Erkennung illegaler Akteure und betrügerischer Transaktionen im Bitcoin-Netzwerk mittels graphbasiertem Lernen.",
       },
       details: {
-        en: "Overview:\n• DistilBERT text classification with three metaheuristics (PSO, GA, Bayesian).\n• Fast iterations on 20% data, then final retrain on 100% with best params.\n\nKey Features:\n• Real‑time progress and comparison dashboards (WebSocket + Recharts).\n• Interactive parameter evolution and algorithm‑specific animations.\n• Persisted settings and search‑space control (opt vs fixed).\n\nStack:\n• Backend: FastAPI (async), PyTorch, scikit‑learn.\n• Frontend: Next.js + TypeScript + Tailwind.\n\nSearch Space:\n• LR [1e‑6, 1e‑4], Batch [4, 64], Dropout [0.0, 0.5], Frozen Layers [0, 6].",
-        fr: "Aperçu :\n• Classification texte DistilBERT avec trois méta‑heuristiques (PSO, GA, Bayésien).\n• Itérations rapides sur 20 % des données puis ré‑entraînement final à 100 %.\n\nFonctionnalités :\n• Progression en temps réel et comparaisons (WebSocket + Recharts).\n• Évolution des paramètres et animations propres à chaque algorithme.\n• Paramètres et espaces de recherche persistants (optimisés vs fixes).\n\nStack :\n• Backend : FastAPI (async), PyTorch, scikit‑learn.\n• Frontend : Next.js + TypeScript + Tailwind.\n\nEspace de recherche :\n• LR [1e‑6, 1e‑4], Batch [4, 64], Dropout [0.0, 0.5], Couches gelées [0, 6].",
-        de: "Überblick:\n• DistilBERT‑Textklassifikation mit drei Metaheuristiken (PSO, GA, Bayes).\n• Schnelle Iterationen auf 20 % der Daten, danach finales Retraining auf 100 %.\n\nFunktionen:\n• Echtzeit‑Fortschritt und Vergleich (WebSocket + Recharts).\n• Interaktive Parameterentwicklung und algorithmus‑spezifische Animationen.\n• Persistente Einstellungen und Suchraum‑Steuerung (optimiert vs fix).\n\nStack:\n• Backend: FastAPI (async), PyTorch, scikit‑learn.\n• Frontend: Next.js + TypeScript + Tailwind.\n\nSuchraum:\n• LR [1e‑6, 1e‑4], Batch [4, 64], Dropout [0.0, 0.5], Gefrorene Layer [0, 6].",
+        en: "Technical Scope:\n• Data: 203k Bitcoin transactions and 822k wallet addresses.\n• Graph Modeling: Capturing money flow (tx-tx) and actor interaction (addr-addr).\n• Classification: Fraud detection via Graph Neural Networks and Feature Importance analysis.",
+        fr: "Portée technique :\n• Données : 203k transactions Bitcoin et 822k adresses de portefeuilles.\n• Modélisation de graphes : Capture du flux d'argent (tx-tx) et de l'interaction des acteurs (addr-addr).",
+        de: "Technischer Umfang:\n• Daten: 203k Bitcoin-Transaktionen und 822k Wallet-Adressen.\n• Graph-Modellierung: Analyse des Geldflusses (tx-tx) und der Akteurinteraktion (addr-addr).",
       },
-      tech: [
-        "DistilBERT",
-        "PyTorch",
-        "PSO",
-        "Genetic Algorithm",
-        "Bayesian Optimization",
-        "FastAPI",
-        "Next.js",
-        "TypeScript",
-        "WebSocket",
-        "Recharts",
-      ],
-      imageFolder: "advanced-nlp",
+      tech: ["Graph Neural Networks", "Python", "NetworkX", "PyTorch Geometric", "Blockchain", "Data Mining"],
       images: [
-        "/advanced-nlp/Screenshot from 2025-11-21 08-38-13.png",
-        "/advanced-nlp/Screenshot from 2025-11-21 08-38-59.png",
-        "/advanced-nlp/Screenshot from 2025-11-21 08-39-22.png",
+        "https://images.unsplash.com/photo-1518544801976-3e159e50e5bb?w=1600" /* bitcoin/blockchain */
       ],
     },
 
-    // 3) Intelligent University Scheduling System (2025)
+    // 3) Vision Transformer (ViT) Implementation
     {
+      category: "AI",
       title: {
-        en: "Intelligent University Scheduling System",
-        fr: "Système Intelligent de Planification Universitaire",
-        de: "Intelligentes Universitäts-Planungssystem",
+        en: "Vision Transformer (ViT) Implementation",
+        fr: "Implémentation de Vision Transformer (ViT)",
+        de: "Vision Transformer (ViT) Implementierung",
       },
       description: {
-        en: "Created automated exam timetabling system using multiple optimization algorithms (Genetic, Swarm, Ant Colony, Simulated Annealing) to satisfy complex scheduling constraints. Handles hard and soft constraints with hybrid optimization approaches.",
-        fr: "Système automatisé de planification d'examens utilisant plusieurs algorithmes d'optimisation (Génétique, Essaim, Colonie de Fourmis, Recuit Simulé) pour satisfaire des contraintes complexes.",
-        de: "Automatisiertes Prüfungsplanungssystem mit mehreren Optimierungsalgorithmen (Genetisch, Schwarm, Ameisenkolonie, Simuliertes Glühen) zur Erfüllung komplexer Planungseinschränkungen.",
+        en: "Applied the power of Transformers to Computer Vision by treating images as sequences of patches. Built with pure PyTorch for state-of-the-art image identification.",
+        fr: "Application de la puissance des transformeurs à la vision par ordinateur en traitant les images comme des séquences de patchs.",
+        de: "Einsatz von Transformern in der Computer Vision durch die Behandlung von Bildern als Sequenzen von Patches.",
       },
-      tech: ["Genetic Algorithm", "PSO", "ACO", "Simulated Annealing", "Hybrid Algorithms", "FastAPI", "Next.js", "TypeScript", "NumPy", "Pandas"],
+      details: {
+        en: "Core Features:\n• Patch Embedding and [CLS] token integration.\n• Multi-Head Self-Attention for global dependency learning.\n• Pure PyTorch implementation with fine-tuning on ImageNet data.",
+        fr: "Fonctionnalités clés :\n• Embedding de patchs et intégration du token [CLS].\n• Self-Attention multi-têtes pour l'apprentissage des dépendances globales.",
+        de: "Kernfunktionen:\n• Patch-Embedding und [CLS]-Token-Integration.\n• Multi-Head Self-Attention für globales Abhängigkeitslernen.",
+      },
+      tech: ["PyTorch", "Transformers", "Computer Vision", "Deep Learning", "GELU"],
       images: [
-        "/intelligent-scheduling/Screenshot from 2025-11-21 09-45-25.png",
-        "/intelligent-scheduling/Screenshot from 2025-11-21 09-46-38.png",
-        "/intelligent-scheduling/Screenshot from 2025-11-21 09-46-48.png",
+        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600" /* neural network viz */
       ],
-      imageFolder: "intelligent-scheduling",
     },
 
-    // 9) Mini‑GPT (Decoder‑only) (2025)
+    // 4) Recognizini: Semi-Supervised Facial Recognition
     {
+      category: "AI",
       title: {
-        en: "Mini‑GPT (Decoder‑only) (2025)",
-        fr: "Mini‑GPT (décodeur seul) (2025)",
-        de: "Mini‑GPT (nur Decoder) (2025)",
+        en: "Recognizini: Semi-Supervised Facial Recognition",
+        fr: "Recognizini : Reconnaissance Faciale Semi-Supervisée",
+        de: "Recognizini: Semi-überwachte Gesichtserkennung",
       },
       description: {
-        en: "Developed a character‑level decoder‑only transformer with causal self‑attention to generate Shakespeare‑style text.",
-        fr: "Développement d'un transformer décodeur‑seul au niveau caractère, avec self‑attention causale, pour générer du texte à la manière de Shakespeare.",
-        de: "Entwicklung eines zeichenbasierten Decoder‑only‑Transformers mit kausaler Self‑Attention zur Generierung von Text im Shakespeare‑Stil.",
+        en: "Real-time facial recognition web app that learns new identities online using Label Propagation and PCA for efficient dimensionality reduction.",
+        fr: "Application web de reconnaissance faciale en temps réel qui apprend de nouvelles identités en ligne via Label Propagation et PCA.",
+        de: "Echtzeit-Gesichtserkennungs-Web-App, die neue Identitäten online lernt mittels Label Propagation und PCA.",
       },
       details: {
-        en: "Project Overview:\n• Built GPT-style transformer from scratch for text generation\n• Character-level tokenization for learning fine-grained patterns\n• Trained on Shakespeare corpus for creative text generation\n\nCore Concepts:\n• Autoregressive Language Modeling: Predicting next character given context\n• Causal Self-Attention: Decoder-only attention mechanism preventing future information leakage\n• Multi-Head Attention: Parallel attention for capturing different representation aspects\n• Positional Encoding: Learned embeddings for sequence position information\n• Residual Connections: Skip connections enabling deep network training\n• Layer Normalization: Stabilizing training with pre-norm architecture\n\nText Generation Techniques:\n• Autoregressive Sampling: Sequential character-by-character generation\n• Temperature Control: Adjustable randomness for creative outputs\n• Nucleus Sampling: Top-k and top-p sampling for quality control\n• Context Window: Fixed-length context for generation\n\nKey Achievements:\n• Successfully generated coherent Shakespeare-style text\n• Learned grammar, vocabulary, and writing style patterns\n• Demonstrated deep understanding of transformer principles\n\nTechnologies Used:\n• Framework: (PyTorch) for model implementation\n• Optimization: (AdamW) optimizer with weight decay and gradient clipping\n• Training: Custom training loop with warmup and cosine annealing schedule\n• Activation: (GELU) non-linearity for feed-forward networks",
-        fr: "Aperçu du projet:\n• Construction d'un transformer de style GPT depuis zéro\n• Tokenisation au niveau caractère\n• Entraîné sur le corpus de Shakespeare",
-        de: "Übersicht:\n• GPT-Transformer von Grund auf gebaut\n• Zeichenbasierte Tokenisierung\n• Trainiert auf Shakespeare-Korpus"
+        en: "AI Techniques:\n• PCA for 10x faster matching while preserving 95% variance.\n• Label Propagation (graph-based) to label unlabeled identities.\n• Comparison between CNN+PCA analysis and HOG+PCA methods.",
+        fr: "Techniques IA :\n• PCA pour un matching 10x plus rapide.\n• Label Propagation (basé sur les graphes) pour étiqueter les identités inconnues.",
+        de: "KI-Techniken:\n• PCA für 10x schnelleres Matching.\n• Label Propagation (graphbasiert) zur Kennzeichnung unbekannter Identitäten.",
       },
-      tech: ["Python", "PyTorch", "Transformers", "NLP", "GPT Architecture", "GELU", "AdamW"],
-      images: [
-        "/mini-gpt/mini-gpt-01.png",
-      ],
-      imageFolder: "mini-gpt",
-      link: "#",
-    },
-    // 8) BERT (Encoder‑only) (2025)
-    {
-      title: {
-        en: "BERT (Encoder‑only) (2025)",
-        fr: "BERT (encodeur seul) (2025)",
-        de: "BERT (nur Encoder) (2025)",
-      },
-      description: {
-        en: "Implemented a BERT‑style encoder for sentiment analysis, including pre‑training and fine‑tuning pipeline.",
-        fr: "Mise en œuvre d'un encodeur type BERT pour l'analyse de sentiments, avec pipeline de pré‑entraînement et de fine‑tuning.",
-        de: "Implementierung eines BERT‑ähnlichen Encoders für Sentiment‑Analyse, inkl. Pretraining‑ und Fine‑Tuning‑Pipeline.",
-      },
-      details: {
-        en: "Project Overview:\n• Implemented BERT encoder architecture from scratch\n• Complete pre-training and fine-tuning workflow\n• Applied to sentiment analysis task\n\nCore Concepts:\n• Bidirectional Language Modeling: Learning context from both directions\n• Masked Language Modeling (MLM): Predicting randomly masked tokens (15% masking)\n• Next Sentence Prediction (NSP): Understanding sentence relationships\n• Transfer Learning: Pre-training on large corpus, fine-tuning for specific tasks\n• Multi-Layer Encoding: Stacked transformer blocks for hierarchical representations\n• Attention Mechanism: Scaled dot-product attention for token relationships\n\nFine-tuning Strategy:\n• Classification Head: Task-specific layer on [CLS] token\n• Gradual Unfreezing: Layer-wise unfreezing for optimal transfer\n• Supervised Learning: Fine-tuning on labeled sentiment data\n\nKey Results:\n• Strong performance on sentiment classification benchmarks\n• Successfully captured contextual word representations\n• Demonstrated effectiveness of BERT pre-training approach\n• Validated transfer learning for NLP tasks\n\nTechnologies Used:\n• Framework: (PyTorch) and (transformers library)\n• Tokenization: WordPiece with custom vocabulary\n• Optimization: (AdamW) with learning rate warmup\n• Activation: (GELU) non-linearity\n• Architecture: Layer normalization with residual connections",
-        fr: "Aperçu:\n• Implémentation de l'encodeur BERT\n• Pipeline complet de pré-entraînement et fine-tuning\n• Application à l'analyse de sentiments",
-        de: "Übersicht:\n• BERT-Encoder-Implementierung\n• Vollständige Pretraining- und Fine-Tuning-Pipeline\n• Anwendung auf Sentiment-Analyse"
-      },
-      tech: ["Python", "PyTorch", "Transformers", "BERT", "NLP", "MLM", "GELU", "AdamW"],
-      images: [
-        "/bert-sentiment/bert-sentiment-01.png",
-      ],
-      imageFolder: "bert-sentiment",
-      link: "#",
-    },
-
-    // Geo RAG — Streamlit RAG demo (localized)
-    {
-      title: {
-        en: "Geo RAG — Map-based RAG Demo",
-        fr: "Geo RAG — Démo RAG cartographique",
-        de: "Geo RAG — Kartenbasiertes RAG Demo",
-      },
-      description: {
-        en: "Geo RAG is a full application (not just a demo) that integrates persisted Chroma vector search, sentence-transformers embeddings, a Streamlit user interface, and a locally hosted LLM to produce concise, context-aware natural-language summaries for geographic places. Queries are answered by retrieving relevant geo-tagged documents, constructing per-place prompts, and rendering generated answers directly in Folium marker popups on an interactive map. The app is designed for reproducible RAG experiments and portfolio presentation.",
-        fr: "Geo RAG est une application complète (pas seulement une démo) qui intègre une recherche vectorielle Chroma persistée, des embeddings sentence-transformers, une interface Streamlit et un LLM local pour produire des résumés concis et contextualisés pour des lieux géographiques. Les requêtes sont traitées en récupérant des documents géolocalisés pertinents, en construisant des prompts par lieu et en affichant les réponses générées directement dans les popups Folium sur une carte interactive. L'application est conçue pour des expérimentations RAG reproductibles et une présentation portfolio.",
-        de: "Geo RAG ist eine vollständige Anwendung (kein reines Demo), die persistente Chroma-Vektorsuche, sentence-transformers-Embeddings, eine Streamlit-Benutzeroberfläche und ein lokal gehostetes LLM integriert, um prägnante, kontextbezogene Textzusammenfassungen für geografische Orte zu erzeugen. Anfragen werden beantwortet, indem relevante geo-getaggte Dokumente abgerufen, ortsspezifische Prompts erzeugt und die generierten Antworten in Folium-Markern auf einer interaktiven Karte angezeigt werden. Die App ist für reproduzierbare RAG-Experimente und Portfolio-Präsentationen ausgelegt.",
-      },
-      details: {
-        en: "Detailed application notes: Geo RAG implements a robust, production-minded RAG flow: (1) documents are embedded with sentence-transformers and persisted in a Chroma vector store; (2) a variety of retrieval fallbacks (retriever.get_relevant_documents, similarity_search, similarity_search_with_score) are used to ensure compatibility across LangChain versions; (3) per-place prompts are synthesized from retrieved context and sent to a local LLM (Ollama/phi-3 in the original implementation) using defensive call wrappers that accept callable LLMs, .predict or .generate shapes; (4) the Streamlit UI displays results on an interactive Folium map — marker popups show concise LLM-generated summaries and the map uses flyTo / fitBounds logic to animate results. Key technologies used: Python 3.11, Streamlit, ChromaDB (persisted), sentence-transformers (HuggingFace models), LangChain retrieval wrappers (defensive use), Ollama (local LLM) or alternative LLM adapters, Folium for mapping, Pandas/GeoPandas for data handling, NumPy, PyTorch (for embeddings), and standard tooling (pip, virtualenv). See `geo-rag/README.md` for setup, vector creation notebooks, and screenshot placement.",
-        fr: "Notes détaillées : Geo RAG implémente un flux RAG robuste et orienté production : (1) les documents sont vectorisés avec sentence-transformers et persistés dans ChromaDB ; (2) plusieurs stratégies de récupération (retriever.get_relevant_documents, similarity_search, similarity_search_with_score) sont utilisées pour assurer la compatibilité entre les versions de LangChain ; (3) des prompts par lieu sont synthétisés à partir du contexte récupéré et envoyés à un LLM local (Ollama/phi-3 dans l'implémentation originale) en utilisant des wrappers défensifs acceptant des formes appelables, .predict ou .generate ; (4) l'interface Streamlit affiche les résultats sur une carte Folium interactive — les popups des marqueurs contiennent des résumés concis générés par le LLM et la carte utilise flyTo / fitBounds pour animer les résultats. Technologies clés : Python 3.11, Streamlit, ChromaDB (persistant), sentence-transformers (modèles HuggingFace), wrappers de récupération LangChain (usage défensif), Ollama (LLM local) ou adaptateurs alternatifs, Folium pour la cartographie, Pandas/GeoPandas pour le traitement des données, NumPy, PyTorch (pour les embeddings), et outils standards (pip, virtualenv). Voir `geo-rag/README.md` pour l'installation, la création des vecteurs et le placement des captures d'écran.",
-        de: "Detaillierte Hinweise: Geo RAG implementiert einen robusten, produktionsorientierten RAG-Flow: (1) Dokumente werden mit sentence-transformers eingebettet und in einer persistenten Chroma-DB gespeichert; (2) verschiedene Retrieval-Fallbacks (retriever.get_relevant_documents, similarity_search, similarity_search_with_score) gewährleisten Kompatibilität über LangChain-Versionen hinweg; (3) ortsspezifische Prompts werden aus dem abgerufenen Kontext generiert und an ein lokales LLM (ursprünglich Ollama/phi-3) über defensive Wrapper gesendet, die callable-Objekte, .predict oder .generate unterstützen; (4) die Streamlit-Oberfläche zeigt Ergebnisse auf einer interaktiven Folium-Karte — Marker-Popups enthalten kurze, vom LLM generierte Zusammenfassungen, und die Karte nutzt flyTo / fitBounds zur Animation. Wichtige Technologien: Python 3.11, Streamlit, ChromaDB (persistiert), sentence-transformers (HuggingFace-Modelle), LangChain-Retrieval-Wrapper (defensive Nutzung), Ollama (lokales LLM) oder alternative LLM-Adapter, Folium für Karten, Pandas/GeoPandas für Datenverarbeitung, NumPy, PyTorch (für Embeddings) sowie Standard-Tools (pip, virtualenv). Siehe `geo-rag/README.md` für Einrichtung, Vektor-Erstellung und Screenshot-Platzierung.",
-      },
-      tech: [
-        "Chroma",
-        "sentence-transformers",
-        "Streamlit",
-        "Folium",
-        "Ollama",
-        "Python",
-        "Pandas",
-        "GeoPandas",
-        "PyTorch",
-      ],
-      images: ["/geo-rag/1.png", "/geo-rag/2.png", "/geo-rag/3.png"],
-      link: "geo-rag/README.md",
-    },
-    // 4) Hadj Management System (2024)
-    {
-      title: {
-        en: "Hadj Management System (2024)",
-        fr: "Système de Gestion du Hajj (2024)",
-        de: "Haddsch‑Managementsystem (2024)",
-      },
-      description: {
-        en: "Built a comprehensive web platform to manage logistics for Hajj pilgrims: group selection, travel, and medical scheduling. Centralized database and UI to handle complex relationships (flights, hotels, pilgrim info).",
-        fr: "Conception d'une plateforme web complète pour gérer la logistique des pèlerins : sélection des groupes, voyages et planning médical. Base de données et UI centralisées pour des relations complexes (vols, hôtels, infos pèlerins).",
-        de: "Umfassende Web‑Plattform zur Verwaltung der Logistik für Pilger: Gruppenauswahl, Reisen und medizinische Planung. Zentrale Datenbank und UI für komplexe Beziehungen (Flüge, Hotels, Pilgerdaten).",
-      },
-      tech: ["Web", "Database", "Scheduling"],
-      images: [
-        "https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=1200",
-      ],
-      link: "#",
-    },
-    // 3) (moved/expanded) Hybrid POS & E‑commerce — see enriched entry later in the list
-    // 2) Recognizini (2025)
-    {
-      title: {
-        en: "Recognizini | Real‑Time Facial Recognition System (2025)",
-        fr: "Recognizini | Système de reconnaissance faciale en temps réel (2025)",
-        de: "Recognizini | Echtzeit‑Gesichtserkennungssystem (2025)",
-      },
-      description: {
-        en: "Semi‑supervised face recognition web app (frontend: Next.js) that identifies faces from images/video and learns new identities online. Combines traditional CV with deep models and dimensionality reduction for efficiency.",
-        fr: "Application web de reconnaissance faciale semi‑supervisée (frontend : Next.js) qui identifie des visages à partir d'images/vidéo et apprend de nouvelles identités en ligne. Combine CV traditionnel et modèles profonds avec réduction de dimension pour l'efficacité.",
-        de: "Semi‑überwachte Web‑App zur Gesichtserkennung (Frontend: Next.js), die Gesichter aus Bildern/Video identifiziert und neue Identitäten online lernt. Kombiniert klassische CV‑Methoden mit Deep‑Learning und Dimensionsreduktion für Effizienz.",
-      },
-      details: {
-        en: "Overview: Recognizini implements a semi‑supervised pipeline to improve face recognition using labeled and unlabeled data. Key techniques: (1) PCA for dimensionality reduction to speed up matching while preserving discriminative features; (2) Label Propagation (graph‑based) to spread labels from a small labeled seed set to unlabeled embeddings; (3) an online update flow that ingests user‑confirmed labels to expand the gallery in real time. The system supports real‑time interaction (image / video upload, live labeling), evaluation of models and a performance comparison between CNN+PCA (higher accuracy using 95% variance) and HOG+PCA (faster, 90% variance). Tech stack: Frontend — Next.js, TypeScript, Tailwind CSS; Backend — FastAPI (Python); ML — Python, OpenCV, scikit‑learn (PCA, LabelPropagation), PyTorch for CNN models. Contributions: UI/UX design and frontend implementation (Next.js, Tailwind), integration with the Python backend and model inference endpoints.",
-        fr: "Aperçu : Recognizini met en œuvre un pipeline semi‑supervisé pour améliorer la reconnaissance faciale en utilisant des données étiquetées et non étiquetées. Techniques clés : (1) PCA pour la réduction de dimension afin d'accélérer le matching tout en conservant les caractéristiques discriminantes ; (2) Label Propagation (graphe) pour étendre les étiquettes depuis un petit jeu étiqueté aux embeddings non étiquetés ; (3) un flux de mise à jour en ligne qui intègre les labels confirmés par l'utilisateur pour étendre la galerie en temps réel. Le système prend en charge l'interaction en temps réel (upload d'images/vidéo, étiquetage), l'évaluation des modèles et une comparaison de performances entre CNN+PCA (précision supérieure, 95% variance) et HOG+PCA (plus rapide, 90% variance). Stack : Frontend — Next.js, TypeScript, Tailwind CSS ; Backend — FastAPI (Python) ; ML — Python, OpenCV, scikit‑learn (PCA, LabelPropagation), PyTorch pour les modèles CNN. Contributions : conception UI/UX et implémentation frontend (Next.js, Tailwind), intégration avec le backend Python et les endpoints d'inférence des modèles.",
-        de: "Überblick: Recognizini implementiert eine semi‑überwachte Pipeline zur Verbesserung der Gesichtserkennung mit gelabelten und ungelabelten Daten. Wichtige Techniken: (1) PCA zur Dimensionsreduktion zur Beschleunigung des Matchings bei Erhalt diskriminativer Merkmale; (2) Label Propagation (graphbasiert), um Labels von einer kleinen gelabelten Seed‑Menge auf ungelabelte Embeddings zu übertragen; (3) ein Online‑Update‑Flow, der benutzerbestätigte Labels aufnimmt, um die Galerie in Echtzeit zu erweitern. Das System unterstützt Echtzeit‑Interaktion (Bild/Video‑Upload, Live‑Labeling), Modellbewertung und einen Leistungsvergleich zwischen CNN+PCA (höhere Genauigkeit bei 95% Varianz) und HOG+PCA (schneller, 90% Varianz). Tech‑Stack: Frontend — Next.js, TypeScript, Tailwind CSS; Backend — FastAPI (Python); ML — Python, OpenCV, scikit‑learn (PCA, LabelPropagation), PyTorch für CNN‑Modelle. Beiträge: UI/UX‑Design und Frontend‑Implementierung (Next.js, Tailwind), Integration mit dem Python‑Backend und den Modell‑Inference‑Endpoints.",
-      },
-      tech: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "FastAPI",
-        "Python",
-        "OpenCV",
-        "PCA",
-        "Label Propagation",
-        "PyTorch",
-      ],
+      tech: ["PyTorch", "OpenCV", "FastAPI", "Next.js", "PCA", "Label Propagation", "Python"],
+      imageFolder: "recognizini",
       images: [
         "/recognizini/1.png",
         "/recognizini/2.png",
@@ -427,105 +320,250 @@ export const site = {
       ],
       link: "recognizini/README.md",
     },
-    // Safety Equipment Detection with YOLOv8 (2025)
+
+    // 5) AI Traffic Camera & License Plate Recognition
     {
+      category: "AI",
       title: {
-        en: "Safety Equipment Detection with YOLOv8 (2025)",
-        fr: "Détection d'équipement de sécurité avec YOLOv8 (2025)",
-        de: "Sicherheitsausrüstungserkennung mit YOLOv8 (2025)",
+        en: "AI Traffic Camera & License Plate Recognition",
+        fr: "Caméra de Trafic IA & Reconnaissance de Plaques",
+        de: "KI-Verkehrskamera & Kennzeichenerkennung",
       },
       description: {
-        en: "Real-time safety monitoring system using YOLOv8 to detect safety helmets and reflective jackets in workplace environments, providing instant feedback on missing equipment for each person detected.",
-        fr: "Système de surveillance de sécurité en temps réel utilisant YOLOv8 pour détecter les casques de sécurité et gilets réfléchissants dans les environnements de travail, fournissant un retour instantané sur l'équipement manquant pour chaque personne détectée.",
-        de: "Echtzeit-Sicherheitsüberwachungssystem mit YOLOv8 zur Erkennung von Schutzhelmen und Warnwesten in Arbeitsumgebungen, mit sofortigem Feedback zu fehlender Ausrüstung für jede erkannte Person.",
+        en: "Intelligent monitoring system featuring vehicle detection, tracking, counting, speed estimation via perspective transform, and LPR (EasyOCR).",
+        fr: "Système de surveillance intelligent comprenant la détection de véhicules, le suivi, le comptage et l'estimation de la vitesse.",
+        de: "Intelligentes Überwachungssystem mit Fahrzeugerkennung, Tracking, Zählung und Geschwindigkeitsschätzung.",
       },
-      details: {
-        en: "Project Overview:\n• Computer vision system for workplace safety monitoring\n• Detects persons, safety helmets, and reflective jackets in real-time\n• Provides per-person safety compliance feedback\n• Processes both images and video streams\n\nCore Concepts:\n• Object Detection: YOLOv8 for multi-class detection (person, helmet, jacket)\n• Bounding Box Association: IoU-based matching to associate equipment with persons\n• Real-Time Processing: Frame-by-frame video analysis with live visualization\n• Safety Compliance: Automated detection of missing safety equipment\n• Transfer Learning: Fine-tuning pre-trained YOLOv8 on custom safety dataset\n\nKey Features:\n• Multi-Object Detection: Simultaneous detection of persons and safety equipment\n• Association Logic: Intelligent matching of helmets/jackets to each person using spatial overlap\n• Visual Feedback: Thin borders around detected objects with warning labels for missing equipment\n• Video Processing: Real-time analysis of video feeds with adjustable display size (1280x720)\n• Performance Metrics: Training metrics, sample predictions, and detection accuracy analysis\n\nTraining Pipeline:\n• Dataset: Custom annotated dataset with train/valid/test splits in YOLO format\n• Model: YOLOv8n (nano) for fast inference, trained on 2 classes (Safety-Helmet, Reflective-Jacket)\n• Training: Complete training notebook with visualization of metrics and sample predictions\n• Testing: Dedicated testing notebook for evaluation and performance analysis\n• Output: Annotated images, JSON results, and comprehensive performance reports\n\nTechnologies Used:\n• Framework: (Ultralytics YOLOv8) for object detection\n• Computer Vision: (OpenCV) for video processing and visualization\n• Deep Learning: (PyTorch) with CUDA support for GPU acceleration\n• Data Processing: (NumPy) for numerical operations\n• Notebooks: Jupyter notebooks for training and testing workflows",
-        fr: "Aperçu du projet:\n• Système de vision par ordinateur pour la surveillance de la sécurité au travail\n• Détecte les personnes, casques de sécurité et gilets réfléchissants en temps réel\n• Fournit un retour de conformité de sécurité par personne\n• Traite les images et flux vidéo\n\nConcepts clés:\n• Détection d'objets avec YOLOv8\n• Association de boîtes englobantes basée sur IoU\n• Traitement en temps réel\n• Conformité de sécurité automatisée\n• Transfer Learning sur dataset personnalisé",
-        de: "Projektübersicht:\n• Computer-Vision-System zur Sicherheitsüberwachung am Arbeitsplatz\n• Erkennt Personen, Schutzhelme und Warnwesten in Echtzeit\n• Bietet personenbezogenes Sicherheits-Compliance-Feedback\n• Verarbeitet Bilder und Videostreams\n\nKernkonzepte:\n• Objekterkennung mit YOLOv8\n• IoU-basierte Bounding-Box-Zuordnung\n• Echtzeitverarbeitung\n• Automatisierte Sicherheitskonformität\n• Transfer Learning auf benutzerdefiniertem Datensatz"
-      },
-      tech: [
-        "Python",
-        "YOLOv8",
-        "Ultralytics",
-        "OpenCV",
-        "PyTorch",
-        "CUDA",
-        "NumPy",
-        "Computer Vision",
-        "Object Detection",
-        "Jupyter",
+      tech: ["YOLOv8", "OpenCV", "ByteTrack", "EasyOCR", "PyTorch", "CUDA", "Computer Vision"],
+      images: [
+        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600",
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600",
       ],
+      link: "#",
+    },
+
+    // 6) Safety Equipment Detection with YOLOv8
+    {
+      category: "AI",
+      title: {
+        en: "Safety Equipment Detection with YOLOv8",
+        fr: "Détection d'Équipement de Sécurité avec YOLOv8",
+        de: "Sicherheitsausrüstungserkennung mit YOLOv8",
+      },
+      description: {
+        en: "Workplace monitoring system detecting helmets and reflective jackets in real-time using YOLOv8 with automated per-person compliance feedback.",
+        fr: "Système de surveillance du lieu de travail détectant les casques et les gilets réfléchissants en temps réel.",
+        de: "Arbeitsplatzüberwachungssystem zur Echtzeit-Erkennung von Helmen und Warnwesten.",
+      },
+      tech: ["YOLOv8", "Ultralytics", "OpenCV", "PyTorch", "Python", "Computer Vision"],
       images: [
         "/safety/1.jpeg",
         "/safety/2.png",
         "/safety/3.png",
       ],
-      link: "#",
     },
-    // AI Traffic Camera System (2025)
+
+    // 7) Geo RAG — Map-based RAG Demo
     {
+      category: "AI",
       title: {
-        en: "AI Traffic Camera System (2025)",
-        fr: "Système de caméra de trafic IA (2025)",
-        de: "KI-Verkehrskamera-System (2025)",
+        en: "Geo RAG — Map-based RAG Demo",
+        fr: "Geo RAG — Démo RAG Cartographique",
+        de: "Geo RAG — Kartenbasiertes RAG Demo",
       },
       description: {
-        en: "Comprehensive computer vision system for intelligent traffic monitoring with vehicle detection, tracking, counting, speed estimation, and license plate recognition. Features real-time analysis with perspective transformation for accurate speed calculation.",
-        fr: "Système complet de vision par ordinateur pour la surveillance intelligente du trafic avec détection, suivi, comptage de véhicules, estimation de vitesse et reconnaissance de plaques d'immatriculation. Analyse en temps réel avec transformation de perspective pour un calcul précis de la vitesse.",
-        de: "Umfassendes Computer-Vision-System für intelligente Verkehrsüberwachung mit Fahrzeugerkennung, -verfolgung, -zählung, Geschwindigkeitsschätzung und Kennzeichenerkennung. Echtzeitanalyse mit Perspektivtransformation für präzise Geschwindigkeitsberechnung.",
+        en: "Interactive RAG application integrating Chroma vector search, sentence-transformers, and a local LLM (Ollama) to generate geo-aware summaries on Folium maps.",
+        fr: "Application RAG interactive intégrant la recherche vectorielle Chroma et un LLM local pour générer des résumés géographiques.",
+        de: "Interaktive RAG-Anwendung mit Chroma-Vektorsuche und lokalem LLM zur Generierung kartenbasierter Zusammenfassungen.",
       },
-      details: {
-        en: "Project Overview:\n• Multi-phase intelligent traffic monitoring system\n• Real-time vehicle detection, tracking, and analysis\n• Speed estimation using perspective transformation\n• Optional license plate recognition\n• Comprehensive traffic flow analytics\n\nPhase 1 - Detection, Tracking & Counting:\n• YOLOv8x: State-of-the-art vehicle detection (cars, motorcycles, buses, trucks)\n• ByteTrack: Robust multi-object tracking with unique ID assignment\n• Line Zone Counting: Virtual tripwire for traffic flow analysis\n• Real-time bounding boxes with tracker IDs\n\nPhase 2 - Speed Estimation:\n• Perspective Transformation: Pixel-to-world coordinate mapping using homography matrix\n• Calibration System: User-defined calibration zone with real-world measurements\n• Speed Calculation: Distance traveled over time with frame-based tracking\n• Speed Smoothing: Multi-frame averaging for stable measurements\n• Real-time Display: Speed shown in km/h for each tracked vehicle\n\nPhase 3 - License Plate Recognition:\n• EasyOCR Integration: Deep learning-based text extraction\n• Image Preprocessing: Grayscale conversion, denoising, adaptive thresholding\n• Plate Caching: Per-vehicle plate storage to avoid redundant processing\n• Optional Feature: Enable/disable via configuration\n\nKey Technical Concepts:\n• Homography Matrix: 3×3 transformation matrix for plane-to-plane mapping\n• Perspective Transform: Converting camera view to bird's-eye view coordinates\n• IoU Tracking: Intersection over Union for object association across frames\n• Contrastive Learning: Motion prediction for robust tracking\n• OCR Pipeline: Multi-stage text recognition with confidence scoring\n\nSpeed Calculation Mathematics:\n• Convert pixel coordinates to world coordinates using homography\n• Calculate Euclidean distance: D = √((X₂-X₁)² + (Y₂-Y₁)²) meters\n• Compute speed: Speed = (D / Δt) × 3.6 km/h\n• Apply smoothing over multiple frames for stability\n\nCalibration Process:\n• Define 4-point calibration zone in video frame (pixels)\n• Measure real-world dimensions (width × height in meters)\n• System computes homography matrix automatically\n• Visual feedback with yellow quadrilateral overlay\n\nApplications & Use Cases:\n• Traffic flow monitoring and analysis\n• Speed enforcement and violation detection\n• Vehicle counting for traffic density studies\n• License plate logging for security\n• Multi-camera traffic network analysis\n\nTechnologies Used:\n• Detection: (YOLOv8x) - Ultralytics framework\n• Tracking: (ByteTrack) via supervision library\n• OCR: (EasyOCR) for license plate text extraction\n• Computer Vision: (OpenCV) for video processing and transformations\n• Utilities: (supervision) for detection and tracking tools\n• Data Processing: (NumPy, Pandas) for numerical operations\n• Optimization: Mixed precision training, GPU acceleration with CUDA",
-        fr: "Aperçu du projet:\n• Système de surveillance de trafic intelligent multi-phases\n• Détection, suivi et analyse de véhicules en temps réel\n• Estimation de vitesse par transformation de perspective\n• Reconnaissance de plaques optionnelle\n• Analytique complète du flux de trafic\n\nPhase 1 - Détection, Suivi & Comptage:\n• YOLOv8x pour détection de véhicules\n• ByteTrack pour suivi multi-objets\n• Comptage par ligne virtuelle\n\nPhase 2 - Estimation de Vitesse:\n• Transformation de perspective\n• Système de calibration\n• Calcul de vitesse en km/h\n• Lissage multi-frames\n\nPhase 3 - Reconnaissance de Plaques:\n• Intégration EasyOCR\n• Prétraitement d'images\n• Cache par véhicule",
-        de: "Projektübersicht:\n• Mehrstufiges intelligentes Verkehrsüberwachungssystem\n• Echtzeit-Fahrzeugerkennung, -verfolgung und -analyse\n• Geschwindigkeitsschätzung durch Perspektivtransformation\n• Optionale Kennzeichenerkennung\n• Umfassende Verkehrsflussanalyse\n\nPhase 1 - Erkennung, Verfolgung & Zählung:\n• YOLOv8x für Fahrzeugerkennung\n• ByteTrack für Multi-Objekt-Tracking\n• Linien-Zonen-Zählung\n\nPhase 2 - Geschwindigkeitsschätzung:\n• Perspektivtransformation\n• Kalibrierungssystem\n• Geschwindigkeitsberechnung in km/h\n• Multi-Frame-Glättung\n\nPhase 3 - Kennzeichenerkennung:\n• EasyOCR-Integration\n• Bildvorverarbeitung\n• Fahrzeugbezogener Cache"
+      tech: ["ChromaDB", "LangChain", "Ollama", "Folium", "Streamlit", "Python", "RAG"],
+      images: ["/geo-rag/1.png", "/geo-rag/2.png", "/geo-rag/3.png"],
+    },
+
+    // 8) Mini‑GPT & BERT (Foundational Transformers)
+    {
+      category: "AI",
+      title: {
+        en: "Foundational Transformers: Mini-GPT & BERT",
+        fr: "Transformeurs Fondamentaux : Mini-GPT & BERT",
+        de: "Grundlagen-Transformer: Mini-GPT & BERT",
       },
-      tech: [
-        "Python",
-        "YOLOv8",
-        "Ultralytics",
-        "OpenCV",
-        "ByteTrack",
-        "EasyOCR",
-        "PyTorch",
-        "CUDA",
-        "NumPy",
-        "Pandas",
-        "Computer Vision",
-        "Object Detection",
-        "Object Tracking",
-        "OCR",
-      ],
+      description: {
+        en: "Pure PyTorch implementations of Decoder-only (GPT) and Encoder-only (BERT) architectures from scratch for creative text generation and sentiment analysis.",
+        fr: "Implémentations pures PyTorch des architectures GPT et BERT à partir de zéro.",
+        de: "Reine PyTorch-Implementierungen von GPT- und BERT-Architekturen von Grund auf.",
+      },
+      tech: ["PyTorch", "Transformers", "NLP", "Causal Attention", "MLM", "Python"],
+      imageFolder: "mini-gpt",
       images: [
-        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600" /* traffic monitoring */,
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600" /* city traffic */,
-        "https://images.unsplash.com/photo-1502101872923-d48509bff386?w=1600" /* highway */,
+        "/mini-gpt/mini-gpt-01.png",
+        "/bert-sentiment/bert-sentiment-01.png",
       ],
-      link: "#",
     },
-    // additional details for Hybrid POS & e‑commerce
+
+    // 9) Advanced NLP Optimization (Metaheuristics)
     {
+      category: "AI",
       title: {
-        en: "Hybrid POS & E‑commerce System (2025)",
-        fr: "Système Hybride POS & E‑commerce (2025)",
-        de: "Hybrides POS‑ & E‑Commerce‑System (2025)",
+        en: "Advanced NLP Optimization (Metaheuristics)",
+        fr: "Optimisation NLP Avancée (Métaheuristiques)",
+        de: "Fortgeschrittene NLP-Optimierung (Metaheuristiken)",
       },
       description: {
-        en: "Engineered a desktop POS synchronized with a live e‑commerce website. Designed a hybrid architecture with local (SQLite) and cloud (PostgreSQL) databases for seamless offline/online operation.",
-        fr: "Conception d'un POS desktop synchronisé avec un site e‑commerce. Architecture hybride avec bases locales (SQLite) et cloud (PostgreSQL) pour un fonctionnement hors‑ligne/en ligne.",
-        de: "Desktop‑POS, synchronisiert mit einer Live‑E‑Commerce‑Website. Hybride Architektur mit lokalen (SQLite) und Cloud‑Datenbanken (PostgreSQL) für nahtlosen Offline/Online‑Betrieb.",
+        en: "DistilBERT app with hyperparameter tuning via PSO, GA, and Bayesian optimization. Real‑time convergence dashboards and algorithm comparison.",
+        fr: "Application DistilBERT avec réglage d'hyperparamètres via PSO, GA et optimisation bayésienne.",
+        de: "DistilBERT-App mit Hyperparameter-Tuning per PSO, GA und Bayes-Optimierung.",
       },
-      details: {
-        en: "This POS desktop app integrates with multiple e‑commerce websites (example: Shiakati Store, Celtic Wear, Jet7) for inventory sync, order processing, and customer management. Implemented a background synchronization service that batches local transactions and reconciles with the remote APIs. The architecture supports offline-first operations with conflict resolution strategies and eventual consistency. The project included secure authentication for merchant dashboards and a monitoring suite for synchronization health.",
-        fr: "L'application POS desktop s'intègre à plusieurs sites e‑commerce (ex : Shiakati Store, Celtic Wear, Jet7) pour la synchronisation des stocks, le traitement des commandes et la gestion client. Service de synchronisation en arrière‑plan, batch des transactions locales et réconciliation via APIs distantes. Architecture offline‑first avec stratégies de résolution de conflits et consistance éventuelle. Authentification sécurisée et dashboard de monitoring.",
-        de: "Diese POS‑Desktop‑App integriert sich mit mehreren E‑Commerce‑Websites (z. B. Shiakati Store, Celtic Wear, Jet7) für Inventarsynchronisation, Bestellverarbeitung und Kundenverwaltung. Hintergrund‑Synchronisationsdienst batcht lokale Transaktionen und reconciliert sie mit Remote‑APIs. Offline‑First‑Architektur mit Konfliktlösungsstrategien und eventual consistency. Sichere Authentifizierung und Monitoring‑Dashboard implementiert.",
+      tech: ["FastAPI", "PyTorch", "PSO", "Genetic Algorithm", "Bayesian Optimization", "Next.js"],
+      imageFolder: "advanced-nlp",
+      images: [
+        "/advanced-nlp/Screenshot from 2025-11-21 08-38-13.png",
+        "/advanced-nlp/Screenshot from 2025-11-21 08-38-59.png",
+      ],
+    },
+
+    // --- OTHER SOFTWARE SOLUTIONS ---
+
+    // 10) Tajer: Desktop POS System
+    {
+      category: "Other",
+      title: {
+        en: "Tajer: Professional Desktop POS",
+        fr: "Tajer : POS Desktop Professionnel",
+        de: "Tajer: Professionelles Desktop-POS",
       },
-      tech: ["SQLite", "PostgreSQL", "Desktop", "Web"],
+      description: {
+        en: "A high-performance Electron-based POS application using Node.js and SQLite. Handled product variants, dynamic pricing schemas, and real-time inventory management with secure IPC architecture.",
+        fr: "Application POS haute performance basée sur Electron utilisant Node.js et SQLite. Gestion des variantes de produits et schémas de prix dynamiques.",
+        de: "Hochleistungs-Electron-POS mit Node.js und SQLite. Unterstützung von Produktvarianten und dynamischen Preisschemata.",
+      },
+      tech: ["Electron", "Node.js", "SQLite", "IPC", "JavaScript"],
+      imageFolder: "tajer-pos",
+      images: [
+        "/tajer-pos/tajer-1.png",
+        "/tajer-pos/tajer-2.png",
+        "/tajer-pos/tajer-3.png",
+        "/tajer-pos/tajer-4.png",
+        "/tajer-pos/tajer-5.png",
+        "/tajer-pos/tajer-6.png",
+        "/tajer-pos/tajer-7.png",
+      ],
+      link: "projects/tajer-pos/README.md",
+    },
+
+    // 11) Hybrid POS & E‑commerce Sync
+    {
+      category: "Other",
+      title: {
+        en: "Hybrid POS & E‑commerce Sync",
+        fr: "Sync POS Hybride & E‑commerce",
+        de: "Hybride POS & E‑Commerce Synchronisation",
+      },
+      description: {
+        en: "Enterprise retail solution connecting local stores with online websites. Dual-database architecture (SQLite + PostgreSQL) for 100% offline-online resilience.",
+        fr: "Solution de vente au détail connectant les magasins physiques aux sites web en ligne.",
+        de: "Handelslösung zur Verbindung von Filialen mit Online-Shops.",
+      },
+      tech: ["Python", "PostgreSQL", "SQLite", "API Integration", "Offline-First"],
+      imageFolder: "hybrid-pos",
       images: [
         "/hybrid-pos/hybrid-pos-01.png",
       ],
-      imageFolder: "hybrid-pos",
-      link: "#",
+    },
+
+    // 12) My Sweety: Luxury POS (Flutter)
+    {
+      category: "Other",
+      title: {
+        en: "My Sweety: Luxury POS (Flutter)",
+        fr: "My Sweety : POS de Luxe (Flutter)",
+        de: "My Sweety: Luxus-POS (Flutter)",
+      },
+      description: {
+        en: "High-fidelity POS and inventory management system for sweet shops and artisanal bakeries. Designed with a luxury aesthetic and multi-platform support (Android/Windows).",
+        fr: "Système de gestion de stock et POS haute fidélité pour pâtisseries artisanales.",
+        de: "Hochwertiges POS- und Lagerverwaltungssystem für Konditoreien.",
+      },
+      tech: ["Flutter", "Provider", "Shared Preferences", "Localization", "Windows Desktop"],
+      imageFolder: "my-sweety",
+      images: [
+        "/my-sweety/sweety-1.png",
+        "/my-sweety/sweety-2.png",
+        "/my-sweety/sweety-3.png",
+        "/my-sweety/sweety-4.png",
+        "/my-sweety/sweety-5.png",
+        "/my-sweety/sweety-6.png",
+        "/my-sweety/sweety-7.png",
+      ],
+      link: "projects/my-sweety/README.md",
+    },
+
+    // 13) Hadj Management System
+    {
+      category: "Other",
+      title: {
+        en: "Hadj Management System",
+        fr: "Système de Gestion du Hajj",
+        de: "Haddsch-Managementsystem",
+      },
+      description: {
+        en: "Comprehensive platform to manage logistics, transport, and medical scheduling for pilgrims. Centralized data handling for complex relationships.",
+        fr: "Plateforme complète pour gérer la logistique, le transport et le planning médical des pèlerins.",
+        de: "Umfassende Plattform für Logistik, Transport und medizinische Planung für Pilger.",
+      },
+      tech: ["React", "FastAPI", "PostgreSQL", "Logistics", "Scheduling"],
+      images: [
+        "https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=1200",
+      ],
+    },
+
+    // 14) University Scheduling (NP-Complete Optimization)
+    {
+      category: "Other",
+      title: {
+        en: "University Scheduling Optimization",
+        fr: "Optimisation de l'Emploi du Temps Universitaire",
+        de: "Optimierung der Universitäts-Stundenplanung",
+      },
+      description: {
+        en: "Automated timetabling system solving hard constraint problems using Genetic and Swarm algorithms for conflict-free resource allocation.",
+        fr: "Système automatisé de planification d'examens utilisant des algorithmes d'optimisation.",
+        de: "Automatisiertes Prüfungsplanungssystem mit Optimierungsalgorithmen.",
+      },
+      tech: ["Python", "Genetic Algorithm", "PSO", "ACO", "Simulated Annealing"],
+      imageFolder: "intelligent-scheduling",
+      images: [
+        "/intelligent-scheduling/Screenshot from 2025-11-21 09-45-25.png",
+        "/intelligent-scheduling/Screenshot from 2025-11-21 09-46-38.png",
+      ],
+    },
+
+    // 15) Elydent: Dentist Management Platform
+    {
+      category: "Other",
+      title: {
+        en: "Elydent: Professional Dentist Management",
+        fr: "Elydent : Gestion Dentaire Professionnelle",
+        de: "Elydent: Professionelle Zahnarzt-Verwaltung",
+      },
+      description: {
+        en: "Advanced clinical management platform developed with Next.js, Electron, and SQLite. Features patient charting, appointment scheduling, and automated billing with clinical precision.",
+        fr: "Plateforme de gestion clinique avancée développée avec Next.js, Electron et SQLite. Gestion des dossiers patients et planification des rendez-vous.",
+        de: "Fortgeschrittene klinische Verwaltungsplattform mit Next.js, Electron und SQLite. Patientenverwaltung und Terminplanung.",
+      },
+      tech: ["Next.js", "Electron", "SQLite", "React", "Node.js", "Clinical Management"],
+      imageFolder: "elydent",
+      images: [
+        "/elydent/image_2026-02-10_21-00-22.png",
+        "/elydent/image_2026-02-10_21-01-52.png",
+        "/elydent/image_2026-02-10_21-02-32.png",
+        "/elydent/image_2026-02-10_21-02-41.png",
+        "/elydent/image_2026-02-10_21-02-56.png",
+        "/elydent/image_2026-02-10_21-03-04.png",
+        "/elydent/image_2026-02-10_21-03-14.png",
+        "/elydent/image_2026-02-10_21-53-26.png",
+      ],
+      link: "projects/elydent/README.md",
     },
   ] as Project[],
 };

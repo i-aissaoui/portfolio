@@ -289,80 +289,125 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto'>
-            {site.projects.map((p, i) => {
-              const title = L(p.title, locale);
-              const desc = L(p.description, locale);
-              const shortDesc =
-                desc.length > 150 ? desc.slice(0, 147) + "…" : desc;
-              const image = p.images?.[0] || "/window.svg";
-              return (
-                <article
-                  key={i}
-                  className='project-card group rounded-2xl overflow-hidden bg-[#12002b]/60 border border-[#22104a] hover:border-[#3a1558] backdrop-blur-sm opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:scale-[1.02]'
-                >
-                  <div className='relative h-48 overflow-hidden'>
-                    {image.startsWith("/") ||
-                      image.startsWith("https://images.unsplash.com") ? (
-                      <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className='object-cover transition-transform duration-500 group-hover:scale-110'
-                      />
-                    ) : (
-                      // Fallback for external images not in remotePatterns
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={image}
-                        alt={title}
-                        className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
-                      />
-                    )}
-                    <div className='absolute inset-0 bg-gradient-to-t from-[#12002b] via-[#12002b]/50 to-transparent'></div>
-                  </div>
-
-                  <div className='p-6'>
-                    <h3 className='text-xl font-bold text-white mb-2 group-hover:text-[#a78bfa] transition-colors'>
-                      {title}
-                    </h3>
-                    <p className='text-white/70 text-sm mb-4 line-clamp-2'>
-                      {shortDesc}
-                    </p>
-
-                    <div className='flex flex-wrap gap-2 mb-4'>
-                      {p.tech.slice(0, 4).map((t) => (
-                        <span
-                          key={t}
-                          className='px-2 py-1 text-[10px] font-semibold uppercase rounded-md text-white/90 bg-white/5 border border-white/10'
-                        >
-                          {t}
-                        </span>
-                      ))}
-                      {p.tech.length > 4 && (
-                        <span className='px-2 py-1 text-[10px] font-semibold text-white/60'>
-                          +{p.tech.length - 4}
-                        </span>
+          {/* AI Engineering Projects */}
+          <div className='mb-20'>
+            <div className='flex items-center gap-4 mb-8 max-w-6xl mx-auto'>
+              <h3 className='text-2xl md:text-3xl font-bold text-[#00d9ff]'>
+                {locale === "fr" ? "Projets d'Ingénierie IA" : locale === "de" ? "KI-Engineering Projekte" : "AI Engineering Projects"}
+              </h3>
+              <div className='h-[1px] flex-1 bg-gradient-to-r from-[#00d9ff]/30 to-transparent'></div>
+            </div>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto'>
+              {site.projects.filter(p => p.category === "AI").map((p) => {
+                const i = site.projects.indexOf(p);
+                const title = L(p.title, locale);
+                const desc = L(p.description, locale);
+                const shortDesc = desc.length > 150 ? desc.slice(0, 147) + "…" : desc;
+                const image = p.images?.[0] || "/window.svg";
+                return (
+                  <article
+                    key={i}
+                    className='project-card group rounded-2xl overflow-hidden bg-[#12002b]/60 border border-[#22104a] hover:border-[#00d9ff]/30 backdrop-blur-sm opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:scale-[1.02]'
+                  >
+                    <div className='relative h-48 overflow-hidden'>
+                      {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
+                        <Image
+                          src={image}
+                          alt={title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className='object-cover transition-transform duration-500 group-hover:scale-110'
+                        />
+                      ) : (
+                        <img src={image} alt={title} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110' />
                       )}
+                      <div className='absolute inset-0 bg-gradient-to-t from-[#12002b] via-[#12002b]/50 to-transparent'></div>
                     </div>
 
-                    <button
-                      onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                        openProject(i, e)
-                      }
-                      className='w-full px-4 py-2 rounded-lg bg-[#6332db] text-white text-sm font-semibold hover:bg-[#7848e8] transition-colors shadow-lg hover:shadow-xl'
-                    >
-                      {locale === "fr"
-                        ? "Voir le projet"
-                        : locale === "de"
-                          ? "Projekt ansehen"
-                          : "View Project"}
-                    </button>
-                  </div>
-                </article>
-              );
-            })}
+                    <div className='p-6'>
+                      <div className='flex justify-between items-start mb-2'>
+                        <h3 className='text-xl font-bold text-white group-hover:text-[#00d9ff] transition-colors'>
+                          {title}
+                        </h3>
+                        <span className='px-2 py-0.5 rounded text-[10px] bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/20 font-bold uppercase'>AI/ML</span>
+                      </div>
+                      <p className='text-white/70 text-sm mb-4 line-clamp-2'>
+                        {shortDesc}
+                      </p>
+
+                      <div className='flex flex-wrap gap-2 mb-4'>
+                        {p.tech.slice(0, 4).map((t) => (
+                          <span key={t} className='px-2 py-1 text-[10px] font-semibold uppercase rounded-md text-white/90 bg-white/5 border border-white/10'>{t}</span>
+                        ))}
+                        {p.tech.length > 4 && <span className='px-2 py-1 text-[10px] font-semibold text-white/60'>+{p.tech.length - 4}</span>}
+                      </div>
+
+                      <button
+                        onClick={(e) => openProject(i, e)}
+                        className='w-full px-4 py-2 rounded-lg bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/30 text-sm font-semibold hover:bg-[#00d9ff]/20 transition-all shadow-lg hover:shadow-[#00d9ff]/10'
+                      >
+                        {locale === "fr" ? "Voir le projet" : locale === "de" ? "Projekt ansehen" : "View Project"}
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Other Software Solutions */}
+          <div>
+            <div className='flex items-center gap-4 mb-8 max-w-6xl mx-auto'>
+              <h3 className='text-2xl md:text-3xl font-bold text-white/60'>
+                {locale === "fr" ? "Solutions d'Entreprise" : locale === "de" ? "Unternehmenslösungen" : "Enterprise Solutions"}
+              </h3>
+              <div className='h-[1px] flex-1 bg-gradient-to-r from-white/10 to-transparent'></div>
+            </div>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto'>
+              {site.projects.filter(p => p.category === "Other").map((p) => {
+                const i = site.projects.indexOf(p);
+                const title = L(p.title, locale);
+                const desc = L(p.description, locale);
+                const shortDesc = desc.length > 100 ? desc.slice(0, 97) + "…" : desc;
+                const image = p.images?.[0] || "/window.svg";
+                return (
+                  <article
+                    key={i}
+                    className='project-card group rounded-2xl overflow-hidden bg-white/[0.02] border border-white/5 hover:border-white/20 backdrop-blur-sm opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:scale-[1.02]'
+                  >
+                    <div className='relative h-32 overflow-hidden grayscale group-hover:grayscale-0 transition-all'>
+                      {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
+                        <Image
+                          src={image}
+                          alt={title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className='object-cover'
+                        />
+                      ) : (
+                        <img src={image} alt={title} className='w-full h-full object-cover' />
+                      )}
+                      <div className='absolute inset-0 bg-gradient-to-t from-[#0c001a] to-transparent'></div>
+                    </div>
+
+                    <div className='p-4'>
+                      <h3 className='text-lg font-bold text-white/80 group-hover:text-white transition-colors mb-2'>
+                        {title}
+                      </h3>
+                      <p className='text-white/50 text-xs mb-4 line-clamp-2'>
+                        {shortDesc}
+                      </p>
+                      <button
+                        onClick={(e) => openProject(i, e)}
+                        className='w-full px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white/70 text-xs font-semibold hover:bg-white/10 transition-all'
+                      >
+                        {locale === "fr" ? "Détails" : locale === "de" ? "Details" : "Details"}
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </section>
 
