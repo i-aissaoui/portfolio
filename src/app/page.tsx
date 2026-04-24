@@ -119,25 +119,45 @@ export default function Home() {
                   : "Architecting the next generation of intelligence, from foundational Transformer models to robust enterprise ecosystems. Specializing in Deep Learning, NLP, and high-performance software engineering."}
             </p>
 
-            {/* Glassmorphism CTAs */}
-            <div className='flex flex-wrap items-center gap-6'>
-              <a
-                href='#contact'
-                className='px-10 py-5 bg-[#00d9ff] text-black font-bold rounded-full hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(0,217,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]'
-              >
-                {locale === "fr" ? "Collaborer" : locale === "de" ? "Zusammenarbeiten" : "Let's Collaborate"}
-              </a>
+            <div className='absolute top-0 right-0 w-full h-full lg:w-1/2 lg:h-full opacity-20 lg:opacity-30 pointer-events-none select-none overflow-hidden'>
+              <div className='absolute inset-0 bg-gradient-to-l from-black via-transparent to-transparent z-10'></div>
+              <Image
+                src="/the_mind.png"
+                alt="The Mind"
+                fill
+                className='object-contain object-right transform translate-x-20 scale-110 lg:scale-125'
+              />
+            </div>
 
-              <a
-                href={locale === "fr" ? "/resume_fr.pdf" : locale === "de" ? "/resume_de.pdf" : "/resume_en.pdf"}
-                download
-                className='px-10 py-5 glass-card font-bold rounded-full hover:bg-white/10 transition-all duration-500 flex items-center gap-3 border-white/20'
-              >
-                <span>{locale === "fr" ? "Curriculum Vitae" : locale === "de" ? "Lebenslauf" : "Download Resume"}</span>
-                <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
-                </svg>
-              </a>
+            <div className='relative z-20'>
+              <div className='flex items-center gap-3 mb-6'>
+                <span className='text-[10px] font-bold text-white/30 uppercase tracking-[0.5em] display-font'>NEURAL INTERFACE ACTIVED</span>
+                <div className='h-[1px] w-20 bg-white/10'></div>
+              </div>
+              <h2 className='text-[16vw] font-black text-white leading-none tracking-tighter display-font mb-12 opacity-[0.03] select-none pointer-events-none absolute -top-32 left-0 whitespace-nowrap uppercase'>
+                THE MIND
+              </h2>
+
+              {/* Glassmorphism CTAs */}
+              <div className='flex flex-wrap items-center gap-6'>
+                <a
+                  href='#contact'
+                  className='px-10 py-5 bg-[#00d9ff] text-black font-bold rounded-full hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(0,217,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]'
+                >
+                  {locale === "fr" ? "Collaborer" : locale === "de" ? "Zusammenarbeiten" : "Let's Collaborate"}
+                </a>
+
+                <a
+                  href={locale === "fr" ? "/resume_fr.pdf" : locale === "de" ? "/resume_de.pdf" : "/resume_en.pdf"}
+                  download
+                  className='px-10 py-5 glass-card font-bold rounded-full hover:bg-white/10 transition-all duration-500 flex items-center gap-3 border-white/20'
+                >
+                  <span>{locale === "fr" ? "Curriculum Vitae" : locale === "de" ? "Lebenslauf" : "Download Resume"}</span>
+                  <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -232,7 +252,8 @@ export default function Home() {
                 return (
                   <article
                     key={i}
-                    className='project-card group rounded-2xl overflow-hidden bg-[#12002b]/60 border border-[#22104a] hover:border-[#00d9ff]/30 backdrop-blur-sm opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:scale-[1.02]'
+                    onClick={(e) => openProject(i, e)}
+                    className='project-card group cursor-pointer rounded-3xl overflow-hidden bg-[#0c0c0c]/80 border border-white/5 hover:border-[#00d9ff]/30 backdrop-blur-xl opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,217,255,0.15)] flex flex-col h-full'
                   >
                     <div className='relative h-48 overflow-hidden'>
                       {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
@@ -256,7 +277,7 @@ export default function Home() {
                         </h3>
                         <span className='px-2 py-0.5 rounded text-[10px] bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/20 font-bold uppercase'>AI/ML</span>
                       </div>
-                      <p className='text-white/70 text-sm mb-4 line-clamp-2'>
+                      <p className='text-white/40 text-base md:text-lg mb-6 leading-relaxed font-light line-clamp-3'>
                         {shortDesc}
                       </p>
 
@@ -299,7 +320,7 @@ export default function Home() {
                   <article
                     key={i}
                     onClick={(e) => openProject(i, e)}
-                    className='project-card glass-card group cursor-pointer rounded-3xl overflow-hidden opacity-0 translate-y-6 transition-all duration-700 ease-out flex flex-col h-full hover:border-[#00d9ff]/30'
+                    className='project-card group cursor-pointer rounded-[2.5rem] overflow-hidden bg-[#0c0c0c]/80 border border-white/5 hover:border-[#00d9ff]/30 backdrop-blur-xl opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,217,255,0.15)] flex flex-col h-full'
                   >
                     <div className='relative h-48 overflow-hidden'>
                       {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
@@ -320,7 +341,7 @@ export default function Home() {
                       <h3 className='text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-[#00d9ff] transition-colors display-font'>
                         {title}
                       </h3>
-                      <p className='text-white/50 text-sm leading-relaxed mb-6 line-clamp-2 font-light'>
+                      <p className='text-white/40 text-base md:text-lg mb-6 leading-relaxed font-light line-clamp-3'>
                         {desc}
                       </p>
                       <div className='mt-auto flex flex-wrap gap-2'>
