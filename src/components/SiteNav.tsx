@@ -28,11 +28,9 @@ export default function SiteNav({ locale, onLocaleChange }: SiteNavProps) {
         <div className='flex items-center justify-between h-20'>
           <a
             href="#home"
-            className='text-xl font-bold text-white hover:text-[#00d9ff] transition-colors'
+            className='text-2xl font-bold text-white hover:text-[#00d9ff] transition-colors display-font'
           >
-            <span className='text-[#00d9ff]'>&lt;</span>
-            ismail
-            <span className='text-[#00d9ff]'>/&gt;</span>
+            <span className='text-[#00d9ff]'>.</span>ismail
           </a>
 
           <div className='hidden md:flex items-center gap-8'>
@@ -58,11 +56,10 @@ export default function SiteNav({ locale, onLocaleChange }: SiteNavProps) {
                   key={lang}
                   type='button'
                   onClick={() => onLocaleChange?.(typedLang)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-bold uppercase transition-all ${
-                    isActive
+                  className={`px-3 py-1.5 rounded-md text-xs font-bold uppercase transition-all ${isActive
                       ? "bg-[#00d9ff]/20 text-[#00d9ff] border border-[#00d9ff]/30"
                       : "text-white/60 hover:text-white hover:bg-white/5"
-                  }`}
+                    }`}
                   disabled={!onLocaleChange}
                 >
                   {lang}
