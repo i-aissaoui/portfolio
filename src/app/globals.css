@@ -28,12 +28,12 @@
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-bg: rgba(255, 255, 255, 0.03);
 
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
 
   --radius: 0.5rem;
   --background: var(--bg-obsidian);
-  --foreground: #e5e2e1;
+  --foreground: #ffffff;
 }
 
 html,
@@ -297,4 +297,9 @@ html {
   opacity: var(--glow-intensity, 0);
   pointer-events: none;
   transition: opacity 0.3s ease;
+}
+
+.brain-visual-mask {
+  mask-image: radial-gradient(circle at 60% 50%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 60% 50%, black 20%, transparent 70%);
 }

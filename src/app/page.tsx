@@ -75,38 +75,22 @@ export default function Home() {
 
             {/* Name with Space Grotesk */}
             <h1 className='text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9] display-font'>
-              <span className='block opacity-50 text-4xl md:text-5xl lg:text-6xl mb-2 font-medium tracking-normal'>
+              <span className='block opacity-30 text-4xl md:text-5xl lg:text-7xl mb-2 font-medium tracking-normal'>
                 {locale === "fr" ? "Je suis" : locale === "de" ? "Ich bin" : "I am"}
               </span>
-              <TextType
-                text={L(site.name, locale)}
-                as="span"
-                typingSpeed={100}
-                pauseDuration={2000}
-                showCursor={false}
-                loop={false}
-                className="text-white"
-              />
+              {L(site.name, locale)}
             </h1>
 
             {/* Elite Role */}
             <div className='mb-10'>
               <h2 className='text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight'>
-                <SplitText
-                  text={locale === "fr"
+                <span className='text-[#00d9ff]'>
+                  {locale === "fr"
                     ? "Ingénieur en IA & Full-Stack"
                     : locale === "de"
                       ? "KI & Full-Stack Ingenieur"
                       : "AI & Full-Stack Engineer"}
-                  tag="span"
-                  className="text-[#00d9ff] text-glow-cyan"
-                  delay={50}
-                  duration={0.5}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 20 }}
-                  to={{ opacity: 1, y: 0 }}
-                />
+                </span>
               </h2>
             </div>
 
@@ -119,24 +103,16 @@ export default function Home() {
                   : "Architecting the next generation of intelligence, from foundational Transformer models to robust enterprise ecosystems. Specializing in Deep Learning, NLP, and high-performance software engineering."}
             </p>
 
-            <div className='absolute top-0 right-0 w-full h-full lg:w-1/2 lg:h-full opacity-20 lg:opacity-30 pointer-events-none select-none overflow-hidden'>
-              <div className='absolute inset-0 bg-gradient-to-l from-black via-transparent to-transparent z-10'></div>
+            <div className='absolute top-0 right-0 w-full h-full lg:w-3/5 lg:h-full opacity-60 pointer-events-none select-none overflow-hidden brain-visual-mask'>
               <Image
                 src="/the_mind.png"
-                alt="The Mind"
+                alt="Brain Visual"
                 fill
-                className='object-contain object-right transform translate-x-20 scale-110 lg:scale-125'
+                className='object-cover object-right transform translate-x-20 scale-100'
               />
             </div>
 
             <div className='relative z-20'>
-              <div className='flex items-center gap-3 mb-6'>
-                <span className='text-[10px] font-bold text-white/30 uppercase tracking-[0.5em] display-font'>NEURAL INTERFACE ACTIVED</span>
-                <div className='h-[1px] w-20 bg-white/10'></div>
-              </div>
-              <h2 className='text-[16vw] font-black text-white leading-none tracking-tighter display-font mb-12 opacity-[0.03] select-none pointer-events-none absolute -top-32 left-0 whitespace-nowrap uppercase'>
-                THE MIND
-              </h2>
 
               {/* Glassmorphism CTAs */}
               <div className='flex flex-wrap items-center gap-6'>
