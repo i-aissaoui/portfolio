@@ -167,7 +167,7 @@ export default function ProjectModal({
             className='inline-flex items-center justify-center px-8 py-3 rounded-full text-white/50 hover:text-black hover:bg-[#00d9ff] transition-all border border-white/10 hover:border-[#00d9ff] text-xs font-bold uppercase tracking-[0.2em]'
             onClick={closeWithAnimation}
           >
-            Quit System
+            Close Window
           </button>
         </div>
 

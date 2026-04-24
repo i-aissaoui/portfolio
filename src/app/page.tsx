@@ -65,13 +65,6 @@ export default function Home() {
         {/* Hero Section - Elite AI Engineer Style */}
         <section id='home' className='relative pt-40 pb-24 overflow-hidden'>
           <div className='relative z-10 mx-auto px-6 sm:px-12 lg:px-24'>
-            {/* System Status Indicator */}
-            <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00d9ff]/5 border border-[#00d9ff]/20 mb-8 animate-pulse'>
-              <span className='w-2 h-2 rounded-full bg-[#00d9ff] shadow-[0_0_8px_#00d9ff]'></span>
-              <span className='text-[10px] font-bold uppercase tracking-widest text-[#00d9ff]'>
-                {locale === "fr" ? "Système Actif" : locale === "de" ? "System Aktiv" : "System Active"}
-              </span>
-            </div>
 
             {/* Name with Space Grotesk */}
             <h1 className='text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9] display-font'>
@@ -103,12 +96,12 @@ export default function Home() {
                   : "Architecting the next generation of intelligence, from foundational Transformer models to robust enterprise ecosystems. Specializing in Deep Learning, NLP, and high-performance software engineering."}
             </p>
 
-            <div className='absolute top-0 right-0 w-full h-full lg:w-3/5 lg:h-full opacity-60 pointer-events-none select-none overflow-hidden brain-visual-mask'>
+            <div className='absolute top-0 -right-20 lg:right-0 w-full lg:w-3/5 h-[50vh] lg:h-full opacity-60 pointer-events-none select-none overflow-hidden brain-visual-mask'>
               <Image
                 src="/the_mind.png"
                 alt="Brain Visual"
                 fill
-                className='object-cover object-right transform translate-x-20 scale-100'
+                className='object-contain lg:object-right transform scale-125 lg:scale-110 translate-y-20 lg:translate-y-0 translate-x-10 lg:translate-x-0'
               />
             </div>
 
@@ -480,7 +473,9 @@ export default function Home() {
                 const logoMap: { [key: string]: string } = {
                   'GitHub': 'github.svg',
                   'LinkedIn': 'linkedin.svg',
-                  'Twitter': 'twitter.svg'
+                  'Twitter': 'twitter.svg',
+                  'Instagram': 'instagram.svg',
+                  'WhatsApp': 'whatsapp.svg',
                 };
                 const logoFile = logoMap[s.label] || 'globe.svg';
                 return (
