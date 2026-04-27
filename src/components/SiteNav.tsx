@@ -32,7 +32,7 @@ export default function SiteNav({ locale, onLocaleChange }: SiteNavProps) {
             className='flex items-center gap-3 group'
           >
             <div className='w-10 h-10 rounded-xl bg-[#00d9ff]/10 border border-[#00d9ff]/20 flex items-center justify-center overflow-hidden p-1 group-hover:border-[#00d9ff]/50 transition-all'>
-              <img src="/logo.png" alt="AI Logo" className='w-full h-full object-contain' />
+              <img src="/logo-bg.png" alt="AI Logo" className='w-full h-full object-contain' />
             </div>
             <span className='text-sm font-bold text-white tracking-[0.3em] uppercase hidden md:block'>
               ISMAIL

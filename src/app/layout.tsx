@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   title: "Aissaoui Ismail | AI Engineer",
   description: "Elite AI & Full-Stack Engineer specializing in Deep Learning and Enterprise Architectures.",
   icons: {
-    icon: "/favicon.png",
-    apple: "/logo.png",
+    icon: "/logo-bg.png",
+    apple: "/logo-bg.png",
   }
 };
 

@@ -59,22 +59,22 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='relative w-full text-foreground overflow-x-hidden min-h-screen bg-[#0c0c0c]'>
+    <div className='relative w-full text-foreground overflow-x-hidden min-h-screen'>
       <SiteNav locale={locale} onLocaleChange={(lang) => setLocale(lang)} />
-      <main className='relative z-10 mx-auto w-full max-w-[1920px] px-6 sm:px-8 lg:px-12'>
+      <main className='relative z-10 mx-auto w-full max-w-[1920px]'>
         {/* Hero Section - Elite AI Engineer Style */}
-        <section id='home' className='relative pt-40 pb-24 overflow-hidden bg-grid-slate-900 hero-glow-border'>
+        <section id='home' className='relative pt-40 pb-24 overflow-hidden'>
           {/* Ambient Glows */}
           <div className='absolute top-0 right-0 w-[500px] h-[500px] bg-[#00d9ff]/10 blur-[120px] rounded-full pointer-events-none'></div>
 
           <div className='relative z-10 mx-auto px-6 sm:px-12 lg:px-24'>
 
-            <div className='absolute top-0 right-0 w-full lg:w-1/2 h-full opacity-40 pointer-events-none select-none overflow-hidden brain-visual-mask z-0'>
+            <div className='absolute top-0 right-0 w-full lg:w-3/5 h-full opacity-60 pointer-events-none select-none overflow-hidden brain-visual-mask z-0'>
               <Image
                 src="/the_mind.png"
                 alt="Brain Visual"
                 fill
-                className='object-contain object-right transform translate-x-10 scale-110 lg:scale-125'
+                className='object-contain object-center transform lg:-translate-x-24 scale-110 lg:scale-[1.4]'
               />
             </div>
 
@@ -129,7 +129,7 @@ export default function Home() {
 
         {/* Interactive Expertise Section - MagicBento */}
         <section id='expertise' className='py-32'>
-          <div className='max-w-6xl mx-auto mb-20'>
+          <div className='max-w-6xl mx-auto mb-20 px-6 sm:px-12'>
             <div className='flex items-center gap-4 mb-4'>
               <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
               <span className='text-[#00d9ff] font-bold uppercase tracking-widest text-xs'>
@@ -176,7 +176,7 @@ export default function Home() {
 
         {/* Projects Section - Elite AI Engineer Style */}
         <section id='projects' className='py-32'>
-          <div className='max-w-6xl mx-auto mb-20'>
+          <div className='max-w-6xl mx-auto mb-20 px-6 sm:px-12'>
             <div className='flex items-center gap-4 mb-4'>
               <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
               <span className='text-[#00d9ff] font-bold uppercase tracking-widest text-xs'>

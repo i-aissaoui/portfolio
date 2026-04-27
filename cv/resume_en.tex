@@ -1,0 +1,161 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+
+\definecolor{titleblue}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=titleblue,
+    linkcolor=titleblue,
+    citecolor=titleblue,
+    pdfborder={0 0 0}
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{titleblue}\titlerule]
+
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[4pt]
+    {\Large AI \& Data Science Engineer}\\[6pt]
+
+    {\normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
+    Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
+    Location: Chlef, Algeria \\
+    LinkedIn: \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
+    GitHub: \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    }
+\end{center}
+
+%===========================
+\section{PROFILE}
+AI \& Data Science Engineer specialized in Transformer models, NLP, recommender systems, optimization, computer vision, and MLOps. Builds and deploys end-to-end AI solutions for HR tech, mobility, retail, and education. Strong expertise in model optimization, ML pipelines, and translating technical outcomes into business value.
+
+%===========================
+\section{SKILLS}
+\setlength{\parskip}{-1pt}
+{\normalsize
+\textbf{Programming}: Python, TypeScript, JavaScript, Java, SQL \\
+
+\textbf{ML / DL}: PyTorch, TensorFlow, Keras, Scikit-learn, Lightning, ONNX \\
+
+\textbf{AI Techniques}: Transformers (BERT, GPT, RAG), GNN, GAN, XGBoost, LSTM \\
+
+\textbf{Optimization}: PSO, Genetic Algorithm, ACO, Simulated Annealing, Bayesian Optimization \\
+
+\textbf{Web \& API}: React, Next.js, FastAPI, Node.js, TailwindCSS \\
+
+\textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, DVC, Pandas, NumPy \\
+
+\textbf{Databases}: PostgreSQL, MongoDB, MySQL, Neo4j, Cassandra \\
+
+\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana \\
+
+\textbf{Soft Skills}: Technical leadership, Communication, Stakeholder management
+}
+
+%===========================
+\section{PROFESSIONAL EXPERIENCE}
+\textbf{Network Engineering Intern} \hfill Sep 2024 \\
+Algérie Télécom RMC Center — Chlef, Algeria
+
+%===========================
+\section{EDUCATION}
+\textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
+Engineering and Master’s Degree in Computer Science \\
+Specialization: Artificial Intelligence \& Informatics
+
+%===========================
+\section{KEY ACHIEVEMENTS}
+\begin{itemize}
+    \item Developed custom Transformer models (BERT, GPT, RAG) for real-world multilingual applications.
+    \item Built explainable AI platforms for HR tech and public institutions — reducing bias and improving decision quality.
+    \item Designed a graph-based recommendation system with +24\% accuracy improvement (dataset: 60K profiles).
+    \item Delivered complete ML pipelines: data ingestion, validation, training, CI/CD, and monitoring.
+    \item Built real-time vision systems (YOLO, ByteTrack) reducing latency by 32\%.
+\end{itemize}
+
+%===========================
+% Force projects + languages onto page 2
+\newpage
+
+\section{PROJECTS}
+% tighter spacing so everything fits on page 2
+\setlength{\parskip}{10pt}
+{\small
+
+\textbf{GNN-based Recruiting System (Career Connect)} \hfill 2024--2025 \\
+CV/job matching using graph embeddings and relational learning. \\
+\textit{Tech: PyTorch Geometric, SBERT, FastAPI, PostgreSQL — Concepts: GNN, Similarity, Embeddings}
+
+\textbf{Aura — Enterprise AI Trading System} \hfill 2025 \\
+Full-stack automated crypto trading platform powered by hybrid LSTM forecasting and \textbf{Reinforcement Learning} (Deep Q-Learning) to optimize entry/exit policies under long-term reward maximization. Includes advanced technical indicators, real-time dashboards, and interactive backtesting. \\
+\textit{Tech: TensorFlow, Keras, FastAPI, Next.js, WebSockets — Concepts: LSTM, Reinforcement Learning, Deep Q-Learning, Time-Series Analysis}
+
+\textbf{Advanced NLP Pipeline with Multi-Optimization} \hfill 2025 \\
+Multilingual moderation optimized with PSO, Genetic Algorithm, and Bayesian Optimization. \\
+\textit{Tech: DistilBERT, PyTorch, FastAPI — Concepts: Optimization, Transformers, Classification}
+
+\textbf{Intelligent University Scheduler} \hfill 2025 \\
+Automatic generation of conflict-free timetables using hybrid heuristics and evolutionary algorithms. \\
+\textit{Tech: FastAPI, NumPy, Pandas — Concepts: GA, PSO, ACO, Simulated Annealing}
+
+\textbf{Mini-GPT (Decoder-only)} \hfill 2025 \\
+Implementation of a compact GPT model with controlled training and sequential text generation. \\
+\textit{Tech: PyTorch, CUDA, AdamW, W\&B — Concepts: Transformers, Language Modeling}
+
+\textbf{North African Sentiment BERT} \hfill 2025 \\
+LoRA adaptation of BERT for sentiment analysis in Maghrebi dialect. \\
+\textit{Tech: PyTorch, LoRA, MLflow — Concepts: Fine-tuning, Low-Rank Adaptation}
+
+\textbf{Geo-RAG — Map Assistant} \hfill 2025 \\
+RAG system integrating geospatial data for map-oriented queries. \\
+\textit{Tech: ChromaDB, GeoPandas, Streamlit — Concepts: RAG, Spatial Reasoning}
+
+\textbf{Recognizini — Facial Recognition} \hfill 2025 \\
+Facial recognition with incremental embeddings and an active feedback loop. \\
+\textit{Tech: OpenCV, PyTorch, Redis, FastAPI — Concepts: Embeddings, Drift Management}
+
+\textbf{Real-time PPE Detection (YOLOv8)} \hfill 2025 \\
+Real-time detection of safety equipment (helmet, vest) for compliance monitoring. \\
+\textit{Tech: YOLOv8, OpenCV — Concepts: Object Detection, Streaming}
+
+\textbf{Traffic Analytics Suite} \hfill 2025 \\
+Traffic analytics including tracking, speed estimation, and license plate recognition. \\
+\textit{Tech: YOLOv8, ByteTrack, EasyOCR — Concepts: Tracking, OCR, Analytics}
+
+\textbf{Hadj Management System} \hfill 2024 \\
+End-to-end logistics platform for group management and itineraries. \\
+\textit{Tech: React, FastAPI, PostgreSQL — Concepts: Workflow, Synchronization}
+
+\textbf{Hybrid POS \& E-Commerce System} \hfill 2025 \\
+Offline-first POS system integrated with an online store. \\
+\textit{Tech: PyQt, SQLite, PostgreSQL — Concepts: Offline/Online Sync, Inventory Management}
+
+} % end small
+
+%===========================
+\section{LANGUAGES}
+Arabic: Native \quad|\quad French: Fluent \quad|\quad English: Fluent
+
+\end{document}
