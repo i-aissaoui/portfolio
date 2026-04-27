@@ -433,10 +433,9 @@ export default function Home() {
 
                 <div className='space-y-10'>
                   {[
-                    { label: "Arabic", level: "Fluency", width: "100%" },
-                    { label: "English", level: "Fluency", width: "100%" },
-                    { label: "French", level: "Fluency", width: "100%" },
-                    { label: "German", level: "Intermediate", width: "65%" },
+                    { label: "Arabic", level: "Mother Tongue", width: "100%" },
+                    { label: "English", level: "Advanced", width: "95%" },
+                    { label: "French", level: "Conversational", width: "75%" },
                   ].map((lang) => (
                     <div key={lang.label}>
                       <div className='flex justify-between items-end mb-3'>
@@ -466,13 +465,6 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className='flex flex-col gap-6 md:items-end'>
-                <span className='text-[10px] font-bold uppercase tracking-[0.3em] text-white/30'>Establish Connection</span>
-                <div className='flex flex-col gap-3 md:items-end'>
-                  <a href='mailto:init@ismail.dev' className='text-white hover:text-[#00d9ff] transition-all text-sm font-medium'>init@ismail.dev</a>
-                  <a href='https://github.com/ismail-ai' target='_blank' rel='noopener noreferrer' className='text-white hover:text-[#00d9ff] transition-all text-sm font-medium'>GitHub @ismail-ai</a>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -503,9 +495,12 @@ export default function Home() {
           <div className='flex flex-wrap items-center gap-6 justify-center mb-24'>
             <a
               href={`mailto:${site.email}`}
-              className='px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-[#00d9ff] transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)]'
+              className='p-5 glass-card rounded-full border-[#00d9ff]/20 hover:border-[#00d9ff]/50 transition-all shadow-[0_0_20px_rgba(0,217,255,0.1)]'
+              aria-label="Email"
             >
-              Email Agent
+              <svg className='w-6 h-6 text-[#00d9ff]' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />
+              </svg>
             </a>
             <div className='flex gap-4'>
               {site.socials.map((s) => {

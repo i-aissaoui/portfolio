@@ -77,7 +77,7 @@ export const site = {
       },
       company: "Sonatrach",
       location: "Algeria",
-      period: "2026 (6 Months)",
+      period: "2026",
       description: {
         en: "Developed a Digital Twin for gas turbines to enable real-time monitoring and predictive maintenance. Implemented advanced anomaly detection and RUL (Remaining Useful Life) estimation using deep learning models.",
         fr: "Développement d'un jumeau numérique pour turbines à gaz pour permettre une surveillance en temps réel et une maintenance prédictive. Implémentation d'une détection d'anomalies avancée et estimation de la RUL (durée de vie résiduelle) à l'aide de modèles de deep learning.",
@@ -109,7 +109,7 @@ export const site = {
         fr: "Langues (parlées)",
         de: "Sprachen (gesprochen)",
       },
-      items: ["Arabic (native)", "English (fluent)", "French (fluent)", "German (intermediate)"],
+      items: ["Arabic (Mother Tongue)", "English (Advanced)", "French (Conversational)"],
     },
     {
       key: "prog",
