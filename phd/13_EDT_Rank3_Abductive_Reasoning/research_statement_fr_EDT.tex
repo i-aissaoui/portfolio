@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Projet de Recherche}\\[6pt]
+    {\large Raisonnement Abductif Distribué pour des Jumeaux Numériques Auto-Explicatifs}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Motivation}
+La complexité croissante des Jumeaux Numériques (JN) industriels, intégrant des modèles de deep learning opaques, soulève des défis majeurs en termes de confiance et de diagnostic. Dans des environnements distribués (Edge-Fog-Cloud), il est crucial que le JN puisse non seulement détecter des anomalies, mais aussi expliquer *pourquoi* elles se produisent de manière intelligible pour l'humain. Ce projet de recherche propose d'utiliser le **Raisonnement Abductif** (recherche de la meilleure explication) pour transformer les sorties numériques de modèles haute performance en explications symboliques structurées.
+
+\section{Recherche Actuelle : IA Distribuée et Modèles de Séquences}
+Au cours de ma thèse chez Sonatrach, j'ai développé des architectures de surveillance basées sur \textbf{Mamba-SSM} et \textbf{xLSTM} pour des flottes de turbines. Mon travail s'est concentré sur l'optimisation de l'inférence en périphérie (Edge) pour garantir une réactivité en temps réel. Cette expérience m'a permis de comprendre les limites de l'explicabilité purement numérique (ex: cartes de chaleur ou gradients) dans un contexte opérationnel. Je dispose d'une solide expertise dans la gestion des flux de données entre les niveaux Edge et Cloud, socle nécessaire à une explication distribuée.
+
+\section{Axes de Recherche Proposés}
+En alignement avec les objectifs du programme EDT à l'Université Côte d'Azur, je propose d'investiguer trois axes :
+
+\subsection{1. Abduction Symbolique sur Sorties Neuronales}
+Je prévois de développer une couche de raisonnement symbolique capable d'interpréter les vecteurs de caractéristiques extraits par les modèles de deep learning (ex: Mamba). En utilisant des bases de connaissances métier et des logiques de description, l'objectif est d'inférer les causes probables d'une dérive physique (ex: usure de palier vs erreur capteur) via une recherche abductive.
+
+\subsection{2. Explication Hiérarchique Distribuée}
+L'explication ne doit pas être monolithique. Je propose une approche hiérarchique où les explications de bas niveau (locales, rapides) sont générées au niveau **Edge**, tandis que des explications contextuelles plus globales (flotte, historique long) sont synthétisées au niveau **Cloud**. L'enjeu sera d'assurer la cohérence entre ces différents niveaux d'explication.
+
+\subsection{3. Apprentissage de Règles à partir de Simulations}
+Afin d'enrichir le moteur d'abduction, je souhaite explorer comment utiliser les données de simulation physique pour apprendre automatiquement des règles de causalité. En utilisant le Transport Optimal pour aligner les trajectoires de simulation avec les trajectoires réelles, nous pourrons extraire des patterns explicatifs robustes qui serviront de base au raisonnement symbolique.
+
+\section{Alignement avec le Programme EDT}
+Mon projet contribue à l'axe PC1 (Fondations) en apportant une brique d'IA explicable (XAI) indispensable à l'adoption des jumeaux numériques. Je souhaite intégrer mes travaux à la plateforme **Artemis** pour offrir des services de diagnostic auto-explicatifs aux autres partenaires du consortium.
+
+\section{Conclusion}
+L'objectif de mon doctorat sera de lever le voile sur les boîtes noires des jumeaux numériques. En mariant la puissance prédictive de l'IA connexionniste et la clarté du raisonnement abductif symbolique, j'ambitionne de créer des systèmes de surveillance plus transparents et plus sûrs pour l'industrie 4.0.
+
+\end{document}

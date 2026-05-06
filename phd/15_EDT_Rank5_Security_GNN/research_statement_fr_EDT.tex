@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Projet de Recherche}\\[6pt]
+    {\large Ingénierie de la Sécurité Assistée par l'IA pour les Jumeaux Numériques}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Motivation}
+La multiplication des Jumeaux Numériques (JN) dans les infrastructures critiques accroît la surface d'attaque des systèmes industriels. Garantir la sécurité de ces jumeaux tout au long de leur cycle de vie est un défi majeur, car les modèles de sécurité classiques peinent à suivre l'évolution dynamique des systèmes numériques. Ce projet de recherche propose d'exploiter l'**Apprentissage Automatique (IA)** pour assister l'**Ingénierie Dirigée par les Modèles (MDE)** dans l'injection et la vérification automatique de propriétés de sécurité, créant ainsi des jumeaux numériques nativement résilients.
+
+\section{Recherche Actuelle : Intelligence Relationnelle et GNN}
+Au cours de ma formation et de ma thèse chez Sonatrach, j'ai développé une expertise dans l'utilisation des **Réseaux de Neurones sur Graphes (GNN)** pour modéliser les relations complexes au sein des systèmes industriels. J'ai utilisé ces architectures pour l'extraction de connaissances à partir de sources hétérogènes (Geo-RAG) et pour la détection d'anomalies structurelles. Cette approche « relationnelle » est directement transposable à l'ingénierie de la sécurité, où les vulnérabilités résultent souvent d'interactions non prévues entre composants.
+
+\section{Axes de Recherche Proposés}
+En alignement avec les travaux du CEA List et de l'IRIT, je propose d'explorer trois axes :
+
+\subsection{1. Injection Automatique de Propriétés de Sécurité via les GNN}
+Je prévois d'utiliser les GNN pour analyser les modèles d'architecture des jumeaux numériques et identifier les points de vulnérabilité potentiels. L'objectif est de développer des modèles capables de suggérer ou d'injecter automatiquement des contraintes de sécurité (ex: règles de contrôle d'accès, mécanismes de chiffrement) directement dans le modèle MDE, en fonction du contexte opérationnel.
+
+\subsection{2. Synchronisation Bidirectionnelle de la Sécurité (Round-trip)}
+Un jumeau numérique évolue. Je propose de concevoir un framework de « round-trip engineering » assisté par l'IA qui assure que toute modification de sécurité effectuée au niveau de l'exécution (runtime) est automatiquement répercutée dans le modèle de conception (design), et inversement. L'utilisation de techniques d'alignement de graphes permettra de maintenir la cohérence de la posture de sécurité.
+
+\subsection{3. Inférence de Politiques de Sécurité par Prompting Contextuel}
+J'étudierai comment les techniques de « prompting » appliquées aux modèles de langage ou de graphes peuvent aider les ingénieurs à spécifier des intentions de sécurité de haut niveau. L'IA traduira ces intentions en spécifications formelles intégrables dans le workflow MDE, facilitant ainsi le travail des non-experts en cybersécurité.
+
+\section{Alignement avec le Programme EDT}
+Ce projet s'inscrit dans l'axe PC3 visant à faciliter le développement et l'usage des jumeaux numériques. En automatisant l'ingénierie de la sécurité, je souhaite contribuer à la **plateforme Artemis** en proposant des briques logicielles garantissant la robustesse des jumeaux déployés dans des secteurs sensibles.
+
+\section{Conclusion}
+L'objectif de mon doctorat sera de faire de la sécurité une composante native et automatisée de l'ingénierie des jumeaux numériques. En combinant l'intelligence relationnelle des GNN et la rigueur du MDE, j'ambitionne de fournir les outils nécessaires à la conception de jumeaux numériques capables de s'auto-protéger face aux cybermenaces.
+
+\end{document}

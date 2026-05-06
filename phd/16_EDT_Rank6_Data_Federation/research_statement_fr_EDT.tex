@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Projet de Recherche}\\[6pt]
+    {\large Fédération de Données et de Modèles pour l'Assemblage de Jumeaux Numériques}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Motivation}
+Un Jumeau Numérique (JN) n'est pas un modèle monolithique, mais un assemblage complexe de connaissances provenant de sources hétérogènes (CAO, flux de capteurs, modèles comportementaux, documentation technique). L'un des verrous majeurs de l'ingénierie des JN réside dans la capacité à fédérer ces informations tout en gérant leur évolution temporelle et leur variabilité. Ce projet de recherche propose de développer un cadre de **Fédération d'Informations** permettant de définir et d'assembler des jumeaux numériques de manière cohérente et évolutive.
+
+\section{Recherche Actuelle : Extraction de Connaissances et RAG}
+Dans mes projets récents, notamment « Geo-RAG », j'ai mis en œuvre des techniques de **Génération Augmentée par Récupération (RAG)** pour extraire et synchroniser des connaissances sémantiques à partir de bases de données hétérogènes. Ma thèse chez Sonatrach m'a également permis de manipuler des modèles de substitution intégrant des données multi-physiques. Cette expérience m'a donné une vision claire des défis liés à l'alignement des données et à la gestion de la provenance de l'information dans un contexte industriel.
+
+\section{Axes de Recherche Proposés}
+En alignement avec les objectifs de l'IMT Atlantique et de l'IRISA, je propose d'explorer trois axes :
+
+\subsection{1. Ontologie Unifiée pour la Fédération de Modèles}
+Je prévois de définir une ontologie de haut niveau capable de représenter les différentes facettes d'un jumeau numérique (géométrie, comportement, état). L'objectif est de créer une « couche de fédération » qui permet d'interroger et de manipuler des modèles provenant d'outils de conception différents sans perte de sens sémantique.
+
+\subsection{2. Gestion du Temps et des Variantes dans le Référentiel}
+Le jumeau numérique doit refléter l'historique de son jumeau physique ainsi que les variantes de conception. Je propose d'investiguer des structures de données multidimensionnelles permettant de versionner les modèles et les données de manière synchronisée. L'enjeu est de pouvoir reconstruire l'état exact du jumeau à n'importe quel instant du passé ou de simuler des futurs alternatifs.
+
+\subsection{3. Inférence de Liens de Traçabilité par l'IA}
+Pour faciliter l'assemblage, je souhaite explorer l'utilisation de l'IA (modèles de langage et de graphes) pour inférer automatiquement les liens de traçabilité entre des sources d'information disparates. Par exemple, lier automatiquement une exigence textuelle à une variable spécifique d'un modèle de simulation, assurant ainsi la cohérence globale de l'assemblage du jumeau numérique.
+
+\section{Alignement avec le Programme EDT}
+Ce projet s'inscrit dans l'axe PC2 (Composition et Fédération). En proposant une méthodologie rigoureuse pour l'assemblage des jumeaux numériques, je souhaite contribuer à la **plateforme Artemis** en offrant des outils de gestion de cycle de vie des données et des modèles indispensables au consortium.
+
+\section{Conclusion}
+L'objectif de mon doctorat sera de transformer la construction de jumeaux numériques d'un processus ad-hoc en une ingénierie de fédération systématique. En combinant la puissance sémantique des ontologies et l'agilité de l'IA pour la gestion des données, j'ambitionne de fournir les fondations nécessaires à la création de jumeaux numériques modulaires et pérennes.
+
+\end{document}

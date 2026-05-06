@@ -1,0 +1,75 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=1.5cm,right=1.5cm,top=1.2cm,bottom=1.2cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=titleblue, linkcolor=titleblue}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}{\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}[\color{titleblue}\titlerule]
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=1pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[4pt]
+    {\Large Ingénieur d'État en Intelligence Artificielle \& Data Science}\\[6pt]
+    ismail.aissaoui.pro@gmail.com $|$ +213 660 70 77 96 $|$ Algérie \\
+    \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} $|$ \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app}
+\end{center}
+
+\section{RÉSUMÉ DE RECHERCHE}
+Ingénieur d'État (ESI-SBA) spécialisé dans les \textbf{Jumeaux Numériques}, l'\textbf{Exploration d'Espaces de Conception (DSE)} et l'\textbf{Optimisation Multi-Objectif}. Expert dans la résolution de compromis non-fonctionnels (Énergie, Latence, Précision) pour les systèmes d'IA industriels. Maîtrise des algorithmes métaheuristiques (PSO, GA) pour la configuration automatisée et la synchronisation de systèmes distribués.
+
+\section{FORMATION}
+\textbf{École Nationale Supérieure d'Informatique (ESI-SBA, Algérie)} \hfill 2021 -- 2026 \\
+\textbf{Diplôme d'Ingénieur d'État \& Master en Intelligence Artificielle}
+
+\section{PROJETS CLÉS}
+
+\textbf{Jumeau Numérique co-conçu Matériel-Logiciel — Sonatrach} \hfill 2026 \\
+Optimisation de substituts génératifs pour environnements industriels contraints.
+\begin{itemize}
+    \item Développement d'une architecture hybride \textbf{Mamba-SSM/xLSTM} optimisée pour les CPU Edge.
+    \item Résolution du paradoxe latence-précision avec une inférence de \textbf{0.04ms} via compilation \textbf{C++ JIT}.
+    \item Implémentation de contraintes \textbf{PINN} pour garantir la cohérence physique des simulations.
+\end{itemize}
+
+\textbf{NLP Avancé : Optimisation Métaheuristique de Modèles} \hfill 2025 \\
+Plateforme de réglage automatisé des hyperparamètres et d'exploration d'architectures.
+\begin{itemize}
+    \item Implémentation de l'\textbf{Optimisation par Essaim Particulaire (PSO)} et d'\textbf{Algorithmes Génétiques (GA)} pour explorer l'espace de recherche de DistilBERT.
+    \item Développement de visualisations en temps réel pour la convergence et l'exploration du front de Pareto.
+\end{itemize}
+
+\textbf{Système POS Hybride \& Moteur de Sync E-commerce} \hfill 2025 \\
+Système distribué de classe entreprise avec réconciliation de données en temps réel.
+\begin{itemize}
+    \item Architecture d'une **couche double base de données** (SQLite/PostgreSQL) pour la résilience hors-ligne.
+    \item Développement de microservices de synchronisation gérant la cohérence des stocks multi-boutiques.
+\end{itemize}
+
+\section{COMPÉTENCES TECHNIQUES}
+\begin{itemize}
+    \item \textbf{Architecture} : Pipelines de Jumeaux Numériques, Systèmes Distribués, Electron, Next.js.
+    \item \textbf{Optimisation} : PSO, Algorithmes Génétiques, Optimisation Bayésienne, Optuna.
+    \item \textbf{Génie Logiciel ML} : PyTorch, C++ JIT, Docker, PostgreSQL, SQLite, FAISS.
+    \item \textbf{Systèmes de Données} : Synchronisation en temps réel, Bases de données vectorielles (Chroma).
+\end{itemize}
+
+\section{LANGUES}
+Arabe (Maternel), Anglais (Avancé - Recherche Professionnelle), Français (Courant).
+
+\end{document}

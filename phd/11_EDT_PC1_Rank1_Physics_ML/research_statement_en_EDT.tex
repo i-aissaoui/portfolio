@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\titleformat{\section}{\color{titleblue}\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Research Statement}\\[6pt]
+    {\large Interpretable and Robust Machine Learning for Physics-Based Numerical Simulations}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in AI
+\end{center}
+
+\bigskip
+
+\section{Introduction and Motivation}
+The integration of Machine Learning (ML) into physical sciences has shifted from simple data-fitting to the creation of high-fidelity surrogate models capable of accelerating computationally expensive numerical solvers. However, the adoption of these models in critical industrial Digital Twins is hindered by two primary challenges: the "black-box" nature of deep learning architectures and their fragility when faced with out-of-distribution (OOD) data. This research statement outlines my proposal to address these limitations through advanced statistical methods, ensuring that hybrid physics-data models are both interpretable and robust.
+
+\section{Current Research: Physics-Informed Digital Twins}
+In my current work at Sonatrach, I have developed a generative surrogate model for gas turbine monitoring using \textbf{Mamba-SSM} and \textbf{xLSTM} architectures. The core of my contribution is the design of custom \textbf{Physics-Informed Neural Network (PINN)} loss functions that enforce thermodynamic consistency (e.g., energy conservation, pressure-temperature relationships). This work has demonstrated that while physical constraints improve generalization, they do not inherently provide a measure of model reliability. My experience with these hybrid models has revealed the critical need for \textbf{Uncertainty Quantification (UQ)} to detect when a surrogate is operating outside its domain of validity.
+
+\section{Proposed Research Directions}
+Building upon the objectives of the \textbf{Catalyst (Reliable Hybrid Model Forge)} project, I propose to investigate the following three axes:
+
+\subsection{1. Global Sensitivity Analysis for Neural Surrogates}
+I intend to use Global Sensitivity Analysis (GSA) to identify which input parameters or internal model components (e.g., specific layers or weights) most significantly influence the output in physics-based tasks. By quantifying these influences, we can move towards a "white-box" understanding of how deep learning models emulate physical phenomena, facilitating better alignment with established numerical laws.
+
+\subsection{2. Optimal Transport for Generalization Assessment}
+Generalization in physics-based ML is often a matter of how well the model maps the training distribution to the test distribution. I propose to leverage \textbf{Optimal Transport (OT)} methods to analyze the geometry of learned representations. By measuring the distance between the training manifold and new simulation contexts, we can establish a quantitative threshold for model reuse, preventing catastrophic failures in unseen physical regimes.
+
+\subsection{3. Statistical Depth for Out-of-Distribution Detection}
+To enhance model robustness, I will investigate \textbf{Statistical Depth} metrics. These tools allow for the identification of "central" vs. "outlying" data points in high-dimensional spaces. In the context of a Digital Twin, this means the model will be capable of signaling a "low-confidence" warning when the input physics parameters represent a scenario (e.g., an extreme fault condition) that was not adequately covered during training.
+
+\section{Alignment with the Catalyst Project}
+My background in production-grade PyTorch implementation, combined with my rigorous training in statistics and numerical methods, aligns perfectly with the interdisciplinary nature of the \textbf{EDT program}. I am particularly interested in contributing to the **Artemis platform**, ensuring that the theoretical breakthroughs in interpretability are translated into usable tools for the digital twin community.
+
+\section{Conclusion}
+The goal of my PhD will be to bridge the gap between the predictive power of state-of-the-art ML and the reliability of classical numerical analysis. By developing a framework for interpretable and robust physics-aware AI, I aim to provide the foundational tools necessary for the next generation of trustworthy industrial Digital Twins.
+
+\end{document}

@@ -1,0 +1,47 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+\begin{center}
+    {\huge \textbf{Research Statement}} \\
+    \bigskip
+    {\large \textbf{Ismail AISSAOUI}} \\
+    PhD Application: AI-Native Networking (SYNAPSE Project) \\
+    Oslo University Hospital (OUS)
+\end{center}
+
+\bigskip
+
+\section{Introduction}
+Modern healthcare networks face a critical challenge: the disconnect between distributed AI processes and network infrastructure. The SYNAPSE project’s goal of building an AI-native ecosystem that recognizes clinical urgency in real-time is a vital step toward reliable remote patient monitoring. My research focus is on the bridge between **Structural Intelligence (Graphs)** and **Temporal Dynamics (Sequences)** to ensure mission-critical performance.
+
+\section{Proposed Research Axes}
+I propose to contribute to the SYNAPSE project through the following three technical directions:
+
+\begin{enumerate}[label=\textbf{Axis \arabic*:}]
+    \item \textbf{Semantic Hypergraph Modeling for Urgency Propagation:} Leveraging my background in GNNs to design hypergraph representations that encode not just connectivity, but the "semantic weight" of healthcare alerts. This involves formalizing how urgency propagates across distributed network layers.
+    \item \textbf{Temporal GNNs for Real-Time Network Embeddings:} Integrating architectures like **Mamba-SSM** or **xLSTM** with graph structures to capture the evolving state of network congestion. The goal is to produce unified embeddings that allow the network to "predict" and reroute critical cardiac alerts before congestion occurs.
+    \item \textbf{Distributed MARL Orchestration:} Developing Multi-Agent Reinforcement Learning (MARL) frameworks for cross-layer orchestration. My experience with metaheuristic optimization (PSO/GA) will be used to initialize and regularize the MARL agents, ensuring faster convergence in highly dynamic healthcare scenarios.
+\end{enumerate}
+
+\section{Technical Expertise}
+My background as a State Engineer in AI has provided me with:
+\begin{itemize}
+    \item \textbf{Graph AI:} Proficiency in PyTorch Geometric and DGL for structural modeling.
+    \item \textbf{Optimization:} Expertise in hardware-software co-design to achieve 0.04ms latency for AI on the edge.
+    \item \textbf{Distributed Learning:} Familiarity with federated learning principles for privacy-preserving AI.
+\end{itemize}
+
+\section{Vision}
+By the end of this PhD, I aim to have developed a robust, AI-native middleware that transforms communication networks into intelligent, health-aware ecosystems, capable of saving lives through predictive and prioritized data orchestration.
+
+\end{document}

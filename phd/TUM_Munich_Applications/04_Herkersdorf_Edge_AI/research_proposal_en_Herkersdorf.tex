@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{tumblue}{RGB}{0,101,189}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=tumblue,
+    urlcolor=tumblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{tumblue} Research Proposal Outline}\\[6pt]
+    {\large Efficient HW/SW Co-Design for Linear State Space Models on Industrial Edge Devices}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in Artificial Intelligence
+\end{center}
+
+\bigskip
+
+\section{Introduction}
+The deployment of complex AI models, such as Digital Twins for high-frequency industrial assets, is constrained by the compute and power limits of Edge-AI hardware. While Transformers are the current standard, their quadratic complexity makes them unsuitable for many edge scenarios. I propose a research project to develop an **Efficient HW/SW Co-Design** framework specifically for **State Space Models (SSMs)**, such as Mamba, leveraging their linear scaling properties for ultra-low-latency industrial inference.
+
+\section{Proposed Research Axes}
+
+\subsection{1. Hardware-Aware Quantization of Linear State Spaces}
+The state transition matrices in SSMs are critical for stability and performance. I propose to investigate specialized quantization schemes (Int8/Int4/FP8) that preserve the dynamic properties of the linear recurrence. By identifying the sensitivity of the state space eigenvalues to bit-width reduction, we can develop "Stability-Aware Quantization" that maintains model accuracy for long-range industrial time-series.
+
+\subsection{2. Mapping SSM Scan Operations to Systolic Arrays}
+The core "Selective Scan" operation of Mamba-SSM is highly efficient on GPUs but requires specific mapping to be effective on FPGA or ASIC-based edge accelerators. I aim to research custom dataflows that can map the associative scan of SSMs onto systolic arrays or specialized hardware units, significantly reducing memory bandwidth requirements compared to traditional Attention-based models.
+
+\subsection{3. Distributed Edge-GNN Architecture for Sensor Networks}
+Industrial monitoring involves networks of distributed sensors. I propose to investigate a decentralized hardware architecture for **Graph State Space Models (G-SSMs)**. By partitioning the graph-based computation across multiple low-power edge nodes, we can perform local inference on component clusters while maintaining a global state, reducing the communication overhead to the central cloud.
+
+\section{Alignment with TUM Integrated Systems}
+This proposal aligns with the Chair of Integrated Systems' focus on application-specific AI optimization. I aim to contribute to the development of a unified **Edge-AI Ecosystem for Digital Twins**, validating the proposed hardware-aware SSMs on FPGA-based prototyping platforms (e.g., Zynq UltraScale+) using real-world data from my work at Sonatrach.
+
+\end{document}

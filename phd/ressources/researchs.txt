@@ -1,0 +1,501 @@
+Aller au contenu principal
+User account menu
+Se connecter
+Accueil 
+Décision et Information pour les Systèmes de Production
+Améliorer la performance des systèmes de production de biens et de services
+UR 4570
+EnglishFrançais
+AccueilLaboratoire MembresRéseauxStructuration scientifique Axe Gestion et Optimisation des OpérationsAxe Systèmes d'Information et DonnéesSystèmes applicatifsRésultats PublicationsThèsesProjetsPartenariats Thèses PartenariallesActualitésOffres d'emploiIntranet
+THÈSES EN COURS
+Diyaaeddine CHERQI
+De la simulation multi-échelles de systèmes de production agile à la définition d’un système de Jumeaux Numériques
+Directeur(s): Vincent CHEUTET, Lilia GZARA
+Co-superviseur(s): Yenny PAREDES-ASTUDILLO
+Depuis février 2026
+Malo DESBOIS
+Résilience de réseaux – application au système de réponse aux crises humanitaires
+Directeur(s): Guillaume BOULEUX, Aurélie CHARLES
+Co-superviseur(s): Giacomo KAHN
+Depuis octobre 2025
+Mohcine MANSSOURI
+La confiance dans la génération augmentée par récupération multimodale pour les systèmes industriels complexes
+Directeur(s): Yacine OUZROUT
+Co-superviseur(s): M.-Lounes BENTAHA, Sara BOUGUELIA
+Depuis octobre 2025
+Samah ZEBBOUDJ
+Une approche stochastique pour le maintien en condition opérationnelle des jumeaux numériques
+Directeur(s): Sébastien HENRY, Jannik LAVAL
+Co-superviseur(s): Vital KOMBAYA, Matthieu GUILLOT
+Depuis octobre 2025
+Nour El Houda MEZNI
+Méthodologie pour reconcevoir les chaînes logistiques de batteries basée sur l’analyse de cycle de vie
+Directeur(s): Valérie BOTTA-GENOULAZ
+Co-superviseur(s): Taha ARBAOUI
+Depuis février 2025
+Arthur HEAM
+Planification du transport des personnes à mobilité réduite : Contraintes métier et approche dynamique
+Directeur(s): Samuel VERCRAENE, Thibaud MONTEIRO
+Depuis février 2025
+Brice CENCI
+Algorithme d'optimisation pour minimiser la consommation d'énergie dans un entrepôt automatisé
+Directeur(s): Anne-Laure LADIER
+Depuis janvier 2025
+Hadi TERKI HASSAINE
+Gestion optimisée et intégrée de la production des épurateurs de biogaz
+Directeur(s): Tao WANG
+Co-superviseur(s): Taha ARBAOUI, Sylvain TOUCHARD
+Depuis novembre 2024
+Ferdaous KESSAISSIA
+Interopérabilité adaptative des systèmes d’informations – cas de la filière Biogaz
+Directeur(s): Lilia GZARA, Vincent CHEUTET
+Co-superviseur(s): Linda ELMHADHBI
+Depuis novembre 2024
+Akram LAISSAOUI
+S&OP probabilisé, prise en compte des incertitudes dans le processus de Sales and Operations Planning
+Directeur(s): Khaled HADJ-HAMOU
+Co-superviseur(s): Anne-Laure LADIER
+Depuis novembre 2024
+Joan BESANTE
+Développement de méthodes d’optimisation avancées pour les scénarios électronucléaires
+Directeur(s): Khaled HADJ-HAMOU
+Co-superviseur(s): Matthieu GUILLOT
+Depuis octobre 2024
+Paula Sofía CASTRO ACEVEDO
+Vers la résilience de la chaîne logistique d’épurateurs de biogaz
+Directeur(s): Anne-Laure LADIER
+Co-superviseur(s): Lorraine TRILLING, Yenny PAREDES-ASTUDILLO
+Depuis octobre 2024
+Ismaïl RAMDE
+Optimisation énergétique des électrolyseurs par l’apprentissage automatique : améliorer l’efficacité de la production d’hydrogène
+Directeur(s): Sébastien HENRY, Yacine OUZROUT
+Co-superviseur(s): Vital KOMBAYA
+Depuis octobre 2024
+Bowei HAN
+Approche d’intelligence artificielle explicable (XAI) basée sur la sémantique pour une gestion durable de la chaîne d’approvisionnement
+Directeur(s): Lilia GZARA
+Co-superviseur(s): Linda ELMHADHBI
+Depuis octobre 2024
+Ksenija MILENKOVIC
+Méthodes d’optimisation temps réel pour l'ordonnancement durable basées sur les jumeaux numériques
+Directeur(s): Lilia GZARA
+Depuis octobre 2024
+Tom PERROUX
+Planification de la production dans un atelier deconfection textile avec contraintes d’équilibrage et d’équité
+Directeur(s): Khaled HADJ-HAMOU
+Co-superviseur(s): Taha ARBAOUI
+Depuis septembre 2024
+Tianxiao XU
+Ingénierie des systèmes agiles basée sur des modèles pour l'optimisation multidisciplinaire lors du développement de nouveaux véhicules
+Directeur(s): Néjib MOALLA
+Co-superviseur(s): M.-Lounes BENTAHA
+Depuis mai 2024
+Yasaman KAKAEI SIAKHAL
+Habilitation des patients atteints d’apnée obstructive du sommeil pour un traitement à domicile plus efficace et plus résilient
+Directeur(s): Néjib MOALLA, Tao WANG
+Depuis mars 2024
+Célestine COMMENGE
+Evaluation de la durabilité des chaînes d’approvisionnement courtes dans l’industrie agro-alimentaire
+Directeur(s): Valérie BOTTA-GENOULAZ
+Co-superviseur(s): Anne-Laure LADIER
+Depuis octobre 2023
+Siyu GUO
+Intégration des décisions de localisation et de distribution dans le contexte des soins de santé
+Directeur(s): Thibaud MONTEIRO, Tao WANG
+Depuis octobre 2023
+Randa BENDJEDDOU
+Pré-diagnostique assisté par apprentissage automatique pour la santé dentaire
+Directeur(s): Tao WANG
+Co-superviseur(s): Giacomo KAHN, AICHA SEKHARI SEKLOULI
+Depuis octobre 2023
+Meriem SMATI
+Utilisation des jumeaux numériques pour la résilience d'infrastructure IoT
+Directeur(s): Vincent CHEUTET, Jannik LAVAL
+Depuis octobre 2023
+Jessica FLORENCIA
+Assurer une performance organisationnelle dynamique d’un service d’accueil des urgences en explorant la structure des interactions des agents
+Directeur(s): Vincent CHEUTET
+Co-superviseur(s): Thierry MOYAUX, Lorraine TRILLING, Guillaume BOULEUX
+Depuis septembre 2023
+Nouha JLASSI
+Un Système Multi-Agent pour le pilotage hybride d’un Groupement Hospitalier Territorial – Cas d’une gestion de crise dans le cadre d’une épidémie
+Directeur(s): Yacine OUZROUT
+Co-superviseur(s): Thierry MOYAUX, Guillaume BOULEUX
+Depuis décembre 2022
+THÈSES SOUTENUES
+Jérémie MARCHAND
+Approche systémique du maintien opérationnel des systèmes de machine learning pour la maintenance prédictive dans l'industrie nucléaire
+Directeur(s): Vincent CHEUTET, AICHA SEKHARI SEKLOULI
+Co-responsable(s): Jannik LAVAL
+Soutenue en décembre 2025
+Mengji YANG
+Nonlinear feature selection and hybrid deep learning based architecture for photovoltaic power forecasting
+Directeur(s): Yacine OUZROUT
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en octobre 2025
+Amaratou MAHAMADOU SALEY
+Cadre méthodologique couplant données et connaissances pour la maintenance prédictive en contexte nucléaire
+Directeur(s): Vincent CHEUTET, AICHA SEKHARI SEKLOULI
+Co-responsable(s): Thierry MOYAUX
+Soutenue en juin 2025
+Bilgesu BAYIR
+Evaluation et Amélioration des Performances pour des Circuits Courts Alimentaires Durables : Une Approche basée sur la Simulation
+Directeur(s): Yacine OUZROUT
+Co-responsable(s): Aurélie CHARLES
+Soutenue en décembre 2024
+Xeniya PYSTINA
+Systèmes de Jumeau Numérique pour les systèmes de production : application sur un manufacturing lab
+Directeur(s): Vincent CHEUTET, Lilia GZARA
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en décembre 2024
+Qing LI
+Responsible production in agricultural supply chains: An impact of Information transparency
+Directeur(s): Khaled HADJ-HAMOU
+Co-responsable(s):
+Soutenue en novembre 2024
+Fang WAN
+Multi-criteria optimization for the management of intensive care beds in an epidemic context
+Directeur(s): Tao WANG
+Co-responsable(s): Julien FONDREVELLE
+Soutenue en novembre 2024
+Badreddine TANANE
+AI-based decision-making in mass-customization industry 4.0 environment: Application to Total Manufacturing Quality 4.0
+Directeur(s): Néjib MOALLA
+Co-responsable(s): M.-Lounes BENTAHA, Baudouin DAFFLON
+Soutenue en septembre 2024
+Minh Tam TRAN
+Innovative multichannel models for pricing and inventory decisions considering service level
+Directeur(s): Khaled HADJ-HAMOU, Yacine REKIK
+Co-responsable(s):
+Soutenue en juin 2024
+Adam DÉSORMIÈRE
+Simulation in electronic design: Workshop for Model management & Machine Learning
+Directeur(s): Lilia GZARA
+Co-responsable(s):
+Soutenue en juin 2024
+Jiao ZHAO
+Multi-Objective Optimization in Short and Mid-term Home Health Care Planning
+Directeur(s): Thibaud MONTEIRO
+Co-responsable(s): Tao WANG
+Soutenue en mai 2024
+Boubou Thiam NIANG
+A Model-Driven Engineering and Software Product Line Approach to Support Interoperability in Evolving Systems of Information Systems
+Directeur(s): Jannik LAVAL, Yacine OUZROUT
+Co-responsable(s): Giacomo KAHN
+Soutenue en mars 2024
+Yenny PAREDES-ASTUDILLO
+Personnel scheduling considering learning and forgetting process
+Directeur(s): Valérie BOTTA-GENOULAZ
+Co-responsable(s):
+Soutenue en janvier 2024
+Timothée CHANE-HAI
+Nouvelles variantes et méthodes de résolution pour le problème de transport à la demande, Application au transport d'enfants en situation de handicap
+Directeur(s): Thibaud MONTEIRO
+Co-responsable(s): Samuel VERCRAENE
+Soutenue en décembre 2023
+Alice MARTIN
+Prédiction des parcours sous l’angle médico-économique : une approche basée sur l’intelligence artificielle
+Directeur(s): A. GUINET
+Co-responsable(s): Julien FONDREVELLE
+Soutenue en juillet 2023
+Lijuan REN
+Un cadre de prédiction des maladies liées au mode de vie basé sur l'imputation des valeurs manquantes et la méthode d'empilement d'ensembles
+Directeur(s): Abdelaziz BOURAS, Tao WANG
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en mars 2023
+Siraprapa WATTANAKUL
+Un jumeau numérique pour l’aide à la décision dans un contexte de gestion portuaire avec incertitudes : Une approche à base de connaissances issue de l'apprentissage automatique
+Directeur(s): Yacine OUZROUT
+Co-responsable(s): Sébastien HENRY
+Soutenue en octobre 2022
+Jensen JOYMANGUL
+Une approche centrée patient pour maximiser l’observance d’une thérapie par pression positive continue : conception orientée IA, déploiement et supervision des interventions
+Directeur(s): Néjib MOALLA
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en octobre 2022
+Abir M'BAYA
+A Graph Based End To End Defect Prediction Framework
+Directeur(s): Néjib MOALLA
+Co-responsable(s):
+Soutenue en juillet 2022
+Clément PEALAT
+Modélisation du flux de patients aux urgences liés aux maladies respiratoires par analyse géométrique de séries temporelles
+Directeur(s): Vincent CHEUTET
+Co-responsable(s): Guillaume BOULEUX
+Soutenue en mars 2022
+Faycal Atik TOUZOUT
+Inventory-Routing Problem : Gestion des incertitudes liées à la demande et aux temps de trajets
+Directeur(s): Khaled HADJ-HAMOU
+Co-responsable(s): Anne-Laure LADIER
+Soutenue en octobre 2021
+Paweena SUEBSOMBUT
+Système d'aide à la décision adaptatif pour soutenir l'agriculture dans le nord de la Thaïlande
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en septembre 2021
+Roua ELCHAMAA
+Un système d’aide à la décision basé sur un micro-réseau adaptatif pour la mobilité des hommes, biens et services dans une ville coopérative
+Directeur(s): Yacine OUZROUT
+Co-responsable(s): Baudouin DAFFLON
+Soutenue en décembre 2020
+Mojtaba EBRAHIMI
+Configuration et Organisation dynamique du Système Manufacturier Connecté (SMC) pour un système basé sur l’approche World Class Manufacturing (WCM)
+Directeur(s): Armand BABOLI
+Co-responsable(s): Thierry MOYAUX
+Soutenue en juillet 2020
+Minh Phuoc DOAN
+Problème de constitution et de planification d'équipes de travail : modèles et expérimentations dans le contexte de services aux entreprises
+Directeur(s): Valérie BOTTA-GENOULAZ
+Co-responsable(s): Julien FONDREVELLE
+Soutenue en juillet 2020
+Houssem GASMI
+Gestion de la vulnérabilité de la cyber-sécurité à l’aide de réseaux de neurones LSTM
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): Jannik LAVAL
+Soutenue en juillet 2020
+Abdelhak BELHI
+Préservation Numérique du Patrimoine Culturel : Enrichissement et Reconstruction basés sur les CNNs Multimodaux Hiérarchiques et la Complétion d’Images
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s):
+Soutenue en juillet 2020
+Damrongpol KAMHANGWONG
+Qualité́, sécurité́ et durabilité́ dans la distribution de fruits frais : une étude de cas de fruits frais thaïlandais exportés vers la Chine
+Directeur(s): Yacine OUZROUT
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en juillet 2020
+Ahmadzai AHMADI
+Standardization of Cyber-Physical System for Smart manufacturing
+Directeur(s): Vincent CHEUTET
+Co-responsable(s): Chantal CHERIFI
+Soutenue en mars 2020
+Alnour RIBAULT
+Optimisation de la consommation d’énergie d’un entrepôt frigorifique : une double approche par la recherche opérationnelle et l’apprentissage automatique
+Directeur(s): Yacine OUZROUT
+Co-responsable(s): Samuel VERCRAENE, Sébastien HENRY
+Soutenue en janvier 2020
+Yinling LIU
+Conception et Vérification du Système d'Information Pour la Maintenance Aéronautique
+Directeur(s): Vincent CHEUTET
+Co-responsable(s): Tao WANG
+Soutenue en décembre 2019
+Abdelhadi BELFADEL
+Profil de capacité de l'architecture d'entreprise pour la réutilisation des logiciels
+Directeur(s): Néjib MOALLA
+Co-responsable(s): Chantal CHERIFI
+Soutenue en décembre 2019
+Corentin LE HESRAN
+Réduire les déchets industriels : une approche par l'ordonnancement
+Directeur(s): Valérie BOTTA-GENOULAZ
+Co-responsable(s): Anne-Laure LADIER
+Soutenue en novembre 2019
+Oscar Augusto TELLEZ-SANCHEZ
+Optimisation du transport quotidien des personnes en situation de handicap
+Directeur(s): Thibaud MONTEIRO
+Co-responsable(s): Samuel VERCRAENE
+Soutenue en septembre 2019
+Anderson Fabian MOSQUERA VARELA
+Approche territoriale d'une gestion dynamique et multidimensionnelle du parcours des personnes en situation de handicap au sein d'un réseau de structures médico-sociales
+Directeur(s): Thibaud MONTEIRO
+Co-responsable(s): Lorraine TRILLING
+Soutenue en juillet 2019
+Maël DUGAST
+Géométrie et topologie des processus périodiquement corrélés induit par la dilation: Application à l’étude de la variabilité des épidémies pédiatrique saisonières
+Directeur(s): Eric MARCON
+Co-responsable(s): Guillaume BOULEUX
+Soutenue en décembre 2018
+Tehreem MASOOD
+Prise de décision basée sur les performances dans les architectures orientées services
+Directeur(s): Néjib MOALLA
+Co-responsable(s): Chantal CHERIFI
+Soutenue en octobre 2018
+Houssem BARKAOUI
+Proactivité des systèmes de soins à domicile face à des crises sanitaires
+Directeur(s): A. GUINET
+Co-responsable(s): Tao WANG
+Soutenue en juillet 2018
+Ahmed HEFNAWY
+Modélisation du cycle de vie de l'écosystème de la ville intelligente
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): Chantal CHERIFI
+Soutenue en janvier 2018
+Mohammad RAHIMI
+Optimisation conjointe des flux et des stocks pour la distribution urbaine, dans un contexte dynamique, incertain et respectueux de l'environnement
+Directeur(s): Armand BABOLI
+Co-responsable(s): Yacine REKIK
+Soutenue en juin 2017
+Muhammad NAEEM
+Un modèle dynamique de prise de décision basé sur la performance des processus métiers collaboratifs
+Directeur(s): Abdelaziz BOURAS, Yacine OUZROUT
+Co-responsable(s): Néjib MOALLA
+Soutenue en avril 2017
+Maroua HACHICHA
+Un modèle dynamique de prise de décision basé sur la performance des processus métiers collaboratifs
+Directeur(s): Néjib MOALLA, Yacine OUZROUT
+Co-responsable(s):
+Soutenue en avril 2017
+Umar FAROOQ
+Evaluation de la réputation des produits sur le Web
+Directeur(s): Yacine OUZROUT
+Co-responsable(s):
+Soutenue en janvier 2017
+Geovanny OSORIO-MONTOYA
+Conception des outils pour le suivi des activités et l’aide au pilotage dans le secteur médico-social
+Directeur(s): Thibaud MONTEIRO
+Co-responsable(s): Lorraine TRILLING
+Soutenue en décembre 2015
+Thierno M. L. DIALLO
+Approche de diagnostic des défauts d'un produit par intégration des données de traçabilité unitaire produit/process et des connaissances expertes
+Directeur(s): Yacine OUZROUT
+Co-responsable(s): Sébastien HENRY
+Soutenue en décembre 2015
+Farzad NIAKAN
+Configuration de systèmes de production cellulaires dynamiques et durables
+Directeur(s): Armand BABOLI
+Co-responsable(s): Thierry MOYAUX
+Soutenue en décembre 2015
+Krittiya SAKSRISATHAPORN
+La conception et l’implémentation d’un outil d’aide a la décision multicritères intégrant les concepts de la gestion des connaissances et du cycle de vie : application de la chaîne d'approvisionnement humanitaire
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): Aurélie CHARLES
+Soutenue en septembre 2015
+Sophea CHHUN
+Une architecture d'orchestration dynamique des services pour la réingénérie des processus métiers
+Directeur(s): Yacine OUZROUT
+Co-responsable(s): Néjib MOALLA
+Soutenue en juillet 2015
+Haiqing ZHANG
+Amélioration du cycle de vie des systèmes basée sur l'évaluation de la maturité et l'analyse de la réputation
+Directeur(s): Yacine OUZROUT, Abdelaziz BOURAS
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en juillet 2015
+Xi YU
+Une approche d'amélioration continue pour améliorer la performance environnementale du produit
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en juillet 2015
+Linjie CHEN
+Approche générique pour la prise de décisions multi-niveaux - contribution à la gestion des systèmes de production de soins en réseau
+Directeur(s): Thibaud MONTEIRO
+Co-responsable(s): Tao WANG
+Soutenue en juillet 2015
+Wanying CHEN
+Outils et modèles pour l'organisation de réponses logistiques face aux situations de crise sanitaires
+Directeur(s): A. GUINET
+Co-responsable(s):
+Soutenue en mai 2015
+Fatima BENNOUNA
+Un système unifié pour le management intégré Qualité, Sécurité, Environnement dans les entreprises Marocaines
+Directeur(s):
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en février 2015
+Mansour RACHED
+Evaluation de la valeur du partage d’informations et de ses impacts sur la performance des différents maillons dans des réseaux logistiques
+Directeur(s): Jean-Pierre CAMPAGNE
+Co-responsable(s): Armand BABOLI
+Soutenue en février 2015
+Houssem ABID
+Intégration des systèmes mécatroniques dans les systèmes d'information
+Directeur(s): Jean-Pierre CAMPAGNE
+Co-responsable(s): Didier NOTERMAN
+Soutenue en janvier 2015
+Salinee SANTITEERAKUL
+Système de mesure de la performance des fournisseurs pour la gestion durable de la chaîne logistique : électronique Thaïlandais Industrie
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): AICHA SEKHARI SEKLOULI
+Soutenue en juillet 2014
+Naoufal SEFIANI
+Contribution au développement d’outils et méthodes de pilotage des compétences
+Directeur(s): Jean-Pierre CAMPAGNE
+Co-responsable(s):
+Soutenue en février 2014
+Selma-Afakh KHADER
+Modèles de réapprovisionnement de stocks sous incertitudes et perturbations dans le contexte d'e-détaillant
+Directeur(s): Valérie BOTTA-GENOULAZ, Jean-Pierre CAMPAGNE
+Co-responsable(s): Yacine REKIK
+Soutenue en octobre 2013
+Tasseda BOUKHERROUB
+Intégration des objectifs du développement durable dans la gestion stratégique et tactique de la chaîne logistique
+Directeur(s): A. GUINET
+Co-responsable(s): Julien FONDREVELLE
+Soutenue en septembre 2013
+Zeinab SAZVAR
+Politiques de réapprovisionnement pour les produits périssables dans des conditions incertaines et en considérant des critères environnementaux
+Directeur(s): Jean-Pierre CAMPAGNE
+Co-responsable(s): Armand BABOLI
+Soutenue en juillet 2013
+Yahya PEZESHKI
+Les mécanismes de coordination par les contrats dans les chaînes logistiques
+Directeur(s): Jean-Pierre CAMPAGNE
+Co-responsable(s): Armand BABOLI
+Soutenue en avril 2013
+Muhammad FAHAD
+Ontologies ingénierie du web sémantique par ontologie Fusion et classification
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): Néjib MOALLA
+Soutenue en avril 2013
+Sarra MAMOGHLI
+Alignement des systèmes d’information à base de progiciel, vers une ingénierie dirigée par les modèles centrée identification des risques
+Directeur(s): Valérie BOTTA-GENOULAZ
+Co-responsable(s):
+Soutenue en janvier 2013
+Ali GHODRATNAMA
+Méthode de la localisation des hubs de distribution multi usage avec l'affectation multi objectifs dans l'environnement incertain
+Directeur(s):
+Co-responsable(s): Armand BABOLI
+Soutenue en octobre 2012
+Fei TENG
+MethodoMéthodologie et architecture de préservation des connaissances à long terme - Approche de préservation dynamique et logy and Architecture for Products Long Term Knowledge Preservation : A dynamic preservation approach and a multi-layer architecture
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): Néjib MOALLA
+Soutenue en juin 2012
+Thitiya MANAKITSIRISUTHI
+Proposition d’une architecture de gestion des connaissances pour la fin de vie des produits : application à la Logistique Inverse
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): Yacine OUZROUT
+Soutenue en mars 2012
+Omar SAKKA
+Alignement sémantique de référentiels d'entreprise – application aux systèmes d’exécution de la fabrication (MES)
+Directeur(s): Valérie BOTTA-GENOULAZ
+Co-responsable(s): Pierre-Alain MILLET
+Soutenue en mars 2012
+Anis BEN KHEDHER
+Amélioration de la qualité des données produits échangées entre l'ingénierie et la production à travers l'intégration des systèmes d'information dédiés
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): Sébastien HENRY
+Soutenue en février 2012
+Seyed Mohammad Javad MIRZAPOUR AL E HASHEM
+L'approche stochastique pour la planification multi-objectif de la chaîne logistique
+Directeur(s):
+Co-responsable(s): Armand BABOLI
+Soutenue en septembre 2011
+Mounira TLILI-BEN HAMIDA
+Instrumentation du "transshipment d'urgence" comme mode de coopération pour l'amélioration du pilotage des flux dans les réseaux de distribution
+Directeur(s): Jean-Pierre CAMPAGNE
+Co-responsable(s):
+Soutenue en juillet 2011
+Émilie BAUMANN
+Modèle d’évaluation des performances économique, environnementale et sociale dans les chaînes logistiques
+Directeur(s): Valérie BOTTA-GENOULAZ
+Co-responsable(s):
+Soutenue en mai 2011
+Khaled BAHLOUL
+Optimisation combinée des coûts de transports et de stockage dans un réseau logistique multiniveaux, multiproduits avec demande probabiliste
+Directeur(s): Jean-Pierre CAMPAGNE
+Co-responsable(s): Armand BABOLI
+Soutenue en avril 2011
+Napaporn REEVEERAKUL
+Un système d’aide à la décision pour la réorganisation des chaînes logistiques : une approche basée sur une analyse multicritère et un système de gestion des connaissances
+Directeur(s): Abdelaziz BOURAS
+Co-responsable(s): Yacine OUZROUT
+Soutenue en janvier 2011
+Address
+Bât. Léonard de Vinci, 21 av. Jean Capelle, 69621 Villeurbanne, FRANCE
++33(0)4 72 43 82 19
+Contact     Getting here
+SUPERVISING INSTITUTIONS
+logo insa Lyon couleur
+Université Lumière Lyon 2 logo
+Université Claude Bernard Lyon 1 logo
+Université Jean Monnet Saint-Étienne logo
+Université de Lyon logo
+Propulsé par Drupal

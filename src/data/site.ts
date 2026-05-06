@@ -224,7 +224,32 @@ export const site = {
   projects: [
     // --- MAIN AI ENGINEERING PROJECTS ---
 
-    // 0) Aura AI Trading Ecosystem
+    // 0) Industrial Gas Turbine Digital Twin (Sonatrach)
+    {
+      category: "AI",
+      title: {
+        en: "Industrial Gas Turbine Digital Twin: Generative Surrogate Architecture",
+        fr: "Jumeau Numérique de Turbine à Gaz : Architecture de Substitut Génératif",
+        de: "Industrieller Gasturbinen-Digitalzwilling: Generative Surrogat-Architektur",
+      },
+      description: {
+        en: "Scientifically rigorous Digital Twin for Sonatrach GE LM2500. Features a Generative Mamba-SSM surrogate for 'What-If' scenarios and C++ JIT-compiled xLSTM for edge deployment.",
+        fr: "Jumeau numérique rigoureux pour Sonatrach GE LM2500. Comprend un substitut Mamba-SSM génératif pour les scénarios 'What-If' et xLSTM compilé en C++ JIT pour le déploiement edge.",
+        de: "Wissenschaftlich fundierter digitaler Zwilling für Sonatrach GE LM2500. Mit generativem Mamba-SSM-Surrogat für 'Was-wäre-wenn'-Szenarien und C++ JIT-kompiliertem xLSTM.",
+      },
+      details: {
+        en: "Research Breakthroughs:\n• Hardware-Software Co-Design: 0.04ms edge inference via C++ JIT Compiled xLSTM.\n• Generative Surrogate: Mamba-SSM based 'What-If' simulator for autoregressive failure prediction.\n• Physics-Informed ML: PINN loss functions enforcing thermodynamic monotonicity ($d(RUL)/dt \\le 0$).\n• Desktop Integration: Air-gapped Electron UI with Three.js for real-time 3D component isolation.",
+        fr: "Avancées de recherche :\n• Co-conception Matériel-Logiciel : Inférence edge de 0,04ms via xLSTM compilé en C++ JIT.\n• Substitut Génératif : Simulateur 'What-If' basé sur Mamba-SSM pour la prédiction de défaillance autorégressive.\n• ML Physique : Fonctions de perte PINN imposant la monotonicité thermodynamique.\n• Intégration Desktop : UI Electron air-gapped avec Three.js pour l'isolation 3D des composants.",
+        de: "Forschungshighlights:\n• Hardware-Software Co-Design: 0,04ms Edge-Inferenz über C++ JIT-kompiliertes xLSTM.\n• Generatives Surrogat: Mamba-SSM-basierter 'Was-wäre-wenn'-Simulator.\n• Physik-Informatik ML: PINN-Loss-Funktionen zur Durchsetzung der thermodynamischen Monotonie.\n• Desktop-Integration: Air-gapped Electron UI mit Three.js für 3D-Komponentenisolierung.",
+      },
+      tech: ["Mamba-SSM", "xLSTM", "PyTorch", "C++ JIT", "Electron", "Three.js", "Koopman Theory", "PINN"],
+      images: [
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600"
+      ],
+      link: "sonatrach/README.md",
+    },
+
+    // 1) Aura AI Trading Ecosystem
     {
       category: "AI",
       title: {
@@ -462,6 +487,27 @@ export const site = {
       ],
     },
 
+    // 10) University Scheduling (NP-Complete Optimization)
+    {
+      category: "AI",
+      title: {
+        en: "University Scheduling Optimization",
+        fr: "Optimisation de l'Emploi du Temps Universitaire",
+        de: "Optimierung der Universitäts-Stundenplanung",
+      },
+      description: {
+        en: "Automated timetabling system solving hard constraint problems using Genetic and Swarm algorithms for conflict-free resource allocation.",
+        fr: "Système automatisé de planification d'examens utilisant des algorithmes d'optimisation (Génétique, PSO).",
+        de: "Automatisiertes Prüfungsplanungssystem mit Optimierungsalgorithmen.",
+      },
+      tech: ["Python", "Genetic Algorithm", "PSO", "ACO", "Simulated Annealing"],
+      imageFolder: "intelligent-scheduling",
+      images: [
+        "/intelligent-scheduling/Screenshot from 2025-11-21 09-45-25.png",
+        "/intelligent-scheduling/Screenshot from 2025-11-21 09-46-38.png",
+      ],
+    },
+
     // --- OTHER SOFTWARE SOLUTIONS ---
 
     // 10) Tajer: Desktop POS System
@@ -557,26 +603,6 @@ export const site = {
       ],
     },
 
-    // 14) University Scheduling (NP-Complete Optimization)
-    {
-      category: "Other",
-      title: {
-        en: "University Scheduling Optimization",
-        fr: "Optimisation de l'Emploi du Temps Universitaire",
-        de: "Optimierung der Universitäts-Stundenplanung",
-      },
-      description: {
-        en: "Automated timetabling system solving hard constraint problems using Genetic and Swarm algorithms for conflict-free resource allocation.",
-        fr: "Système automatisé de planification d'examens utilisant des algorithmes d'optimisation.",
-        de: "Automatisiertes Prüfungsplanungssystem mit Optimierungsalgorithmen.",
-      },
-      tech: ["Python", "Genetic Algorithm", "PSO", "ACO", "Simulated Annealing"],
-      imageFolder: "intelligent-scheduling",
-      images: [
-        "/intelligent-scheduling/Screenshot from 2025-11-21 09-45-25.png",
-        "/intelligent-scheduling/Screenshot from 2025-11-21 09-46-38.png",
-      ],
-    },
 
     // 15) Elydent: Dentist Management Platform
     {

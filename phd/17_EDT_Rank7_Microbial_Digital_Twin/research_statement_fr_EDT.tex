@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Projet de Recherche}\\[6pt]
+    {\large Jumeaux Numériques Hybrides Compositionnels pour les Écosystèmes Microbiens}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Motivation}
+Les systèmes alimentaires fermentés sont des écosystèmes microbiens complexes caractérisés par des interactions non linéaires et évolutives entre les espèces et leur environnement. La modélisation prédictive de ces systèmes est essentielle pour l'innovation et la sécurité alimentaire, mais elle est difficile à capturer via un paradigme unique. Ce projet de recherche propose un cadre de **Jumeau Numérique Hybride Compositionnel** qui intègre systématiquement des modèles écologiques mécanistes (ex: modèles consommateur-ressource) avec des substituts d'apprentissage automatique, permettant une simulation flexible et scalable des écosystèmes biologiques.
+
+\section{Recherche Actuelle : Modélisation Hybride Physique-Données}
+Dans mes travaux actuels chez Sonatrach, j'ai développé un **Jumeau Numérique informé par la physique** pour la surveillance de turbines à gaz. Ma recherche se concentre sur l'hybridation de lois physiques mécanistes (thermodynamique) avec des architectures basées sur les données (\textbf{Mamba-SSM}, \textbf{xLSTM}). J'ai implémenté des fonctions de perte **PINN** personnalisées qui imposent la cohérence physique. Cette expérience m'a donné une compréhension profonde de la manière de mélanger des équations de « premiers principes » avec des dynamiques observées partiellement comprises—un défi directement pertinent pour modéliser les interactions au sein des communautés microbiennes.
+
+\section{Axes de Recherche Proposés}
+En alignement avec les objectifs du projet à l'INRAE et à l'Inria, je propose d'explorer trois axes dans le contexte des écosystèmes de fermentation :
+
+\subsection{1. Opérateurs de Hybridation Composables}
+Je prévois d'investiguer des opérateurs formels de composition de modèles permettant l'intégration systématique de modèles écologiques mécanistes et de composants de machine learning. En concevant des opérateurs bien définis, nous pourrons apprendre des corrections aux dynamiques biologiques partiellement spécifiées ou inférer des processus microbiens latents à partir d'observations expérimentales incomplètes.
+
+\subsection{2. Patterns de Modélisation Hybride Réutilisables}
+Le cœur de ma recherche portera sur la définition de patterns réutilisables pour l'hybridation microbienne (ex: remplacement par substitut, apprentissage de résidus, commutation multi-fidélité). Ces patterns permettront une approche « modulaire » de la construction du jumeau numérique, où les stratégies de modélisation peuvent être adaptées à mesure que de nouvelles connaissances biologiques ou de nouveaux jeux de données deviennent disponibles.
+
+\subsection{3. Mélange Multi-Fidélité de Modèles}
+Je propose d'étudier des mécanismes de commutation adaptative entre des modèles de complexités différentes, tels que les modèles consommateur-ressource, les dynamiques de Lotka-Volterra et les substituts neuronaux. En m'appuyant sur mon expérience en quantification de l'incertitude, je viserai à ce que le jumeau numérique sélectionne automatiquement la fidélité de modélisation la plus appropriée en fonction des données disponibles et de la précision requise.
+
+\section{Alignement avec le Programme EDT}
+Mon expertise en modélisation hybride et en implémentation industrielle s'aligne avec l'objectif de créer une infrastructure nationale pour l'ingénierie des jumeaux numériques. Je souhaite contribuer à la **plateforme Artemis** en proposant une couche de modélisation compositionnelle capable de gérer les défis uniques des jumeaux numériques biologiques et microbiens.
+
+\section{Conclusion}
+L'objectif de mon doctorat sera de faire passer les jumeaux numériques biologiques de simulations ad-hoc à un cadre hybride compositionnel rigoureux. En jetant des ponts entre la biologie computationnelle, la modélisation écologique et l'apprentissage automatique, j'ambitionne de fournir les outils fondamentaux nécessaires à la prochaine génération de jumeaux numériques microbiens fiables et scalables.
+
+\end{document}

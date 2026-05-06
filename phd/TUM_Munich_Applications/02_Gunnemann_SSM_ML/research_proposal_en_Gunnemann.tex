@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{tumblue}{RGB}{0,101,189}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=tumblue,
+    urlcolor=tumblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{tumblue} Research Proposal Outline}\\[6pt]
+    {\large Robust Spatial-Temporal Fusion: Graph-State Space Models (G-SSM)}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in Artificial Intelligence
+\end{center}
+
+\bigskip
+
+\section{Introduction}
+Modern machine learning for complex systems (Climate, Industry, Finance) requires models that can capture both intricate spatial dependencies and long-range temporal dynamics. While Transformers and standard GNNs are the current baseline, they face significant scaling and robustness issues. I propose to investigate a novel fusion of **Graph Neural Networks (GNNs)** and **State Space Models (SSMs)**, creating a **"Graph-State Space Model" (G-SSM)** framework designed for robust, multi-scale spatial-temporal forecasting.
+
+\section{Proposed Research Axes}
+
+\subsection{1. Graph-Integrated State Space Transitions}
+Existing SSMs (like Mamba) operate on 1D sequences. I propose to generalize the SSM state transition matrix $A$ to be a function of the graph topology. By integrating graph-convolutional operators into the state space recurrence, we can capture how latent states "flow" across a network (e.g., thermal propagation in a gas turbine or weather patterns across a grid).
+
+\subsection{2. Robustness to Noisy and Incomplete Graphs}
+A major challenge in GNNs is sensitivity to edge noise or missing data. I intend to explore how the inherent stability properties of linear state space systems can be used to regularize graph-based embeddings. By treating the graph-state evolution as a dynamical system, we can apply control-theoretic stability constraints to ensure robust inference even when the underlying graph is partially corrupted.
+
+\subsection{3. Probabilistic G-SSMs for Uncertainty Quantification}
+For high-stakes applications, point estimates are insufficient. I propose to develop probabilistic versions of the G-SSM that provide calibrated **Uncertainty Quantification (UQ)**. Building on my work with hybrid modeling at Sonatrach, I will investigate how domain-priors can be used to bound the uncertainty of the graph-state transitions, particularly in the "tails" of the distribution where extreme events occur.
+
+\section{Alignment with TUM CIT}
+This research aligns with the Data Analytics and ML group's focus on robust and theoretically sound graph learning. I aim to validate these G-SSM architectures on large-scale datasets (Sensor networks, Climate grids), contributing to the development of next-generation foundational models for complex spatial-temporal systems.
+
+\end{document}

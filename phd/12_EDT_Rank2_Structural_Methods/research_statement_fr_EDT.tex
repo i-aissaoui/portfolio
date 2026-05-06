@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Projet de Recherche}\\[6pt]
+    {\large Méthodes Structurelles pour le Diagnostic et l'Ingénierie de Jumeaux Numériques Mixtes}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Motivation}
+La conception de Jumeaux Numériques (JN) pour des systèmes physiques complexes nécessite une intégration rigoureuse entre les modèles mécanistes (fondés sur des équations algébro-différentielles - DAE) et les approches basées sur les données. Un défi majeur réside dans la capacité à diagnostiquer les incohérences entre le modèle et la réalité physique, ainsi qu'à isoler les capteurs ou composants défaillants. Ce projet de recherche propose de lever ces verrous en utilisant l'**Analyse Structurelle** couplée à l'**Apprentissage sur Graphes (GNN)**, permettant une ingénierie de jumeaux numériques à la fois robuste et explicable.
+
+\section{Recherche Actuelle : Modélisation Hybride et GNN}
+Dans mes travaux actuels chez Sonatrach, j'ai développé des modèles de substitution pour des systèmes thermomécaniques (turbines à gaz). Ma recherche se concentre sur l'utilisation des architectures \textbf{Mamba-SSM} et \textbf{xLSTM} pour capturer les dynamiques temporelles complexes. Parallèlement, j'ai exploré l'utilisation des \textbf{Graph Neural Networks (GNN)} pour représenter la topologie des systèmes industriels et propager les contraintes physiques. Cette double expertise me permet d'appréhender les systèmes non pas comme des boîtes noires, mais comme des structures organisées régies par des lois physiques.
+
+\section{Axes de Recherche Proposés}
+En alignement avec les objectifs de l'équipe-projet à l'Inria Rennes, je propose d'explorer trois axes :
+
+\subsection{1. Analyse Structurelle et GNN pour le Diagnostic}
+Je prévois d'investiguer l'utilisation des graphes de causalité et des méthodes de décomposition structurelle (ex: décomposition de Dulmage-Mendelsohn) pour guider l'architecture des GNN. L'objectif est de contraindre l'apprentissage neuronal par la structure du système DAE, permettant d'identifier plus efficacement les sous-systèmes minimalement surdéterminés (MSO) et d'améliorer la précision du diagnostic de pannes.
+
+\subsection{2. Apprentissage de Résidus Localisés}
+Le « fossé de réalité » entre un modèle physique et les données observées est souvent localisé. Je propose de développer des modèles hybrides où le GNN apprend à corriger les résidus du modèle DAE de manière localisée sur la structure du graphe. Cette approche permettra d'affiner le jumeau numérique là où la connaissance physique est incomplète ou incertaine.
+
+\subsection{3. Inférence de Graphes pour Systèmes Inconnus}
+Dans certains contextes, la structure exacte du système physique n'est que partiellement connue. Je souhaite explorer des techniques d'**Apprentissage de Structure** pour inférer les dépendances manquantes entre variables à partir des données de simulation et d'observation. L'utilisation du Transport Optimal pourrait ici aider à aligner la structure apprise avec les propriétés géométriques attendues du système physique.
+
+\section{Alignement avec le Programme EDT}
+Mon projet s'inscrit directement dans l'axe PC1 du programme EDT visant à renforcer les fondations des jumeaux numériques. Je suis impatient de contribuer à la plateforme **Artemis** en proposant des modules de diagnostic structurel innovants, exploitant la puissance du deep learning tout en garantissant une cohérence avec les modèles mécanistes classiques.
+
+\section{Conclusion}
+L'objectif de mon doctorat sera de proposer une méthodologie unifiée pour l'ingénierie de jumeaux numériques mixtes. En combinant l'analyse structurelle formelle et l'apprentissage automatique sur graphes, j'ambitionne de créer des systèmes de surveillance plus fiables et plus faciles à maintenir pour les infrastructures industrielles de demain.
+
+\end{document}

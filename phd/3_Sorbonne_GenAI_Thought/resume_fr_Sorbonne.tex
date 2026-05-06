@@ -1,0 +1,162 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=titleblue,
+    linkcolor=titleblue,
+    citecolor=titleblue,
+    pdfborder={0 0 0}
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{titleblue}\titlerule]
+
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[4pt]
+    {\Large Ingénieur IA \& Data Science}\\[6pt]
+
+    {\normalsize
+    Email : \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
+    Tél : +213 660 70 77 96 \\
+    Portfolio : \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
+    Localisation : Chlef, Algérie \\
+    LinkedIn : \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
+    GitHub : \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    }
+\end{center}
+
+%===========================
+\section{RÉSUMÉ PROFESSIONNEL}
+Ingénieur IA \& Data Science spécialisé dans les architectures LLM, le RAG et les systèmes de soutien cognitif. Passionné par l'interaction humain-IA et la conception de systèmes génératifs visant à étendre le raisonnement humain plutôt qu'à s'y substituer. Expert en déploiement de modèles de langage (Transformers) et en ingénierie de prompt avancée pour le soutien à la pensée critique.
+
+%===========================
+\section{COMPÉTENCES}
+\setlength{\parskip}{-1pt}
+{\normalsize
+\textbf{Programmation}: Python, TypeScript, JavaScript, Java, SQL \\
+
+\textbf{ML / DL}: PyTorch, TensorFlow, Keras, Scikit-learn, Lightning, \textbf{Fine-tuning (LoRA/QLoRA)} \\
+
+\textbf{Techniques IA}: LLMs (GPT, Llama), RAG, \textbf{Multi-Agent Systems}, \textbf{Chain-of-Thought Reasoning}, GNN \\
+
+\textbf{Optimisation}: PSO, Algorithme génétique, ACO, Recuit simulé, Optimisation bayésienne \\
+
+\textbf{Web \& API}: React, Next.js, FastAPI, Node.js, TailwindCSS \\
+
+\textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, DVC, Pandas, NumPy \\
+
+\textbf{Bases de données}: PostgreSQL, MongoDB, MySQL, Neo4j, Cassandra \\
+
+\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana \\
+
+\textbf{Soft Skills}: Leadership technique, Communication, Gestion des parties prenantes
+}
+
+%===========================
+\section{EXPÉRIENCE PROFESSIONNELLE}
+\textbf{Stagiaire Ingénieur IA — Jumeau Numérique \& Maintenance Prédictive} \hfill 2026 \\
+Sonatrach — Algérie \\
+Développement d’un jumeau numérique pour turbines à gaz permettant une surveillance en temps réel et une maintenance prédictive. Implémentation d’une détection d’anomalies avancée et estimation de la RUL à l’aide de modèles de deep learning.
+
+\textbf{Stagiaire en ingénierie réseau} \hfill Sep 2024 \\
+Algérie Télécom RMC Center — Chlef, Algérie
+
+%===========================
+\section{FORMATION}
+\textbf{École Nationale Supérieure d’Informatique (ESI-SBA)} \hfill 2021--2026 \\
+Diplôme d’ingénieur et master en informatique \\
+Spécialisation : Intelligence Artificielle \& Informatique
+
+%===========================
+\section{RÉALISATIONS CLÉS}
+\begin{itemize}
+    \item Développement de modèles Transformer (BERT, GPT, RAG) pour des applications multilingues réelles.
+    \item Conception de plateformes d’IA explicable pour la HR tech et les institutions publiques.
+    \item Système de recommandation basé sur graphes avec +24\% de précision (60\,000 profils).
+    \item Pipelines ML complets : ingestion, validation, entraînement, CI/CD et monitoring.
+    \item Vision temps réel (YOLO, ByteTrack) réduisant la latence de 32\%.
+\end{itemize}
+
+\newpage
+
+%===========================
+\section{PROJETS}
+\setlength{\parskip}{13pt}
+{\small
+
+\textbf{Geo-RAG — Assistant Cognitif Cartographique} \hfill 2025 \\
+Développement d'un système RAG visant à soutenir le raisonnement spatial et la découverte de connaissances géospatiales. Utilisation de l'IA pour augmenter l'analyse plutôt que d'automatiser la décision. \\
+\textit{Tech : ChromaDB, LangChain, OpenAI — Concepts : RAG, Cognitive Support, Raisonnement spatial}
+
+\textbf{Mini-GPT \& Architecture Transformer} \hfill 2025 \\
+Implémentation d'un modèle GPT compact pour l'étude des mécanismes d'attention. Analyse de la manière dont les modèles génératifs encodent et restituent les structures de pensée. \\
+\textit{Tech : PyTorch, CUDA, AdamW — Concepts : Transformers, Language Modeling, Latent Space}
+
+\textbf{Pipeline NLP avancé multi-optimisation} \hfill 2025 \\
+Modération multilingue optimisée via PSO, algorithme génétique et optimisation bayésienne. \\
+\textit{Tech : DistilBERT, PyTorch, FastAPI — Concepts : Optimisation, Transformers, Classification}
+
+\textbf{Planificateur universitaire intelligent} \hfill 2025 \\
+Génération automatique d’emplois du temps sans conflits à l’aide d’heuristiques hybrides. \\
+\textit{Tech : FastAPI, NumPy, Pandas — Concepts : GA, PSO, ACO, Recuit simulé}
+
+\textbf{Mini-GPT (Decoder-only)} \hfill 2025 \\
+Implémentation d’un GPT compact avec entraînement contrôlé et génération séquentielle. \\
+\textit{Tech : PyTorch, CUDA, AdamW, W\&B — Concepts : Transformers, Language Modeling}
+
+\textbf{North African Sentiment BERT} \hfill 2025 \\
+Adaptation LoRA de BERT pour l’analyse de sentiment en dialecte maghrébin. \\
+\textit{Tech : PyTorch, LoRA, MLflow — Concepts : Fine-tuning, Low-Rank Adaptation}
+
+\textbf{Geo-RAG — Assistant cartographique} \hfill 2025 \\
+Système RAG intégrant des données géospatiales pour répondre à des requêtes cartographiques. \\
+\textit{Tech : ChromaDB, GeoPandas, Streamlit — Concepts : RAG, Raisonnement spatial}
+
+\textbf{Recognizini — Reconnaissance faciale} \hfill 2025 \\
+Reconnaissance faciale avec embeddings incrémentaux et boucle de feedback actif. \\
+\textit{Tech : OpenCV, PyTorch, Redis, FastAPI — Concepts : Embeddings, Drift Management}
+
+\textbf{Recognizini — IA Interactive \& Feedback} \hfill 2025 \\
+Système de reconnaissance faciale avec boucle de feedback actif, plaçant l'humain au centre de l'apprentissage du modèle pour préserver l'autonomie et le contrôle. \\
+\textit{Tech : OpenCV, PyTorch, FastAPI — Concepts : Human-in-the-loop, Agency, Active Learning}
+
+\textbf{Suite analytique trafic} \hfill 2025 \\
+Analyse du trafic routier : suivi, estimation de vitesse et OCR des plaques. \\
+\textit{Tech : YOLOv8, ByteTrack, EasyOCR — Concepts : Tracking, OCR, Analytics}
+
+\textbf{Système de gestion du Hadj} \hfill 2024 \\
+Plateforme logistique end-to-end pour la gestion de groupes et d’itinéraires. \\
+\textit{Tech : React, FastAPI, PostgreSQL — Concepts : Workflow, Synchronisation}
+
+\textbf{POS \& e-commerce hybride} \hfill 2025 \\
+Système POS offline-first intégré à une boutique en ligne. \\
+\textit{Tech : PyQt, SQLite, PostgreSQL — Concepts : Sync offline/online, Inventory Management}
+}
+
+%===========================
+\section{LANGUES}
+Arabe : Langue maternelle \quad|\quad Anglais : Avancé \quad|\quad Français : Conversationnel
+
+\end{document}

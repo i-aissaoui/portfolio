@@ -1,0 +1,52 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Projet de Recherche : Thèse CIFRE}\\[6pt]
+    {\large Modélisation Intégrative et Dynamique des Trajectoires Neurodégénératives par IA Multi-Échelle}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Vision}
+Les maladies neurodégénératives représentent l'un des défis les plus complexes de la médecine moderne en raison de leur nature multi-échelle et de leur dynamique lente mais inexorable. La capacité à prédire le déclin cognitif à partir d'altérations moléculaires précoces nécessite un changement de paradigme : passer d'une analyse statique à une modélisation dynamique intégrative. Je propose de traiter le système biologique comme un « Jumeau Numérique » dynamique, en exploitant les dernières avancées en architectures d'IA séquentielles et relationnelles.
+
+\section{Expérience Pertinente : Du Jumeau Industriel au Jumeau Biologique}
+Dans mes travaux actuels, j'ai développé des modèles de substitution informés par la physique pour des systèmes complexes. J'ai acquis une maîtrise des architectures \textbf{Mamba-SSM (State Space Models)} et \textbf{xLSTM}, qui excellent dans la capture de dépendances à long terme dans des signaux bruités. Parallèlement, mes travaux sur les \textbf{Graph Neural Networks (GNN)} m'ont permis de modéliser des systèmes où la structure (topologie) est aussi importante que la donnée brute. Je suis convaincu que ces outils sont directement transposables à la biologie des réseaux pour articuler les échelles moléculaires, cellulaires et cliniques.
+
+\section{Axes de Recherche Proposés}
+Pour ce projet chez Aixial Group, je propose d'explorer trois axes stratégiques :
+
+\subsection{1. Articulation Multi-Échelle via les Graph Neural Networks (GNN)}
+Je prévois de construire un graphe de connaissances hiérarchique où chaque niveau (molécule, cellule, tissu) est représenté par des sous-graphes interconnectés. En utilisant des GNN (type GraphSAGE ou GAT), l'objectif est de propager les perturbations biologiques d'un niveau à l'autre pour identifier comment une altération moléculaire spécifique se traduit, à terme, par une signature clinique.
+
+\subsection{2. Modélisation de la Progression par State Space Models (Mamba)}
+L'évolution d'une pathologie neurodégénérative est une séquence temporelle. Je propose d'adapter les architectures \textbf{Mamba-SSM} pour modéliser les trajectoires de progression. Contrairement aux approches RNN classiques, les SSM permettent de gérer des séquences très longues et des données irrégulièrement espacées (typique des suivis cliniques) tout en conservant une interprétabilité mathématique sur les états latents de la maladie.
+
+\subsection{3. Apprentissage Informé par la Biologie et Explicabilité (XAI)}
+Pour éviter l'effet « boîte noire », je souhaite intégrer des contraintes biologiques (ex: cinétique enzymatique, taux de dégradation protéique) directement dans la fonction de perte du modèle. Cette approche d'**IA informée par le domaine** garantit que les hypothèses générées par le modèle sont biologiquement testables. De plus, j'utiliserai des mécanismes d'attention et de raisonnement abductif pour fournir aux chercheurs d'Aixial des explications claires sur les facteurs prédictifs du déclin cognitif.
+
+\section{Conclusion}
+L'objectif de mon doctorat CIFRE sera de fournir à Aixial Group un framework de modélisation prédictive robuste et explicable. En mariant la puissance des GNN pour la structure et de Mamba pour la dynamique, j'ambitionne de créer un véritable outil d'aide à la décision pour la caractérisation de la progression des maladies neurodégénératives.
+
+\end{document}

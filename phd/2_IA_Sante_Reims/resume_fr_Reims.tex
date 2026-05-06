@@ -1,0 +1,142 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=titleblue,
+    linkcolor=titleblue,
+    citecolor=titleblue,
+    pdfborder={0 0 0}
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{titleblue}\titlerule]
+
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[4pt]
+    {\Large Ingénieur IA \& Data Science}\\[6pt]
+
+    {\normalsize
+    Email : \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
+    Tél : +213 660 70 77 96 \\
+    Portfolio : \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
+    Localisation : Chlef, Algérie \\
+    LinkedIn : \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
+    GitHub : \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    }
+\end{center}
+
+%===========================
+\section{RÉSUMÉ PROFESSIONNEL}
+Ingénieur IA \& Data Science spécialisé dans l'apprentissage de représentations latentes, les réseaux de graphes (GNN), et les modèles Transformers. Passionné par l'IA explicable (XAI) et la modélisation de relations de similarité complexes à partir de données multimodales. Candidat au doctorat pour l'aide au raisonnement clinique via la construction de graphes de patients et l'évaluation de la représentativité/atypicité.
+
+%===========================
+\section{COMPÉTENCES}
+\setlength{\parskip}{-1pt}
+{\normalsize
+\textbf{Programmation}: Python, TypeScript, JavaScript, Java, SQL \\
+
+\textbf{ML / DL}: PyTorch, TensorFlow, Keras, Scikit-learn, \textbf{Metric Learning}, \textbf{Autoencodeurs} \\
+
+\textbf{Techniques IA}: GNN, Transformers, Embeddings Latents, \textbf{IA Explicable (XAI)}, Apprentissage Multimodal \\
+
+\textbf{Optimisation}: PSO, Algorithme génétique, ACO, Recuit simulé, Optimisation bayésienne \\
+
+\textbf{Web \& API}: React, Next.js, FastAPI, Node.js, TailwindCSS \\
+
+\textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, DVC, Pandas, NumPy \\
+
+\textbf{Bases de données}: PostgreSQL, MongoDB, MySQL, Neo4j, Cassandra \\
+
+\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana \\
+
+\textbf{Soft Skills}: Leadership technique, Communication, Gestion des parties prenantes
+}
+
+%===========================
+\section{EXPÉRIENCE PROFESSIONNELLE}
+\textbf{Stagiaire Ingénieur IA — Jumeau Numérique \& Maintenance Prédictive} \hfill 2026 \\
+Sonatrach — Algérie \\
+Développement d’un jumeau numérique pour turbines à gaz permettant une surveillance en temps réel et une maintenance prédictive. Implémentation d’une détection d’anomalies avancée et estimation de la RUL à l’aide de modèles de deep learning.
+
+\textbf{Stagiaire en ingénierie réseau} \hfill Sep 2024 \\
+Algérie Télécom RMC Center — Chlef, Algérie
+
+%===========================
+\section{FORMATION}
+\textbf{École Nationale Supérieure d’Informatique (ESI-SBA)} \hfill 2021--2026 \\
+Diplôme d’ingénieur et master en informatique \\
+Spécialisation : Intelligence Artificielle \& Informatique
+
+%===========================
+\section{RÉALISATIONS CLÉS}
+\begin{itemize}
+    \item Développement de modèles Transformer (BERT, GPT, RAG) pour des applications multilingues réelles.
+    \item Conception de plateformes d’IA explicable (XAI) pour la HR tech et les institutions publiques.
+    \item Apprentissage de représentations sur graphes de 60\,000 nœuds (+24\% de précision en similarité).
+    \item Pipelines ML complets : ingestion multimodale, validation, entraînement, et monitoring.
+    \item Systèmes interactifs humains-dans-la-boucle réduisant les biais et le drift de 32\%.
+\end{itemize}
+
+%===========================
+\section{PROJETS}
+\setlength{\parskip}{6pt}
+{\small
+
+\textbf{Graph-Based Similarity Intelligence (Career Connect)} \hfill 2024--2025 \\
+Modélisation de relations de similarité complexes entre profils via des \textbf{GNN}. Apprentissage de représentations latentes pour l'appariement sémantique performant et l'identification de profils atypiques. \\
+\textit{Tech : PyTorch Geometric, SBERT, FastAPI — Concepts : GNN, Embeddings relationnels, Metric Learning}
+
+\textbf{Recognizini — Latent Representation \& Feedback} \hfill 2025 \\
+Génération et mise à jour d'embeddings latents avec boucle de feedback pour corriger le modèle et identifier des cas aberrants. Un parallèle direct avec le raisonnement clinique interactif. \\
+\textit{Tech : OpenCV, PyTorch, FastAPI — Concepts : Embeddings, Détection d'anomalies, Label Propagation}
+
+\textbf{Pipeline NLP multimodal multi-optimisation} \hfill 2025 \\
+Architecture de classification optimisée via PSO et algorithm génétique. Gestion de la robustesse et stabilité des résultats de classification de textes complexes. \\
+\textit{Tech : DistilBERT, PyTorch, FastAPI — Concepts : Modèles Multimodaux, Optimisation, Robustesse}
+
+\textbf{Mini-GPT (Decoder-only)} \hfill 2025 \\
+Implémentation expérimentale d’un GPT compact pour comprendre la génération séquentielle et la stabilité des LLM. Prise en main avancée des architectures d'attention. \\
+\textit{Tech : PyTorch, CUDA, AdamW — Concepts : Transformers, Modèles de langage, Représentation}
+
+\textbf{North African Sentiment BERT} \hfill 2025 \\
+Adaptation LoRA de BERT pour l’analyse de données textuelles fortement bruitées et non standardisées. \\
+\textit{Tech : PyTorch, LoRA, MLflow — Concepts : Fine-tuning, LLM, XAI}
+
+\textbf{Geo-RAG \& Augmented Generation} \hfill 2025 \\
+Système RAG intégrant de la donnée structurée (graphes, geo) et non structurée (texte) pour des réponses explicables. \\
+\textit{Tech : ChromaDB, LangChain — Concepts : RAG, Text Mining, Explicabilité}
+
+\textbf{Elliptic++ : Détection d'anomalies sur Graphes} \hfill 2025 \\
+Identification de "cas" frauduleux dans des réseaux massifs de transactions (200k+ nœuds) via auto-encodeurs sur graphes. \\
+\textit{Tech : PyTorch Geometric, NetworkX — Concepts : GNN, Détection d'atypicités}
+}
+
+
+
+%===========================
+\section{LANGUES}
+Arabe : Langue maternelle \quad|\quad Anglais : Avancé \quad|\quad Français : Conversationnel
+
+\end{document}

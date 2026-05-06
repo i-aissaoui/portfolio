@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\titleformat{\section}{\color{titleblue}\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Research Statement}\\[6pt]
+    {\large Improving Sustainability in the Physical-to-Digital Twin Continuum}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in AI
+\end{center}
+
+\bigskip
+
+\section{Introduction and Motivation}
+Digital twins are complex virtual representations that require significant computational resources for simulation, monitoring, and synchronization. As these twins scale across industrial and environmental sectors, their environmental footprint becomes a critical concern. This research statement proposes a **Sustainable Middleware Framework** that optimizes the energy consumption of digital twins by dynamically adapting their deployment across the physical-to-digital continuum (Edge, Fog, Cloud) while balancing model precision and hardware lifespan.
+
+\section{Current Research: Resource-Constrained Digital Twins}
+In my current work at Sonatrach, I have developed a **Physics-Informed Digital Twin** for gas turbine monitoring. A core part of this project involves deploying generative surrogates (Mamba-SSM/xLSTM) onto industrial edge devices. This experience has taught me that high-fidelity simulation is often at odds with the energy constraints of remote infrastructure. I have developed techniques for benchmarking the energy-precision trade-offs of hybrid models and optimizing their performance for local execution. My background in building these "Edge-ready" twins provides a practical foundation for investigating systematic sustainability in digital twin engineering.
+
+\section{Proposed Research Directions}
+Building upon the objectives of the **Sustainable Middleware** project at University of Lille/INSA Rennes, I propose to investigate the following axes:
+
+\subsection{1. Modeling the Energy-Precision Pareto Front}
+I intend to investigate mathematical frameworks for quantifying the relationship between digital twin model precision (e.g., simulation granularity, data frequency) and energy consumption. By defining this Pareto front, we can move towards an automated system that selects the "most sustainable" model configuration that still meets the operational requirements of the twin.
+
+\subsection{2. Adaptive Deployment for Hardware Longevity}
+The core of my research will focus on creating a middleware reasoning framework that dynamically adapts the digital twin's deployment. This includes deciding when to execute models on centralized high-performance servers versus decentralized edge devices, with the additional goal of extending the lifespan of IT devices by balancing their computational load according to sustainability metrics.
+
+\subsection{3. Lifecycle Analysis for Digital Twin Engineering}
+I propose to develop methods for measuring the full environmental cost of designing, implementing, and maintaining a digital twin. By integrating Life Cycle Analysis (LCA) directly into the engineering workflow, we can provide digital twin engineers with real-time feedback on the sustainability of their architectural choices.
+
+\section{Alignment with the EDT Program}
+My background in distributed AI and software optimization aligns with the goal of creating a national infrastructure for sustainable digital twin engineering. I am eager to contribute to the **Artemis platform** by providing a middleware layer that ensures the twins produced by the consortium are not only technologically advanced but also environmentally viable.
+
+\section{Conclusion}
+The goal of my PhD will be to bridge the gap between high-performance digital twin simulation and environmental sustainability. By formalizing a middleware framework for adaptive, energy-aware deployment, I aim to provide the foundational tools necessary for the next generation of "Green" industrial and environmental digital twins.
+
+\end{document}

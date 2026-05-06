@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{tumblue}{RGB}{0,101,189}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=tumblue,
+    urlcolor=tumblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{tumblue} Research Proposal Outline}\\[6pt]
+    {\large Scaling Differentiable Surrogates for High-Complexity Industrial Digital Twins}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in Artificial Intelligence
+\end{center}
+
+\bigskip
+
+\section{Introduction}
+The development of Digital Twins for complex systems, such as gas turbines or climate models, requires surrogates that are both computationally efficient and physically consistent. While differentiable physics has shown promise for simple fluid systems, scaling these methods to high-dimensional industrial assets remains a challenge. I propose a research framework to develop **Scalable Differentiable Surrogates** by integrating **Graph Neural Networks (GNNs)** and **State Space Models (SSMs)** into the differentiable simulation pipeline.
+
+\section{Proposed Research Axes}
+
+\subsection{1. Graph-based Differentiable Representation of Industrial Systems}
+Industrial assets are composed of interconnected components with complex topological dependencies. I propose to use **GNNs** as a differentiable representation of these systems. By treating the components as nodes and their physical interactions as edges, we can learn a latent space that respects the structural constraints of the system, allowing for more accurate backpropagation through the "physics" of the digital twin.
+
+\subsection{2. High-Performance Temporal Advection with Mamba-SSM}
+Time-dependent physical processes often involve long-range dependencies that are expensive to simulate. I propose to investigate the use of **Mamba-SSM** architectures as the temporal backbone for differentiable simulators. Their linear scaling with sequence length could enable the simulation of much longer physical trajectories than current Transformer or RNN-based surrogates, which is vital for long-term health monitoring in Digital Twins.
+
+\subsection{3. Generative Refinement of Reality-Gap Residuals}
+Real-world sensor data often deviates from simulation results due to unmodeled physics or sensor noise. I aim to develop a generative framework (using Denoising Diffusion or GAN-based refinement) to model the **Reality-Gap**. By training these models on the residuals between the differentiable surrogate and real-world sensor streams from my work at Sonatrach, we can create a "Refined Digital Twin" that is both physically grounded and data-adaptive.
+
+\section{Alignment with TUM Simulation & Digital Twin Group}
+This research aligns with Prof. Thürey’s focus on bridging simulation and machine learning. I aim to contribute to the development of a unified framework for **Differentiable Digital Twins**, validating the approach on both synthetic CFD datasets and real-world industrial data from gas turbine fleets.
+
+\end{document}

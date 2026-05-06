@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{mtunavy}{RGB}{0,32,91}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=mtunavy,
+    urlcolor=mtunavy,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{mtunavy} Research Statement Outline}\\[6pt]
+    {\large LLM-based Simulation Synthesis and Conformal Uncertainty Quantification for Network Resilience}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in Artificial Intelligence
+\end{center}
+
+\bigskip
+
+\section{Introduction and Vision}
+Supply chain resilience depends on the ability to rapidly simulate "what-if" scenarios. However, the bottleneck remains the manual effort required to build discrete-event simulation (DES) models. My vision is to develop a framework where **Large Language Models (LLMs)** act as an "Automated Simulation Architect," converting structured network data into executable simulation code, while **Conformal Prediction** provides rigorous statistical bounds on the resulting resilience metrics (Time-to-Survive/Recover).
+
+\section{Proposed Research Axes}
+
+\subsection{1. Automated Simulation Synthesis via LLMs}
+I propose to investigate the use of LLMs to synthesize simulation scripts (e.g., in SimPy or Arena-style logic) directly from supply network specifications. By leveraging prompt engineering and fine-tuning on domain-specific simulation code, the goal is to create a "Translation Layer" that allows supply chain managers to generate complex models through natural language or structured data inputs, significantly reducing expert-effort.
+
+\subsection{2. Uncertainty Quantification via Conformal Prediction}
+Simulation results are only as good as their reliability. I propose to use **Conformal Prediction** to provide distribution-free uncertainty intervals for resilience estimates. Unlike traditional sensitivity analysis, Conformal Prediction offers formal guarantees on the coverage of the predicted metrics. This will allow decision-makers to know exactly how much they can trust the "Time-to-Recover" predictions under various disruption scenarios.
+
+\subsection{3. Surrogate Modeling for Fast Decision Intelligence}
+To enable real-time mitigation planning, running full DES models repeatedly can be slow. I propose to train **Surrogate Models** (such as Graph Neural Networks or Physics-Informed ML) to approximate the simulation behavior. These surrogates, validated against the LLM-generated simulation baselines, will provide instantaneous "Reasoning" about the impact of disruptions, turning simulation data into real-time Decision Intelligence.
+
+\section{Alignment with MTU and Research Ireland}
+My profile as an AI Engineer with experience in **Digital Twins** (Sonatrach) and **Advanced Sequential Architectures** (Mamba/Transformers) provides the technical toolkit needed for this interdisciplinary project. I am eager to collaborate with industrial partners in Ireland to validate this "Simulation-as-a-Service" framework, contributing to the "Optimisation \& Reasoning" research theme of the national centre.
+
+\end{document}

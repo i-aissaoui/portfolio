@@ -1,0 +1,143 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+
+\definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=titleblue,
+    linkcolor=titleblue,
+    citecolor=titleblue,
+    pdfborder={0 0 0}
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{titleblue}\titlerule]
+
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[4pt]
+    {\Large AI \& Data Science Engineer}\\[6pt]
+
+    {\normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
+    Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
+    Location: Chlef, Algeria \\
+    LinkedIn: \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
+    GitHub: \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    }
+\end{center}
+
+%===========================
+\section{PROFILE}
+AI \& Data Science Engineer specialized in representation learning, Graph Neural Networks (GNN), and Transformer models. Passionate about Explainable AI (XAI) and modeling complex similarity relationships from multimodal data. PhD applicant for clinical reasoning support via the construction of patient graphs and evaluation of representativeness/atypicality.
+
+%===========================
+\section{SKILLS}
+\setlength{\parskip}{-1pt}
+{\normalsize
+\textbf{Programming}: Python, TypeScript, JavaScript, Java, SQL \\
+
+\textbf{ML / DL}: PyTorch, TensorFlow, Keras, Scikit-learn, \textbf{Metric Learning}, \textbf{Autoencoders} \\
+
+\textbf{AI Techniques}: GNN, Transformers, Latent Embeddings, \textbf{Explainable AI (XAI)}, Multimodal Learning \\
+
+\textbf{Optimization}: PSO, Genetic Algorithm, ACO, Simulated Annealing, Bayesian Optimization \\
+
+\textbf{Web \& API}: React, Next.js, FastAPI, Node.js, TailwindCSS \\
+
+\textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, DVC, Pandas, NumPy \\
+
+\textbf{Databases}: PostgreSQL, MongoDB, MySQL, Neo4j, Cassandra \\
+
+\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana \\
+
+\textbf{Soft Skills}: Technical leadership, Communication, Stakeholder management
+}
+
+%===========================
+\section{PROFESSIONAL EXPERIENCE}
+\textbf{AI Engineer Intern — Digital Twin \& Predictive Maintenance} \hfill 2026 \\
+Sonatrach — Algeria \\
+Developed a Digital Twin for gas turbines enabling real-time monitoring and predictive maintenance. Implemented advanced anomaly detection and RUL estimation using deep learning models.
+
+\textbf{Network Engineering Intern} \hfill Sep 2024 \\
+Algérie Télécom RMC Center — Chlef, Algeria
+
+%===========================
+\section{EDUCATION}
+\textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
+Engineering and Master’s Degree in Computer Science \\
+Specialization: Artificial Intelligence \& Informatics
+
+%===========================
+\section{KEY ACHIEVEMENTS}
+\begin{itemize}
+    \item Developed custom Transformer models (BERT, GPT, RAG) for real-world multilingual applications.
+    \item Built Explainable AI (XAI) platforms for HR tech and public institutions — prioritizing reasoning transparency.
+    \item Learned graph representations over 60,000 nodes (+24\% accuracy in similarity matching).
+    \item Delivered complete ML pipelines: multimodal data ingestion, validation, training, and monitoring.
+    \item Designed human-in-the-loop systems reducing bias and drift by 32\%.
+\end{itemize}
+
+%===========================
+\section{PROJECTS}
+\setlength{\parskip}{6pt}
+{\small
+
+\textbf{Graph-Based Similarity Intelligence (Career Connect)} \hfill 2024--2025 \\
+Modeled complex similarity relationships using \textbf{GNN}. Learned latent representations for robust semantic matching and identification of atypical profiles. \\
+\textit{Tech: PyTorch Geometric, SBERT, FastAPI — Concepts: GNN, Relational Embeddings, Metric Learning}
+
+\textbf{Recognizini — Latent Representation \& Feedback} \hfill 2025 \\
+Generated and updated latent embeddings with an active feedback loop to correct the model and identify outlier cases. A direct parallel to interactive clinical reasoning. \\
+\textit{Tech: OpenCV, PyTorch, FastAPI — Concepts: Embeddings, Anomaly Detection, Label Propagation}
+
+\textbf{Multimodal NLP Pipeline with Multi-Optimization} \hfill 2025 \\
+Classification architecture optimized via PSO and Genetic Algorithm. Managed robustness and stability of classification results in complex texts. \\
+\textit{Tech: DistilBERT, PyTorch, FastAPI — Concepts: Multimodal Models, Optimization, Robustness}
+
+\textbf{Mini-GPT (Decoder-only)} \hfill 2025 \\
+Experimental implementation of a compact GPT to understand sequential generation and LLM stability. Advanced hands-on experience with attention mechanisms. \\
+\textit{Tech: PyTorch, CUDA, AdamW — Concepts: Transformers, Language Models, Representation Learning}
+
+\textbf{North African Sentiment BERT} \hfill 2025 \\
+LoRA adaptation of BERT for analyzing highly noisy and non-standardized textual data. \\
+\textit{Tech: PyTorch, LoRA, MLflow — Concepts: Fine-tuning, LLM, XAI}
+
+\textbf{Geo-RAG \& Augmented Generation} \hfill 2025 \\
+RAG system integrating structured (graphs, geo) and unstructured (text) data for explainable reasoning. \\
+\textit{Tech: ChromaDB, LangChain — Concepts: RAG, Text Mining, Explainability}
+
+\textbf{Elliptic++: Graph Anomaly Detection} \hfill 2025 \\
+Identified fraudulent "cases" in massive transaction networks (200k+ nodes) using graph autoencoders. \\
+\textit{Tech: PyTorch Geometric, NetworkX — Concepts: GNN, Atypicality Detection}
+}
+
+
+
+%===========================
+\section{LANGUAGES}
+Arabic: Mother Tongue \quad|\quad English: Advanced \quad|\quad French: Conversational
+
+\end{document}

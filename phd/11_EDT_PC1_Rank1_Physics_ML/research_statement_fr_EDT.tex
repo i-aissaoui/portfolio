@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Projet de Recherche}\\[6pt]
+    {\large Apprentissage Automatique Interprétable et Robuste pour les Simulations Numériques Physiques}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Motivation}
+L'intégration de l'Apprentissage Automatique (ML) dans les sciences physiques est passée de la simple corrélation de données à la création de modèles de substitution (surrogates) haute fidélité capables d'accélérer les solveurs numériques coûteux. Cependant, l'adoption de ces modèles dans les Jumeaux Numériques industriels critiques est entravée par deux défis majeurs : la nature « boîte noire » des architectures de deep learning et leur fragilité face aux données hors distribution (OOD). Ce projet de recherche expose ma proposition pour lever ces limitations via des méthodes statistiques avancées, garantissant que les modèles hybrides physique-données soient à la fois interprétables et robustes.
+
+\section{Recherche Actuelle : Jumeaux Numériques Informés par la Physique}
+Dans le cadre de ma thèse chez Sonatrach, j'ai développé un modèle de substitution génératif pour la surveillance des turbines à gaz en utilisant les architectures \textbf{Mamba-SSM} et \textbf{xLSTM}. Le cœur de ma contribution réside dans la conception de fonctions de perte \textbf{PINN (Physics-Informed Neural Network)} qui imposent la cohérence thermodynamique (ex: conservation de l'énergie). Ces travaux ont démontré que si les contraintes physiques améliorent la généralisation, elles n'offrent pas intrinsèquement de mesure de la fiabilité du modèle. Mon expérience a révélé la nécessité critique de la \textbf{Quantification de l'Incertitude (UQ)} pour détecter quand un modèle opère hors de son domaine de validité.
+
+\section{Axes de Recherche Proposés}
+En cohérence avec les objectifs du projet \textbf{Catalyst (Reliable Hybrid Model Forge)}, je propose d'explorer trois axes :
+
+\subsection{1. Analyse de Sensibilité Globale pour les Substituts Neuronaux}
+Je prévois d'utiliser l'Analyse de Sensibilité Globale (GSA) pour identifier quels paramètres d'entrée ou composants internes du modèle (ex: couches ou poids spécifiques) influencent le plus significativement la sortie. En quantifiant ces influences, nous pourrons passer à une compréhension « boîte blanche » de la manière dont les modèles de deep learning émulent les phénomènes physiques, facilitant leur alignement avec les lois numériques établies.
+
+\subsection{2. Transport Optimal pour l'Évaluation de la Généralisation}
+La généralisation dans le ML appliqué à la physique dépend de la capacité du modèle à projeter la distribution d'entraînement vers la distribution de test. Je propose d'exploiter les méthodes de \textbf{Transport Optimal (OT)} pour analyser la géométrie des représentations apprises. En mesurant la distance entre le collecteur (manifold) d'entraînement et les nouveaux contextes de simulation, nous pourrons établir un seuil quantitatif de réutilisabilité du modèle, évitant ainsi des défaillances critiques dans des régimes physiques inédits.
+
+\subsection{3. Profondeur Statistique pour la Détection Hors Distribution}
+Pour renforcer la robustesse, j'étudierai les métriques de \textbf{Profondeur Statistique}. Ces outils permettent d'identifier les points de données « centraux » par rapport aux points « aberrants » dans des espaces de haute dimension. Dans le contexte d'un Jumeau Numérique, cela signifie que le modèle sera capable de signaler une alerte de « faible confiance » lorsque les paramètres physiques d'entrée représentent un scénario (ex: condition de panne extrême) qui n'a pas été couvert de manière adéquate lors de l'entraînement.
+
+\section{Alignement avec le Projet Catalyst et le Programme EDT}
+Mon expertise dans l'implémentation industrielle sur PyTorch, combinée à ma formation rigoureuse en statistiques et méthodes numériques, s'aligne parfaitement avec la nature interdisciplinaire du \textbf{programme EDT}. Je souhaite particulièrement contribuer à la **plateforme Artemis**, en veillant à ce que les avancées théoriques en interprétabilité soient traduites en outils utilisables pour la communauté des jumeaux numériques.
+
+\section{Conclusion}
+L'objectif de mon doctorat sera de combler le fossé entre la puissance prédictive du ML de pointe et la fiabilité de l'analyse numérique classique. En développant un cadre pour une IA informée par la physique, interprétable et robuste, j'ambitionne de fournir les outils fondamentaux nécessaires à la prochaine génération de Jumeaux Numériques industriels de confiance.
+
+\end{document}

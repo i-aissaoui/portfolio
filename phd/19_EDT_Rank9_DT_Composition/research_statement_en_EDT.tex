@@ -1,0 +1,55 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\usepackage{lmodern}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{blue}}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Research Statement}} \\
+    \medskip
+    {\large \textbf{Automated Composition and Multi-Objective Optimization of Digital Twin Architectures}} \\
+    \medskip
+    Candidate: \textbf{Ismail AISSAOUI} \\
+    Target: EDT Program - Rank 9 (PC2)
+\end{center}
+
+\section{Introduction}
+The development of modern Digital Twins (DT) involves orchestrating a heterogeneous set of components—from data acquisition and communication protocols to complex simulation engines. The primary challenge lies in the fact that no single architecture is optimal for all scenarios. Instead, engineers must navigate a complex design space to balance performance, energy efficiency, and operational costs. My research objective is to develop a framework for the automated exploration and configuration of these architectures.
+
+\section{Proposed Research Axes}
+
+\subsection{Axis 1: Metaheuristic Search for Architectural Design Space Exploration (DSE)}
+Drawing from my experience in hyperparameter optimization (PSO, Genetic Algorithms), I propose to model the **Digital Twin Architectural Design Space (DT-ADS)** as a high-dimensional optimization problem. 
+\begin{itemize}
+    \item \textbf{Approach:} Define a formal grammar for DT component composition and use evolutionary algorithms to find configurations that satisfy user-defined non-functional constraints.
+    \item \textbf{Innovation:} Moving beyond random or grid search by using swarm intelligence to identify Pareto-optimal architectures (e.g., maximizing accuracy while staying under a specific energy budget).
+\end{itemize}
+
+\subsection{Axis 2: Constraint-Aware Selection of Hybrid Surrogate Models}
+A critical part of the DT pipeline is the simulation engine. Based on my thesis at Sonatrach with **Mamba-SSM** and **xLSTM**, I have seen how different models offer varying performance-accuracy trade-offs.
+\begin{itemize}
+    \item \textbf{Approach:} Develop a meta-model that predicts the energy and performance impact of a specific surrogate model before deployment.
+    \item \textbf{Objective:} Enable the system to dynamically switch between high-fidelity/high-energy models and lightweight/low-energy models (e.g., quantized TCNs) based on the current available resources.
+\end{itemize}
+
+\subsection{Axis 3: Integration into the Artemis Open-Source Platform}
+The theoretical results must be validated through practical implementation.
+\begin{itemize}
+    \item \textbf{Approach:} Develop an "Architectural Configuration Module" for the Artemis platform using modern software engineering principles (Modular Python/C++).
+    \item \textbf{Outcome:} Provide a tool that allows industrial users to input their constraints (e.g., "I have 500€/month budget and need 1ms latency") and receive a recommended software stack automatically.
+\end{itemize}
+
+\section{Conclusion}
+By bridging the gap between metaheuristic optimization and software architecture, this research will contribute to making Digital Twins more accessible, efficient, and sustainable. My background in building end-to-end AI systems and industrial surrogates provides the necessary technical foundation to achieve these goals within the EDT ecosystem.
+
+\end{document}

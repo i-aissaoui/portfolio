@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Projet de Recherche}\\[6pt]
+    {\large Améliorer la Durabilité dans le Continuum Physique-Numérique des Jumeaux}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Motivation}
+Les Jumeaux Numériques (JN) sont des représentations virtuelles complexes exigeant des ressources de calcul significatives pour la simulation, la surveillance et la synchronisation. À mesure que ces jumeaux se déploient à grande échelle dans les secteurs industriels et environnementaux, leur empreinte environnementale devient une préoccupation majeure. Ce projet de recherche propose un **Framework de Middleware Durable** qui optimise la consommation énergétique des JN en adaptant dynamiquement leur déploiement sur le continuum Edge-Fog-Cloud tout en équilibrant la précision du modèle et la durée de vie du matériel.
+
+\section{Recherche Actuelle : Jumeaux Numériques à Ressources Contraintes}
+Au cours de ma thèse chez Sonatrach, j'ai développé un **Jumeau Numérique informé par la physique** pour la surveillance de turbines à gaz. Une partie essentielle de ce projet a consisté à déployer des modèles de substitution génératifs (Mamba-SSM, xLSTM) sur des dispositifs Edge industriels. Cette expérience m'a appris que la simulation haute fidélité est souvent en conflit avec les contraintes énergétiques des infrastructures distantes. J'ai développé des techniques pour évaluer le compromis énergie-précision des modèles hybrides et optimiser leur exécution locale. Ces travaux constituent une base pratique pour étudier la durabilité systématique dans l'ingénierie des JN.
+
+\section{Axes de Recherche Proposés}
+En alignement avec les objectifs du projet à l'Université de Lille et à l'INSA Rennes, je propose d'explorer trois axes :
+
+\subsection{1. Modélisation du Front de Pareto Énergie-Précision}
+Je prévois d'investiguer des cadres mathématiques pour quantifier la relation entre la précision du jumeau numérique (ex: granularité de simulation, fréquence des données) et la consommation énergétique. En définissant ce front de Pareto, nous pourrons évoluer vers un système automatisé qui sélectionne la configuration de modèle la plus durable tout en respectant les exigences opérationnelles du jumeau.
+
+\subsection{2. Déploiement Adaptatif pour la Longévité du Matériel}
+Le cœur de ma recherche portera sur la création d'un middleware de raisonnement capable d'adapter dynamiquement le déploiement du jumeau numérique. Cela inclut la décision d'exécuter des modèles sur des serveurs haute performance centralisés ou sur des dispositifs décentralisés en périphérie, avec l'objectif supplémentaire de prolonger la durée de vie des équipements informatiques en équilibrant leur charge de calcul selon des métriques de durabilité.
+
+\subsection{3. Analyse du Cycle de Vie pour l'Ingénierie des JN}
+Je propose de développer des méthodes pour mesurer le coût environnemental complet de la conception, de l'implémentation et de la maintenance d'un jumeau numérique. En intégrant l'Analyse du Cycle de Vie (ACV) directement dans le workflow d'ingénierie, nous pourrons fournir aux concepteurs un retour en temps réel sur la durabilité de leurs choix architecturaux.
+
+\section{Alignement avec le Programme EDT}
+Mon expertise en IA distribuée et en optimisation logicielle s'aligne avec l'objectif de créer une infrastructure nationale pour une ingénierie durable des jumeaux numériques. Je souhaite contribuer à la **plateforme Artemis** en proposant une couche de middleware garantissant que les jumeaux produits par le consortium soient non seulement performants technologiquement, mais aussi viables environnementalement.
+
+\section{Conclusion}
+L'objectif de mon doctorat sera de combler le fossé entre la simulation haute performance et la durabilité environnementale. En formalisant un framework de middleware pour un déploiement adaptatif et économe en énergie, j'ambitionne de fournir les outils nécessaires à la prochaine génération de jumeaux numériques « verts ».
+
+\end{document}

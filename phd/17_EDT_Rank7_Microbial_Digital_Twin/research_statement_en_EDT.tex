@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\titleformat{\section}{\color{titleblue}\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Research Statement}\\[6pt]
+    {\large Compositional Hybrid Digital Twins for Fermented Microbial Ecosystems}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in AI
+\end{center}
+
+\bigskip
+
+\section{Introduction and Motivation}
+Fermented food systems are complex microbial ecosystems characterized by non-linear, evolving interactions between species and their environments. Predictive models of these systems are essential for food innovation and safety, but they are often difficult to capture using a single modeling paradigm. This research statement proposes a **Compositional Hybrid Digital Twin** framework that systematically integrates mechanistic ecological models (e.g., consumer-resource models) with machine learning surrogates, enabling flexible and scalable simulation of biological ecosystems.
+
+\section{Current Research: Hybrid Physics-Data Modeling}
+In my current work at Sonatrach, I have developed a **Physics-Informed Digital Twin** for gas turbine monitoring. My research focuses on the hybridization of mechanistic physical laws (thermodynamics) with data-driven architectures (Mamba-SSM/xLSTM). I have implemented custom **PINN loss functions** that enforce physical consistency in generative surrogates. This experience has given me a deep understanding of how to blend "first-principles" equations with partially understood observed dynamics—a challenge that is directly relevant to modeling the evolving interactions within microbial communities.
+
+\section{Proposed Research Directions}
+Building upon the objectives of the **Catalyst (Reliable Hybrid Model Forge)** project, I propose to investigate the following axes within the context of fermentation ecosystems:
+
+\subsection{1. Composable Hybridization Operators}
+I intend to investigate formal operators of model composition that enable the systematic integration of mechanistic ecological models and machine learning components. By designing well-defined hybridization operators, we can learn corrections to partially specified biological dynamics or infer latent microbial processes from incomplete experimental observations.
+
+\subsection{2. Reusable Hybrid Modeling Patterns}
+The core of my research will focus on defining reusable patterns for microbial hybridization (e.g., surrogate replacement, residual learning, multi-fidelity switching). These patterns will allow for a "modular" approach to digital twin construction, where modeling strategies can be adapted as new biological knowledge or datasets become available.
+
+\subsection{3. Multi-Fidelity Model Blending}
+I propose to investigate adaptive switching mechanisms between models of different complexity, such as consumer-resource models, Lotka-Volterra dynamics, and neural surrogates. By leveraging my background in uncertainty quantification, I aim to ensure that the digital twin automatically selects the most appropriate modeling fidelity based on the available data and the required precision.
+
+\section{Alignment with the EDT Program}
+My background in hybrid modeling and industrial implementation aligns with the goal of creating a national infrastructure for digital twin engineering. I am eager to contribute to the **Artemis platform** by providing a compositional modeling layer that can handle the unique challenges of biological and microbial digital twins across the consortium.
+
+\section{Conclusion}
+The goal of my PhD will be to move biological digital twins from ad-hoc simulations to a rigorous, compositional hybrid framework. By bridging the gap between computational biology, ecological modeling, and machine learning, I aim to provide the foundational tools necessary for the next generation of reliable and scalable microbial digital twins.
+
+\end{document}

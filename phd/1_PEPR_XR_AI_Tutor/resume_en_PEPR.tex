@@ -1,0 +1,147 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+
+\definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=titleblue,
+    linkcolor=titleblue,
+    citecolor=titleblue,
+    pdfborder={0 0 0}
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{titleblue}\titlerule]
+
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[4pt]
+    {\Large AI \& Data Science Engineer}\\[6pt]
+
+    {\normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
+    Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
+    Location: Chlef, Algeria \\
+    LinkedIn: \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
+    GitHub: \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    }
+\end{center}
+
+%===========================
+\section{PROFILE}
+AI \& Data Science Engineer passionate about human-computer interaction and adaptive learning systems. Expertise in Transformer models, Reinforcement Learning, and Digital Twins. PhD candidate for co-learning in XR, aiming to merge embodied AI and technical gesture simulation for advanced training environments.
+
+%===========================
+\section{SKILLS}
+\setlength{\parskip}{-1pt}
+{\normalsize
+\textbf{Programming}: Python, TypeScript, JavaScript, Java, SQL \\
+
+\textbf{AI / ML}: PyTorch, TensorFlow, Keras, Scikit-learn, \textbf{Inverse RL}, \textbf{Imitation Learning} \\
+
+\textbf{AI Techniques}: Transformers, GNN, GANs, RL (DQN, PPO), \textbf{Symbolic AI} (Rule-based systems) \\
+
+\textbf{Optimization}: PSO, Genetic Algorithm, ACO, Simulated Annealing, Bayesian Optimization \\
+
+\textbf{Web, API \& 3D}: Next.js, FastAPI, Node.js, \textbf{Unity3D}, \textbf{Unreal Engine (C++)} \\
+
+\textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, DVC, Pandas, NumPy \\
+
+\textbf{Databases}: PostgreSQL, MongoDB, MySQL, Neo4j, Cassandra \\
+
+\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana \\
+
+\textbf{Soft Skills}: Technical leadership, Communication, Stakeholder management
+}
+
+%===========================
+\section{PROFESSIONAL EXPERIENCE}
+\textbf{AI Engineer Intern — Digital Twin \& Simulation} \hfill 2026 \\
+Sonatrach — Algeria \\
+Developed a Digital Twin for real-time supervision of gas turbines. Modeled physical flows and estimated RUL using Deep Learning. This immersion in high-fidelity simulation enabled me to master the digital replication of complex industrial processes, a cornerstone for immersive training systems.
+
+\textbf{Network Engineering Intern} \hfill Sep 2024 \\
+Algérie Télécom RMC Center — Chlef, Algeria
+
+%===========================
+\section{EDUCATION}
+\textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
+Engineering and Master’s Degree in Computer Science \\
+Specialization: Artificial Intelligence \& Informatics
+
+%===========================
+\section{KEY ACHIEVEMENTS}
+\begin{itemize}
+    \item Developed custom Transformer models (BERT, GPT, RAG) for real-world multilingual applications.
+    \item Built explainable AI platforms for HR tech and public institutions — reducing bias and improving decision quality.
+    \item Designed a graph-based recommendation system with +24\% accuracy improvement (dataset: 60K profiles).
+    \item Delivered complete ML pipelines: data ingestion, validation, training, CI/CD, and monitoring.
+    \item Built real-time vision systems (YOLO, ByteTrack) reducing latency by 32\%.
+\end{itemize}
+
+%===========================
+% Force projects + languages onto page 2
+%===========================
+\section{PROJECTS}
+\setlength{\parskip}{6pt}
+{\small
+
+\textbf{Aura — Adaptive Reinforcement Learning System} \hfill 2025 \\
+Developed an autonomous agent using \textbf{Reinforcement Learning} (DQN) for real-time strategy optimization. Implemented adaptive policies allowing the system to continuously learn from its environment. \\
+\textit{Tech: TensorFlow, RL, Python — Concepts: Reinforcement Learning, Adaptability}
+
+\textbf{Vision Transformer (ViT) Implementation} \hfill 2025 \\
+Adapted Transformer architectures for Computer Vision. Treated images as sequences of patches, using multi-head self-attention to capture global dependencies. \\
+\textit{Tech: PyTorch, Deep Learning — Concepts: Transformers, Image-to-Sequence}
+
+\textbf{Recognizini — Online Learning \& Interactive Feedback} \hfill 2025 \\
+Real-time facial recognition system integrating human feedback loop for incremental identity learning. Used \textbf{Label Propagation} to dynamically enrich the model. \\
+\textit{Tech: PyTorch, OpenCV, FastAPI — Concepts: Ecological Learning, Feedback Loop}
+
+\textbf{Traffic Analytics \& Safety Monitoring (YOLOv8)} \hfill 2025 \\
+Analyzed video data streams for object tracking and trajectory estimation. Provides a solid foundation for modeling and evaluating \textbf{technical gestures} in real-time. \\
+\textit{Tech: YOLOv8, Computer Vision — Concepts: Motion Analysis, Action Tracking}
+
+\textbf{GNN-based Recruitment Intelligence} \hfill 2024--2025 \\
+Modeled complex relationships between skills and profiles using \textbf{Graph Neural Networks}. Expertise in extracting rich semantic representations from knowledge graphs. \\
+\textit{Tech: PyTorch Geometric, SBERT — Concepts: Graph Learning, Knowledge Modeling}
+
+\textbf{Mini-GPT \& Deep NLP Adaptation} \hfill 2025 \\
+Implemented GPT (Decoder-only) architectures and LoRA adaptation for BERT models on multilingual and dialectal sentiment analysis tasks. \\
+\textit{Tech: PyTorch, LoRA, HuggingFace — Concepts: LLM, Fine-tuning, NLP}
+
+\textbf{Geo-RAG \& Intelligent Scheduling} \hfill 2025 \\
+Developed geospatial RAG systems and metaheuristic algorithms (GA, PSO) for solving complex NP-complete constraint optimization problems. \\
+\textit{Tech: ChromaDB, LangChain, NumPy — Concepts: RAG, Optimization}
+
+\textbf{Elliptic++ : Bitcoin Fraud Detection} \hfill 2025 \\
+Detected illicit actors on the Bitcoin network via graph-based learning on over 200k transactions. \\
+\textit{Tech: PyTorch Geometric, NetworkX — Concepts: Fraud Detection, GNN}
+}
+
+%===========================
+\section{LANGUAGES}
+Arabic: Mother Tongue \quad|\quad English: Advanced \quad|\quad French: Conversational
+
+\end{document}

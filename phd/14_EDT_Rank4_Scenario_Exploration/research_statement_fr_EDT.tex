@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Projet de Recherche}\\[6pt]
+    {\large Exploration Intelligente de Scénarios et Gestion des Enveloppes de Validité}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Motivation}
+L'exploration de scénarios est une fonction clé des Jumeaux Numériques (JN), permettant d'anticiper les comportements futurs d'un système face à des changements environnementaux ou opérationnels. Cependant, pour que ces explorations soient crédibles, il est impératif de savoir si le modèle de substitution utilisé est utilisé dans son domaine de validité. Ce projet de recherche propose de formaliser les **enveloppes de validité** pour guider l'exploration intelligente de scénarios, en s'assurant que les prédictions restent physiquement et statistiquement cohérentes.
+
+\section{Recherche Actuelle : Simulation de Scénarios et PINNs}
+Dans le cadre de ma thèse chez Sonatrach, j'ai mis en œuvre des modèles de substitution pour simuler l'usure de composants critiques sous différents régimes de charge. Mon travail repose sur les architectures \textbf{Mamba-SSM} et \textbf{xLSTM}, couplées à des contraintes physiques (PINN). J'ai développé des méthodes de **Quantification de l'Incertitude (UQ)** pour détecter les zones où le modèle devient instable ou imprécis. Cette expérience m'a permis de comprendre que l'enjeu n'est pas seulement de produire une simulation, mais de définir les frontières de confiance de cette simulation.
+
+\section{Axes de Recherche Proposés}
+En alignement avec les objectifs du programme EDT à l'Université de Pau, je propose d'investiguer trois axes :
+
+\subsection{1. Formalisation des Enveloppes de Validité Multimodales}
+Je prévois de définir des métriques de validité combinant la cohérence physique (résidus des lois de conservation) et la densité statistique des données d'entraînement. L'utilisation de la **Profondeur Statistique** ou du **Transport Optimal** permettra de quantifier la distance entre un scénario d'exploration et le domaine de connaissance du jumeau numérique.
+
+\subsection{2. Exploration Guidée par l'Incertitude}
+Plutôt qu'une exploration exhaustive, je propose un algorithme d'exploration active qui privilégie les scénarios situés aux frontières de l'enveloppe de validité. Cela permet d'identifier les zones de risque pour le système physique (ex: défaillances critiques en cas de conditions météo extrêmes dans un jumeau territorial) tout en optimisant le coût computationnel de la simulation.
+
+\subsection{3. Correction de Modèle et Mise à Jour des Enveloppes}
+Lorsqu'une exploration sort de l'enveloppe de validité initiale, le système doit être capable d'intégrer de nouvelles données de simulation haute fidélité pour étendre son domaine de confiance. Je souhaite explorer des mécanismes de mise à jour dynamique des modèles de substitution, permettant au JN d'« apprendre » de ses propres explorations et d'affiner ses enveloppes de validité au cours de son cycle de vie.
+
+\section{Alignement avec le Programme EDT}
+Ce projet s'inscrit dans l'axe PC1 visant à assurer la fiabilité des jumeaux numériques. En proposant des outils pour une exploration sécurisée de scénarios, je souhaite enrichir la plateforme **Artemis** avec des fonctionnalités d'aide à la décision robustes pour les jumeaux de territoires et d'environnements.
+
+\section{Conclusion}
+L'objectif de mon doctorat sera de transformer l'exploration de scénarios de jumeaux numériques en un processus rigoureux et fiable. En définissant des enveloppes de validité intelligentes, j'ambitionne de fournir aux décideurs des outils de simulation capables de signaler d'eux-mêmes leurs propres limites de prédiction.
+
+\end{document}

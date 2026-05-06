@@ -1,0 +1,54 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{titleblue}{RGB}{0,51,102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleblue,
+    urlcolor=titleblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} PhD Research Statement}\\[6pt]
+    {\large Statistical Robustness of Graph-based Weather Forecasting Models during Climate Extremes}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in Artificial Intelligence
+\end{center}
+
+\bigskip
+
+\section{Introduction and Motivation}
+AI-based weather forecasting models, notably **GraphCast**, **AIFS**, and **GenCast**, have recently surpassed traditional Numerical Weather Prediction (NWP) models in both speed and accuracy for standard atmospheric variables. However, their reliability during **extreme climatic events** (heatwaves, flash floods, extreme wind gusts) remains a critical open question. These events reside in the "tails" of the distribution, where standard machine learning models often fail to extrapolate. My research aims to analyze the statistical properties of these graph-based architectures through the lens of **Extreme Value Theory (EVT)** to ensure their robustness in a changing climate.
+
+\section{Research Background: Graphs and Sequential Dynamics}
+In my current research at Sonatrach, I have developed **Physics-Informed Digital Twins** using high-performance architectures like **Mamba-SSM** and **xLSTM**. My work focuses on the intersection of mechanistic laws and data-driven surrogates. Furthermore, I have a strong background in **Graph Neural Networks (GNNs)**, which I have applied to structural anomaly detection. I believe that understanding the message-passing dynamics on the spherical multi-mesh grids used in GraphCast is the key to identifying why these models might "smooth out" extreme gradients or fail to capture catastrophic failures.
+
+\section{Proposed Research Directions}
+At the University of Geneva, I propose to explore three research axes:
+
+\subsection{1. Structural Sensitivity Analysis of Graph-based Weather Models}
+GraphCast relies on a complex mesh structure to propagate information across the globe. I propose to use sensitivity analysis to identify which "nodes" or "sub-graphs" are most critical during the onset of extreme events. By analyzing the learned weights and attention mechanisms, we can determine if the model is capturing the underlying physics of extreme pressure gradients or if it is merely performing sophisticated interpolation.
+
+\subsection{2. Extreme Value Regularization for GNN Architectures}
+Standard GNN training optimizes for the "mean" performance (MSE/MAE), which often penalizes the capture of extreme values. I intend to investigate "Extreme-Aware" loss functions, incorporating priors from EVT (such as Generalized Extreme Value distributions) into the training or fine-tuning of weather models. This would ensure that the model's "validity envelope" includes the rare but high-impact events critical for disaster prevention.
+
+\subsection{3. Extrapolation Benchmarking: NWP vs. AI in the Tails}
+I propose a comparative statistical study between traditional NWP models and AI models specifically focused on tail events. By applying **Extreme Value Statistics** to the residuals of GraphCast and AIFS, we can quantify the "Extrapolation Gap" and identify specific climatic conditions under which AI models become statistically unreliable.
+
+\section{Alignment with RISIS and GSEM}
+My profile as an AI Engineer with expertise in GNNs and sequential modeling provides the technical "know-how" to dissect these state-of-the-art models. My goal is to bridge the gap between pure machine learning and rigorous statistical inference, contributing to Prof. Engelke’s group and the RISIS institute's mission to understand complex data scenarios.
+
+\section{Conclusion}
+The future of climate resilience depends on our ability to trust AI predictions for events that have never occurred before. My PhD will focus on providing the statistical and architectural foundations for a new generation of **Robust Climate AI**, ensuring that models like GraphCast are not just accurate, but safe for predicting extreme climatic variations.
+
+\end{document}

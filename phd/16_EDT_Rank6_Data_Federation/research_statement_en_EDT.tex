@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\titleformat{\section}{\color{titleblue}\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Research Statement}\\[6pt]
+    {\large Federation of data and models to define digital twins}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in AI
+\end{center}
+
+\bigskip
+
+\section{Introduction and Motivation}
+Digital twins are virtual representations that must persist throughout the entire lifecycle of a physical system. However, the construction of these twins is currently hindered by the extreme heterogeneity of information sources, ranging from real-time sensor data and behavioral models to historical documents and physical equations. This research statement proposes an **Information Federation** approach to structure this knowledge, enabling digital twins to remain interoperable, maintainable, and traceable across the dimensions of time and system variants.
+
+\section{Current Research: Semantic Knowledge Retrieval}
+In my current work at Sonatrach, I have developed a **Physics-Informed Digital Twin** for gas turbine monitoring. A significant portion of this research involves the "Geo-RAG" project, where I implemented semantic knowledge retrieval from multi-source industrial and geospatial data. This experience in integrating unstructured documents with structured physical models is directly applicable to the challenge of model federation. My background in building these hybrid knowledge bases provides a unique perspective on how to classify and synchronize "descriptive" data with "prescriptive" design models.
+
+\section{Proposed Research Directions}
+Building upon the objectives of the **Information Federation** project at IMT Atlantique/IRISA, I propose to investigate the following axes:
+
+\subsection{1. Multi-Dimensional Information Federation}
+I intend to develop a formal federation framework that can integrate heterogeneous sources (sensor values, 3D models, behavioral equations) into a unified repository. The core challenge will be to handle the different temporalities of these sources—synchronizing "real-time" observations with "future" predictive scenarios and "past" historical configurations.
+
+\subsection{2. Ontology-Based Model Classification}
+I propose to develop an ontology and vocabulary to classify models into three categories: descriptive (what is), prescriptive (what should be), and predictive (what could be). By formalizing the relationships between these categories, we can enable seamless navigation and traceability across the digital twin's multidimensional space.
+
+\subsection{3. Traceability for Long-Term Digital Twin Evolution}
+Digital twins must evolve as the physical system changes. I propose to investigate mechanisms for tracking the lifecycle of models and data, ensuring that every update is traceable. This is essential for auditing decision-making processes and comparing the "as-built" reality with the "as-designed" prescriptive models.
+
+\section{Alignment with the EDT Program}
+My background in semantic retrieval and industrial implementation aligns with the goal of creating a benchmark open-source platform for digital twin engineering. I am eager to contribute to the **Artemis platform** by providing an information federation layer that serves as a unified source of truth for digital twins across the consortium.
+
+\section{Conclusion}
+The goal of my PhD will be to transform digital twins from ad-hoc data repositories into structured, federated knowledge bases. By bridging the gap between information science, software engineering, and hybrid modeling, I aim to provide the foundational tools necessary for the next generation of scalable and interoperable industrial digital twins.
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\titleformat{\section}{\color{titleblue}\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{titleblue} Research Statement}\\[6pt]
+    {\large Smart Scenario Exploration for Digital Twins through Validity Envelopes}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in AI
+\end{center}
+
+\bigskip
+
+\section{Introduction and Motivation}
+Engineering digital twins for environmental systems (e.g., water cycles, coastal management) rely on the integration of heterogeneous scientific models. However, these models are often designed for specific spatial scales and territorial characteristics, and their implicit assumptions are rarely formalized. This research statement proposes a framework for "Smart Scenario Exploration" by making these constraints explicit through the concept of **Validity Envelopes**, ensuring that digital twins remain scientifically grounded during interactive decision-making.
+
+\section{Current Research: Physics-Informed Digital Twins}
+In my current work at Sonatrach, I have developed a generative surrogate for gas turbine monitoring using \textbf{Mamba-SSM} and \textbf{xLSTM} architectures. A key aspect of this research is the use of \textbf{Physics-Informed Neural Networks (PINN)} to enforce thermodynamic laws. This experience has taught me that the "envelope of validity" for a surrogate is defined by both the training data distribution and the underlying physical constraints. My background in building these hybrid models provides a practical starting point for formalizing the validity conditions of more complex environmental simulations.
+
+\section{Proposed Research Directions}
+Building upon the objectives of the \textbf{Scenario Exploration} project at Université de Pau, I propose to investigate the following axes:
+
+\subsection{1. Formalization of Model Validity Envelopes}
+I intend to investigate mathematical frameworks for capturing the validity conditions of scientific models (spatial scale, precision, territorial constraints). By defining these envelopes formally, we can move from implicit expert knowledge to an automated system that warns decision-makers when a scenario pushes a model outside its operational domain.
+
+\subsection{2. Model Interoperability and Automated Selection}
+The core of my research will focus on enabling the dynamic replacement or combination of models based on their contextual validity. By leveraging my background in high-dimensional statistical analysis, I will explore how to quantify the "compatibility" between different models when exploring alternative environmental scenarios.
+
+\subsection{3. Optimizing Scenario Exploration in Decision-Support}
+I propose to develop strategies for automatically selecting the most appropriate models to evaluate a given decision scenario (e.g., land-use planning). The goal is to balance simulation fidelity with computational efficiency, ensuring that the digital twin remains responsive during interactive exploration sessions.
+
+\section{Alignment with the EDT Program}
+My background in physics-aware AI and industrial implementation aligns with the goal of creating a national infrastructure for digital twin engineering. I am eager to contribute to the **Artemis platform** by providing a robust framework for scenario management and model validity, ensuring that the digital twins produced by the consortium are both flexible and scientifically reliable.
+
+\section{Conclusion}
+The goal of my PhD will be to transform environmental digital twins from static simulations into dynamic, interactive explorers. By formalizing model validity envelopes, I aim to provide the foundational tools necessary for the next generation of trustworthy and scientifically-grounded decision-support systems.
+
+\end{document}

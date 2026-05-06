@@ -1,0 +1,48 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{orange}{RGB}{255,102,0}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=orange,
+    urlcolor=orange,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{orange} Projet de Recherche Doctoral}\\[6pt]
+    {\large Jumeaux Numériques pour la Résilience des Infrastructures de Virtualisation : Une Approche par Modèles d'États (SSM) et Graphes}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ Ingénieur d'État en Intelligence Artificielle
+\end{center}
+
+\bigskip
+
+\section{Introduction et Problématique}
+L'hébergement d'applications critiques sur des infrastructures de virtualisation distribuées (Edge Computing) exige une disponibilité proche de 100\%. Cependant, la complexité de l'orchestration (Kubernetes) et la volatilité des ressources rendent difficile la prédiction précise des défaillances. Je propose de développer un **Jumeau Numérique** capable de modéliser dynamiquement la disponibilité d'un site en hybridant des données de monitoring temps réel (**Prometheus**) avec des architectures neuronales avancées pour la prédiction de séries temporelles.
+
+\section{Axes de Recherche Proposés}
+
+\subsection{1. Modélisation Séquentielle par Mamba-SSM et xLSTM}
+Les défaillances d'infrastructure sont souvent précédées de signaux faibles sur de longues périodes. Les architectures traditionnelles (RNN/Transformers) peinent à capturer ces dépendances à long terme avec une efficacité computationnelle suffisante pour le temps réel. Je propose d'utiliser les **State Space Models (Mamba-SSM)** et les **xLSTM** pour modéliser l'évolution de l'état de santé des nœuds de virtualisation, permettant une estimation précise de la "vie résiduelle" des services.
+
+\subsection{2. Analyse Structurelle par Réseaux de Neurones sur Graphes (GNN)}
+Une infrastructure Kubernetes est par nature un graphe d'interdépendances (Pods, Nodes, Services). Je propose d'intégrer des **GNNs** pour capturer la propagation des pannes entre les composants. Cette approche permettra d'identifier les "états dégradés" non pas de manière isolée, mais en tenant compte de la topologie du réseau de virtualisation.
+
+\subsection{3. Indicateur de Disponibilité et Incertitude}
+L'objectif final est de transformer ces prédictions en un **Indicateur de Disponibilité** actionnable. En utilisant des méthodes d'**Estimation d'Incertitude** (Uncertainty Quantification), le Jumeau Numérique pourra fournir non seulement une prédiction de panne, mais aussi un intervalle de confiance, permettant à l'orchestrateur de prendre des décisions de redéploiement préventif sécurisées.
+
+\section{Alignement avec Orange Innovation}
+Ce projet s'inscrit parfaitement dans la mission de l'équipe NAVI visant à automatiser l'exploitation des réseaux. Mon expertise acquise chez Sonatrach sur des systèmes critiques me permettra de livrer des prototypes robustes intégrables dans les chaînes de mesure Orange.
+
+\end{document}

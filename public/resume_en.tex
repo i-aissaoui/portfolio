@@ -9,6 +9,7 @@
 \usepackage{xcolor}
 
 \definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -49,52 +50,47 @@
 
 %===========================
 \section{PROFILE}
-AI \& Data Science Engineer specialized in Transformer models, NLP, recommender systems, optimization, computer vision, and MLOps. Builds and deploys end-to-end AI solutions for HR tech, mobility, retail, and education. Strong expertise in model optimization, ML pipelines, and translating technical outcomes into business value.
+AI \& Data Science Engineer specialized in Edge AI, deep sequence models (Mamba, xLSTM), and performance optimization (C++ JIT, 0.04ms latency). Proven track record in designing hybrid architectures and Physics-Informed Digital Twins (PINN) for mission-critical industrial systems. Passionate about solving complex engineering problems at the intersection of hardware constraints and algorithmic design.
 
 %===========================
 \section{SKILLS}
 \setlength{\parskip}{-1pt}
 {\normalsize
 \textbf{Programming}: Python, TypeScript, JavaScript, Java, SQL \\
-
 \textbf{ML / DL}: PyTorch, TensorFlow, Keras, Scikit-learn, Lightning, ONNX \\
-
 \textbf{AI Techniques}: Transformers (BERT, GPT, RAG), GNN, GAN, XGBoost, LSTM \\
-
 \textbf{Optimization}: PSO, Genetic Algorithm, ACO, Simulated Annealing, Bayesian Optimization \\
-
 \textbf{Web \& API}: React, Next.js, FastAPI, Node.js, TailwindCSS \\
-
 \textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, DVC, Pandas, NumPy \\
-
 \textbf{Databases}: PostgreSQL, MongoDB, MySQL, Neo4j, Cassandra \\
-
 \textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana \\
-
 \textbf{Soft Skills}: Technical leadership, Communication, Stakeholder management
 }
 
 %===========================
 \section{PROFESSIONAL EXPERIENCE}
+\textbf{Graduate AI Research Engineer (Intern)} \hfill Jan 2026 -- Jul 2026 \\
+Sonatrach (Industrial Surveillance Division) — Algeria \\
+Led the architectural design and deployment of an AI-native Digital Twin platform for monitoring critical industrial assets (Gas Turbines). 
+\begin{itemize}
+    \item Developed a Physics-Informed Digital Twin using state-of-the-art \textbf{Mamba-SSM} and \textbf{xLSTM} architectures.
+    \item Solved the "Latency-vs-Precision" trade-off through hardware-software co-design, achieving \textbf{0.04ms inference time} on edge devices via C++ JIT optimization.
+    \item Implemented custom PINN loss functions to ensure thermodynamic consistency in generative surrogates.
+    \item Designed quantitative reliability indicators for Out-of-Distribution (OOD) anomaly detection.
+\end{itemize}
+
 \textbf{Network Engineering Intern} \hfill Sep 2024 \\
 Algérie Télécom RMC Center — Chlef, Algeria
 
 %===========================
 \section{EDUCATION}
 \textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
-Engineering and Master’s Degree in Computer Science \\
-Specialization: Artificial Intelligence \& Informatics
+State Engineer's Degree and Master’s Degree in Artificial Intelligence
 
 %===========================
-\section{KEY ACHIEVEMENTS}
-\begin{itemize}
-    \item Developed custom Transformer models (BERT, GPT, RAG) for real-world multilingual applications.
-    \item Built explainable AI platforms for HR tech and public institutions — reducing bias and improving decision quality.
-    \item Designed a graph-based recommendation system with +24\% accuracy improvement (dataset: 60K profiles).
-    \item Delivered complete ML pipelines: data ingestion, validation, training, CI/CD, and monitoring.
-    \item Built real-time vision systems (YOLO, ByteTrack) reducing latency by 32\%.
-\end{itemize}
-
+\section{CERTIFICATIONS}
+\textbf{DeepLearning.AI}: Machine Learning Specialization, Deep Learning Specialization, NLP Specialization \\
+\textbf{ZTM Academy}: PyTorch: Zero to Mastery, TensorFlow Developer
 %===========================
 % Force projects + languages onto page 2
 \newpage
@@ -103,6 +99,10 @@ Specialization: Artificial Intelligence \& Informatics
 % tighter spacing so everything fits on page 2
 \setlength{\parskip}{10pt}
 {\small
+
+\textbf{Physics-Informed Digital Twin (Mamba-SSM/xLSTM)} \hfill 2026 \\
+Generative surrogate architecture achieving 0.04ms edge inference for industrial gas turbines. \\
+\textit{Tech: PyTorch, C++, CUDA — Concepts: Mamba-SSM, PINN, Edge Latency Optimization}
 
 \textbf{GNN-based Recruiting System (Career Connect)} \hfill 2024--2025 \\
 CV/job matching using graph embeddings and relational learning. \\
@@ -144,18 +144,13 @@ Real-time detection of safety equipment (helmet, vest) for compliance monitoring
 Traffic analytics including tracking, speed estimation, and license plate recognition. \\
 \textit{Tech: YOLOv8, ByteTrack, EasyOCR — Concepts: Tracking, OCR, Analytics}
 
-\textbf{Hadj Management System} \hfill 2024 \\
-End-to-end logistics platform for group management and itineraries. \\
-\textit{Tech: React, FastAPI, PostgreSQL — Concepts: Workflow, Synchronization}
 
-\textbf{Hybrid POS \& E-Commerce System} \hfill 2025 \\
-Offline-first POS system integrated with an online store. \\
-\textit{Tech: PyQt, SQLite, PostgreSQL — Concepts: Offline/Online Sync, Inventory Management}
 
 } % end small
 
 %===========================
+%===========================
 \section{LANGUAGES}
-Arabic: Native \quad|\quad French: Fluent \quad|\quad English: Fluent
+Arabic: Mother Tongue \quad|\quad English: Advanced \quad|\quad French: Conversational
 
 \end{document}

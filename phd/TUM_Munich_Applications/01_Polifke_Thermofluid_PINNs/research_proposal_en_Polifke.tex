@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{tumblue}{RGB}{0,101,189}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=tumblue,
+    urlcolor=tumblue,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{tumblue} Research Proposal Outline}\\[6pt]
+    {\large Integrating State Space Models with PINNs for Thermofluid Digital Twins}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in Artificial Intelligence
+\end{center}
+
+\bigskip
+
+\section{Introduction}
+Modern gas turbine engineering requires high-fidelity models that can predict complex thermofluid behavior (combustion, turbulence, heat transfer) in real-time. Traditional Numerical Weather Prediction (NWP) or CFD models are often too computationally expensive for real-time Digital Twin applications. I propose a research framework that combines **Physics-Informed Neural Networks (PINNs)** with **State Space Models (Mamba-SSM)** to create fast, physically consistent, and long-range predictive surrogates for thermofluid dynamics.
+
+\section{Proposed Research Axes}
+
+\subsection{1. SSM-based Sequential Modeling of Turbulent Flows}
+Turbulent flows are characterized by multi-scale temporal dependencies. Standard Recurrent Neural Networks (RNNs) or Transformers often struggle with the memory-compute trade-off for high-frequency sensor data. I propose to investigate the use of **Mamba-SSM** architectures to model the evolution of flow fields. Their linear scaling with sequence length makes them ideal for the long-range monitoring required in gas turbine digital twins.
+
+\subsection{2. Constraining State Transitions with Physical Laws}
+Building upon my work at Sonatrach, I aim to embed governing equations (Navier-Stokes, Energy Balance) directly into the SSM state transition matrices. By enforcing physical consistency through PINN-style loss functions, we can ensure that the learned latent states of the fluid system remain within the bounds of physical reality, even when the model extrapolates to unseen operating regimes.
+
+\subsection{3. Multi-mesh Graph Integration for Distributed Sensing}
+Gas turbines involve spatially distributed sensors. I propose using **Graph Neural Networks (GNNs)** to model the spatial topology of the turbine components, integrated with SSMs for the temporal aspect. This "Spatial-Temporal Graph-SSM" would allow for a holistic digital twin capable of pinpointing local thermofluid anomalies (e.g., combustion hotspots) across the entire system.
+
+\section{Alignment with TUM CIT/Engineering}
+My proposal aligns with the Professorship of Thermofluid Dynamics' mission to push the boundaries of Physics-Informed Deep Learning. I intend to leverage TUM’s high-performance computing resources to validate these hybrid architectures against high-fidelity CFD datasets, ultimately contributing to a more robust and sustainable engineering digital twin infrastructure.
+
+\end{document}
