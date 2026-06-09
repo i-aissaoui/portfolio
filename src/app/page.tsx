@@ -220,7 +220,7 @@ export default function Home() {
                     onClick={(e) => openProject(i, e)}
                     className='project-card group cursor-pointer rounded-3xl overflow-hidden bg-[#0c0c0c]/80 border border-white/5 hover:border-[#00d9ff]/30 backdrop-blur-xl opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,217,255,0.15)] flex flex-col h-full'
                   >
-                    <div className='relative h-48 overflow-hidden'>
+                    <div className='relative h-64 md:h-80 overflow-hidden'>
                       {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
                         <Image
                           src={image}
@@ -287,7 +287,7 @@ export default function Home() {
                     onClick={(e) => openProject(i, e)}
                     className='project-card group cursor-pointer rounded-[2.5rem] overflow-hidden bg-[#0c0c0c]/80 border border-white/5 hover:border-[#00d9ff]/30 backdrop-blur-xl opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,217,255,0.15)] flex flex-col h-full'
                   >
-                    <div className='relative h-48 overflow-hidden'>
+                    <div className='relative h-64 md:h-80 overflow-hidden'>
                       {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
                         <Image
                           src={image}

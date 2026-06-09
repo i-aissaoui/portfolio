@@ -66,7 +66,46 @@ PyQt
 
 ---
 
+## CERTIFICATIONS
+
+- **DeepLearning.AI**: Machine Learning Specialization, Deep Learning Specialization, NLP Specialization
+- **ZTM Academy**: PyTorch: Zero to Mastery, TensorFlow Developer
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### Graduate AI Research Engineer (Intern) (Jan 2026 -- Jul 2026)
+**Sonatrach (Industrial Surveillance Division) — Algeria**
+
+Architected an AI-native Digital Twin for real-time monitoring of Gas Turbines.
+
+- Built a Physics-Informed Digital Twin (PINN) using **Mamba-SSM** and **xLSTM** architectures.
+- Achieved **0.04ms edge inference** via hardware-software co-design and C++ JIT optimization.
+- Engineered custom PINN loss functions to ensure strict thermodynamic consistency.
+- Developed quantitative indicators for Out-of-Distribution (OOD) anomaly detection.
+
+---
+
 ## PROJECTS
+
+### Industrial Gas Turbine Digital Twin (Sonatrach) (2026)
+
+- Generative Mamba-SSM surrogate for 'What-If' scenarios and C++ JIT xLSTM edge inference.
+- Physics-Informed Digital Twin ensuring thermodynamic monotonicity.
+
+**Technologies:** Mamba-SSM, xLSTM, PyTorch, C++ JIT, PINN, Edge Computing, Thermodynamics
+
+---
+
+### Cardiovascular Medical Digital Twin (2026)
+
+- Physics-Informed Digital Twin modeling 1D Hemodynamic Navier-Stokes flows.
+- Leverages spatial-temporal transformers for vascular geometry and non-invasive inverse problem solving.
+
+**Technologies:** PyTorch, PINN, ST-KDFormer, Kafka, Fluid Mechanics
+
+---
 
 ### Career Connect | AI Job Recommendation Platform (2024-2025)
 
@@ -74,6 +113,31 @@ PyQt
 - Automatically analyzes resumes and job descriptions to provide intelligent matching and ranked recommendations
 
 **Technologies:** Python, FastAPI, React, TypeScript, PostgreSQL, Docker, PyTorch, PyTorch Geometric, SBERT, FAISS, SpaCy, XGBoost, LightGBM
+
+---
+
+### Aura | Enterprise AI Trading System (2025)
+
+- Full-stack automated crypto trading platform powered by hybrid LSTM forecasting and **Reinforcement Learning** (Deep Q-Learning).
+- Optimizes entry/exit policies under long-term reward maximization with real-time dashboards.
+
+**Technologies:** TensorFlow, Keras, FastAPI, Next.js, WebSockets, Deep Q-Learning
+
+---
+
+### Advanced NLP Pipeline with Multi-Optimization (2025)
+
+- Multilingual moderation optimized with PSO, Genetic Algorithm, and Bayesian Optimization.
+
+**Technologies:** DistilBERT, PyTorch, FastAPI
+
+---
+
+### Intelligent University Scheduler (2025)
+
+- Automatic generation of conflict-free timetables using hybrid heuristics and evolutionary algorithms.
+
+**Technologies:** FastAPI, NumPy, Pandas, GA, PSO, ACO, Simulated Annealing
 
 ---
 
@@ -131,15 +195,6 @@ PyQt
 
 ---
 
-### Hadj Management System (2024)
-
-- Web platform for managing all aspects of Hajj pilgrim logistics and travel arrangements
-- Coordinates group selection, flight bookings, hotel accommodations, and medical scheduling
-
-**Technologies:** Web Development, Database Management, Scheduling Systems
-
----
-
 ### Hybrid POS & E-commerce System (2025)
 
 - Desktop point-of-sale system that synchronizes with multiple online stores in real-time
@@ -149,4 +204,4 @@ PyQt
 
 ---
 
-*Resume last updated: 2025*
+*Resume last updated: 2026*

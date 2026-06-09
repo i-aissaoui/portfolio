@@ -228,25 +228,75 @@ export const site = {
     {
       category: "AI",
       title: {
-        en: "Industrial Gas Turbine Digital Twin: Generative Surrogate Architecture",
-        fr: "Jumeau Numérique de Turbine à Gaz : Architecture de Substitut Génératif",
-        de: "Industrieller Gasturbinen-Digitalzwilling: Generative Surrogat-Architektur",
+        en: "SONATRACH Gas Turbine Digital Twin",
+        fr: "Jumeau Numérique de Turbine à Gaz (SONATRACH)",
+        de: "Gasturbinen-Digitalzwilling (SONATRACH)",
       },
       description: {
-        en: "Scientifically rigorous Digital Twin for Sonatrach GE LM2500. Features a Generative Mamba-SSM surrogate for 'What-If' scenarios and C++ JIT-compiled xLSTM for edge deployment.",
-        fr: "Jumeau numérique rigoureux pour Sonatrach GE LM2500. Comprend un substitut Mamba-SSM génératif pour les scénarios 'What-If' et xLSTM compilé en C++ JIT pour le déploiement edge.",
-        de: "Wissenschaftlich fundierter digitaler Zwilling für Sonatrach GE LM2500. Mit generativem Mamba-SSM-Surrogat für 'Was-wäre-wenn'-Szenarien und C++ JIT-kompiliertem xLSTM.",
+        en: "Dual-Track Digital Twin framework solving the Hardware Latency Paradox for GE LM2500 gas turbines. Decouples Siemens Edge PLCs (TCNEdge), IoT Gateways (MambaTS), and Cloud (ST-KDFormer, KAN-PCNN).",
+        fr: "Framework de jumeau numérique double-voie résolvant le paradoxe de latence matérielle pour les turbines GE LM2500. Découple le PLC Siemens (TCNEdge), la passerelle IoT (MambaTS) et le cloud.",
+        de: "Dual-Track Digitaler Zwilling zur Lösung des Hardware-Latenz-Paradoxons für GE LM2500 Gasturbinen. Entkoppelt Siemens-Edge-SPS, IoT-Gateways und Cloud.",
       },
       details: {
-        en: "Research Breakthroughs:\n• Hardware-Software Co-Design: 0.04ms edge inference via C++ JIT Compiled xLSTM.\n• Generative Surrogate: Mamba-SSM based 'What-If' simulator for autoregressive failure prediction.\n• Physics-Informed ML: PINN loss functions enforcing thermodynamic monotonicity ($d(RUL)/dt \\le 0$).\n• Desktop Integration: Air-gapped Electron UI with Three.js for real-time 3D component isolation.",
-        fr: "Avancées de recherche :\n• Co-conception Matériel-Logiciel : Inférence edge de 0,04ms via xLSTM compilé en C++ JIT.\n• Substitut Génératif : Simulateur 'What-If' basé sur Mamba-SSM pour la prédiction de défaillance autorégressive.\n• ML Physique : Fonctions de perte PINN imposant la monotonicité thermodynamique.\n• Intégration Desktop : UI Electron air-gapped avec Three.js pour l'isolation 3D des composants.",
-        de: "Forschungshighlights:\n• Hardware-Software Co-Design: 0,04ms Edge-Inferenz über C++ JIT-kompiliertes xLSTM.\n• Generatives Surrogat: Mamba-SSM-basierter 'Was-wäre-wenn'-Simulator.\n• Physik-Informatik ML: PINN-Loss-Funktionen zur Durchsetzung der thermodynamischen Monotonie.\n• Desktop-Integration: Air-gapped Electron UI mit Three.js für 3D-Komponentenisolierung.",
+        en: "Core Breakthroughs:\n• Tier 1 (Deep Edge): TCNEdge compiled to C++ ONNX Runtime for 0.049ms latency emergency shutdown with causality defense.\n• Tier 2 (Near Edge): MambaTS featuring missingness-aware gating for sandstorm robustness and physics-informed thermodynamic regularization.\n• Tier 3 (Cloud): Fleet-wide analytics using ST-KDFormer (Koopman Operator) and KAN-PCNN (B-spline Physics networks).",
+        fr: "Avancées majeures :\n• Tier 1 (Deep Edge) : TCNEdge compilé en C++ ONNX pour un arrêt d'urgence en 0,049ms.\n• Tier 2 (Near Edge) : MambaTS avec gestion des pannes de capteurs et régularisation thermodynamique.\n• Tier 3 (Cloud) : ST-KDFormer (Opérateur Koopman) et KAN-PCNN (Réseaux Kolmogorov-Arnold).",
+        de: "Kernbereiche:\n• Tier 1 (Deep Edge): TCNEdge kompiliert auf C++ ONNX für 0,049ms Abschaltlatenz.\n• Tier 2 (Near Edge): MambaTS mit Sensorfehler-Kompensation und physikalischen Regularisierungen.\n• Tier 3 (Cloud): ST-KDFormer (Koopman-Operator) und KAN-PCNN (Kolmogorov-Arnold-Netze).",
       },
-      tech: ["Mamba-SSM", "xLSTM", "PyTorch", "C++ JIT", "Electron", "Three.js", "Koopman Theory", "PINN"],
+      tech: ["Mamba-SSM", "TCNEdge", "ST-KDFormer", "KAN-PCNN", "ONNX Runtime", "C++ JIT", "PINN"],
       images: [
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600"
+        "/ai-projects/gas_turbine_v2.png"
       ],
       link: "sonatrach/README.md",
+    },
+
+    // 0.5) Cardiovascular Medical Digital Twin
+    {
+      category: "AI",
+      title: {
+        en: "Cardiovascular Medical Digital Twin",
+        fr: "Jumeau Numérique Médical Cardiovasculaire",
+        de: "Kardiovaskulärer Medizinischer Digitaler Zwilling",
+      },
+      description: {
+        en: "Physics-Informed Digital Twin forecasting patient arterial Mean Blood Pressure (MBP) in the ICU. Uses the VitalDB dataset and multi-scale state space models.",
+        fr: "Jumeau numérique médical informé par la physique prédisant la pression artérielle moyenne (MBP) en soins intensifs à partir du dataset VitalDB.",
+        de: "Physik-informierter medizinischer digitaler Zwilling zur Vorhersage des mittleren Blutdrucks (MBP) auf der Intensivstation unter Verwendung von VitalDB.",
+      },
+      details: {
+        en: "Core Architecture:\n• 0D Windkessel PINN: Integrates cardiovascular ODEs using PyTorch autograd loss regularizers for physiological compliance.\n• Medical_MambaTS: Selective State Space Model achieving linear complexity O(N) for resource-constrained bedside monitors.\n• SST_KODA_MultiScale: Dual-branch hybrid routing trends to Mamba and transients to Transformers.\n• PI_DeepONet: Solves cardiovascular ODEs in sub-0.05ms using branch and trunk networks.",
+        fr: "Architecture principale :\n• PINN Windkessel 0D : Intègre les équations différentielles cardiovasculaires via autograd dans PyTorch.\n• Medical_MambaTS : Modèle State-Space sélectif à complexité linéaire O(N) pour moniteurs de chevet.\n• SST_KODA_MultiScale : Routage hybride double branche pour les tendances et pics de pression.\n• PI_DeepONet : Résout les équations différentielles cardiovasculaires en moins de 0,05ms.",
+        de: "Hauptarchitektur:\n• 0D Windkessel PINN: Integriert kardiovaskuläre DGLs über PyTorch-Autograd für physiologische Konformität.\n• Medical_MambaTS: Selektives Zustandsraummodell mit linearer Komplexität O(N) für bettseitige Monitore.\n• SST_KODA_MultiScale: Dual-Branch-Modell für Trends und Blutdruckspitzen.\n• PI_DeepONet: Löst kardiovaskuläre DGLs in unter 0,05ms.",
+      },
+      tech: ["PyTorch", "PINN", "MambaTS", "SST-KODA", "PI-DeepONet", "VitalDB", "Kafka"],
+      images: [
+        "/ai-projects/medical_v2.png"
+      ],
+      link: "medical-digital-twin/README.md",
+    },
+
+    // 0.7) Autonomous Cyber-Shield Platform
+    {
+      category: "AI",
+      title: {
+        en: "Autonomous Cyber-Shield Platform",
+        fr: "Plateforme Cyber-Bouclier Autonome",
+        de: "Autonome Cyber-Shield Plattform",
+      },
+      description: {
+        en: "Artificial General Intelligence (AGI) framework designed to autonomously defend enterprise networks via Inductive GNNs and Adversarial Co-Evolution.",
+        fr: "Cadre d'Intelligence Artificielle Générale (AGI) conçu pour défendre de manière autonome les réseaux d'entreprise via GNN Inductifs et Co-Évolution Adversarielle.",
+        de: "AGI-Framework (Artificial General Intelligence) zur autonomen Verteidigung von Unternehmensnetzwerken mittels induktiver GNNs und adversarieller Koevolution.",
+      },
+      details: {
+        en: "Core Architecture:\n• Topological Zero-Shot Defense: Instantly transfer models trained on 10 nodes to 10,000 node networks.\n• Geometric Deep Learning: Graph Attention Networks (GATs) for state interception.\n• Adversarial Co-Evolution: Red AI and Blue AI agents locked in millions of fictitious self-play battles.\n• Neuro-Symbolic LLM Masking: Translates strict safety policies into mathematical action masks.",
+        fr: "Architecture de base :\n• Défense topologique Zero-Shot : Transfert instantané de modèles formés sur 10 nœuds à des réseaux de 10 000 nœuds.\n• Apprentissage profond géométrique : Graph Attention Networks (GATs).\n• Co-Évolution Adversarielle : Agents IA Rouge et IA Bleu en apprentissage compétitif.\n• LLM Neuro-Symbolique : Masques d'action basés sur des politiques de sécurité strictes.",
+        de: "Kernarchitektur:\n• Topologische Zero-Shot-Verteidigung: Modelle, die auf 10 Knoten trainiert wurden, direkt auf 10.000 Knoten skalierbar.\n• Geometrisches Deep Learning: Graph Attention Networks (GATs).\n• Adversarielle Koevolution: Red AI und Blue AI in Self-Play-Wettbewerben.\n• Neuro-symbolisches LLM-Masking: Strenge Sicherheitspolitiken als mathematische Aktionsmasken.",
+      },
+      tech: ["PyTorch Geometric", "Graph Attention Networks (GAT)", "Reinforcement Learning", "CybORG", "LSTM"],
+      images: [
+        "/ai-projects/cyber_shield_v2.png"
+      ],
+      link: "engineering thesis/README.md",
     },
 
     // 1) Aura AI Trading Ecosystem

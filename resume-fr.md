@@ -66,14 +66,78 @@ PyQt
 
 ---
 
+## CERTIFICATIONS
+
+- **DeepLearning.AI** : Machine Learning Specialization, Deep Learning Specialization, NLP Specialization
+- **ZTM Academy** : PyTorch: Zero to Mastery, TensorFlow Developer
+
+---
+
+## EXPÉRIENCE PROFESSIONNELLE
+
+### Ingénieur de Recherche IA (Stagiaire) (Jan 2026 -- Jui 2026)
+**Sonatrach (Division Surveillance Industrielle) — Algérie**
+
+Architecture d'un Jumeau Numérique IA pour la surveillance en temps réel des Turbines à Gaz.
+
+- Création d'un Jumeau Numérique Informé par la Physique (PINN) avec **Mamba-SSM** et **xLSTM**.
+- **Inférence edge à 0.04ms** atteinte via co-conception matériel-logiciel et optimisation C++ JIT.
+- Ingénierie de fonctions de perte PINN personnalisées assurant la consistance thermodynamique.
+- Développement d'indicateurs quantitatifs pour la détection d'anomalies hors distribution (OOD).
+
+---
+
 ## PROJETS
+
+### Jumeau Numérique de Turbine à Gaz (Sonatrach) (2026)
+
+- Substitut génératif Mamba-SSM pour scénarios 'What-If' et inférence edge xLSTM en C++ JIT.
+- Jumeau Numérique informé par la physique pour assurer la monotonie thermodynamique.
+
+**Technologies :** Mamba-SSM, xLSTM, PyTorch, C++ JIT, PINN, Edge Computing, Thermodynamique
+
+---
+
+### Jumeau Numérique Médical Cardiovasculaire (2026)
+
+- Jumeau numérique informé par la physique modélisant les flux hémodynamiques de Navier-Stokes en 1D.
+- Utilise des transformateurs spatio-temporels pour la géométrie vasculaire et la résolution non invasive de problèmes inverses.
+
+**Technologies :** PyTorch, PINN, ST-KDFormer, Kafka, Mécanique des fluides
+
+---
 
 ### Career Connect | Plateforme IA de Recommandation d'Emplois (2024-2025)
 
 - Plateforme de recrutement connectant chercheurs d'emploi et recruteurs
 - Analyse automatiquement CV et offres pour fournir correspondances intelligentes et recommandations
 
-**Technologies:** Python, FastAPI, React, TypeScript, PostgreSQL, Docker, PyTorch, PyTorch Geometric, SBERT, FAISS, SpaCy, XGBoost, LightGBM
+**Technologies :** Python, FastAPI, React, TypeScript, PostgreSQL, Docker, PyTorch, PyTorch Geometric, SBERT, FAISS, SpaCy, XGBoost, LightGBM
+
+---
+
+### Aura | Système de Trading IA d'Entreprise (2025)
+
+- Plateforme de trading crypto combinant prévision LSTM et **Apprentissage par Renforcement** (Deep Q-Learning).
+- Optimise les stratégies d'entrée/sortie sous maximisation de récompense à long terme avec tableaux de bord en temps réel.
+
+**Technologies :** TensorFlow, Keras, FastAPI, Next.js, WebSockets, Deep Q-Learning
+
+---
+
+### Pipeline NLP Avancé avec Multi-Optimisation (2025)
+
+- Modération multilingue optimisée via PSO, algorithme génétique et optimisation bayésienne.
+
+**Technologies :** DistilBERT, PyTorch, FastAPI
+
+---
+
+### Planificateur Universitaire Intelligent (2025)
+
+- Génération automatique d'emplois du temps sans conflits à l'aide d'heuristiques hybrides et d'algorithmes évolutionnaires.
+
+**Technologies :** FastAPI, NumPy, Pandas, GA, PSO, ACO, Recuit simulé
 
 ---
 
@@ -131,15 +195,6 @@ PyQt
 
 ---
 
-### Système de Gestion du Hajj (2024)
-
-- Plateforme web gérant logistique et arrangements de voyage des pèlerins du Hajj
-- Coordonne sélection groupes, réservations vols, hébergements hôteliers et planification médicale
-
-**Technologies:** Développement Web, Gestion de Bases de Données, Systèmes de Planification
-
----
-
 ### Système Hybride POS & E-commerce (2025)
 
 - Système point de vente desktop synchronisé avec boutiques en ligne en temps réel
@@ -149,4 +204,4 @@ PyQt
 
 ---
 
-*CV mis à jour: 2025*
+*CV mis à jour : 2026*

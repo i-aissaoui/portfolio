@@ -9,6 +9,7 @@
 \usepackage{xcolor}
 
 \definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -49,33 +50,32 @@
 
 %===========================
 \section{PROFILE}
-AI \& Data Science Engineer specialized in Transformer models, NLP, recommender systems, optimization, computer vision, and MLOps. Builds and deploys end-to-end AI solutions for HR tech, mobility, retail, and education. Strong expertise in model optimization, ML pipelines, and translating technical outcomes into business value.
+AI \& Data Science Engineer specialized in Deep Learning (Transformers, Mamba) and Edge AI. Proven ability to build end-to-end ML pipelines, optimize model inference, and deploy robust AI solutions that translate technical outcomes into business value.
 
 %===========================
 \section{SKILLS}
-\setlength{\parskip}{-1pt}
-{\normalsize
 \textbf{Programming}: Python, TypeScript, JavaScript, Java, SQL \\
-
 \textbf{ML / DL}: PyTorch, TensorFlow, Keras, Scikit-learn, Lightning, ONNX \\
-
 \textbf{AI Techniques}: Transformers (BERT, GPT, RAG), GNN, GAN, XGBoost, LSTM \\
-
 \textbf{Optimization}: PSO, Genetic Algorithm, ACO, Simulated Annealing, Bayesian Optimization \\
-
 \textbf{Web \& API}: React, Next.js, FastAPI, Node.js, TailwindCSS \\
-
 \textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, DVC, Pandas, NumPy \\
-
 \textbf{Databases}: PostgreSQL, MongoDB, MySQL, Neo4j, Cassandra \\
-
-\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana \\
-
-\textbf{Soft Skills}: Technical leadership, Communication, Stakeholder management
-}
+\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana 
 
 %===========================
 \section{PROFESSIONAL EXPERIENCE}
+\textbf{Graduate AI Research Engineer (Intern)} \hfill Jan 2026 -- Jul 2026 \\
+Sonatrach (Industrial Surveillance Division) — Algeria \\
+Architected an AI-native Digital Twin for real-time monitoring of Gas Turbines.
+\begin{itemize}
+    \item Built a Physics-Informed Digital Twin (PINN) using \textbf{Mamba-SSM} and \textbf{xLSTM} architectures.
+    \item Achieved \textbf{0.04ms edge inference} via hardware-software co-design and C++ JIT optimization.
+    \item Engineered custom PINN loss functions to ensure strict thermodynamic consistency.
+    \item Developed quantitative indicators for Out-of-Distribution (OOD) anomaly detection.
+\end{itemize}
+
+\vspace{8pt}
 \textbf{Network Engineering Intern} \hfill Sep 2024 \\
 Algérie Télécom RMC Center — Chlef, Algeria
 
@@ -83,76 +83,69 @@ Algérie Télécom RMC Center — Chlef, Algeria
 \section{EDUCATION}
 \textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
 Engineering and Master’s Degree in Computer Science \\
-Specialization: Artificial Intelligence \& Informatics
+Specialization: Artificial Intelligence \& Data Science
+
 
 %===========================
-\section{KEY ACHIEVEMENTS}
-\begin{itemize}
-    \item Developed custom Transformer models (BERT, GPT, RAG) for real-world multilingual applications.
-    \item Built explainable AI platforms for HR tech and public institutions — reducing bias and improving decision quality.
-    \item Designed a graph-based recommendation system with +24\% accuracy improvement (dataset: 60K profiles).
-    \item Delivered complete ML pipelines: data ingestion, validation, training, CI/CD, and monitoring.
-    \item Built real-time vision systems (YOLO, ByteTrack) reducing latency by 32\%.
-\end{itemize}
+\section{CERTIFICATIONS}
+\textbf{DeepLearning.AI}: Machine Learning Specialization, Deep Learning Specialization, NLP Specialization \\[6pt]
+\textbf{ZTM Academy}: PyTorch: Zero to Mastery, TensorFlow Developer
 
 %===========================
 % Force projects + languages onto page 2
 \newpage
 
 \section{PROJECTS}
-% tighter spacing so everything fits on page 2
-\setlength{\parskip}{10pt}
+\setlength{\parskip}{0pt}
+
+\noindent\textbf{\large Industrial Gas Turbine Digital Twin (Sonatrach)} \hfill \textbf{2026}
+\vspace{2pt}
 {\small
+\begin{itemize}
+    \item \textbf{Surrogate Modeling}: Engineered a real-time Physics-Informed Digital Twin using Mamba-SSM and xLSTM.
+    \item \textbf{Generative 'What-If'}: Implemented generative scenario forecasting for predictive maintenance.
+    \item \textbf{XAI \& RAG}: Integrated Retrieval-Augmented Generation and Explainable AI for transparent anomaly diagnosis.
+    \item \textbf{Edge Optimization}: Achieved 0.04ms edge inference via hardware-software co-design and C++ JIT optimization.
+\end{itemize}
+\textit{Tech: Mamba-SSM, xLSTM, PyTorch, C++ JIT, PINN, RAG, XAI}
+}
+\vspace{8pt}
 
-\textbf{GNN-based Recruiting System (Career Connect)} \hfill 2024--2025 \\
-CV/job matching using graph embeddings and relational learning. \\
-\textit{Tech: PyTorch Geometric, SBERT, FastAPI, PostgreSQL — Concepts: GNN, Similarity, Embeddings}
+\noindent\textbf{\large Cardiovascular Medical Digital Twin} \hfill \textbf{2026}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{Physics-Informed Modeling}: Architected a Digital Twin modeling 1D Hemodynamic Navier-Stokes flows to predict anomalies.
+    \item \textbf{Spatio-Temporal Distillation}: Integrated ST-KDFormer to balance high-fidelity physics with computational efficiency.
+    \item \textbf{Data Streaming}: Engineered real-time ingestion of physiological data streams using Apache Kafka.
+\end{itemize}
+\textit{Tech: PyTorch, PINN, ST-KDFormer, Kafka, Fluid Mechanics}
+}
+\vspace{8pt}
 
-\textbf{Aura — Enterprise AI Trading System} \hfill 2025 \\
-Full-stack automated crypto trading platform powered by hybrid LSTM forecasting and \textbf{Reinforcement Learning} (Deep Q-Learning) to optimize entry/exit policies under long-term reward maximization. Includes advanced technical indicators, real-time dashboards, and interactive backtesting. \\
-\textit{Tech: TensorFlow, Keras, FastAPI, Next.js, WebSockets — Concepts: LSTM, Reinforcement Learning, Deep Q-Learning, Time-Series Analysis}
+\noindent\textbf{\large Aura — Enterprise AI Trading Platform} \hfill \textbf{2025}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{Hybrid Forecasting}: Built an autonomous trading system combining LSTM networks for time-series predictions.
+    \item \textbf{Strategic Decision-Making}: Implemented Deep Q-Learning (Reinforcement Learning) to optimize long-term reward policies.
+    \item \textbf{Real-Time Dashboard}: Engineered a high-throughput FastAPI backend with WebSockets and a Next.js interactive UI.
+\end{itemize}
+\textit{Tech: TensorFlow, PyTorch, FastAPI, Next.js, WebSockets, RL}
+}
+\vspace{8pt}
 
-\textbf{Advanced NLP Pipeline with Multi-Optimization} \hfill 2025 \\
-Multilingual moderation optimized with PSO, Genetic Algorithm, and Bayesian Optimization. \\
-\textit{Tech: DistilBERT, PyTorch, FastAPI — Concepts: Optimization, Transformers, Classification}
-
-\textbf{Intelligent University Scheduler} \hfill 2025 \\
-Automatic generation of conflict-free timetables using hybrid heuristics and evolutionary algorithms. \\
-\textit{Tech: FastAPI, NumPy, Pandas — Concepts: GA, PSO, ACO, Simulated Annealing}
-
-\textbf{Mini-GPT (Decoder-only)} \hfill 2025 \\
-Implementation of a compact GPT model with controlled training and sequential text generation. \\
-\textit{Tech: PyTorch, CUDA, AdamW, W\&B — Concepts: Transformers, Language Modeling}
-
-\textbf{North African Sentiment BERT} \hfill 2025 \\
-LoRA adaptation of BERT for sentiment analysis in Maghrebi dialect. \\
-\textit{Tech: PyTorch, LoRA, MLflow — Concepts: Fine-tuning, Low-Rank Adaptation}
-
-\textbf{Geo-RAG — Map Assistant} \hfill 2025 \\
-RAG system integrating geospatial data for map-oriented queries. \\
-\textit{Tech: ChromaDB, GeoPandas, Streamlit — Concepts: RAG, Spatial Reasoning}
-
-\textbf{Recognizini — Facial Recognition} \hfill 2025 \\
-Facial recognition with incremental embeddings and an active feedback loop. \\
-\textit{Tech: OpenCV, PyTorch, Redis, FastAPI — Concepts: Embeddings, Drift Management}
-
-\textbf{Real-time PPE Detection (YOLOv8)} \hfill 2025 \\
-Real-time detection of safety equipment (helmet, vest) for compliance monitoring. \\
-\textit{Tech: YOLOv8, OpenCV — Concepts: Object Detection, Streaming}
-
-\textbf{Traffic Analytics Suite} \hfill 2025 \\
-Traffic analytics including tracking, speed estimation, and license plate recognition. \\
-\textit{Tech: YOLOv8, ByteTrack, EasyOCR — Concepts: Tracking, OCR, Analytics}
-
-\textbf{Hadj Management System} \hfill 2024 \\
-End-to-end logistics platform for group management and itineraries. \\
-\textit{Tech: React, FastAPI, PostgreSQL — Concepts: Workflow, Synchronization}
-
-\textbf{Hybrid POS \& E-Commerce System} \hfill 2025 \\
-Offline-first POS system integrated with an online store. \\
-\textit{Tech: PyQt, SQLite, PostgreSQL — Concepts: Offline/Online Sync, Inventory Management}
-
-} % end small
+\noindent\textbf{\large GNN-based Recruiting System (Career Connect)} \hfill \textbf{2024--2025}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{Relational Learning}: Developed a recommendation engine using Graph Neural Networks (GNN) to map candidate-job relationships.
+    \item \textbf{Semantic Embeddings}: Utilized PyTorch Geometric and SBERT for deep semantic text processing.
+    \item \textbf{System Architecture}: Deployed via FastAPI and PostgreSQL, significantly outperforming keyword-based heuristics.
+\end{itemize}
+\textit{Tech: PyTorch Geometric, SBERT, FastAPI, PostgreSQL, GNN}
+}
+\vspace{12pt}
 
 %===========================
 \section{LANGUAGES}
