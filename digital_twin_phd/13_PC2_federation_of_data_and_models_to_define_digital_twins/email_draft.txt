@@ -1,0 +1,16 @@
+To: jerome.david@inria.fr
+Subject: Application: Federation of data and models to define digital twins
+
+Dear Jérôme David, Cassia Trojahn, and Sophie Ebersold,
+
+I am writing to express my strong interest in the PhD position "Federation of data and models to define digital twins" (PC2).
+
+Please find attached my resume, academic transcripts, and a detailed motivation letter outlining my practical engineering experience aligning complex physical models with real-time data streams, and how my background in knowledge engineering and AI can contribute to semantic federation within the Artemis platform.
+
+Thank you for your consideration.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app

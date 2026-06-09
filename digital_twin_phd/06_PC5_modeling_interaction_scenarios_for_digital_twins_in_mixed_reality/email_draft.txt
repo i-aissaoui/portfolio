@@ -1,0 +1,16 @@
+To: hiring.manager@edt-program.fr
+Subject: Application: Modeling Interaction Scenarios for Digital Twins in Mixed Reality
+
+Dear Ronan Querrec, Valérie Gouranton, Vincent Havard, and Eloïdie Bouzekri,
+
+I am writing to submit my application for the PhD position "Modeling Interaction Scenarios for Digital Twins in Mixed Reality" (PC5).
+
+Attached are my resume, academic transcripts, and a detailed motivation letter explaining how my experience in building 3D Next.js/Three.js interfaces for physical simulations aligns with the objectives of Mixed Reality scenario execution.
+
+Thank you for your consideration.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app

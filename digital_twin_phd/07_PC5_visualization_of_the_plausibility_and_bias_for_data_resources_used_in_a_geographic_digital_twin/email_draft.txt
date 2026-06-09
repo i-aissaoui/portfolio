@@ -1,0 +1,16 @@
+To: tobias.isenberg@inria.fr
+Subject: Application: Visualization of the Plausibility and Bias for Data Resources used in a Geographic Digital Twin
+
+Dear Tobias Isenberg and Maria Jesus Lobo-Gunther,
+
+I am writing to apply for the PhD position "Visualization of the Plausibility and Bias for Data Resources used in a Geographic Digital Twin" (PC5) at Inria AVIZ and IGN GeoVis.
+
+I have attached my resume, academic transcripts, and a detailed motivation letter explaining how my extensive experience with Explainable AI (XAI) and 3D data visualization aligns with your goals for depicting algorithmic bias and plausibility interactively.
+
+Thank you for your consideration.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app

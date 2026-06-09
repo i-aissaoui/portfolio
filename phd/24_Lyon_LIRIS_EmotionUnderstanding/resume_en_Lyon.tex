@@ -1,0 +1,101 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=1.5cm,right=1.5cm,top=1.2cm,bottom=1.5cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+
+\definecolor{lyon_red}{RGB}{186, 12, 47}
+\definecolor{LYON_RED}{RGB}{186, 12, 47}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=lyon_red,
+    linkcolor=lyon_red,
+    citecolor=lyon_red,
+    pdfborder={0 0 0}
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{lyon_red}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{lyon_red}\titlerule]
+
+\titlespacing\section{0pt}{10pt}{5pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{lyon_red} AISSAOUI Ismail}\\[4pt]
+    {\Large AI \& Computer Vision Engineer | PhD Candidate}\\[6pt]
+
+    {\normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
+    Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
+    Location: Algeria (Relocation Ready) \\
+    LinkedIn: \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
+    GitHub: \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    }
+\end{center}
+
+%===========================
+\section{PROFILE}
+AI \& Computer Vision Engineer specialized in **Facial Recognition**, **Video Representation Learning**, and **Temporal Dynamics**. Expert in building robust vision pipelines with PyTorch and OpenCV. Proven ability to implement state-of-the-art architectures (ViT, Mamba-SSM) for complex sequential data. Deeply committed to the application of AI in Healthcare and Social Science (ASD Support).
+
+%===========================
+\section{EDUCATION}
+\textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
+\textbf{Engineering \& Master’s Degree in Artificial Intelligence} \\
+\textit{Master's Thesis: "Modeling Temporal Dynamics for Industrial Systems using SSMs and xLSTM"} \\
+Focus: Sequential Representation Learning, Domain Generalization, Real-time Inference.
+
+%===========================
+\section{TECHNICAL SKILLS}
+\textbf{Computer Vision}: Facial Expression Recognition (FER), Image Processing, Object Detection (YOLOv8), Tracking (ByteTrack), Patch-based Attention (ViT). \\
+\textbf{AI \& ML}: PyTorch, TensorFlow, OpenCV, State-Space Models (Mamba), Transformer Architectures, Domain Generalization, Self-Supervised Learning. \\
+\textbf{Tools \& Infrastructure}: Git, Linux, Docker, CUDA, C++ JIT, InfluxDB, PostgreSQL. \\
+\textbf{Web}: FastAPI, Next.js, WebSockets (for real-time vision streaming).
+
+%===========================
+\section{PROJECT HIGHLIGHTS}
+
+\textbf{Recognizini — Real-Time Facial Recognition System} \hfill 2025 \\
+\textit{LIRIS Focus: FER, Embeddings, Real-time Processing}
+\begin{itemize}
+    \item Developed an end-to-end facial recognition application featuring real-time identification and an active feedback loop for incremental embedding updates.
+    \item Optimized facial feature extraction pipelines to handle varying head poses and illumination conditions.
+\end{itemize}
+
+\textbf{Vision Transformer (ViT) Implementation} \hfill 2025 \\
+\textit{LIRIS Focus: Foundation Models, Attention Mechanisms}
+\begin{itemize}
+    \item Implemented the seminal Vision Transformer architecture from scratch in PyTorch, focusing on linear projection of image patches and multi-head self-attention.
+\end{itemize}
+
+\textbf{Industrial Temporal Modeling (Master's Thesis)} \hfill 2025--2026 \\
+\textit{LIRIS Focus: Video Representation, Synchrony, SSMs}
+\begin{itemize}
+    \item Applied **Mamba-SSM** and **xLSTM** to model long-range temporal dependencies in high-frequency sensor data.
+    \item Engineered models for **Domain Generalization**, enabling transfer between different fleet units with 98\% reliability.
+\end{itemize}
+
+\textbf{Real-time Safety \& Traffic Analytics (YOLOv8)} \hfill 2025 \\
+\textit{LIRIS Focus: Monitoring, unconstrained scenes, OpenCV}
+\begin{itemize}
+    \item Built real-time monitoring systems for PPE compliance and traffic flow, utilizing ByteTrack for consistent object tracking across frames.
+\end{itemize}
+
+%===========================
+\section{LANGUAGES}
+English: Fluent (C1) \quad|\quad French: Fluent (C1) \quad|\quad Arabic: Native
+\end{document}

@@ -1,0 +1,16 @@
+To: hiring.manager@edt-program.fr
+Subject: Application: Improving Sustainability in the Physical-to-Digital Twin Continuum: A Middleware Framework for Adaptive Deployment
+
+Dear Prof. Romain Rouvoy and Dr. Quentin Perez,
+
+I am applying for the PhD position "Improving Sustainability in the Physical-to-Digital Twin Continuum" (PC3) within the Spirals and DiverSE project-teams.
+
+Please find attached my resume, transcripts, and a motivation letter outlining my hands-on experience optimizing Edge-AI models for low-power hardware, and how it translates to your objectives of sustainable middleware frameworks.
+
+Thank you for your time.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app

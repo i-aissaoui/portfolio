@@ -1,0 +1,16 @@
+To: arnaud.blouin@irisa.fr
+Subject: Application: Modeling the construction of digital twins
+
+Dear Arnaud Blouin, Benoit Combemale, and Romain Rouvoy,
+
+I am writing to express my eager interest in the PhD position "Modeling the construction of digital twins" (PC3).
+
+I have attached my resume, academic transcripts, and a detailed motivation letter outlining my engineering background in continuous deployment, complex systems architecture, and model-driven engineering, and how I plan to apply these skills to formalize the lifecycle of digital twins within the Artemis framework.
+
+Thank you for your consideration.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app

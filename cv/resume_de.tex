@@ -50,7 +50,7 @@
 
 %===========================
 \section{PROFIL}
-KI- und Data-Science-Ingenieur mit Spezialisierung auf Deep Learning (Transformers, Mamba) und Edge AI. Nachgewiesene Fähigkeit, End-to-End-ML-Pipelines aufzubauen, Modell-Inferenz zu optimieren und robuste KI-Lösungen zur Erreichung geschäftlicher Ziele bereitzustellen.
+KI- \& Data-Science-Ingenieur mit Hintergrund im Full-Stack-Software-Engineering. Erfahren in der Entwicklung von Projekten in den Bereichen industrielle digitale Zwillinge, Gesundheitswesen, Finanzhandel, Computer Vision und Unternehmensverwaltungssysteme. Meine Hauptinteressen umfassen Deep Learning, Graph Neural Networks, Reinforcement Learning und Natural Language Processing (NLP).
 
 %===========================
 \section{FÄHIGKEITEN}
@@ -69,10 +69,10 @@ KI- und Data-Science-Ingenieur mit Spezialisierung auf Deep Learning (Transforme
 Sonatrach (Abteilung für Industrieüberwachung) — Algerien \\
 Architektur eines KI-nativen digitalen Zwillings zur Echtzeitüberwachung von Gasturbinen.
 \begin{itemize}
-    \item Erstellung eines physikalisch informierten digitalen Zwillings mit \textbf{Mamba-SSM} und \textbf{xLSTM}.
-    \item \textbf{0.04ms Edge-Inferenz} durch Hardware-Software-Co-Design und C++ JIT-Optimierung erreicht.
-    \item Entwicklung maßgeschneiderter PINN-Verlustfunktionen zur Sicherstellung thermodynamischer Konsistenz.
-    \item Entwicklung quantitativer Indikatoren für die Out-of-Distribution (OOD) Anomalieerkennung.
+    \item Entwicklung eines 3-Ebenen-Frameworks, das sicherheitskritische Edge-Modelle von Cloud-Analysen entkoppelt.
+    \item Entwicklung von \textbf{TCNEdge} mit \textbf{0,049 ms INT8 ONNX C++ Inferenz} für Notabschaltungen.
+    \item Programmierung von \textbf{MambaTS} mit Sensorfehler-Kompensation zur Aufrechterhaltung der Robustheit.
+    \item Implementierung von \textbf{KAN-PCNN} und \textbf{ST-KDFormer} zur Sicherstellung strikter thermodynamischer Konsistenz.
 \end{itemize}
 
 \textbf{Praktikant Netzwerktechnik} \hfill Sep 2024 \\
@@ -83,7 +83,6 @@ Algérie Télécom RMC Center — Chlef, Algerien
 \textbf{Nationale Hochschule für Informatik (ESI-SBA)} \hfill 2021--2026 \\
 Ingenieur- und Masterstudium in Informatik \\
 Spezialisierung: Künstliche Intelligenz \& Data Science
-
 %===========================
 \section{ZERTIFIZIERUNGEN}
 \textbf{DeepLearning.AI}: Machine Learning Specialization, Deep Learning Specialization, NLP Specialization \\[6pt]
@@ -91,8 +90,19 @@ Spezialisierung: Künstliche Intelligenz \& Data Science
 
 
 %===========================
+% Force projects + languages onto page 2
 \newpage
 
+%===========================
+\section{AKADEMISCHE ABSCHLUSSARBEITEN}
+\textbf{Abschlussarbeit - Ingenieurdiplom:} \\
+\textit{Physik-informierter, erklärbarer digitaler Zwilling für Industrie-Gasturbinen: Ein Dual-Track Cloud-Edge Deep Learning Framework mit Koopman-erweiterten State-Space-Modellen}
+
+\vspace{4pt}
+\textbf{Masterarbeit:} \\
+\textit{Hämodynamische digitale Zwillinge: Fusion hämodynamischer physik-informierter neuronaler Netze und Mamba-SSM für die Prognostik von Intensivpatienten}
+
+\vspace{8pt}
 \section{PROJEKTE}
 \setlength{\parskip}{0pt}
 
@@ -100,12 +110,11 @@ Spezialisierung: Künstliche Intelligenz \& Data Science
 \vspace{2pt}
 {\small
 \begin{itemize}
-    \item \textbf{Ersatzmodellierung}: Entwicklung eines physik-informierten digitalen Zwillings (PINN) mit Mamba-SSM und xLSTM.
-    \item \textbf{Generative 'What-If'-Szenarien}: Implementierung von Simulationen für vorausschauende Wartung.
-    \item \textbf{XAI \& RAG}: Integration von Retrieval-Augmented Generation und erklärbarer KI für transparente Diagnosen.
-    \item \textbf{Edge-Optimierung}: Erreichen von 0,04 ms Edge-Inferenz durch Hardware-Software-Co-Design und C++ JIT.
+    \item \textbf{Edge- \& Cloud-Architektur}: Entwicklung eines 3-Ebenen-Frameworks, das sicherheitskritische TCNEdge (SPS) von MambaTS (Near-Edge) und ST-KDFormer (Cloud) entkoppelt.
+    \item \textbf{Ultra-Niedriglatenz-Inferenz}: Kompilierung von 1D-Faltungen (TCNEdge) zu INT8 ONNX C++, um 0,049 ms Latenz für Notabschaltungen zu erreichen.
+    \item \textbf{Physik \& Robustheit}: Implementierung von MambaTS zur Sensorausfall-Kompensation und KAN-PCNN für strikte thermodynamische Konsistenz.
 \end{itemize}
-\textit{Tech: Mamba-SSM, xLSTM, PyTorch, C++ JIT, PINN, RAG, XAI}
+\textit{Tech: MambaTS, TCNEdge, ST-KDFormer, KAN-PCNN, PyTorch, C++ ONNX, PINN}
 }
 \vspace{8pt}
 
@@ -113,11 +122,11 @@ Spezialisierung: Künstliche Intelligenz \& Data Science
 \vspace{2pt}
 {\small
 \begin{itemize}
-    \item \textbf{Physik-basierte Modellierung}: Modellierung hämodynamischer 1D-Navier-Stokes-Strömungen für die Vorhersage von Anomalien.
-    \item \textbf{Räumlich-zeitliche Destillation}: Integration von ST-KDFormer zur Balance zwischen physikalischer Genauigkeit und Effizienz.
-    \item \textbf{Daten-Streaming}: Verarbeitung von physiologischen Echtzeitdatenströmen über Apache Kafka.
+    \item \textbf{Patienten-basierte Vorhersage}: Prognose der mittleren Blutdruckstabilität (MBP) anhand von 100Hz VitalDB-Daten mit strikter 70/15/15-Aufteilung zur Vermeidung von Data-Leakage.
+    \item \textbf{Physik-informierte KI}: Design eines 0D Windkessel \textbf{PI\_DeepONet} (Branch/Trunk Nets), das physikalische Verletzungen von Arterien-Compliance und Gefäßwiderstand bestraft.
+    \item \textbf{Hybride Edge-Cloud-Modelle}: Architektur des linear-skalierenden \textbf{Medical\_MambaTS} für Monitore und des \textbf{ST-KDFormer} für Cloud-Analysen.
 \end{itemize}
-\textit{Tech: PyTorch, PINN, ST-KDFormer, Kafka, Strömungsmechanik}
+\textit{Tech: PyTorch, Medical\_MambaTS, PI\_DeepONet, ST-KDFormer, Hämodynamik, VitalDB}
 }
 \vspace{8pt}
 
@@ -147,6 +156,6 @@ Spezialisierung: Künstliche Intelligenz \& Data Science
 
 %===========================
 \section{SPRACHEN}
-Arabisch: Muttersprache \quad|\quad Französisch: Fließend \quad|\quad Englisch: Fließend
+Arabisch: Muttersprache \quad|\quad Englisch: Verhandlungssicher \quad|\quad Französisch: Fortgeschritten
 
 \end{document}

@@ -1,0 +1,83 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=titleblue,
+    linkcolor=titleblue,
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{titleblue}\titlerule]
+
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} Ismail AISSAOUI}\\[4pt]
+    {\Large AI \& Data Science Engineer}\\[6pt]
+    Email: ismail.aissaoui.pro@gmail.com \quad Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad Location: Algeria \\
+    LinkedIn: \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7}
+\end{center}
+
+\section{SUMMARY}
+AI Engineer specializing in **Scientific Machine Learning (SciML)** and **Physics-Informed Neural Networks (PINNs)**. Experienced in developing generative surrogates for complex physical systems, multi-step sequential dynamics (Mamba-SSM/xLSTM), and structural modeling via GNNs. Committed to bridging the gap between deep learning and physical/chemical sciences to solve foundational challenges in molecular assembly and property prediction.
+
+\section{EDUCATION}
+\textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
+Engineering and Master’s Degree in Computer Science \\
+Specialization: **Artificial Intelligence \& Informatics** \\
+*Key Coursework: Deep Learning, Graph Machine Learning, Metaheuristic Optimization, Scientific Computing.*
+
+\section{TECHNICAL EXPERTISE}
+\textbf{Machine Learning}: PyTorch, TensorFlow, Scikit-learn, Lightning, GNN (PyTorch Geometric), ViT. \\
+**Physics-AI**: Physics-Informed Neural Networks (PINNs), PINN-surrogates, Hybrid Modeling. \\
+**Sequential Dynamics**: Mamba-SSM, xLSTM, Temporal Convolutional Networks (TCN). \\
+**Optimization**: PSO, Genetic Algorithms, Bayesian Optimization, Optuna. \\
+**Deployment**: FastAPI, Docker, Edge AI (0.04ms inference), CUDA, Linux.
+
+\section{RESEARCH \& THESIS EXPERIENCE}
+\textbf{State Engineering Thesis (Sonatrach)} \hfill Feb 2026 -- July 2026 \\
+\textit{Generative Digital Twin for GE LM2500 Gas Turbines}
+\begin{itemize}
+    \item Developed a **Physics-Informed Digital Twin** capable of predicting high-fidelity thermodynamic states.
+    \item Hybridized **PINNs** with sequential architectures (**Mamba-SSM** and **xLSTM**) to capture non-linear temporal dependencies while maintaining physical consistency.
+    \item Handled a **5.2M point dataset (N-CMAPSS)**, optimizing data pipelines for multi-sensor telemetry.
+    \item Achieved **0.04ms latency** on edge devices through model distillation and JIT compilation.
+\end{itemize}
+
+\section{SELECTED PROJECTS}
+\textbf{Aura — Enterprise AI Trading System (LSTM + DQN)} \hfill 2025 \\
+Automated platform using reinforcement learning to optimize execution policies under reward maximization.
+
+\textbf{Elliptic++ — GNN for Fraud Detection} \hfill 2025 \\
+Graph-based classification of illicit nodes in the Bitcoin network using relational learning and node embeddings.
+
+\textbf{Career Connect — AI HR Platform (GNN + RAG)} \hfill 2024 \\
+Matching engine using graph embeddings and Google Gemini for deep semantic analysis of professional profiles.
+
+\textbf{Advanced NLP Optimization} \hfill 2025 \\
+Benchmarked PSO vs. Genetic Algorithms for hyperparameter tuning of Transformer architectures.
+
+\section{LANGUAGES}
+Arabic: Native \quad|\quad French: Fluent (C1/C2) \quad|\quad English: Fluent (C1/C2)
+
+\end{document}

@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{ucphred}{RGB}{144,26,30}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=ucphred,
+    urlcolor=ucphred,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{ucphred} Research Statement Outline}\\[6pt]
+    {\large Probing the State: Mechanistic Interpretability for Secure State-Space Models}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in Artificial Intelligence
+\end{center}
+
+\bigskip
+
+\section{Introduction and Problem Statement}
+Large Language Models (LLMs) often exhibit a susceptibility to "learning" false information during training or fine-tuning. While current **Mechanistic Interpretability** research has made strides in understanding circuit-based logic in Transformers, the move towards high-performance architectures like **State Space Models (SSMs)** introduces new complexities. My research goal is to develop a mechanistic framework that probes how "factuality" vs. "falsehood" is represented in the compressed latent states of SSMs, specifically **Mamba**, to develop robust mitigation protocols.
+
+\section{Proposed Research Axes}
+
+\subsection{1. Latent State Attribution for Factual Consistency}
+In a Transformer, factual associations are often attributed to specific MLP layers or attention heads. In an SSM, information is stored in a continuously evolving hidden state. I propose to develop **Attribution Methods** for state-space transitions. By identifying which components of the state vector $h_t$ are responsible for storing contradictory or false information, we can develop "surgical" intervention methods to prune or neutralize these specific dimensions without degrading the model's general performance.
+
+\subsection{2. Mechanistic Comparison: Transformers vs. SSMs}
+Does the linear recurrence of an SSM make it more or less susceptible to "hallucinations" than the global attention of a Transformer? I intend to conduct a comparative mechanistic study. Using "Counterfactual Intervention" (changing a specific token and observing the state evolution), I will analyze how false information "leaks" into the model's long-term memory. This will lead to the design of safer training objectives that penalize specific types of state-space dynamics associated with misinformation.
+
+\subsection{3. Security Envelopes for Reliable Inference}
+Inspired by my work on **Physics-Informed Neural Networks**, I propose the concept of **"Logical Validity Envelopes."** By monitoring the state-space trajectories of an LLM during inference, we can identify "unphysical" or "illogical" transitions that correlate with the generation of false information. This real-time monitoring system would act as a security layer, flagging responses where the mechanistic behavior of the model deviates from known factual patterns.
+
+\section{Alignment with CopeNLU and DIKU}
+This research aligns with the lab's mission to build a mechanistic framework for LLM security. By bringing my expertise in **Advanced Sequential Modeling** and **Industrial Reliability**, I aim to contribute to a more theoretically grounded and secure generation of language models at the University of Copenhagen.
+
+\end{document}

@@ -1,0 +1,80 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=1.5cm,right=1.5cm,top=1.2cm,bottom=1.5cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=titleblue, linkcolor=titleblue}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}{\color{titleblue}\large\bfseries\uppercase}{}{0em}{}[\color{titleblue}\titlerule]
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=1pt,itemsep=0pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} Ismail AISSAOUI}\\[4pt]
+    {\large State Engineer in Artificial Intelligence $|$ PhD Candidate in Scientific ML}\\[6pt]
+    \normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} $|$ Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} $|$ GitHub: \href{https://github.com/i-aissaoui}{i-aissaoui} \\
+    Nationality: Algerian $|$ Date of Birth: [INSERT DATE] \\
+    Address: [INSERT FULL POSTAL ADDRESS]
+\end{center}
+
+\section{Research Summary}
+AI Engineer specialized in \textbf{Scientific Machine Learning (SciML)}, \textbf{Physics-Informed Neural Networks (PINNs)}, and \textbf{Multi-Fidelity Digital Twins}. Proven expertise in designing generative surrogates for complex physical systems (Gas Turbines) using modern state-space models (\textbf{Mamba-SSM}) and \textbf{xLSTM}. Strong background in high-performance computing, achieving \textbf{0.04ms real-time inference} through hardware-software co-design.
+
+\section{Education}
+\textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
+\textit{State Engineer's Degree \& Master's Degree in Artificial Intelligence} \hfill GPA: 15.6/20
+\begin{itemize}
+    \item Core focus: Deep Learning, Numerical Optimization, Statistics, and Complex Systems.
+\end{itemize}
+
+\section{Research Experience}
+\textbf{Graduate Research Intern (Master Thesis)} \hfill Jan 2026 -- Jul 2026 \\
+\textit{Sonatrach (Industrial Surveillance Division) — Algeria} \\
+\textit{Supervisor: [INSERT SUPERVISOR NAME]}
+\begin{itemize}
+    \item Led the architectural design and deployment of an AI-native Digital Twin platform for monitoring critical industrial assets (Gas Turbines). 
+    \item Engineered a multi-fidelity surrogate pipeline using \textbf{Mamba-SSM} and \textbf{xLSTM} architectures to model complex temporal dynamics.
+    \item Implemented custom PINN loss functions to enforce thermodynamic consistency (mass/energy balance) in data-driven models.
+    \item Achieved ultra-low latency (\textbf{0.04ms}) for prognostic maintenance using C++ JIT optimization and CUDA.
+    \item Investigated uncertainty quantification for out-of-distribution (OOD) sensor signals.
+\end{itemize}
+
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{SciML:} PINNs, Operator Learning (DeepONet, FNO), GNNs, Surrogate Modeling, Uncertainty Quantification (UQ).
+    \item \textbf{Deep Learning:} PyTorch, Lightning, JAX, Transformers, Mamba-SSM, xLSTM, Variational Autoencoders (VAE).
+    \item \textbf{Optimization:} Metaheuristics (PSO, GA), Bayesian Optimization, Stochastic Gradient Descent.
+    \item \textbf{Systems/HPC:} CUDA, C++ JIT, Triton, Docker, Linux Performance Tuning.
+    \item \textbf{Full-Stack:} FastAPI, Next.js, WebSockets (for real-time industrial dashboards).
+\end{itemize}
+
+\section{Selected Projects}
+\textbf{Aura — RL-based Forecasting System} \\
+Hybrid LSTM + Reinforcement Learning (DQN) for time-series optimization and risk management.
+
+\textbf{Career Connect — Relational Learning (GNN)} \\
+Matching complex job-candidate structures using Graph Neural Networks and vector embeddings.
+
+\textbf{Advanced NLP Meta-Optimization} \\
+Used PSO and Bayesian Optimization to find optimal hyperparameters for DistilBERT-based pipelines.
+
+\section{Languages}
+\textbf{English:} Advanced (C1) $|$ \textbf{French:} Professional $|$ \textbf{Arabic:} Native
+
+\end{document}

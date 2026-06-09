@@ -1,0 +1,157 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,french]{babel}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{xcolor}
+\definecolor{loriagold}{RGB}{184,134,11} % Dark gold for Lorraine
+\definecolor{LORIAGOLD}{RGB}{184,134,11}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+
+\hypersetup{colorlinks=true, urlcolor=loriagold, linkcolor=loriagold}
+
+\titleformat{\section}{\color{loriagold}\large\bfseries\uppercase}{}{0em}{}[\color{loriagold}\titlerule]
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=1pt,itemsep=0pt}
+
+\begin{document}
+
+%==============================================================================
+% PAGE DE GARDE
+%==============================================================================
+\begin{titlepage}
+    \begin{center}
+        \vspace*{2cm}
+        {\Huge\bfseries\color{loriagold} DOSSIER DE CANDIDATURE EN THÈSE}\\[2cm]
+        
+        {\Large Présenté par :}\\[0.5cm]
+        {\huge\bfseries Ismail AISSAOUI}\\[2cm]
+        
+        {\Large Titre du projet doctoral :}\\[0.5cm]
+        {\Large\bfseries Modèles de substitution et optimisation multi-objectif pour le procédé de Cold Spray}\\[2cm]
+        
+        {\Large Financements sollicités :}\\[0.5cm]
+        \begin{itemize}[label=--]
+            \item[] \textbf{Allocation Doctorale du Projet PEPR (Université de Lorraine)}
+        \end{itemize}
+
+        \vfill
+        
+        {\Large École Doctorale : \textbf{IAEM - n° 77}}\\[0.3cm]
+        {\Large Établissement : \textbf{Université de Lorraine}}\\[0.3cm]
+        {\Large Laboratoire : \textbf{LORIA (UMR 7503)}}\\[2cm]
+        
+        \textit{Mai 2026}
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+%==============================================================================
+% DESCRIPTION DU PROJET DOCTORAL
+%==============================================================================
+\begin{center}
+    {\Large\bfseries Description du Projet Doctoral}\\[10pt]
+    \textbf{Sujet :} Modèles de substitution et optimisation multi-objectif pour le procédé de Cold Spray
+\end{center}
+
+\section*{Informations Administratives}
+\begin{itemize}[label=--]
+    \item \textbf{Titre (EN) :} Surrogate Models and Multi-objective Optimization for the Cold Spray Process
+    \item \textbf{Direction :} Nicolas Jozefowiez et Bernardetta Addis
+    \item \textbf{Unité de Recherche :} Laboratoire LORIA (UMR 7503)
+    \item \textbf{École Doctorale :} IAEM - n° 77
+    \item \textbf{Établissement :} Université de Lorraine
+\end{itemize}
+
+\section*{Résumé (Français)}
+Ce projet de thèse porte sur l’optimisation des procédés de Cold Spray, caractérisés par des interactions multi-physiques complexes. L’objectif est de construire des modèles de substitution (surrogate models) performants pour prédire les propriétés des revêtements en fonction des paramètres du procédé (température, pression, vitesse). Ces modèles permettront ensuite de piloter une optimisation multi-objectif visant à identifier les configurations optimales sous contraintes techniques et économiques. Le travail s'appuiera sur des données fournies par le CEA Tech pour valider les approches d'apprentissage automatique et les algorithmes d'optimisation développés.
+
+\section*{Summary (English)}
+This PhD project focuses on the optimization of Cold Spray processes, which involve complex multi-physical interactions. The goal is to build high-performance surrogate models to predict coating properties based on process parameters (temperature, pressure, speed). These models will then drive multi-objective optimization to identify optimal configurations under technical and economic constraints. The research will leverage data provided by CEA Tech to validate the developed machine learning approaches and optimization algorithms.
+
+\section{Plan de Travail}
+Le projet se divise en trois phases principales : 1) Construction de modèles de substitution basés sur l'apprentissage automatique (Processus Gaussiens, Réseaux Neuronaux) pour modéliser le comportement du Cold Spray. 2) Développement de méthodes d'optimisation multi-objectif adaptées aux surfaces de réponse complexes. 3) Validation expérimentale et applicative en collaboration avec CEA Tech.
+
+\newpage
+
+%==============================================================================
+% CV DU CANDIDAT
+%==============================================================================
+\begin{center}
+    {\Huge\bfseries\color{loriagold} Ismail AISSAOUI}\\[4pt]
+    {\large AI Engineer $|$ Specialist in Optimization \& Surrogate Modeling}\\[6pt]
+    \normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} $|$ Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} $|$ GitHub: \href{https://github.com/i-aissaoui}{i-aissaoui} \\
+    Nationality: Algerian $|$ Date of Birth: [INSERT DATE] \\
+    Address: [INSERT FULL POSTAL ADDRESS]
+\end{center}
+
+\section{Research Summary}
+AI Engineer specialized in \textbf{Surrogate Modeling}, \textbf{Multi-objective Optimization}, and \textbf{Metaheuristics}. Proven track record in building high-fidelity surrogates for complex industrial systems (Gas Turbines) and optimizing high-dimensional parameter spaces.
+
+\section{Research Experience}
+\textbf{Graduate Research Intern} \hfill Jan 2026 -- Jul 2026 \\
+\textit{Sonatrach (Industrial Surveillance Division) — Algeria} \\
+\textit{Supervisor: [INSERT SUPERVISOR NAME]}
+\begin{itemize}
+    \item Engineered surrogate models for thermodynamic state prediction in real-time.
+    \item Applied hybrid deep learning architectures (Mamba-SSM, xLSTM) for non-linear process modeling.
+    \item Achieved ultra-low latency (\textbf{0.04ms}) inference for industrial digital twins.
+\end{itemize}
+
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{Optimization:} Multi-objective Optimization, Bayesian Optimization, Metaheuristics (PSO, GA).
+    \item \textbf{AI \& Surrogates:} Surrogate Modeling, Gaussian Processes, Deep Learning (PyTorch).
+    \item \textbf{Programming:} Python, C++, Linux Performance Tuning.
+\end{itemize}
+
+\newpage
+
+%==============================================================================
+% LETTRE DE MOTIVATION
+%==============================================================================
+\begin{flushleft}
+    \textbf{Ismail AISSAOUI} \\
+    \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com}
+\end{flushleft}
+
+\begin{flushright}
+    To Nicolas Jozefowiez and Bernardetta Addis \\
+    \textbf{Laboratoire LORIA} $|$ May 12, 2026
+\end{flushright}
+
+\bigskip
+\noindent \textbf{Subject: Application for PhD in Surrogate Modeling and Multi-objective Optimization}
+\bigskip
+
+Dear Professors Jozefowiez and Addis,
+
+As a State Engineer in AI from ESI-SBA, I am writing to express my strong interest in the PhD position on "Surrogate Models and Multi-objective Optimization for the Cold Spray Process." My professional background in developing **industrial surrogate models** and my experience with **metaheuristic optimization** make me a perfect fit for the research objectives of the LORIA and CEA Tech collaboration.
+
+During my Master's thesis at Sonatrach, I focused on the construction of fast surrogate models for gas turbine monitoring, where I learned to balance prediction accuracy with computational efficiency. Additionally, my work on **Bayesian Optimization** and **Multi-objective trade-offs** has provided me with the necessary tools to explore the complex parameter space of Cold Spray processes. I am particularly motivated by the interdisciplinary nature of this project and the opportunity to apply advanced optimization techniques to real-world manufacturing challenges.
+
+I am eager to join the LORIA laboratory and contribute to the success of this PEPR project.
+
+\bigskip
+Sincerely, \\
+\textbf{Ismail AISSAOUI}
+
+\newpage
+
+%==============================================================================
+% RELEVÉ DE NOTES (4TH YEAR)
+%==============================================================================
+\begin{center}
+    {\Huge\bfseries Relevé de Notes (4ème Année)}\\[20pt]
+\end{center}
+
+\includepdf[pages=-]{/home/ismail/Desktop/portfolio/phd/relevé de notes 4.pdf}
+
+\end{document}

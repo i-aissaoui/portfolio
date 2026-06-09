@@ -79,9 +79,9 @@ export const site = {
       location: "Algeria",
       period: "2026",
       description: {
-        en: "Developed a Digital Twin for gas turbines to enable real-time monitoring and predictive maintenance. Implemented advanced anomaly detection and RUL (Remaining Useful Life) estimation using deep learning models.",
-        fr: "Développement d'un jumeau numérique pour turbines à gaz pour permettre une surveillance en temps réel et une maintenance prédictive. Implémentation d'une détection d'anomalies avancée et estimation de la RUL (durée de vie résiduelle) à l'aide de modèles de deep learning.",
-        de: "Entwicklung eines digitalen Zwillings für Gasturbinen zur Echtzeitüberwachung und vorausschauenden Wartung. Implementierung einer fortschrittlichen Anomalieerkennung und RUL-Schätzung (Restlebensdauer) mittels Deep-Learning-Modellen."
+        en: "Developed a 3-tier Dual-Track Digital Twin framework for gas turbines. Engineered ultra-low latency TCNEdge (0.049ms) for emergency shutdown and MambaTS for robust near-edge analytics.",
+        fr: "Développement d'un framework Jumeau Numérique à 3 niveaux pour turbines à gaz. Création du TCNEdge ultra-rapide (0,049 ms) pour l'arrêt d'urgence et du MambaTS pour les analyses robustes.",
+        de: "Entwicklung eines 3-Ebenen Digitalen Zwillings für Gasturbinen. Erstellung von TCNEdge (0,049 ms) für Notabschaltungen und MambaTS für robuste Analysen am Edge."
       }
     },
     {

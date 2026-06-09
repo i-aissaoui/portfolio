@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{lyon_red}{RGB}{186, 12, 47}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=lyon_red,
+    urlcolor=lyon_red,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{lyon_red} Research Statement Outline}\\[6pt]
+    {\large Temporal Dynamics and Domain Generalization in Emotion Recognition for ASD Support}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in Artificial Intelligence
+\end{center}
+
+\bigskip
+
+\section{Introduction and Vision}
+Automated understanding of social interactions in clinical settings remains a major challenge due to the subtlety of emotional expressions and the variability of real-world environments. My research vision focuses on developing **Robust Video Representation Learning** that captures both the spatial details of micro-expressions and the temporal dynamics of social synchrony. By leveraging **State Space Models (SSMs)** and **Vision Transformers**, I aim to build a diagnostic support system that is resilient to the "distribution shift" between generic movie datasets and naturally occurring medical interactions.
+
+\section{Proposed Research Axes}
+
+\subsection{1. Modeling Emotional Synchrony via State Space Models (SSMs)}
+Traditional RNNs and LSTMs often struggle with very long video sequences. I propose to investigate the use of **Mamba-SSM** architectures to capture the long-range temporal dependencies inherent in social interactions. This will focus on "emotional synchrony"—the rhythmic coordination between a child and a caregiver. By modeling the interaction as a continuous state-space, we can better identify the subtle shifts in behavioral patterns that are critical for ASD assessment but often missed by frame-level analysis.
+
+\subsection{2. Fine-grained FER for Low-Intensity Expressions}
+Standard Facial Expression Recognition (FER) models are often over-fitted to exaggerated emotions. I propose to adapt **Multimodal Foundation Models** (such as CLIP or Video-MAV) using specialized datasets of subtle, day-to-day expressions. This involves developing custom attention mechanisms that prioritize small facial muscle movements (Action Units) over global facial structure, ensuring the model remains sensitive even when the visual signal-to-noise ratio is low due to distance or suboptimal camera placement.
+
+\subsection{3. Domain Generalization via Latent Space Alignment}
+Deployment in unconstrained scenes requires models that are robust to illumination and pose variations. I propose to investigate **Domain Generalization** techniques that align the latent representations of clinical data with those of large-scale generic datasets. By using self-supervised pre-training and contrastive learning, we can force the model to learn "invariant" emotion features that persist regardless of the background or the specific camera viewpoint.
+
+\section{Alignment with AIMAINT and LIRIS}
+My background as an AI Engineer with expertise in **Real-time Computer Vision** (Recognizini) and **Advanced Sequential Modeling** (Sonatrach Thesis) provides a unique foundation for this PhD. I have demonstrated the ability to bridge complex mathematical theory with practical, high-performance implementation. I am eager to collaborate with the interdisciplinary team at LIRIS to translate state-of-the-art AI into a meaningful tool for ASD diagnosis and healthcare support.
+
+\end{document}

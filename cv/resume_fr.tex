@@ -49,7 +49,7 @@
 
 %===========================
 \section{RÉSUMÉ PROFESSIONNEL}
-Ingénieur IA \& Data Science spécialisé en Deep Learning (Transformers, Mamba) et Edge AI. Capacité éprouvée à construire des pipelines ML de bout en bout, optimiser l'inférence et déployer des solutions IA robustes alignées avec les objectifs métier.
+Ingénieur IA \& Data Science avec un profil en Ingénierie Logicielle Full-Stack. Expérimenté dans la réalisation de projets touchant aux Jumeaux Numériques Industriels, à la Santé, au Trading Financier, à la Vision par Ordinateur et aux Systèmes de Gestion d'Entreprise. Mes principaux centres d'intérêt incluent le Deep Learning, les Réseaux de Neurones Graphiques, l'Apprentissage par Renforcement et le Traitement du Langage Naturel (NLP).
 
 %===========================
 \section{COMPÉTENCES}
@@ -68,10 +68,10 @@ Ingénieur IA \& Data Science spécialisé en Deep Learning (Transformers, Mamba
 Sonatrach (Division Surveillance Industrielle) — Algérie \\
 Architecture d'un Jumeau Numérique IA pour la surveillance en temps réel des Turbines à Gaz.
 \begin{itemize}
-    \item Création d'un Jumeau Numérique Informé par la Physique (PINN) avec \textbf{Mamba-SSM} et \textbf{xLSTM}.
-    \item \textbf{Inférence edge à 0.04ms} atteinte via co-conception matériel-logiciel et optimisation C++ JIT.
-    \item Ingénierie de fonctions de perte PINN personnalisées assurant la consistance thermodynamique.
-    \item Développement d'indicateurs quantitatifs pour la détection d'anomalies hors distribution (OOD).
+    \item Conception d'une architecture à 3 niveaux séparant le modèle Edge critique (PLC) du traitement analytique Cloud.
+    \item Développement de \textbf{TCNEdge} atteignant \textbf{0,049 ms d'inférence INT8 ONNX C++} pour l'arrêt d'urgence.
+    \item Ingénierie de \textbf{MambaTS} avec tolérance aux pannes de capteurs (Missingness-Aware Gate).
+    \item Implémentation de \textbf{KAN-PCNN} et \textbf{ST-KDFormer} pour assurer la consistance thermodynamique globale.
 \end{itemize}
 
 \textbf{Stagiaire en ingénierie réseau} \hfill Sep 2024 \\
@@ -81,7 +81,7 @@ Algérie Télécom RMC Center — Chlef, Algérie
 \section{FORMATION}
 \textbf{École Nationale Supérieure d’Informatique (ESI-SBA)} \hfill 2021--2026 \\
 Diplôme d’ingénieur et master en informatique \\
-Spécialisation : Intelligence Artificielle \& Informatique
+Spécialisation : Intelligence Artificielle \& Data Science
 
 %===========================
 \section{CERTIFICATIONS}
@@ -92,6 +92,19 @@ Spécialisation : Intelligence Artificielle \& Informatique
 \newpage
 
 %===========================
+% Force projects + languages onto page 2
+\newpage
+
+%===========================
+\section{THÈSES ACADÉMIQUES}
+\textbf{Thèse d'Ingénieur d'État :} \\
+\textit{Jumeau Numérique Explicable Informé par la Physique pour Turbines à Gaz Industrielles : Un Framework Deep Learning Dual-Track Cloud–Edge avec Modèles d'Espaces d'États Augmentés par Koopman}
+
+\vspace{4pt}
+\textbf{Thèse de Master :} \\
+\textit{Jumeaux Numériques Hémodynamiques : Fusion de Réseaux de Neurones Informés par la Physique Hémodynamique et Mamba-SSM pour les Pronostics des Patients en Soins Intensifs}
+
+\vspace{8pt}
 \section{PROJETS}
 \setlength{\parskip}{0pt}
 
@@ -99,12 +112,11 @@ Spécialisation : Intelligence Artificielle \& Informatique
 \vspace{2pt}
 {\small
 \begin{itemize}
-    \item \textbf{Modélisation de Substitution} : Conception d'un Jumeau Numérique Informé par la Physique (PINN) via Mamba-SSM et xLSTM.
-    \item \textbf{Scénarios 'What-If'} : Implémentation de simulations génératives pour la maintenance prédictive.
-    \item \textbf{XAI \& RAG} : Intégration de la Génération Augmentée par la Recherche (RAG) et d'IA Explicable (XAI).
-    \item \textbf{Inférence Edge} : Atteinte de 0,04 ms de latence grâce au co-design matériel/logiciel et l'optimisation C++ JIT.
+    \item \textbf{Architecture Edge \& Cloud} : Conception d'un framework à 3 niveaux séparant le modèle critique TCNEdge (PLC) du MambaTS (Near Edge) et du ST-KDFormer (Cloud).
+    \item \textbf{Inférence Ultra-Faible Latence} : Compilation de Convolutions 1D (TCNEdge) en C++ ONNX (INT8), atteignant 0,049 ms pour l'arrêt d'urgence.
+    \item \textbf{Physique \& Robustesse} : Implémentation du MambaTS avec tolérance aux pannes de capteurs, et du KAN-PCNN assurant la consistance thermodynamique.
 \end{itemize}
-\textit{Tech : Mamba-SSM, xLSTM, PyTorch, C++ JIT, PINN, RAG, XAI}
+\textit{Tech : MambaTS, TCNEdge, ST-KDFormer, KAN-PCNN, PyTorch, C++ ONNX, PINN}
 }
 \vspace{8pt}
 
@@ -112,11 +124,11 @@ Spécialisation : Intelligence Artificielle \& Informatique
 \vspace{2pt}
 {\small
 \begin{itemize}
-    \item \textbf{Modélisation Physique} : Architecture modélisant les flux hémodynamiques 1D (Navier-Stokes) pour prédire des anomalies.
-    \item \textbf{Distillation Spatio-Temporelle} : Intégration de ST-KDFormer pour équilibrer précision physique et efficacité de calcul.
-    \item \textbf{Streaming de Données} : Ingénierie de flux de données physiologiques en temps réel avec Apache Kafka.
+    \item \textbf{Prédiction par Patient} : Prédiction de la Pression Artérielle Moyenne (MBP) via les données VitalDB (100Hz), avec séparation stricte 70/15/15 pour éviter les fuites de données.
+    \item \textbf{IA Informée par la Physique} : Conception d'un \textbf{PI\_DeepONet} (Windkessel 0D) pénalisant les violations de la compliance artérielle et de la résistance vasculaire.
+    \item \textbf{Modèles Hybrides Edge-Cloud} : Architecture du \textbf{Medical\_MambaTS} (temps linéaire) pour le Edge et du \textbf{ST-KDFormer} (attention spatio-temporelle) pour le Cloud.
 \end{itemize}
-\textit{Tech : PyTorch, PINN, ST-KDFormer, Kafka, Mécanique des Fluides}
+\textit{Tech : PyTorch, Medical\_MambaTS, PI\_DeepONet, ST-KDFormer, Hémodynamique, VitalDB}
 }
 \vspace{8pt}
 
@@ -146,6 +158,6 @@ Spécialisation : Intelligence Artificielle \& Informatique
 
 %===========================
 \section{LANGUES}
-Arabe : Langue maternelle \quad|\quad Français : Courant \quad|\quad Anglais : Courant
+Arabe : Langue maternelle \quad|\quad Anglais : Avancé \quad|\quad Français : Professionnel
 
 \end{document}

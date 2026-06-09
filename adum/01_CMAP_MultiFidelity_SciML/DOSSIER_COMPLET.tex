@@ -1,0 +1,159 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,french]{babel}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{pdfpages} % Required for including the transcript PDF
+
+\hypersetup{colorlinks=true, urlcolor=titleblue, linkcolor=titleblue}
+
+% Style for sections
+\titleformat{\section}{\color{titleblue}\large\bfseries\uppercase}{}{0em}{}[\color{titleblue}\titlerule]
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=1pt,itemsep=0pt}
+
+\begin{document}
+
+%==============================================================================
+% PAGE DE GARDE
+%==============================================================================
+\begin{titlepage}
+    \begin{center}
+        \vspace*{2cm}
+        {\Huge\bfseries\color{titleblue} DOSSIER DE CANDIDATURE EN THÈSE}\\[2cm]
+        
+        {\Large Présenté par :}\\[0.5cm]
+        {\huge\bfseries Ismail AISSAOUI}\\[2cm]
+        
+        {\Large Titre du projet doctoral :}\\[0.5cm]
+        {\Large\bfseries Multi-Fidelity Scientific Machine Learning with Heterogeneous Inputs}\\[2cm]
+        
+        {\Large Financements sollicités :}\\[0.5cm]
+        \begin{itemize}[label=--]
+            \item[] \textbf{Allocation de l'EDMH (Concours École Doctorale)}
+            \item[] \textbf{Bourse de l'Institut Polytechnique de Paris (IP-Paris)}
+            \item[] \textbf{Bourse de Recherche Inria (Platon Team)}
+        \end{itemize}
+
+        \vfill
+        
+        {\Large École Doctorale : \textbf{EDMH - n° 574}}\\[0.3cm]
+        {\Large Établissement : \textbf{École Polytechnique}}\\[0.3cm]
+        {\Large Laboratoire : \textbf{CMAP (UMR 7641)}}\\[2cm]
+        
+        \textit{Mai 2026}
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+%==============================================================================
+% DESCRIPTION DU PROJET DOCTORAL
+%==============================================================================
+\begin{center}
+    {\Large\bfseries Description du Projet Doctoral}\\[10pt]
+    \textbf{Sujet :} Multi-Fidelity Scientific Machine Learning with Heterogeneous Inputs
+\end{center}
+
+\section*{Informations Administratives}
+\begin{itemize}[label=--]
+    \item \textbf{Titre (FR) :} Apprentissage Automatique Scientifique Multi-Fidélité avec Entrées Hétérogènes
+    \item \textbf{Financement :} 100\% (Dossier candidat aux bourses EDMH / IP-Paris)
+    \item \textbf{Unités de Recherche :} CMAP (UMR 7641) - Inria (Équipe Platon)
+    \item \textbf{Encadrement :} P.M. Congedo, E. Denimal Goy et Olivier Le Maître
+    \item \textbf{École Doctorale :} EDMH - n° 574 (Mathématiques Hadamard)
+    \item \textbf{Établissement :} École Polytechnique
+\end{itemize}
+
+\section*{Résumé (Français)}
+Ce projet de thèse s'attaque au défi de la construction de modèles de substitution multi-fidélité lorsque les espaces d'entrée et de sortie sont hétérogènes entre les différents niveaux de fidélité. Dans les applications modernes d'ingénierie et de médecine, comme les jumeaux numériques personnalisés du projet MediTwin, les simulations de haute fidélité sont trop coûteuses pour une utilisation systématique en optimisation ou en quantification d'incertitudes. La recherche vise à concevoir des méthodes rigoureuses pour fusionner ces sources disparates en apprenant des représentations latentes communes via VAE et Operator Learning (DeepONet, FNO).
+
+\section*{Summary (English)}
+This PhD project addresses the challenge of building scalable multi-fidelity surrogate models when input and output spaces are heterogeneous across different levels of fidelity. In modern applications such as the MediTwin project, high-fidelity simulations are computationally prohibitive for systematic use. The research aims to design principled methods to merge mismatched sources by learning common latent representations using VAEs and Operator Learning (DeepONet, FNO), followed by the development of latent-space co-Kriging and multi-fidelity neural surrogates.
+
+\section{Contexte et Plan de Travail}
+Le projet est structuré autour de quatre axes : 1) Formalisation de benchmarks hétérogènes. 2) Apprentissage de représentations latentes pour aligner les espaces d'entrée. 3) Développement de modèles de substitution multi-fidélité (co-Kriging, réseaux neuronaux hiérarchiques). 4) Stratégies d'échantillonnage adaptatif (Apprentissage Actif) pour optimiser les évaluations coûteuses.
+
+\newpage
+
+%==============================================================================
+% CV DU CANDIDAT
+%==============================================================================
+\begin{center}
+    {\Huge\bfseries\color{titleblue} Ismail AISSAOUI}\\[4pt]
+    {\large State Engineer in AI $|$ PhD Candidate in SciML}\\[6pt]
+    \normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} $|$ Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} $|$ GitHub: \href{https://github.com/i-aissaoui}{i-aissaoui} \\
+    Nationality: Algerian $|$ Date of Birth: [INSERT DATE] \\
+    Address: [INSERT FULL POSTAL ADDRESS]
+\end{center}
+
+\section{Research Summary}
+AI Engineer specialized in \textbf{Scientific Machine Learning (SciML)}, \textbf{PINNs}, and \textbf{Digital Twins}. Expert in \textbf{Mamba-SSM} and \textbf{xLSTM} for ultra-low latency inference (\textbf{0.04ms}).
+
+\section{Research Experience}
+\textbf{Graduate Research Intern} \hfill Jan 2026 -- Jul 2026 \\
+\textit{Sonatrach (Industrial Surveillance Division) — Algeria} \\
+\textit{Supervisor: [INSERT SUPERVISOR NAME]}
+\begin{itemize}
+    \item Developed a \textbf{Physics-Informed Digital Twin} for GE LM2500 gas turbines.
+    \item Implemented custom PINN loss functions to ensure thermodynamic consistency in generative surrogates.
+    \item Achieved ultra-low latency (\textbf{0.04ms}) via C++ JIT optimization.
+\end{itemize}
+
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{SciML:} PINNs, Operator Learning, GNNs, Surrogate Modeling, UQ.
+    \item \textbf{Deep Learning:} PyTorch, Lightning, Transformers, Mamba-SSM, xLSTM.
+    \item \textbf{HPC:} CUDA, C++ JIT, Triton, Docker.
+\end{itemize}
+
+\newpage
+
+%==============================================================================
+% LETTRE DE MOTIVATION
+%==============================================================================
+\begin{flushleft}
+    \textbf{Ismail AISSAOUI} \\
+    \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com}
+\end{flushleft}
+
+\begin{flushright}
+    To P.M. Congedo, E. Denimal Goy, and Olivier Le Maître \\
+    \textbf{Inria Platon Team / CMAP} $|$ May 12, 2026
+\end{flushright}
+
+\bigskip
+\noindent \textbf{Subject: Application for PhD in Multi-Fidelity SciML for Digital Twins}
+\bigskip
+
+Dear Members of the Selection Committee,
+
+As a State Engineer in AI from ESI-SBA, I am highly motivated to apply for the PhD position on "Multi-Fidelity Scientific Machine Learning" within the Platon project-team. My work at Sonatrach on \textbf{Physics-Informed Digital Twins} and ultra-low latency surrogates (\textbf{0.04ms}) has prepared me for the challenges of combining mismatched data structures in complex physical systems.
+
+The focus on **latent-variable models** and **Operator Learning (DeepONet, FNO)** to bridge heterogeneous spaces is the logical next step in my research. I am eager to contribute to the **MediTwin** project and master the mathematical rigors of uncertainty quantification at École Polytechnique.
+
+\bigskip
+Sincerely, \\
+\textbf{Ismail AISSAOUI}
+
+\newpage
+
+%==============================================================================
+% RELEVÉ DE NOTES (4TH YEAR)
+%==============================================================================
+\begin{center}
+    {\Large\bfseries Relevé de Notes (4ème Année)}\\[20pt]
+\end{center}
+
+\includepdf[pages=-]{/home/ismail/Desktop/portfolio/phd/relevé de notes 4.pdf}
+
+\end{document}

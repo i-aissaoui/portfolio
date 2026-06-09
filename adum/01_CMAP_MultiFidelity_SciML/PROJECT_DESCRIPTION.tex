@@ -1,0 +1,56 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,french]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+\begin{center}
+    {\Large\bfseries Description du Projet Doctoral}\\[10pt]
+    \textbf{Sujet :} Multi-Fidelity Scientific Machine Learning with Heterogeneous Inputs
+\end{center}
+
+\section*{Informations Administratives}
+\begin{itemize}[label=--]
+    \item \textbf{Titre (FR) :} Apprentissage Automatique Scientifique Multi-Fidélité avec Entrées Hétérogènes
+    \item \textbf{Financement :} 100\% (Dossier candidat aux bourses EDMH / IP-Paris)
+    \item \textbf{Unités de Recherche :} CMAP (Centre de Mathématiques Appliquées), UMR 7641 - Inria (Équipe Platon)
+    \item \textbf{Encadrement :} P.M. Congedo, E. Denimal Goy et Olivier Le Maître
+    \item \textbf{École Doctorale :} EDMH - n° 574 (Mathématiques Hadamard)
+    \item \textbf{Établissement :} École Polytechnique
+\end{itemize}
+
+\section*{Résumé (Français)}
+Ce projet de thèse s'attaque au défi de la construction de modèles de substitution multi-fidélité lorsque les espaces d'entrée et de sortie sont hétérogènes entre les différents niveaux de fidélité. Dans les applications modernes d'ingénierie et de médecine, comme les jumeaux numériques personnalisés du projet MediTwin, les simulations de haute fidélité (ex. Navier-Stokes 3D) sont trop coûteuses pour une utilisation systématique en optimisation ou en quantification d'incertitudes. Les modèles simplifiés de basse fidélité sont plus rapides mais utilisent souvent des paramétrisations ou des discrétisations différentes, empêchant une fusion directe de l'information. La recherche vise à concevoir des méthodes rigoureuses pour fusionner ces sources disparates en apprenant des représentations latentes communes. Les principaux axes méthodologiques incluent l'utilisation d'auto-encodeurs variationnels (VAE) et de l'apprentissage d'opérateurs (DeepONet, FNO) pour aligner les espaces hétérogènes, suivis du développement de co-Kriging en espace latent et de réseaux de neurones multi-fidélité. L'objectif est de produire des modèles robustes capables de quantifier les incertitudes tout en optimisant les évaluations de haute fidélité par des stratégies d'échantillonnage adaptatif.
+
+\section*{Summary (English)}
+This PhD project addresses the challenge of building scalable multi-fidelity surrogate models when input and output spaces are heterogeneous across different fidelity levels. In modern engineering and medical applications, such as the patient-specific digital twins targeted by the MediTwin project, high-fidelity simulations (e.g., 3D Navier-Stokes) are computationally prohibitive for systematic use in optimization or uncertainty quantification. Simplified low-fidelity models are faster but often use different parameterizations or discretizations, preventing direct information fusion. The research aims to design principled methods to merge these mismatched sources by learning common latent representations. Key methodological axes include the use of Variational Autoencoders (VAEs) and Operator Learning (DeepONet, FNO) to align heterogeneous spaces, followed by the development of latent-space co-Kriging and multi-fidelity neural surrogates. The goal is to produce robust models capable of quantifying and propagating uncertainty while optimizing high-fidelity evaluations through adaptive sampling strategies.
+
+\newpage
+
+\section{Contexte et État de l'Art}
+Les méthodes multi-fidélité (MF) exploitent les corrélations entre les modèles de basse et haute fidélité pour réduire le nombre d'évaluations coûteuses. L'approche classique de co-Kriging (Kennedy-O’Hagan) modélise la réponse de haute fidélité par un processus gaussien (GP) autorégressif. Cependant, une limitation majeure persiste : l'hétérogénéité des entrées et sorties. Dans de nombreuses applications, les modèles ne partagent pas la même paramétrisation ou discrétisation, ce qui empêche l'application directe des cadres MF standards.
+
+\section{Objectifs et Verrous Scientifiques}
+L'objectif est de concevoir des méthodes multi-fidélité capables de fusionner des informations provenant de modèles avec des structures de données divergentes. Les verrous incluent :
+\begin{enumerate}
+    \item La définition de représentations latentes communes pour les espaces d'entrée hétérogènes.
+    \item La construction de modèles de substitution consistants sous ces hétérogénéités.
+    \item La quantification et propagation de l'incertitude induite par le décalage de représentation.
+\end{enumerate}
+
+\section{Plan de Travail et Méthodologie}
+\begin{itemize}
+    \item \textbf{Axe 1 : Formalisation et Benchmarks (M1-M6)} -- Définition de cas tests où les fidélités diffèrent (modèles réduits vs complets, maillages grossiers vs fins).
+    \item \textbf{Axe 2 : Apprentissage de Représentations (M6-M18)} -- Utilisation de VAE pour l'encastrement d'entrées de haute dimension et de l'apprentissage d'opérateurs (DeepONet, FNO) pour lier les espaces de fonctions.
+    \item \textbf{Axe 3 : Fusion d'Information et Surrogates (M18-M30)} -- Développement de co-Kriging en espace latent et de réseaux de neurones résiduels conditionnés par les indicateurs de fidélité.
+    \item \textbf{Axe 4 : Apprentissage Actif (M30-M36)} -- Conception de stratégies d'échantillonnage adaptatif pour maximiser le gain d'information lors des évaluations coûteuses.
+\end{itemize}
+
+\end{document}

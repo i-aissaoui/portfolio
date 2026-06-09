@@ -1,0 +1,16 @@
+To: arnaud.blouin@irisa.fr
+Subject: Application: A software engineering approach to ease the development and to ensure the usability of interactive digital twins
+
+Dear Arnaud Blouin, Benoit Combemale, and Philippe Palanque,
+
+I am applying for the PhD position regarding a software engineering approach for interactive digital twins (PC5) at the DiverSE research group.
+
+Please find attached my resume, transcripts, and a detailed motivation letter explaining my background in component-based UI architectures for Next.js/Three.js digital dashboards and how it applies to your objectives.
+
+Thank you for your time and consideration.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app

@@ -1,0 +1,81 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=titleblue,
+    linkcolor=titleblue,
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+% Correction du problème de couleur avec \uppercase
+\titleformat{\section}
+  {\color{titleblue}\Large\bfseries}{}{0em}{\uppercase}
+  [\color{titleblue}\titlerule]
+
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} Ismail AISSAOUI}\\[4pt]
+    {\Large Ingénieur en Intelligence Artificielle \& Data Science}\\[6pt]
+    Email : ismail.aissaoui.pro@gmail.com \quad Tél : +213 660 70 77 96 \\
+    Portfolio : \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad Localisation : Algérie \\
+    LinkedIn : \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7}
+\end{center}
+
+\section{Résumé}
+Ingénieur en IA spécialisé en **Scientific Machine Learning (SciML)** et en **Réseaux de neurones informés par la physique (PINN)**. Expérimenté dans le développement de modèles génératifs pour des systèmes physiques complexes, les dynamiques séquentielles multi-étapes (Mamba-SSM/xLSTM) et la modélisation structurelle via GNN. Déterminé à combler le fossé entre le deep learning et les sciences physiques/chimiques pour résoudre des défis fondamentaux.
+
+\section{Éducation}
+\textbf{École Nationale Supérieure d'Informatique (ESI-SBA)} \hfill 2021--2026 \\
+Diplôme d'Ingénieur d'État et Master en Informatique \\
+Spécialité : **Intelligence Artificielle \& Informatique** \\
+*Cours clés : Deep Learning, Apprentissage sur Graphes, Optimisation Métaheuristique, Calcul Scientifique.*
+
+\section{Expertise Technique}
+\textbf{Machine Learning} : PyTorch, TensorFlow, Scikit-learn, Lightning, GNN (PyTorch Geometric), ViT. \\
+**Physique-IA** : Physics-Informed Neural Networks (PINNs), Modélisation Hybride. \\
+**Dynamiques Séquentielles** : Mamba-SSM, xLSTM, Temporal Convolutional Networks (TCN). \\
+**Optimisation** : PSO, Algorithmes Génétiques, Optimisation Bayésienne, Optuna. \\
+**Déploiement** : FastAPI, Docker, Edge AI (inférence 0,04 ms), CUDA, Linux.
+
+\section{Expérience en Recherche}
+\textbf{Thèse d'exercice d'ingénieur (Sonatrach)} \hfill Fév 2026 -- Juil 2026 \\
+\textit{Jumeau Numérique Génératif pour Turbines à Gaz GE LM2500}
+\begin{itemize}
+    \item Développement d'un **Jumeau Numérique informé par la physique** capable de prédire des états thermodynamiques haute-fidélité.
+    \item Hybridation des **PINN** avec des architectures séquentielles (**Mamba-SSM** et **xLSTM**) pour capturer des dépendances temporelles non linéaires.
+    \item Gestion d'un dataset de **5,2 millions de points (N-CMAPSS)**, optimisation des pipelines de données.
+    \item Inférence record de **0,04 ms** sur dispositifs edge via distillation et compilation JIT.
+\end{itemize}
+
+\section{Projets Sélectionnés}
+\textbf{Aura — Système de Trading IA (LSTM + DQN)} \hfill 2025 \\
+Plateforme automatisée utilisant l'apprentissage par renforcement pour optimiser les politiques d'exécution.
+
+\textbf{Elliptic++ — GNN pour la détection de fraude} \hfill 2025 \\
+Classification de nœuds illicites sur le réseau Bitcoin via l'apprentissage relationnel.
+
+\textbf{Career Connect — Plateforme RH IA (GNN + RAG)} \hfill 2024 \\
+Moteur de matching utilisant les embeddings de graphes et Google Gemini pour l'analyse sémantique.
+
+\section{Langues}
+Arabe : Maternel \quad|\quad Français : Courant (C1/C2) \quad|\quad Anglais : Courant (C1/C2)
+
+\end{document}

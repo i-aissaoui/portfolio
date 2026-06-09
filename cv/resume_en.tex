@@ -50,7 +50,7 @@
 
 %===========================
 \section{PROFILE}
-AI \& Data Science Engineer specialized in Deep Learning (Transformers, Mamba) and Edge AI. Proven ability to build end-to-end ML pipelines, optimize model inference, and deploy robust AI solutions that translate technical outcomes into business value.
+AI \& Data Science Engineer with a background in Full-Stack Software Engineering. Experienced in building projects across diverse domains, including Industrial Digital Twins, Healthcare, Financial Trading, Computer Vision, and Enterprise Management Systems. My primary interests include Deep Learning, Graph Neural Networks, Reinforcement Learning, and Natural Language Processing (NLP).
 
 %===========================
 \section{SKILLS}
@@ -69,10 +69,10 @@ AI \& Data Science Engineer specialized in Deep Learning (Transformers, Mamba) a
 Sonatrach (Industrial Surveillance Division) — Algeria \\
 Architected an AI-native Digital Twin for real-time monitoring of Gas Turbines.
 \begin{itemize}
-    \item Built a Physics-Informed Digital Twin (PINN) using \textbf{Mamba-SSM} and \textbf{xLSTM} architectures.
-    \item Achieved \textbf{0.04ms edge inference} via hardware-software co-design and C++ JIT optimization.
-    \item Engineered custom PINN loss functions to ensure strict thermodynamic consistency.
-    \item Developed quantitative indicators for Out-of-Distribution (OOD) anomaly detection.
+    \item Architected a 3-tier Dual-Track framework decoupling safety-critical Edge models from Cloud analytics.
+    \item Developed \textbf{TCNEdge} achieving \textbf{0.049ms INT8 ONNX C++ inference} for emergency shutdown.
+    \item Engineered \textbf{MambaTS} with a missingness-aware gate to maintain robustness during sensor dropouts.
+    \item Implemented \textbf{KAN-PCNN} and \textbf{ST-KDFormer} to ensure strict thermodynamic consistency at scale.
 \end{itemize}
 
 \vspace{8pt}
@@ -85,7 +85,6 @@ Algérie Télécom RMC Center — Chlef, Algeria
 Engineering and Master’s Degree in Computer Science \\
 Specialization: Artificial Intelligence \& Data Science
 
-
 %===========================
 \section{CERTIFICATIONS}
 \textbf{DeepLearning.AI}: Machine Learning Specialization, Deep Learning Specialization, NLP Specialization \\[6pt]
@@ -95,6 +94,16 @@ Specialization: Artificial Intelligence \& Data Science
 % Force projects + languages onto page 2
 \newpage
 
+%===========================
+\section{ACADEMIC THESES}
+\textbf{State Engineering Degree Thesis:} \\
+\textit{Physics-Informed Explainable Digital Twin for Industrial Gas Turbines: A Dual-Track Cloud–Edge Deep Learning Framework with Koopman-Augmented State-Space Models}
+
+\vspace{4pt}
+\textbf{Master's Degree Thesis:} \\
+\textit{Hemodynamic Digital Twins: Fusing Hemodynamic Physics-Informed Neural Networks and Mamba-SSM for ICU Patient Prognostics}
+
+\vspace{8pt}
 \section{PROJECTS}
 \setlength{\parskip}{0pt}
 
@@ -102,12 +111,11 @@ Specialization: Artificial Intelligence \& Data Science
 \vspace{2pt}
 {\small
 \begin{itemize}
-    \item \textbf{Surrogate Modeling}: Engineered a real-time Physics-Informed Digital Twin using Mamba-SSM and xLSTM.
-    \item \textbf{Generative 'What-If'}: Implemented generative scenario forecasting for predictive maintenance.
-    \item \textbf{XAI \& RAG}: Integrated Retrieval-Augmented Generation and Explainable AI for transparent anomaly diagnosis.
-    \item \textbf{Edge Optimization}: Achieved 0.04ms edge inference via hardware-software co-design and C++ JIT optimization.
+    \item \textbf{Edge \& Cloud Architecture}: Engineered a 3-tier framework decoupling safety-critical TCNEdge (Siemens PLC) from near-edge MambaTS and cloud-based ST-KDFormer.
+    \item \textbf{Ultra-Low Latency Inference}: Compiled 1D Dilated Convolutions (TCNEdge) to INT8 ONNX C++, achieving 0.049ms latency for emergency shutdown.
+    \item \textbf{Physcis \& Robustness}: Implemented MambaTS with missingness-aware gating for broken sensors, and KAN-PCNN with PyTorch Autograd for absolute thermodynamic consistency.
 \end{itemize}
-\textit{Tech: Mamba-SSM, xLSTM, PyTorch, C++ JIT, PINN, RAG, XAI}
+\textit{Tech: MambaTS, TCNEdge, ST-KDFormer, KAN-PCNN, PyTorch, C++ ONNX, PINN}
 }
 \vspace{8pt}
 
@@ -115,11 +123,11 @@ Specialization: Artificial Intelligence \& Data Science
 \vspace{2pt}
 {\small
 \begin{itemize}
-    \item \textbf{Physics-Informed Modeling}: Architected a Digital Twin modeling 1D Hemodynamic Navier-Stokes flows to predict anomalies.
-    \item \textbf{Spatio-Temporal Distillation}: Integrated ST-KDFormer to balance high-fidelity physics with computational efficiency.
-    \item \textbf{Data Streaming}: Engineered real-time ingestion of physiological data streams using Apache Kafka.
+    \item \textbf{Patient-Level Forecasting}: Predicted Mean Blood Pressure (MBP) stability using 100Hz VitalDB ICU telemetry, implementing 70/15/15 splitting to eliminate data leakage.
+    \item \textbf{Physics-Informed AI}: Designed a 0D Windkessel \textbf{PI\_DeepONet} (Branch/Trunk Nets) penalizing violations of arterial compliance and vascular resistance.
+    \item \textbf{Hybrid Edge-Cloud Models}: Architected linear-time \textbf{Medical\_MambaTS} for bedside monitors and \textbf{ST-KDFormer} for deep spatio-temporal attention mapping in the cloud.
 \end{itemize}
-\textit{Tech: PyTorch, PINN, ST-KDFormer, Kafka, Fluid Mechanics}
+\textit{Tech: PyTorch, Medical\_MambaTS, PI\_DeepONet, ST-KDFormer, Hemodynamics, VitalDB}
 }
 \vspace{8pt}
 
@@ -149,6 +157,6 @@ Specialization: Artificial Intelligence \& Data Science
 
 %===========================
 \section{LANGUAGES}
-Arabic: Native \quad|\quad French: Fluent \quad|\quad English: Fluent
+Arabic: Native \quad|\quad English: Advanced \quad|\quad French: Professional
 
 \end{document}

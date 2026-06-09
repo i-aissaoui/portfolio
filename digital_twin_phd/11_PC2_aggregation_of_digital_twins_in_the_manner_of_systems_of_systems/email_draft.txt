@@ -1,0 +1,16 @@
+To: jannik.laval@univ-lyon2.fr
+Subject: Application: Aggregation of digital twins in the manner of Systems of Systems
+
+Dear Jannik Laval and Sylvain Guérin,
+
+I am writing to apply for the PhD position "Aggregation of digital twins in the manner of Systems of Systems" (PC2).
+
+I have attached my resume, academic transcripts, and a detailed motivation letter explaining how my experience in building multi-layered, modular digital twin architectures aligns with your goals for DT composability and System of Systems orchestration.
+
+Thank you for your consideration.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app

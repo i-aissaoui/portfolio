@@ -1,0 +1,106 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=1.5cm,right=1.5cm,top=1.2cm,bottom=1.5cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+
+\definecolor{bosch_red}{RGB}{224, 0, 0}
+\definecolor{BOSCH_RED}{RGB}{224, 0, 0}
+\definecolor{darkgrey}{RGB}{64, 64, 64}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=bosch_red,
+    linkcolor=bosch_red,
+    citecolor=bosch_red,
+    pdfborder={0 0 0}
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{bosch_red}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{bosch_red}\titlerule]
+
+\titlespacing\section{0pt}{10pt}{5pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{bosch_red} AISSAOUI Ismail}\\[4pt]
+    {\Large AI \& Data Science Engineer | PhD Candidate}\\[6pt]
+
+    {\normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
+    Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
+    Location: Algeria (Relocation Ready) \\
+    LinkedIn: \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
+    GitHub: \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    }
+\end{center}
+
+%===========================
+\section{PROFILE}
+AI \& Data Science Engineer specialized in **General Purpose AI (GPAI)**, **System 1/2** sequential reasoning, and **Industrial World Models**. Expert in bridging high-fidelity physics with deep learning (Mamba-SSM, PINNs) for real-time edge applications. Proven track record in achieving sub-millisecond inference for safety-critical industrial systems. Eager to advance Smart Manufacturing through GPAI-driven robotics.
+
+%===========================
+\section{EDUCATION}
+\textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
+\textbf{Engineering \& Master’s Degree in Artificial Intelligence} \\
+\textit{Master's Thesis: "GPAI-Driven Digital Twin for Industrial Gas Turbines: Bridging System 1/2 for Real-time Prognostics"} \\
+Focus: Mamba-SSM, xLSTM, Physics-Informed ML, Edge AI Optimization.
+
+%===========================
+\section{TECHNICAL SKILLS}
+\textbf{GPAI \& ML}: System 1/2, State-Space Models (Mamba), xLSTM, PINNs, GNN, Reinforcement Learning (DQN), XAI. \\
+\textbf{Robotics \& Simulation}: ROS, Webots, Robot Kinematics, Navigation, Manipulation, Synthetic Data Gen. \\
+\textbf{Frameworks}: PyTorch, TensorFlow, Keras, Scikit-learn, ONNX, MLflow, Airflow. \\
+\textbf{Edge \& Performance}: C++ JIT Compilation, CUDA, Docker, Linux, Real-time Stream Processing (InfluxDB). \\
+\textbf{Full-Stack}: FastAPI, Next.js, React, TypeScript, PostgreSQL, Neo4j, WebSockets.
+
+%===========================
+\section{RESEARCH \& PROJECT HIGHLIGHTS}
+
+\textbf{Industrial Gas Turbine Digital Twin (Master's Thesis)} \hfill 2025--2026 \\
+\textit{Robert Bosch Target: System 1/2, World Models, Edge AI}
+\begin{itemize}
+    \item Implemented a **System 1/2** architecture for the GE LM2500 turbine: TCNs for rapid perception (System 1) and **Mamba-SSM/xLSTM** for logical trajectory reasoning (System 2).
+    \item Developed a **Generative World Model** for "What-If" counterfactual simulations, predicting physical failures with high-fidelity thermodynamic consistency using **PINNs**.
+    \item Achieved a record-breaking **0.04ms inference latency** via C++ JIT optimization for edge-based control.
+    \item Engineered **XAI heatmaps** using gradient saliency to provide interpretable failure diagnostics.
+\end{itemize}
+
+\textbf{GNN-Powered Recruitment Ecosystem (Career Connect)} \hfill 2024--2025 \\
+\textit{Robert Bosch Target: Multimodal Perception, Graph-based Reasoning}
+\begin{itemize}
+    \item Modeled the job market as a graph with **PyTorch Geometric**, using GNNs to infer latent structural relationships.
+    \item Integrated **SBERT** and **FAISS** for sub-100ms semantic search across 60,000+ profiles.
+\end{itemize}
+
+\textbf{Aura — Advanced AI Trading Ecosystem} \hfill 2025 \\
+\textit{Robert Bosch Target: Sequential Decision Making, Reinforcement Learning}
+\begin{itemize}
+    \item Built a magnitude-aware **DQN Reinforcement Learning** agent for automated market participation.
+    \item Developed hybrid LSTM-based temporal models for high-volatility time-series forecasting.
+\end{itemize}
+
+\textbf{Mini-GPT \& Vision Transformer (ViT) Implementations} \hfill 2025 \\
+\textit{Robert Bosch Target: Generative AI, Transformer Architectures}
+\begin{itemize}
+    \item Implemented decoder-only and patch-based transformer architectures from scratch in PyTorch.
+\end{itemize}
+
+%===========================
+\section{LANGUAGES}
+English: Fluent (C1) \quad|\quad French: Fluent (C1) \quad|\quad Arabic: Native
+\end{document}

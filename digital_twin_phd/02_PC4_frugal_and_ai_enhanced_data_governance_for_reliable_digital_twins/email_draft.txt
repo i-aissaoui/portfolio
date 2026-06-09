@@ -1,0 +1,16 @@
+To: hiring.manager@edt-program.fr
+Subject: Application: Frugal and AI-Enhanced Data Governance for Reliable Digital Twins
+
+Dear Dr. Moufida Maimour, Dr. Samir Si-Mohammed, Pr. Hind Bril El Haouzi, and Dr. Malcolm Egan,
+
+I am writing to apply for the PhD position "Frugal and AI-Enhanced Data Governance for Reliable Digital Twins" (PC4) at the CRAN laboratory and Inria Maracas.
+
+Attached are my resume, transcripts, and a motivation letter detailing my experience in lightweight AI modeling and digital twin architectures, which I believe aligns perfectly with the goals of achieving information frugality.
+
+Thank you for considering my application.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app

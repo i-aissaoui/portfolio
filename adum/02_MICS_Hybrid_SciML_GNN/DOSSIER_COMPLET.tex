@@ -1,0 +1,163 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,french]{babel}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{xcolor}
+\definecolor{titlesaclay}{RGB}{128,0,0} % Maroon-ish for Paris-Saclay
+\definecolor{TITLESACLAY}{RGB}{128,0,0}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+
+\hypersetup{colorlinks=true, urlcolor=titlesaclay, linkcolor=titlesaclay}
+
+\titleformat{\section}{\color{titlesaclay}\large\bfseries\uppercase}{}{0em}{}[\color{titlesaclay}\titlerule]
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=1pt,itemsep=0pt}
+
+\begin{document}
+
+%==============================================================================
+% PAGE DE GARDE
+%==============================================================================
+\begin{titlepage}
+    \begin{center}
+        \vspace*{2cm}
+        {\Huge\bfseries\color{titlesaclay} DOSSIER DE CANDIDATURE EN THÈSE}\\[2cm]
+        
+        {\Large Présenté par :}\\[0.5cm]
+        {\huge\bfseries Ismail AISSAOUI}\\[2cm]
+        
+        {\Large Titre du projet doctoral :}\\[0.5cm]
+        {\Large\bfseries Méthodes hybrides d’apprentissage automatique scientifique et décomposition de domaine pour la résolution d’équations aux dérivées partielles}\\[2cm]
+        
+        {\Large Financements sollicités :}\\[0.5cm]
+        \begin{itemize}[label=--]
+            \item[] \textbf{Allocation de l'École Doctorale INTERFACES (Paris-Saclay)}
+            \item[] \textbf{Contrat Doctoral de l'Université Paris-Saclay}
+        \end{itemize}
+
+        \vfill
+        
+        {\Large École Doctorale : \textbf{INTERFACES - n° 573}}\\[0.3cm]
+        {\Large Établissement : \textbf{Université Paris-Saclay}}\\[0.3cm]
+        {\Large Laboratoire : \textbf{MICS - EA 4037}}\\[2cm]
+        
+        \textit{Mai 2026}
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+%==============================================================================
+% DESCRIPTION DU PROJET DOCTORAL
+%==============================================================================
+\begin{center}
+    {\Large\bfseries Description du Projet Doctoral}\\[10pt]
+    \textbf{Sujet :} Méthodes hybrides d’apprentissage automatique scientifique et décomposition de domaine pour la résolution d’équations aux dérivées partielles
+\end{center}
+
+\section*{Informations Administratives}
+\begin{itemize}[label=--]
+    \item \textbf{Titre (EN) :} Hybrid Methods for Scientific Machine Learning and Domain Decomposition for Solving PDEs
+    \item \textbf{Direction :} Frédéric Magoulès
+    \item \textbf{Unité de Recherche :} Laboratoire MICS - EA 4037
+    \item \textbf{École Doctorale :} INTERFACES - n° 573
+    \item \textbf{Établissement :} Université Paris-Saclay
+\end{itemize}
+
+\section*{Résumé (Français)}
+Cette thèse vise à développer un cadre unifié combinant l'analyse numérique classique (décomposition de domaine) et l'IA avancée (GNN) pour la résolution efficace d'EDP. L'objectif est d'exploiter les biais inductifs des méthodes numériques pour stabiliser l'entraînement des GNN sur des maillages éléments finis. En intégrant des mécanismes de message passing améliorés (attention, connexions résiduelles), le projet cherche à surmonter les phénomènes de sur-lissage et à garantir la convergence des modèles neuronaux pour des simulations physiques à haute performance.
+
+\section*{Summary (English)}
+This PhD project aims to develop a unified framework combining classical numerical analysis (domain decomposition) and advanced AI (GNNs) for efficient PDE solving. The objective is to leverage inductive biases from numerical methods to stabilize GNN training on finite element meshes. By integrating enhanced message-passing mechanisms (attention, residual connections), the project seeks to overcome over-smoothing phenomena and ensure the convergence of neural models for high-performance physical simulations.
+
+\section{Plan de Travail}
+Le travail s'articule autour de cinq axes : 1) Analyse bibliographique SciML/GNN. 2) Conception d'architectures GNN adaptées aux maillages éléments finis. 3) Intégration de mécanismes de message passing multi-échelles. 4) Expérimentations sur des EDP de référence et algorithmes parallèles. 5) Analyse théorique des propriétés de stabilité et de convergence.
+
+\newpage
+
+%==============================================================================
+% CV DU CANDIDAT
+%==============================================================================
+\begin{center}
+    {\Huge\bfseries\color{titlesaclay} Ismail AISSAOUI}\\[4pt]
+    {\large AI Engineer $|$ Specialist in SciML \& HPC}\\[6pt]
+    \normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} $|$ Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} $|$ GitHub: \href{https://github.com/i-aissaoui}{i-aissaoui} \\
+    Nationality: Algerian $|$ Date of Birth: [INSERT DATE] \\
+    Address: [INSERT FULL POSTAL ADDRESS]
+\end{center}
+
+\section{Research Summary}
+AI Engineer specialized in \textbf{Scientific Machine Learning (SciML)}, \textbf{PINNs}, and \textbf{High-Performance Computing}. Expert in \textbf{GNNs} (PyTorch Geometric) and high-speed inference optimization (\textbf{0.04ms}) for industrial Digital Twins.
+
+\section{Research Experience}
+\textbf{Graduate Research Intern} \hfill Jan 2026 -- Jul 2026 \\
+\textit{Sonatrach (Industrial Surveillance Division) — Algeria} \\
+\textit{Supervisor: [INSERT SUPERVISOR NAME]}
+\begin{itemize}
+    \item Developed a \textbf{Physics-Informed Digital Twin} for GE LM2500 gas turbines.
+    \item Optimized sequential surrogate models for real-time edge deployment.
+    \item Achieved \textbf{0.04ms} inference through C++ JIT and CUDA optimization.
+\end{itemize}
+
+\textbf{Project: Career Connect (GNNs)} \hfill 2024--2025 \\
+\begin{itemize}
+    \item Implemented relational learning using \textbf{PyTorch Geometric} for matching complex data structures.
+\end{itemize}
+
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{GNN \& AI:} PyTorch, PyTorch Geometric (Message Passing, Attention), PINNs, SciML.
+    \item \textbf{HPC \& Programming:} Python, C++, CUDA, MPI, Linux/Unix.
+    \item \textbf{Mathematics:} Finite Element Method (FEM), Numerical Analysis.
+\end{itemize}
+
+\newpage
+
+%==============================================================================
+% LETTRE DE MOTIVATION
+%==============================================================================
+\begin{flushleft}
+    \textbf{Ismail AISSAOUI} \\
+    \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com}
+\end{flushleft}
+
+\begin{flushright}
+    To Frédéric Magoulès \\
+    \textbf{Laboratoire MICS} $|$ May 12, 2026
+\end{flushright}
+
+\bigskip
+\noindent \textbf{Subject: Application for PhD in Hybrid SciML and Domain Decomposition}
+\bigskip
+
+Dear Professor Magoulès,
+
+As a State Engineer in AI from ESI-SBA, I am writing to express my strong interest in the PhD position on "Hybrid Methods for SciML and Domain Decomposition." My research background in **Physics-Informed Digital Twins** and my expertise in **Graph Neural Networks (GNN)** align perfectly with the objectives of your team at MICS.
+
+During my Master's thesis at Sonatrach, I focused on bridging the gap between physical laws and data-driven models, achieving ultra-low latency inference for complex turbine systems. Furthermore, my experience with **PyTorch Geometric** for relational learning has provided me with the tools to implement advanced message-passing mechanisms for mesh-based simulations. I am particularly motivated by the challenge of integrating **Domain Decomposition** techniques with neural architectures to ensure mathematical stability and convergence.
+
+I am eager to contribute to the international research environment of Paris-Saclay and to develop parallel, robust algorithms for solving PDEs.
+
+\bigskip
+Sincerely, \\
+\textbf{Ismail AISSAOUI}
+
+\newpage
+
+%==============================================================================
+% RELEVÉ DE NOTES (4TH YEAR)
+%==============================================================================
+\begin{center}
+    {\Large\bfseries Relevé de Notes (4ème Année)}\\[20pt]
+\end{center}
+
+\includepdf[pages=-]{/home/ismail/Desktop/portfolio/phd/relevé de notes 4.pdf}
+
+\end{document}

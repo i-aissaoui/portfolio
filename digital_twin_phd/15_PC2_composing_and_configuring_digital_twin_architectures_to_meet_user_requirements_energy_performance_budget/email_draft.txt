@@ -1,0 +1,16 @@
+To: khalil.drira@laas.fr
+Subject: Application: Composing and configuring digital twin architectures to meet user requirements (energy, performance, budget)
+
+Dear Prof. Drira, Dr. Chassot, and Dr. Monteko,
+
+I am writing to express my eager interest in the PhD position "Composing and configuring digital twin architectures to meet user requirements" (PC2).
+
+I have attached my resume, academic transcripts, and a detailed motivation letter outlining my engineering background in distributed Edge-AI systems, QoS optimization, and how I plan to apply these skills to dynamically orchestrate digital twin architectures within the Artemis platform.
+
+Thank you for your consideration.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app

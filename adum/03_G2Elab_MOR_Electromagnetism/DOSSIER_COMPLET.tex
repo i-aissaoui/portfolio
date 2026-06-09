@@ -1,0 +1,158 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,french]{babel}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{xcolor}
+\definecolor{ugagreen}{RGB}{0,102,102} % Deep teal for UGA
+\definecolor{UGAGREEN}{RGB}{0,102,102}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+
+\hypersetup{colorlinks=true, urlcolor=ugagreen, linkcolor=ugagreen}
+
+\titleformat{\section}{\color{ugagreen}\large\bfseries\uppercase}{}{0em}{}[\color{ugagreen}\titlerule]
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=1pt,itemsep=0pt}
+
+\begin{document}
+
+%==============================================================================
+% PAGE DE GARDE
+%==============================================================================
+\begin{titlepage}
+    \begin{center}
+        \vspace*{2cm}
+        {\Huge\bfseries\color{ugagreen} DOSSIER DE CANDIDATURE EN THÈSE}\\[2cm]
+        
+        {\Large Présenté par :}\\[0.5cm]
+        {\huge\bfseries Ismail AISSAOUI}\\[2cm]
+        
+        {\Large Titre du projet doctoral :}\\[0.5cm]
+        {\Large\bfseries Réduction d’ordre de modèles électromagnétiques non linéaires par apprentissage automatique intégrant la physique}\\[2cm]
+        
+        {\Large Financements sollicités :}\\[0.5cm]
+        \begin{itemize}[label=--]
+            \item[] \textbf{Allocation Doctorale de l'Université Grenoble Alpes (UGA)}
+        \end{itemize}
+
+        \vfill
+        
+        {\Large École Doctorale : \textbf{EEATS - n° 220}}\\[0.3cm]
+        {\Large Établissement : \textbf{Université Grenoble Alpes}}\\[0.3cm]
+        {\Large Laboratoire : \textbf{G2Elab (UMR 5266)}}\\[2cm]
+        
+        \textit{Mai 2026}
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+%==============================================================================
+% DESCRIPTION DU PROJET DOCTORAL
+%==============================================================================
+\begin{center}
+    {\Large\bfseries Description du Projet Doctoral}\\[10pt]
+    \textbf{Sujet :} Réduction d’ordre de modèles électromagnétiques non linéaires par apprentissage automatique intégrant la physique
+\end{center}
+
+\section*{Informations Administratives}
+\begin{itemize}[label=--]
+    \item \textbf{Titre (EN) :} Model Order Reduction of Nonlinear Electromagnetic Models using Physics-Informed Machine Learning
+    \item \textbf{Direction :} Olivier Chadebec et Jean-Michel Guichon
+    \item \textbf{Unité de Recherche :} Laboratoire G2Elab - Équipe MAGE
+    \item \textbf{École Doctorale :} EEATS - n° 220
+    \item \textbf{Établissement :} Université Grenoble Alpes
+\end{itemize}
+
+\section*{Résumé (Français)}
+Ce projet de thèse vise à développer de nouvelles méthodes de réduction d’ordre (MOR) pour la simulation de problèmes électromagnétiques non linéaires (matériaux ferromagnétiques, courants de Foucault). L’objectif est d’hybrider les approches classiques de projection (POD, PGD, DEIM) avec des techniques d’apprentissage automatique (PINNs, Opérateurs de Koopman) pour corriger les biais non linéaires à partir d'un nombre restreint de simulations haute fidélité. Le projet s’appliquera à des composants de génie électrique tels que des capteurs et des actionneurs, cherchant à réduire drastiquement les temps de calcul tout en conservant une précision optimale.
+
+\section*{Summary (English)}
+This PhD project focuses on developing novel Model Order Reduction (MOR) methods for simulating nonlinear electromagnetic problems (ferromagnetic materials, eddy currents). The goal is to hybridize classical projection-based approaches (POD, PGD, DEIM) with machine learning techniques (PINNs, Koopman operators) to correct nonlinear biases using a limited set of high-fidelity simulations. The work will be applied to electrical engineering components such as sensors and actuators, aiming to drastically reduce computational time while maintaining high accuracy.
+
+\section{Plan de Travail}
+La thèse est organisée en quatre étapes clés : 1) État de l'art sur le MOR et le Machine Learning appliqué à la réduction de modèles. 2) Développement de techniques MOR pour la magnétostatique non linéaire avec couplage circuit. 3) Extension aux courants de Foucault et aux régimes transitoires. 4) Validation industrielle sur des capteurs et actionneurs complexes avec prise en compte du mouvement.
+
+\newpage
+
+%==============================================================================
+% CV DU CANDIDAT
+%==============================================================================
+\begin{center}
+    {\Huge\bfseries\color{ugagreen} Ismail AISSAOUI}\\[4pt]
+    {\large AI Engineer $|$ Specialist in SciML \& Surrogate Modeling}\\[6pt]
+    \normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} $|$ Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} $|$ GitHub: \href{https://github.com/i-aissaoui}{i-aissaoui} \\
+    Nationality: Algerian $|$ Date of Birth: [INSERT DATE] \\
+    Address: [INSERT FULL POSTAL ADDRESS]
+\end{center}
+
+\section{Research Summary}
+AI Engineer specialized in \textbf{Scientific Machine Learning (SciML)}, \textbf{PINNs}, and \textbf{Surrogate Modeling}. Expertise in **State-Space Models (Mamba-SSM)** and high-performance numerical simulation (\textbf{0.04ms} latency).
+
+\section{Research Experience}
+\textbf{Graduate Research Intern} \hfill Jan 2026 -- Jul 2026 \\
+\textit{Sonatrach (Industrial Surveillance Division) — Algeria} \\
+\textit{Supervisor: [INSERT SUPERVISOR NAME]}
+\begin{itemize}
+    \item Developed a \textbf{Physics-Informed Digital Twin} for gas turbines using hybrid SSM architectures.
+    \item Implemented non-linear surrogate models for thermodynamic state prediction.
+    \item Achieved real-time performance through C++ JIT and CUDA optimization.
+\end{itemize}
+
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{SciML:} PINNs, Model Order Reduction, Surrogate Modeling, UQ.
+    \item \textbf{Deep Learning:} PyTorch, Koopman Operator concepts, Mamba-SSM, xLSTM.
+    \item \textbf{Numerical Methods:} Finite Element Method (FEM), Integral Formulations.
+    \item \textbf{HPC:} CUDA, C++, Python (JAX, PyTorch).
+\end{itemize}
+
+\newpage
+
+%==============================================================================
+% LETTRE DE MOTIVATION
+%==============================================================================
+\begin{flushleft}
+    \textbf{Ismail AISSAOUI} \\
+    \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com}
+\end{flushleft}
+
+\begin{flushright}
+    To Olivier Chadebec and Jean-Michel Guichon \\
+    \textbf{G2Elab - Equipe MAGE} $|$ May 12, 2026
+\end{flushright}
+
+\bigskip
+\noindent \textbf{Subject: Application for PhD in Model Order Reduction for Nonlinear Electromagnetics}
+\bigskip
+
+Dear Professors Chadebec and Guichon,
+
+As a State Engineer in AI from ESI-SBA, I am highly motivated to join the G2Elab for the PhD project on "Model Order Reduction of Nonlinear Electromagnetic Models using Physics-Informed Machine Learning." My expertise in building **Physics-Informed Digital Twins** and my work on **State-Space Models (Mamba-SSM)** align directly with your research on hybrid physics-data models and Koopman operators.
+
+During my Master's thesis at Sonatrach, I addressed the challenge of predicting complex, non-linear thermodynamic states under strict real-time constraints (\textbf{0.04ms}). I am particularly interested in the transition to electromagnetic components, where I can apply my skills in **PINNs** and numerical optimization to solve the instabilities often found in traditional reduction methods like POD-DEIM. The prospect of working on integral formulations and advanced interpolation techniques within the MAGE team is a major driver for my application.
+
+I am eager to contribute to the G2Elab's excellence in electrical engineering and to develop the next generation of fast, accurate electromagnetic solvers.
+
+\bigskip
+Sincerely, \\
+\textbf{Ismail AISSAOUI}
+
+\newpage
+
+%==============================================================================
+% RELEVÉ DE NOTES (4TH YEAR)
+%==============================================================================
+\begin{center}
+    {\Large\bfseries Relevé de Notes (4ème Année)}\\[20pt]
+\end{center}
+
+\includepdf[pages=-]{/home/ismail/Desktop/portfolio/phd/relevé de notes 4.pdf}
+
+\end{document}

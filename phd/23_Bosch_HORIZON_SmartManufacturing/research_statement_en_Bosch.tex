@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\definecolor{bosch_red}{RGB}{224, 0, 0}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=bosch_red,
+    urlcolor=bosch_red,
+}
+
+\titlelabel{\thetitle.\quad}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{bosch_red} Research Statement Outline}\\[6pt]
+    {\large GPAI-Driven Robotic World Models: Bridging System 1/2 for Smart Manufacturing}\\[4pt]
+    \textbf{Ismail AISSAOUI} $|$ State Engineer in Artificial Intelligence
+\end{center}
+
+\bigskip
+
+\section{Introduction and Vision}
+The future of Smart Manufacturing lies in robots that do not just follow static scripts but "reason" about their environment. My research vision focuses on the implementation of **General Purpose AI (GPAI)** that bridges the gap between intuitive perception (**System 1**) and analytical planning (**System 2**). By leveraging **State Space Models (SSMs)** and **Physics-Informed ML**, I aim to develop robotic "World Models" that can autonomously navigate the uncertainty of machine loading and human-robot collaboration in dynamic factory environments.
+
+\section{Proposed Research Axes}
+
+\subsection{1. Hybrid Perception-Planning Architectures (System 1/2)}
+I propose to investigate the integration of fast, reactive models (e.g., TCNs or Vision Transformers) for real-time scene understanding with slow, deliberative models (e.g., **Mamba-SSM** or **xLSTM**) for sequential decision-making. This dual-system approach allows the robot to handle high-frequency sensor data while maintaining a long-term "memory" of the manufacturing process, enabling flexible navigation and manipulation strategies that adapt to changing product types.
+
+\subsection{2. Physics-Informed World Models for Robust Manipulation}
+Data-driven robotics often struggle with physical consistency. I propose to develop world models that incorporate the **kinematics and physical constraints** of industrial robots directly into the neural architecture using **Physics-Informed Neural Networks (PINN)**. By penalizing violations of physical laws during the "What-If" simulation phase, we can ensure that the GPAI-guided trajectories are not only efficient but also physically feasible and safe, reducing the gap between simulation (Webots/ROS) and reality.
+
+\subsection{3. Explainable and Trustworthy Human-Centric AI}
+For robots to work alongside humans, their decisions must be interpretable. I propose to extend my work on **Gradient Saliency** and **Uncertainty Quantification** to the multimodal perception systems of (humanoid) robots. By providing real-time "Confidence Envelopes" and visual heatmaps of the robot's focus, we can create a transparent feedback loop for human operators, ensuring that the GPAI-driven navigation is both trustworthy and ethically aligned with safety standards in a shared manufacturing space.
+
+\section{Alignment with Bosch and HORIZON}
+My profile as an AI Engineer with a successful track record in **Hardware-Software Co-Design** and **Industrial Digital Twins** (Sonatrach) aligns perfectly with the requirements of Robert Bosch Manufacturing Solutions. My experience in achieving **0.04ms inference** for edge-based sequential models provides the technical foundation needed to implement these GPAI tools in the **ARENA2036** high-speed manufacturing environment. I am eager to contribute to the HORIZON project’s mission of defining the future of European Smart Manufacturing.
+
+\end{document}

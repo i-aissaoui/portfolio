@@ -1,0 +1,16 @@
+To: romain.raffin@ube.fr
+Subject: Application: Automatic construction of a digital model from real-world scenes
+
+Dear Romain Raffin, Gilles Rougeron, and Jeremie Le Garrec,
+
+I would like to express my interest in applying for the PhD position on the "Automatic construction of a digital model from real-world scenes" (PC5) at the LIB laboratory and CEA LIST.
+
+Attached are my resume, academic transcripts, and my motivation letter describing how my expertise in Multi-fidelity SciML and 3D web visualizations positions me well for extracting mechanical properties from 2D data.
+
+I look forward to hearing from you.
+
+Best regards,
+Ismail Aissaoui
+Email: i.aissaoui@esi-sba.dz
+Phone: +213660707796
+Portfolio: ismail-aissaoui.vercel.app
