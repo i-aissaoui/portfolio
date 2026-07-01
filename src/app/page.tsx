@@ -84,7 +84,7 @@ export default function Home() {
 
             <div className='absolute top-0 right-0 w-full lg:w-3/5 h-full opacity-60 pointer-events-none select-none overflow-hidden brain-visual-mask z-0'>
               <Image
-                src="/the_mind.png"
+                src="/mind.png"
                 alt="Brain Visual"
                 fill
                 priority={true}

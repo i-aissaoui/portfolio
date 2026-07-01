@@ -1,0 +1,141 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=titleblue,
+    linkcolor=titleblue,
+    citecolor=titleblue,
+    pdfborder={0 0 0}
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{titleblue}\titlerule]
+
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[4pt]
+    {\Large Ingénieur IA \& Data Science}\\[6pt]
+
+    {\normalsize
+    Email : \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
+    Tél : +213 660 70 77 96 \\
+    Portfolio : \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
+    Localisation : Chlef, Algérie \\
+    LinkedIn : \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
+    GitHub : \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    }
+\end{center}
+
+%===========================
+\section{RÉSUMÉ PROFESSIONNEL}
+Ingénieur IA \& Data Science avec un profil en Ingénierie Logicielle Full-Stack. Expérimenté dans la réalisation de projets touchant au Traitement du Langage Naturel (NLP), à l'IA Responsable, à la modélisation sémantique et aux Systèmes de Décision. Mes principaux centres d'intérêt incluent les Grands Modèles de Langage (LLM), l'extraction de connaissances (RAG, Web Sémantique), les Réseaux de Neurones Graphiques (GNN) et le Deep Learning informé par les connaissances (Physique/Sémantique).
+
+%===========================
+\section{COMPÉTENCES}
+\textbf{Techniques IA \& Sémantique}: LLM (RAG, Fine-tuning), Ontologies, Graphes de Connaissances, NLP (SBERT) \\
+\textbf{ML / DL}: PyTorch, TensorFlow, Keras, Scikit-learn, Lightning \\
+\textbf{Programmation}: Python (Avancé), TypeScript, JavaScript, SQL \\
+\textbf{Bases de données}: PostgreSQL, MongoDB, Neo4j (Orientée Graphes), MySQL \\
+\textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, Pandas, NumPy \\
+\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, AWS
+
+%===========================
+\section{EXPÉRIENCE PROFESSIONNELLE}
+\textbf{Ingénieur de Recherche IA (Stagiaire)} \hfill Jan 2026 -- Jui 2026 \\
+Sonatrach (Division Surveillance Industrielle) — Algérie \\
+Architecture d'un système hybride et explicable combinant intelligence artificielle et principes a priori (physique).
+\begin{itemize}
+    \item Conception d'un framework Deep Learning augmentant les données brutes de capteurs avec des contraintes explicables (lois thermodynamiques).
+    \item Développement de modèles d'IA sur Edge, nécessitant rigueur algorithmique et maîtrise de l'implémentation bas niveau (C++ ONNX).
+    \item Modélisation de représentations temporelles complexes, analogues à la structuration d'informations continues.
+\end{itemize}
+
+\textbf{Stagiaire en ingénierie réseau} \hfill Sep 2024 \\
+Algérie Télécom RMC Center — Chlef, Algérie
+
+%===========================
+\section{FORMATION}
+\textbf{École Nationale Supérieure d’Informatique (ESI-SBA)} \hfill 2021--2026 \\
+Diplôme d’ingénieur et master en informatique \\
+Spécialisation : Intelligence Artificielle \& Data Science
+
+%===========================
+\section{CERTIFICATIONS}
+\textbf{DeepLearning.AI} : NLP Specialization, Machine Learning Specialization, Deep Learning Specialization \\[6pt]
+\textbf{ZTM Academy} : PyTorch: Zero to Mastery, TensorFlow Developer
+
+
+\newpage
+
+%===========================
+\section{THÈSES ACADÉMIQUES}
+\textbf{Thèse d'Ingénieur d'État :} \\
+\textit{Systèmes Complexes et Modèles Augmentés par la Connaissance : Un Framework Deep Learning Cloud–Edge informé par des représentations a priori (Physique)}
+
+\vspace{4pt}
+\textbf{Thèse de Master :} \\
+\textit{Réseaux de Neurones Informés : Fusion de modèles d'Espaces d'États (Mamba) et de contraintes d'expertises pour des pronostics médicaux}
+
+\vspace{8pt}
+\section{PROJETS ACADÉMIQUES \& PERSONNELS}
+\setlength{\parskip}{0pt}
+
+\noindent\textbf{\large Système de Recrutement GNN (Career Connect)} \hfill \textbf{2024--2025}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{Modélisation Sémantique \& Extraction d'Informations} : Utilisation de modèles de langage (SBERT) pour représenter sémantiquement des descriptions textuelles d'offres d'emploi et de CVs.
+    \item \textbf{Analyse Relationnelle (Graphes)} : Conception d'un système de recommandation exploitant les Graphes de Connaissances et les Réseaux de Neurones Graphiques (GNN) via PyTorch Geometric.
+    \item \textbf{Explicabilité} : Le passage par la structure de graphe permet de tracer les correspondances sémantiques entre profils, limitant ainsi l'opacité (boîte noire) des recommandations classiques.
+\end{itemize}
+\textit{Tech : PyTorch Geometric, NLP, Modèles de Langage (SBERT), Neo4j, FastAPI}
+}
+\vspace{8pt}
+
+\noindent\textbf{\large Systèmes Informés par la Connaissance (Physics-Informed IA)} \hfill \textbf{2026}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{Contraintes Explicites} : Développement de modèles de Deep Learning pénalisés par des règles analytiques explicites, obligeant le système à respecter un "système de croyances" théorique, très proche de l'approche hybride ontologie / IA.
+    \item \textbf{Résultats} : Garantie d'une meilleure explicabilité, robustesse contre le bruit et respect des connaissances fondamentales du domaine ciblé.
+\end{itemize}
+\textit{Tech : PyTorch, DeepONet, KAN, Optimisation sous Contraintes}
+}
+\vspace{8pt}
+
+\noindent\textbf{\large Aura — Plateforme d'IA Décisionnelle} \hfill \textbf{2025}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{Apprentissage des Séquences (NLP et RL)} : Combiné l'analyse séquentielle de données structurées avec le Deep Q-Learning pour orienter des prises de décision stratégiques dans un environnement volatil.
+\end{itemize}
+\textit{Tech : TensorFlow, PyTorch, RL, Architecture Décisionnelle}
+}
+\vspace{12pt}
+
+%===========================
+\section{LANGUES}
+Arabe : Langue maternelle \quad|\quad Anglais : Avancé \quad|\quad Français : Bilingue / Professionnel
+
+\end{document}

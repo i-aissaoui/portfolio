@@ -1,0 +1,151 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% Customize colors to match a professional, tech-focused look
+\definecolor{TitleBlue}{RGB}{0,51,140}
+\setbeamercolor{structure}{fg=TitleBlue}
+\setbeamercolor{palette primary}{bg=TitleBlue,fg=white}
+\setbeamercolor{palette secondary}{bg=TitleBlue!80,fg=white}
+\setbeamercolor{palette tertiary}{bg=TitleBlue!60,fg=white}
+
+\title[AI \& Data Science Engineer]{Ismail Aissaoui}
+\subtitle{AI Architecture \& Digital Twin Engineering Portfolio}
+\author{Ismail Aissaoui}
+\institute[ESI-SBA]{National Higher School of Computer Science (ESI-SBA)}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Agenda}
+\tableofcontents
+\end{frame}
+
+\section{Profile \& Vision}
+\begin{frame}
+\frametitle{Who Am I?}
+\begin{itemize}
+    \item \textbf{Profile:} AI \& Data Science Engineer graduating in 2026.
+    \item \textbf{Education:} State Engineering Degree \& Master's Degree in Computer Science from ESI-SBA.
+    \item \textbf{Engineering Philosophy:} Moving beyond "Black-Box" AI. My work focuses on architecting systems where neural networks are constrained by real-world physical laws and logic.
+    \item \textbf{Core Domains:} 
+    \begin{itemize}
+        \item Physics-Informed Neural Networks (PINNs)
+        \item Spatio-Temporal Sequence Modeling (Mamba, Transformers)
+        \item Graph Neural Networks \& Reinforcement Learning
+        \item Full-Stack System Architecture (FastAPI, Next.js, PostgreSQL)
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Academic Foundation \& Skills}
+\begin{frame}
+\frametitle{Academic Foundation: Key Topics \& Models}
+\textbf{National Higher School of Computer Science (ESI-SBA)} \hfill \textit{2021 -- 2026}
+\vspace{0.2cm}
+\begin{itemize}
+    \item \textbf{Machine Learning:} Regression, SVMs, Decision Trees, Ensembles (Random Forest, XGBoost), Dimensionality Reduction (PCA, t-SNE).
+    \item \textbf{Deep Learning:} CNNs (ResNet, EfficientNet), RNNs/LSTMs, Autoencoders, GANs, Physics-Informed Neural Networks (PINNs).
+    \item \textbf{Computer Vision:} Object Detection (YOLO), Semantic Segmentation (U-Net), Vision Transformers (ViT).
+    \item \textbf{Natural Language Processing (NLP):} Word Embeddings (Word2Vec), Attention Mechanisms, Transformers (BERT, GPT), RAG architectures.
+    \item \textbf{Advanced AI \& Big Data:} Graph Neural Networks (GNNs), Deep Reinforcement Learning (DQN, PPO), Big Data ecosystems (Hadoop, Spark), Semantic Web (Knowledge Graphs).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Certifications}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{DeepLearning.AI (Coursera)}
+    \begin{itemize}
+        \item Machine Learning Specialization
+        \item Deep Learning Specialization
+        \item Natural Language Processing (NLP) Specialization
+    \end{itemize}
+    \vspace{0.4cm}
+    \item \textbf{Zero To Mastery (ZTM) Academy}
+    \begin{itemize}
+        \item PyTorch for Deep Learning: Zero to Mastery
+        \item TensorFlow Developer Certificate Bootcamp
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Gas Turbine Digital Twin (Engineering Thesis)}
+\begin{frame}
+\frametitle{Engineering Thesis: Gas Turbine Digital Twin}
+\textbf{Context:} Real-time monitoring of GE LM2500 gas turbines for Sonatrach. \\
+\textbf{Challenge:} Hardware Latency Paradox (Cloud AI is too slow for emergency shutdowns, edge hardware cannot process massive models).\\
+\textbf{Solution:} A "Dual-Track" 3-Tier Pipeline decoupling the logic.
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{TCNEdge (Temporal Convolutional Network):} 1D CNNs optimized for the Edge. Acts as an immediate safety trigger, bypassing complex attention mechanisms for pure speed (0.049 ms inference).
+    \item \textbf{MambaTS (Selective State Space Model):} A near-edge sequence model providing linear $O(N)$ complexity for infinite-horizon memory, enhanced with a "missingness-aware gate" for sensor faults.
+    \item \textbf{ST-KDFormer \& KAN-PCNN (Cloud):} Spatio-Temporal Knowledge-Distilled Transformers map complex interactions, while Kolmogorov-Arnold Networks act as Physics-Constrained NNs to obey thermodynamics.
+\end{itemize}
+\end{frame}
+
+\section{Medical Digital Twin (Master's Thesis)}
+\begin{frame}
+\frametitle{Master's Thesis: Cardiovascular Digital Twin}
+\textbf{Context:} Predicting sudden drops in Mean Blood Pressure (MBP) in Intensive Care. \\
+\textbf{Challenge:} Models overfit to time-series noise and ignore fundamental fluid dynamics.\\
+\textbf{Data:} 100Hz VitalDB dataset with strict 70/15/15 patient-level split.
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{PI\_DeepONet (Physics-Informed Deep Operator Network):} A dual-network architecture (Branch Net for patient anatomy, Trunk Net for time). It learns mathematical operators (PDEs) rather than just functions.
+    \item \textbf{0D Windkessel Model:} Acts as the physics engine. PyTorch Autograd calculates derivatives to penalize predictions violating physical vascular resistance or arterial compliance.
+    \item \textbf{Medical\_MambaTS:} Deployed at the bedside for continuous state-space monitoring without memory bottlenecks.
+\end{itemize}
+\end{frame}
+
+\section{Enterprise AI Projects}
+\begin{frame}
+\frametitle{Project: Aura — Autonomous Trading System}
+\textbf{Architecture:} Bridging Sequence Learning and Reinforcement Learning
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{LSTM (Long Short-Term Memory):} A specialized Recurrent Neural Network used in the Prediction Layer. It processes historical market data to capture long-term temporal dependencies and predict short-term price movements.
+    \item \textbf{DQN (Deep Q-Network):} Used in the Action Layer. A Reinforcement Learning algorithm that combines Q-Learning with deep neural networks. It takes LSTM outputs as states to optimize long-term trading reward policies.
+    \item \textbf{Infrastructure:} Highly scalable \textbf{FastAPI} backend and a reactive \textbf{Next.js} dashboard receiving real-time agent telemetry via WebSockets.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Project: Career Connect — GNN Recruiting System}
+\textbf{Architecture:} Graph-Based Recommendation System
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{SBERT (Sentence-BERT):} A modification of the pretrained BERT network used to derive semantically meaningful sentence embeddings. It reads resumes and job descriptions to generate deep semantic vectors.
+    \item \textbf{GNN (Graph Neural Network):} A class of neural networks designed to process data represented as graphs (using PyTorch Geometric). It processes the SBERT embeddings as nodes, learning the hidden, non-linear relational patterns between a candidate's skills and a job's true requirements.
+\end{itemize}
+\end{frame}
+
+\section{Full-Stack Engineering}
+\begin{frame}
+\frametitle{Full-Stack Engineering Projects}
+\textbf{Elydent \& Tajer (Professional Desktop POS Systems)}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{The Philosophy:} AI models are useless if they cannot be delivered in robust, usable software. I build production-ready platforms.
+    \item \textbf{How they are Built:}
+    \begin{itemize}
+        \item \textbf{Architecture:} Packaged as cross-platform desktop applications using \textbf{Electron}.
+        \item \textbf{Frontend:} Built with \textbf{Next.js 14} and \textbf{Tailwind CSS} for highly responsive, modern UI/UX.
+        \item \textbf{Database:} Implemented robust, offline-first \textbf{SQLite} databases with complex relational structures for inventory, patient tracking, and accounting.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \Huge Thank You! \\
+    \vspace{0.5cm}
+    \large Questions?
+\end{center}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,162 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+
+\definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=titleblue,
+    linkcolor=titleblue,
+    citecolor=titleblue,
+    pdfborder={0 0 0}
+}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\titleformat{\section}
+  {\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}
+  [\color{titleblue}\titlerule]
+
+\titlespacing\section{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[4pt]
+    {\Large AI \& Data Science Engineer}\\[6pt]
+
+    {\normalsize
+    Email: \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
+    Phone: +213 660 70 77 96 \\
+    Portfolio: \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
+    Location: Chlef, Algeria \\
+    LinkedIn: \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
+    GitHub: \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    }
+\end{center}
+
+%===========================
+\section{PROFILE}
+AI \& Data Science Engineer with a background in Full-Stack Software Engineering. Highly motivated to apply my expertise in Machine Learning, Deep Learning, and Mathematical Modeling to the research challenges at Uppsala University. Experienced in Industrial Digital Twins, Healthcare, Financial Trading, and Computer Vision.
+
+%===========================
+\section{SKILLS}
+\textbf{Programming}: Python, TypeScript, JavaScript, Java, SQL \\
+\textbf{ML / DL}: PyTorch, TensorFlow, Keras, Scikit-learn, Lightning, ONNX \\
+\textbf{AI Techniques}: Transformers (BERT, GPT, RAG), GNN, GAN, XGBoost, LSTM \\
+\textbf{Optimization}: PSO, Genetic Algorithm, ACO, Simulated Annealing, Bayesian Optimization \\
+\textbf{Web \& API}: React, Next.js, FastAPI, Node.js, TailwindCSS \\
+\textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, DVC, Pandas, NumPy \\
+\textbf{Databases}: PostgreSQL, MongoDB, MySQL, Neo4j, Cassandra \\
+\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana 
+
+%===========================
+\section{PROFESSIONAL EXPERIENCE}
+\textbf{Graduate AI Research Engineer (Intern)} \hfill Jan 2026 -- Jul 2026 \\
+Sonatrach (Industrial Surveillance Division) — Algeria \\
+Architected an AI-native Digital Twin for real-time monitoring of Gas Turbines.
+\begin{itemize}
+    \item Architected a 3-tier Dual-Track framework decoupling safety-critical Edge models from Cloud analytics.
+    \item Developed \textbf{TCNEdge} achieving \textbf{0.049ms INT8 ONNX C++ inference} for emergency shutdown.
+    \item Engineered \textbf{MambaTS} with a missingness-aware gate to maintain robustness during sensor dropouts.
+    \item Implemented \textbf{KAN-PCNN} and \textbf{ST-KDFormer} to ensure strict thermodynamic consistency at scale.
+\end{itemize}
+
+\vspace{8pt}
+\textbf{Network Engineering Intern} \hfill Sep 2024 \\
+Algérie Télécom RMC Center — Chlef, Algeria
+
+%===========================
+\section{EDUCATION}
+\textbf{National Higher School of Computer Science (ESI-SBA)} \hfill 2021--2026 \\
+Engineering and Master’s Degree in Computer Science \\
+Specialization: Artificial Intelligence \& Data Science
+
+%===========================
+\section{CERTIFICATIONS}
+\textbf{DeepLearning.AI}: Machine Learning Specialization, Deep Learning Specialization, NLP Specialization \\[6pt]
+\textbf{ZTM Academy}: PyTorch: Zero to Mastery, TensorFlow Developer
+
+%===========================
+% Force projects + languages onto page 2
+\newpage
+
+%===========================
+\section{ACADEMIC THESES}
+\textbf{State Engineering Degree Thesis:} \\
+\textit{Physics-Informed Explainable Digital Twin for Industrial Gas Turbines: A Dual-Track Cloud–Edge Deep Learning Framework with Koopman-Augmented State-Space Models}
+
+\vspace{4pt}
+\textbf{Master's Degree Thesis:} \\
+\textit{Hemodynamic Digital Twins: Fusing Hemodynamic Physics-Informed Neural Networks and Mamba-SSM for ICU Patient Prognostics}
+
+\vspace{8pt}
+\section{PROJECTS}
+\setlength{\parskip}{0pt}
+
+\noindent\textbf{\large Industrial Gas Turbine Digital Twin (Sonatrach)} \hfill \textbf{2026}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{Edge \& Cloud Architecture}: Engineered a 3-tier framework decoupling safety-critical TCNEdge (Siemens PLC) from near-edge MambaTS and cloud-based ST-KDFormer.
+    \item \textbf{Ultra-Low Latency Inference}: Compiled 1D Dilated Convolutions (TCNEdge) to INT8 ONNX C++, achieving 0.049ms latency for emergency shutdown.
+    \item \textbf{Physcis \& Robustness}: Implemented MambaTS with missingness-aware gating for broken sensors, and KAN-PCNN with PyTorch Autograd for absolute thermodynamic consistency.
+\end{itemize}
+\textit{Tech: MambaTS, TCNEdge, ST-KDFormer, KAN-PCNN, PyTorch, C++ ONNX, PINN}
+}
+\vspace{8pt}
+
+\noindent\textbf{\large Cardiovascular Medical Digital Twin} \hfill \textbf{2026}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{High-Frequency Edge-Cloud Architecture}: Engineered \textbf{Medical\_MambaTS} for sub-millisecond bedside inference and dual-branch \textbf{SST\_KODA\_MultiScale} for robust cloud forecasting using 100Hz VitalDB ICU telemetry.
+    \item \textbf{Physics-Informed DeepONet}: Implemented a 0D Windkessel \textbf{PI\_DeepONet} with PyTorch Autograd, forcing the model to obey cardiovascular fluid dynamics without retraining for new patients.
+    \item \textbf{Data Pipeline \& Robustness}: Developed a PyArrow Parquet zero-copy pipeline avoiding GPU starvation, and designed a custom missingness-aware gate to handle sensor dropouts natively.
+\end{itemize}
+\textit{Tech: PyTorch, Medical\_MambaTS, PI\_DeepONet, SST\_KODA\_MultiScale, Parquet PyArrow, Autograd}
+}
+\vspace{8pt}
+
+\noindent\textbf{\large Aura — Enterprise AI Trading Platform} \hfill \textbf{2025}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{Hybrid Forecasting}: Built an autonomous trading system combining LSTM networks for time-series predictions.
+    \item \textbf{Strategic Decision-Making}: Implemented Deep Q-Learning (Reinforcement Learning) to optimize long-term reward policies.
+    \item \textbf{Real-Time Dashboard}: Engineered a high-throughput FastAPI backend with WebSockets and a Next.js interactive UI.
+\end{itemize}
+\textit{Tech: TensorFlow, PyTorch, FastAPI, Next.js, WebSockets, RL}
+}
+\vspace{8pt}
+
+\noindent\textbf{\large GNN-based Recruiting System (Career Connect)} \hfill \textbf{2024--2025}
+\vspace{2pt}
+{\small
+\begin{itemize}
+    \item \textbf{Relational Learning}: Developed a recommendation engine using Graph Neural Networks (GNN) to map candidate-job relationships.
+    \item \textbf{Semantic Embeddings}: Utilized PyTorch Geometric and SBERT for deep semantic text processing.
+    \item \textbf{System Architecture}: Deployed via FastAPI and PostgreSQL, significantly outperforming keyword-based heuristics.
+\end{itemize}
+\textit{Tech: PyTorch Geometric, SBERT, FastAPI, PostgreSQL, GNN}
+}
+\vspace{12pt}
+
+%===========================
+\section{LANGUAGES}
+Arabic: Native \quad|\quad English: Advanced \quad|\quad French: Professional
+
+\end{document}

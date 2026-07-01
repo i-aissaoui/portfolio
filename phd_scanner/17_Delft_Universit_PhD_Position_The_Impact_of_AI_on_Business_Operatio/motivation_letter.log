@@ -1,0 +1,435 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.30)  19 JUN 2026 17:20
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex
+(/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:1: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 H
+     ere is the motivation letter:
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no H in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no : in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--2
+[]
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/letter.cls
+Document Class: letter 2021/12/07 v1.3c Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\longindentation=\dimen140
+\indentedwidth=\dimen141
+\labelcount=\count187
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:6: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 {\begin{tabular}
+                    {@{}c@{}} Ismail Aissaoui \\ [5mm] \end{tabular}}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 6.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:8: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...15, 2026\hspace{-2.5mm}\\[1mm]\vspace{1mm}}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:8: Undefined control sequence.
+\fromaddress ->\thefamily 
+                          
+l.8 ...15, 2026\hspace{-2.5mm}\\[1mm]\vspace{1mm}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:8: Undefined control sequence.
+\opening ...ace {2\parskip }{\raggedright \toname 
+                                                  \expandafter \\\toaddress ...
+l.8 ...15, 2026\hspace{-2.5mm}\\[1mm]\vspace{1mm}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:8: Undefined control sequence.
+\opening ...ght \toname \expandafter \\\toaddress 
+                                                  \par }\vspace {2\parskip }...
+l.8 ...15, 2026\hspace{-2.5mm}\\[1mm]\vspace{1mm}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:8: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...15, 2026\hspace{-2.5mm}\\[1mm]\vspace{1mm}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:8: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...15, 2026\hspace{-2.5mm}\\[1mm]\vspace{1mm}}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:9: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 T
+     o the PhD Admissions Committee at Delft University of Technology,
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[2
+
+]
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:13: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 D
+      ear Admissions Committee,
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:15: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 I
+       am excited to apply for the fully funded PhD position on "The Impact ...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:17: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 W
+      ith my background in relevant fields and strong quantitative research ...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:17: Missing $ inserted.
+<inserted text> 
+                $
+l.17 ...is PhD offer. For instance, my work on PI_
+                                                  DeepONet, a Physics-Inform...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:18: Missing $ inserted.
+<inserted text> 
+                $
+l.18 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (16.87352pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 pared me well for this PhD of-fer. For in-stance, my work on PI$[]\OML/cmm/m/it/10 eepONet; aPhysics \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (617.6174pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 InformedOperatorNetworkusingPyTorchAutograd; demonstratesmyabilitytointegrateAIintocomplexsystemswithphysicalconstraints; whichalignsperfectlywiththeresearchfocusonAI[]simpactonbusinessoperations:$ 
+ []
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:19: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 M
+      oreover, my experience with SST_KODA_MultiScale, a robust cloud foreca...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:19: Missing $ inserted.
+<inserted text> 
+                $
+l.19 Moreover, my experience with SST_
+                                      KODA_MultiScale, a robust cloud foreca...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:20: Missing $ inserted.
+<inserted text> 
+                $
+l.20 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (306.93353pt too wide) in paragraph at lines 19--20
+[]\OT1/cmr/m/n/10 Moreover, my ex-pe-ri-ence with SST$[]\OML/cmm/m/it/10 ODA[]ultiScale; arobustcloudforecastingsystemthathandlesmissingdata; showcasesmycapabilitytodevelopAI \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (384.44794pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 poweredsolutionsforreal \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 worldproblems:IamconfidentthatmyskillsinNLPembeddingsusingSBERTandPyTorchGeometricwillalsobevaluableassetsinthisproject:$ 
+ []
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:21: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 I
+       am impressed by the university's reputation for cutting-edge research...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:23: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 T
+      hank you for considering my application. I look forward to discussing ...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:25: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 S
+      incerely,
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:27: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 I
+      smail Aissaoui
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1]
+\@mlabel{}{\unhbox \voidb@x \ignorespaces \par \\}
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:31: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 \closing{\end{letter}}
+                           
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:31: Undefined control sequence.
+<write> ...ing \@mlabel {\returnaddress }{\toname 
+                                                  \\\toaddress }
+l.31 \closing{\end{letter}}
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:31: Undefined control sequence.
+<write> ...{\returnaddress }{\toname \\\toaddress 
+                                                  }
+l.31 \closing{\end{letter}}
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\@mlabel{}{\\}
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:31: LaTeX Error: \begin{document} ended by \end{letter}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 \closing{\end{letter}}
+                           
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:31: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 \closing{\end{letter}}
+                           
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:31: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 \closing{\end{letter}}
+                           
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:31: Missing } inserted.
+<inserted text> 
+                }
+l.31 \closing{\end{letter}}
+                           
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:31: Too many }'s.
+\@begin@tempboxa ...begingroup #2\color@endgroup }
+                                                  \def \width {\wd \@tempbox...
+l.31 \closing{\end{letter}}
+                           
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+/home/ismail/Desktop/portfolio/phd_scanner/17_Delft_Universit_PhD_Position_The_Impact_of_AI_on_Business_Operatio/motivation_letter.tex:31: Extra \endgroup.
+\@iiiparbox ...f@pboxsw \m@th $\fi \@end@tempboxa 
+                                                  
+l.31 \closing{\end{letter}}
+                           
+Things are pretty mixed up, but I think the worst is over.
+
+[2]
+\gdef \@abspage@last{4}
+(./motivation_letter.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 182 strings out of 474222
+ 2885 string characters out of 5748733
+ 1927975 words of memory out of 5000000
+ 22523 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,6n,38p,709b,143s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on motivation_letter.pdf (4 pages, 65655 bytes).
+PDF statistics:
+ 42 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

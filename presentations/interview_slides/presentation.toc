@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Profile \& Vision}{3}{0}{1}
+\beamer@sectionintoc {2}{Academic Foundation \& Skills}{4}{0}{2}
+\beamer@sectionintoc {3}{Gas Turbine Digital Twin (Engineering Thesis)}{6}{0}{3}
+\beamer@sectionintoc {4}{Medical Digital Twin (Master's Thesis)}{7}{0}{4}
+\beamer@sectionintoc {5}{Enterprise AI Projects}{8}{0}{5}
+\beamer@sectionintoc {6}{Full-Stack Engineering}{10}{0}{6}

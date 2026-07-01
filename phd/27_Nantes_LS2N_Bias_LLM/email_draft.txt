@@ -1,0 +1,28 @@
+Objet : Candidature à la thèse « Détection explicable des biais discriminatoires par ontologies et LLM »
+
+Madame Mounira Harzallah,
+Madame Carito Guziolowski,
+Monsieur André Ndobo,
+
+Je vous écris pour vous soumettre ma candidature à l'offre de thèse intitulée « Détection explicable des biais discriminatoires dans les processus décisionnels par construction automatique d’ontologies et LLM augmentés par des connaissances », au sein des laboratoires LS2N et LPPL.
+
+Actuellement en dernière année d'ingénierie et de Master en Intelligence Artificielle à l'École Nationale Supérieure d'Informatique (ESI-SBA, Algérie), je suis passionné par l'IA responsable et l'intégration de connaissances a priori (Web sémantique, ontologies) avec l'apprentissage profond (LLM, RAG, GNN). 
+
+Lors de mes projets de recherche, j'ai eu l'opportunité de travailler sur l'extraction d'informations sémantiques avec des LLM (SBERT) et des graphes pour modéliser des relations dans le recrutement, ainsi que sur le développement d'architectures hybrides intégrant des contraintes rigoureuses aux réseaux de neurones. Votre projet, à l'intersection de l'informatique et de la psychologie sociale, représente une continuité parfaite de mes aspirations scientifiques.
+
+Veuillez trouver ci-joints pour examen de ma candidature :
+- Mon Curriculum Vitae
+- Ma lettre de motivation détaillée
+- Mes relevés de notes des trois dernières années d'études
+
+Je suis très enthousiaste à l'idée d'approfondir ces recherches avec vous et me tiens à votre entière disposition pour un entretien.
+
+Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+
+Cordialement,
+
+Ismail AISSAOUI
+Ingénieur IA & Data Science
+Tél : +213 660 70 77 96
+LinkedIn : https://linkedin.com/in/aissaoui-ismail-6a77a92a7
+Portfolio : https://ismail-aissaoui.vercel.app

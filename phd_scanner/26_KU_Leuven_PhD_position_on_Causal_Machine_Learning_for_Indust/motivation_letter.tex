@@ -1,0 +1,22 @@
+\documentclass[11pt, a4paper]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\begin{document}
+\begin{letter}{Prof. Mathias Verbeke \\ KU Leuven \\ Leuven, Belgium}
+\opening{Dear Prof. Mathias Verbeke,}
+
+I am writing to express my strong interest in the PhD position on Causal Machine Learning for Industrial Root Cause Analysis (CausAICA project) at the M-Group, KU Leuven. Having reviewed the specific goals of uncovering the root causes of machine failures under limited data and evolving operating conditions, I am extremely motivated to bring my background in physics-informed AI and time-series modeling to your team.
+
+My State Engineer thesis, "Gas Turbine Digital Twin," aligns perfectly with the industrial focus of this project. I engineered predictive maintenance architectures using ST-KDFormer and Temporal Convolutional Networks to predict thermodynamic degradation and sensor drift in highly complex, heavy machinery. While these deep learning models effectively captured sequential dependencies from multivariate time-series, I deeply recognized the critical limitation of pure, non-causal associative learning: it predicts *what* is failing, but struggles to mathematically isolate *why* it failed across heterogeneous operating environments.
+
+To move beyond pure correlation, my Master's thesis ("Cardiovascular Medical Digital Twin") introduced PI-DeepONet, an architecture that explicitly constrained neural predictions to the causal 0D Windkessel differential equations via PyTorch Autograd. This allowed the model to merge raw sensor data with true, physics-based structural knowledge.
+
+I am eager to transition this intuition into formal causal discovery and inference (e.g., Double Machine Learning, Causal Forests) for your project. Developing hybrid causal graphs that unite data-driven time-series extraction with structural physics-based models—precisely as outlined in the CausAICA framework—is the exact research path I wish to pursue. I am highly proficient in Python, have extensive experience with complex telemetry, and work with a high degree of independence.
+
+Thank you for your consideration.
+
+\closing{Sincerely, \\ Ismail Aissaoui \\ \href{https://ismail-aissaoui.vercel.app}{https://ismail-aissaoui.vercel.app}}
+\end{letter}
+\end{document}
