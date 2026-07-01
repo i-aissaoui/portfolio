@@ -3,11 +3,14 @@
 import React, { useState, useEffect } from "react";
 import { site, type Locale } from "@/data/site";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 import SiteNav from "@/components/SiteNav";
-import ProjectModal from "@/components/ProjectModal";
-import MagicBento from "@/components/MagicBento";
-import TextType from "@/components/TextType";
-import SplitText from "@/components/SplitText";
+
+const ProjectModal = dynamic(() => import("@/components/ProjectModal"), { ssr: false });
+const MagicBento = dynamic(() => import("@/components/MagicBento"), { ssr: false });
+const TextType = dynamic(() => import("@/components/TextType"), { ssr: false });
+const SplitText = dynamic(() => import("@/components/SplitText"), { ssr: false });
 
 function L(str: unknown, locale: Locale) {
   if (!str) return "";
@@ -17,6 +20,7 @@ function L(str: unknown, locale: Locale) {
 }
 
 export default function Home() {
+  const router = useRouter();
   // locale is now stateful so we can switch languages at runtime
   const [locale, setLocale] = useState<Locale>("en");
   const [open, setOpen] = useState(false);
@@ -24,6 +28,15 @@ export default function Home() {
   const [originRect, setOriginRect] = useState<DOMRect | null>(null);
 
   function openProject(i: number, e?: React.MouseEvent) {
+    const p = site.projects[i];
+    if (p.link && p.link.startsWith("/projects/")) {
+      router.push(p.link);
+      return;
+    }
+    if (p.category === "AI") {
+      router.push(`/projects/${i}`);
+      return;
+    }
     const el = (e?.currentTarget as HTMLElement) ?? null;
     if (el) setOriginRect(el.getBoundingClientRect());
     setActive(i);
@@ -74,6 +87,7 @@ export default function Home() {
                 src="/the_mind.png"
                 alt="Brain Visual"
                 fill
+                priority={true}
                 className='object-contain object-center transform lg:-translate-x-24 scale-110 lg:scale-[1.4]'
               />
             </div>
@@ -199,16 +213,84 @@ export default function Home() {
             </p>
           </div>
 
-          {/* AI Engineering Projects */}
+          
+          {/* Academic Theses */}
           <div className='mb-24'>
             <div className='flex items-center gap-6 mb-12 max-w-6xl mx-auto'>
               <h3 className='text-2xl md:text-3xl font-bold text-white/90 display-font uppercase tracking-wider'>
-                01. {locale === "fr" ? "Ingénierie IA" : locale === "de" ? "KI-Engineering" : "AI Engineering"}
+                01. {locale === "fr" ? "THÈSES ACADÉMIQUES" : locale === "de" ? "AKADEMISCHE ARBEITEN" : "ACADEMIC THESES"}
               </h3>
               <div className='h-[1px] flex-1 bg-white/5'></div>
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto'>
-              {site.projects.filter(p => p.category === "AI").map((p) => {
+              {site.projects.filter(p => p.link?.includes('digital-twin')).map((p) => {
+                const i = site.projects.indexOf(p);
+                const title = L(p.title, locale);
+                const desc = L(p.description, locale);
+                const shortDesc = desc.length > 150 ? desc.slice(0, 147) + "…" : desc;
+                const image = p.images?.[0] || "/window.svg";
+                return (
+                  <article
+                    key={i}
+                    onClick={(e) => openProject(i, e)}
+                    className='project-card group cursor-pointer rounded-3xl overflow-hidden bg-[#0c0c0c]/80 border border-white/5 hover:border-[#00d9ff]/30 backdrop-blur-xl opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,217,255,0.15)] flex flex-col h-full'
+                  >
+                    <div className='relative h-64 md:h-80 overflow-hidden'>
+                      {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
+                        <Image
+                          src={image}
+                          alt={title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className='object-cover transition-transform duration-500 group-hover:scale-110'
+                        />
+                      ) : (
+                        <img src={image} alt={title} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110' />
+                      )}
+                      <div className='absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-transparent to-transparent'></div>
+                    </div>
+
+                    <div className='p-6'>
+                      <div className='flex justify-between items-start mb-2'>
+                        <h3 className='text-xl font-bold text-white group-hover:text-[#00d9ff] transition-colors'>
+                          {title}
+                        </h3>
+                        <span className='px-2 py-0.5 rounded text-[10px] bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/20 font-bold uppercase'>AI/ML</span>
+                      </div>
+                      <p className='text-white/40 text-base md:text-lg mb-6 leading-relaxed font-light line-clamp-3'>
+                        {shortDesc}
+                      </p>
+
+                      <div className='flex flex-wrap gap-2 mb-4'>
+                        {p.tech.slice(0, 4).map((t) => (
+                          <span key={t} className='px-2 py-1 text-[10px] font-semibold uppercase rounded-md text-white/90 bg-white/5 border border-white/10'>{t}</span>
+                        ))}
+                        {p.tech.length > 4 && <span className='px-2 py-1 text-[10px] font-semibold text-white/60'>+{p.tech.length - 4}</span>}
+                      </div>
+
+                      <button
+                        onClick={(e) => openProject(i, e)}
+                        className='w-full px-4 py-2 rounded-lg bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/30 text-sm font-semibold hover:bg-[#00d9ff]/20 transition-all shadow-lg hover:shadow-[#00d9ff]/10'
+                      >
+                        {locale === "fr" ? "Voir le projet" : locale === "de" ? "Projekt ansehen" : "View Project"}
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* AI Engineering Projects */}
+          <div className='mb-24'>
+            <div className='flex items-center gap-6 mb-12 max-w-6xl mx-auto'>
+              <h3 className='text-2xl md:text-3xl font-bold text-white/90 display-font uppercase tracking-wider'>
+                02. {locale === "fr" ? "Ingénierie IA" : locale === "de" ? "KI-Engineering" : "AI Engineering"}
+              </h3>
+              <div className='h-[1px] flex-1 bg-white/5'></div>
+            </div>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto'>
+              {site.projects.filter(p => p.category === "AI" && !p.link?.includes('digital-twin')).map((p) => {
                 const i = site.projects.indexOf(p);
                 const title = L(p.title, locale);
                 const desc = L(p.description, locale);
@@ -270,60 +352,43 @@ export default function Home() {
           <div>
             <div className='flex items-center gap-6 mb-12 max-w-6xl mx-auto'>
               <h3 className='text-2xl md:text-3xl font-bold text-white/90 display-font uppercase tracking-wider'>
-                02. {locale === "fr" ? "Full-Stack & Entreprise" : locale === "de" ? "Full-Stack & Enterprise" : "Full-Stack & Enterprise"}
+                03. {locale === "fr" ? "Autres Solutions" : locale === "de" ? "Weitere Lösungen" : "Other Solutions"}
               </h3>
               <div className='h-[1px] flex-1 bg-white/5'></div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto'>
+            <div className='flex flex-col gap-6 max-w-6xl mx-auto'>
               {site.projects.filter(p => p.category === "Other").map((p) => {
                 const i = site.projects.indexOf(p);
                 const title = L(p.title, locale);
                 const desc = L(p.description, locale);
-                const shortDesc = desc.length > 100 ? desc.slice(0, 97) + "…" : desc;
-                const image = p.images?.[0] || "/window.svg";
                 return (
                   <article
                     key={i}
-                    onClick={(e) => openProject(i, e)}
-                    className='project-card group cursor-pointer rounded-[2.5rem] overflow-hidden bg-[#0c0c0c]/80 border border-white/5 hover:border-[#00d9ff]/30 backdrop-blur-xl opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,217,255,0.15)] flex flex-col h-full'
+                    className='glass-card p-6 rounded-3xl bg-[#0c0c0c]/80 border border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4'
                   >
-                    <div className='relative h-64 md:h-80 overflow-hidden'>
-                      {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
-                        <Image
-                          src={image}
-                          alt={title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className='object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0'
-                        />
-                      ) : (
-                        <img src={image} alt={title} className='w-full h-full object-cover grayscale group-hover:grayscale-0' />
-                      )}
-                      <div className='absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-transparent to-transparent'></div>
-                    </div>
-
-                    <div className='p-8 flex flex-col flex-1'>
-                      <h3 className='text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-[#00d9ff] transition-colors display-font'>
+                    <div>
+                      <h3 className='text-xl font-bold text-white mb-2 display-font'>
                         {title}
                       </h3>
-                      <p className='text-white/40 text-base md:text-lg mb-6 leading-relaxed font-light line-clamp-3'>
+                      <p className='text-white/40 text-sm md:text-base leading-relaxed font-light'>
                         {desc}
                       </p>
-                      <div className='mt-auto flex flex-wrap gap-2'>
-                        {p.tech.slice(0, 3).map(t => (
-                          <span key={t} className='px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-white/50 uppercase tracking-widest'>
-                            {t}
-                          </span>
-                        ))}
-                      </div>
+                    </div>
+                    <div className='flex flex-wrap gap-2 md:justify-end shrink-0'>
+                      {p.tech.slice(0, 3).map(t => (
+                        <span key={t} className='px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-white/50 uppercase tracking-widest'>
+                          {t}
+                        </span>
+                      ))}
                     </div>
                   </article>
                 );
               })}
             </div>
           </div>
-        </section>
 
+
+        </section>
 
         {/* Professional Experience Section */}
         <section id='experience' className='py-32 bg-black/10'>

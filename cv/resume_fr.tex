@@ -1,163 +1,104 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 \usepackage{geometry}
-\geometry{left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.6cm}
+% Adjusted margins for maximum density
+\geometry{a4paper,left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.2cm}
+% Slightly expand the text height to force the page to fill
+\addtolength{\textheight}{1.5cm}
 
 \usepackage{lmodern}
 \usepackage{xcolor}
-\definecolor{titleblue}{RGB}{0,51,140}
-\definecolor{TITLEBLUE}{RGB}{0,51,140}
-
 \usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    urlcolor=titleblue,
-    linkcolor=titleblue,
-    citecolor=titleblue,
-    pdfborder={0 0 0}
-}
-
 \usepackage{titlesec}
 \usepackage{enumitem}
 
+\definecolor{titleblue}{RGB}{0,51,140}
+\definecolor{TITLEBLUE}{RGB}{0,51,140}
+\hypersetup{colorlinks=true, urlcolor=titleblue, linkcolor=titleblue, pdfborder={0 0 0}}
+
 \pagestyle{empty}
+\renewcommand{\baselinestretch}{0.96}  % Increased from 1.1 to 1.2
 
 \titleformat{\section}
   {\color{titleblue}\Large\bfseries\uppercase}{}{0em}{}
   [\color{titleblue}\titlerule]
+\titlespacing\section{0pt}{4pt}{2pt}  % Increased spacing
 
-\titlespacing\section{0pt}{8pt}{4pt}
-\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+\setlist[itemize]{leftmargin=*,topsep=1pt,itemsep=1pt,parsep=0pt}  % Increased spacing
+\setlist[itemize,2]{leftmargin=*,topsep=1pt,itemsep=1pt,parsep=0pt}
 
 \begin{document}
+\sloppy
 
 \begin{center}
-    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[4pt]
-    {\Large Ingénieur IA \& Data Science}\\[6pt]
-
-    {\normalsize
-    Email : \href{mailto:ismail.aissaoui.pro@gmail.com}{ismail.aissaoui.pro@gmail.com} \quad
-    Tél : +213 660 70 77 96 \\
-    Portfolio : \href{https://ismail-aissaoui.vercel.app}{ismail-aissaoui.vercel.app} \quad
-    Localisation : Chlef, Algérie \\
-    LinkedIn : \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{linkedin.com/in/aissaoui-ismail-6a77a92a7} \quad
-    GitHub : \href{https://github.com/i-aissaoui}{github.com/i-aissaoui}
+    {\Huge\bfseries\color{titleblue} AISSAOUI Ismail}\\[1pt]
+    {\LARGE\bfseries Ingénieur en IA et Data Science}\\\  % Increased spacing
+    {    \href{mailto:i.aissaoui@esi-sba.dz}{i.aissaoui@esi-sba.dz} \quad|\quad
+    +213 660 70 77 96 \quad|\quad Chlef, Algérie \\  % Increased spacing
+    \href{https://linkedin.com/in/aissaoui-ismail-6a77a92a7}{LinkedIn} \quad|\quad
+    \href{https://github.com/i-aissaoui}{GitHub} \quad|\quad
+    \href{https://ismail-aissaoui.vercel.app}{Portfolio}
     }
 \end{center}
 
-%===========================
-\section{RÉSUMÉ PROFESSIONNEL}
-Ingénieur IA \& Data Science avec un profil en Ingénierie Logicielle Full-Stack. Expérimenté dans la réalisation de projets touchant aux Jumeaux Numériques Industriels, à la Santé, au Trading Financier, à la Vision par Ordinateur et aux Systèmes de Gestion d'Entreprise. Mes principaux centres d'intérêt incluent le Deep Learning, les Réseaux de Neurones Graphiques, l'Apprentissage par Renforcement et le Traitement du Langage Naturel (NLP).
+\section{Résumé Professionnel}
+  % Make the text larger
+Ingénieur en IA et Data Science spécialisé dans les architectures de machine learning avancées, incluant Mamba-SSM, PINNs et GNNs. Expertise dans la conception de solutions d'IA en périphérie (Edge) à très faible latence et de modèles cloud évolutifs pour les secteurs industriels et médicaux. Compétences en calcul haute performance (C++, Next.js) et visualisation 3D web moderne.
 
-%===========================
-\section{COMPÉTENCES}
-\textbf{Programmation}: Python, TypeScript, JavaScript, Java, SQL \\
-\textbf{ML / DL}: PyTorch, TensorFlow, Keras, Scikit-learn, Lightning, ONNX \\
-\textbf{Techniques IA}: Transformers (BERT, GPT, RAG), GNN, GAN, XGBoost, LSTM \\
-\textbf{Optimisation}: PSO, Algorithme génétique, ACO, Recuit simulé, Optimisation bayésienne \\
-\textbf{Web \& API}: React, Next.js, FastAPI, Node.js, TailwindCSS \\
-\textbf{Data \& MLOps}: MLflow, Airflow, Kubeflow, DVC, Pandas, NumPy \\
-\textbf{Bases de données}: PostgreSQL, MongoDB, MySQL, Neo4j, Cassandra \\
-\textbf{Cloud \& DevOps}: Docker, Linux, Git, CI/CD, CUDA, AWS, Grafana 
+\section{Compétences Techniques}
+\textbf{Langages :} Python, C++, Next.js, TypeScript, JavaScript, SQL \\
+\textbf{IA/ML :} PyTorch, TensorFlow, Mamba, PINNs, GNNs, Transformers, DeepONet, KAN \\
+\textbf{3D/Web :} React, Next.js, Three.js, React Three Fiber, FastAPI, TailwindCSS \\
+\textbf{Data/MLOps :} MLflow, PyArrow, Docker, Linux, Git, PostgreSQL, Parquet \\
+\textbf{Optimisation :} Quantification Post-Entraînement (INT8), RL, Algorithmes Génétiques
 
-%===========================
-\section{EXPÉRIENCE PROFESSIONNELLE}
-\textbf{Ingénieur de Recherche IA (Stagiaire)} \hfill Jan 2026 -- Jui 2026 \\
-Sonatrach (Division Surveillance Industrielle) — Algérie \\
-Architecture d'un Jumeau Numérique IA pour la surveillance en temps réel des Turbines à Gaz.
+\section{Thèses Académiques}
+\noindent\textbf{Thèse d'Ingénieur : Jumeau Numérique Cloud-Edge à Double Voie pour la Maintenance Prédictive des Turbines à Gaz} \hfill 2026 \\
+\textit{Sonatrach (Division de Surveillance Industrielle)}
 \begin{itemize}
-    \item Conception d'une architecture à 3 niveaux séparant le modèle Edge critique (PLC) du traitement analytique Cloud.
-    \item Développement de \textbf{TCNEdge} atteignant \textbf{0,049 ms d'inférence INT8 ONNX C++} pour l'arrêt d'urgence.
-    \item Ingénierie de \textbf{MambaTS} avec tolérance aux pannes de capteurs (Missingness-Aware Gate).
-    \item Implémentation de \textbf{KAN-PCNN} et \textbf{ST-KDFormer} pour assurer la consistance thermodynamique globale.
+    \item \textbf{Architecture :} Conception d'un framework à 3 niveaux découplant les modèles Edge critiques pour la sécurité des analyses Cloud.
+    \item \textbf{Optimisation :} Ingénierie de \textbf{TCNEdge} et compilation de convolutions dilatées 1D en INT8 ONNX C++, atteignant une latence de 0.049ms.
+    \item \textbf{Robustesse :} Développement de \textbf{MambaTS} avec un mécanisme d'attention gérant les données manquantes pour une inférence ininterrompue lors de la perte de capteurs.
+    \item \textbf{Conformité Physique :} Implémentation de \textbf{KAN-PCNN} et \textbf{ST-KDFormer} pour assurer la cohérence thermodynamique via PyTorch Autograd.
 \end{itemize}
 
-\textbf{Stagiaire en ingénierie réseau} \hfill Sep 2024 \\
-Algérie Télécom RMC Center — Chlef, Algérie
-
-%===========================
-\section{FORMATION}
-\textbf{École Nationale Supérieure d’Informatique (ESI-SBA)} \hfill 2021--2026 \\
-Diplôme d’ingénieur et master en informatique \\
-Spécialisation : Intelligence Artificielle \& Data Science
-
-%===========================
-\section{CERTIFICATIONS}
-\textbf{DeepLearning.AI} : Machine Learning Specialization, Deep Learning Specialization, NLP Specialization \\[6pt]
-\textbf{ZTM Academy} : PyTorch: Zero to Mastery, TensorFlow Developer
-
-
-\newpage
-
-%===========================
-% Force projects + languages onto page 2
-\newpage
-
-%===========================
-\section{THÈSES ACADÉMIQUES}
-\textbf{Thèse d'Ingénieur d'État :} \\
-\textit{Jumeau Numérique Explicable Informé par la Physique pour Turbines à Gaz Industrielles : Un Framework Deep Learning Dual-Track Cloud–Edge avec Modèles d'Espaces d'États Augmentés par Koopman}
-
-\vspace{4pt}
-\textbf{Thèse de Master :} \\
-\textit{Jumeaux Numériques Hémodynamiques : Fusion de Réseaux de Neurones Informés par la Physique Hémodynamique et Mamba-SSM pour les Pronostics des Patients en Soins Intensifs}
-
-\vspace{8pt}
-\section{PROJETS}
-\setlength{\parskip}{0pt}
-
-\noindent\textbf{\large Jumeau Numérique Industriel de Turbine à Gaz} \hfill \textbf{2026}
-\vspace{2pt}
-{\small
+  % Increased spacing
+\noindent\textbf{Thèse de Master : Jumeaux Numériques Hémodynamiques : Une Approche IA Physiquement Informée pour les Pronostics en Soins Intensifs} \hfill 2026 \\
+\textit{École Nationale Supérieure d'Informatique (ESI-SBA)}
 \begin{itemize}
-    \item \textbf{Architecture Edge \& Cloud} : Conception d'un framework à 3 niveaux séparant le modèle critique TCNEdge (PLC) du MambaTS (Near Edge) et du ST-KDFormer (Cloud).
-    \item \textbf{Inférence Ultra-Faible Latence} : Compilation de Convolutions 1D (TCNEdge) en C++ ONNX (INT8), atteignant 0,049 ms pour l'arrêt d'urgence.
-    \item \textbf{Physique \& Robustesse} : Implémentation du MambaTS avec tolérance aux pannes de capteurs, et du KAN-PCNN assurant la consistance thermodynamique.
+    \item \textbf{Architecture :} Ingénierie de \textbf{Medical\_MambaTS} pour l'inférence au chevet du patient et de \textbf{SST\_KODA\_MultiScale} à double branche pour les prévisions cloud à l'aide de télémétrie à 100Hz.
+    \item \textbf{Modélisation :} Implémentation d'un \textbf{PI\_DeepONet} 0D Windkessel pour imposer la dynamique des fluides cardiovasculaires sans réentraînement inter-patients.
+    \item \textbf{Efficacité :} Développement d'un pipeline zero-copy avec PyArrow Parquet pour éliminer les goulots d'étranglement de privation des GPU.
 \end{itemize}
-\textit{Tech : MambaTS, TCNEdge, ST-KDFormer, KAN-PCNN, PyTorch, C++ ONNX, PINN}
-}
-\vspace{8pt}
 
-\noindent\textbf{\large Jumeau Numérique Médical Cardiovasculaire} \hfill \textbf{2026}
-\vspace{2pt}
-{\small
+\section{Projets Professionnels}
+\noindent\textbf{Aura --- Plateforme de Trading IA d'Entreprise} \hfill 2025 \\
 \begin{itemize}
-    \item \textbf{Prédiction par Patient} : Prédiction de la Pression Artérielle Moyenne (MBP) via les données VitalDB (100Hz), avec séparation stricte 70/15/15 pour éviter les fuites de données.
-    \item \textbf{IA Informée par la Physique} : Conception d'un \textbf{PI\_DeepONet} (Windkessel 0D) pénalisant les violations de la compliance artérielle et de la résistance vasculaire.
-    \item \textbf{Modèles Hybrides Edge-Cloud} : Architecture du \textbf{Medical\_MambaTS} (temps linéaire) pour le Edge et du \textbf{ST-KDFormer} (attention spatio-temporelle) pour le Cloud.
+    \item \textbf{Prévisions :} Création d'un système hybride utilisant des LSTM pour des prédictions de séries chronologiques de haute fidélité.
+    \item \textbf{Politique :} Implémentation du Deep Q-Learning (RL) pour optimiser les stratégies de trading à long terme.
+    \item \textbf{Déploiement :} Ingénierie d'un backend FastAPI à haut débit avec WebSockets et d'une interface Next.js.
 \end{itemize}
-\textit{Tech : PyTorch, Medical\_MambaTS, PI\_DeepONet, ST-KDFormer, Hémodynamique, VitalDB}
-}
-\vspace{8pt}
 
-\noindent\textbf{\large Aura — Plateforme de Trading IA d'Entreprise} \hfill \textbf{2025}
-\vspace{2pt}
-{\small
+\vspace{6pt}
+\noindent\textbf{Career Connect --- Système de Recrutement basé sur les GNN} \hfill 2024 -- 2025 \\
 \begin{itemize}
-    \item \textbf{Prédiction Hybride} : Création d'un système combinant des réseaux LSTM pour la prédiction de séries temporelles.
-    \item \textbf{Décisions Stratégiques} : Implémentation du Deep Q-Learning (Apprentissage par Renforcement) pour maximiser les gains.
-    \item \textbf{Dashboard en Temps Réel} : Backend FastAPI hautement performant avec WebSockets et interface Next.js.
+    \item \textbf{Apprentissage Relationnel :} Développement d'un moteur de recrutement évolutif utilisant des GNN pour cartographier les relations candidats-emplois.
+    \item \textbf{Traitement :} Utilisation de PyTorch Geometric et SBERT pour des embeddings sémantiques profonds.
+    \item \textbf{Architecture :} Déployé via FastAPI et PostgreSQL, améliorant considérablement la précision des correspondances.
 \end{itemize}
-\textit{Tech : TensorFlow, PyTorch, FastAPI, Next.js, WebSockets, RL}
-}
-\vspace{8pt}
 
-\noindent\textbf{\large Système de Recrutement GNN (Career Connect)} \hfill \textbf{2024--2025}
-\vspace{2pt}
-{\small
-\begin{itemize}
-    \item \textbf{Apprentissage Relationnel} : Moteur de recommandation utilisant les GNN pour cartographier les relations emplois/candidats.
-    \item \textbf{Embeddings Sémantiques} : Utilisation de PyTorch Geometric et SBERT pour le traitement sémantique NLP.
-    \item \textbf{Architecture} : Déploiement via FastAPI et PostgreSQL, surpassant les heuristiques classiques.
+\section{Formation}
+\textbf{École Nationale Supérieure d'Informatique (ESI-SBA)} \hfill 2021 -- 2026 \\
+Diplôme d'Ingénieur d'État et de Master en Intelligence Artificielle et Data Science \\
+\textit{Soutenu le 28 juin 2026}
+
+\section{Certifications et Langues}
+\begin{itemize}[label=--]
+    \item \textbf{DeepLearning.AI :} Machine Learning Specialization, Deep Learning Specialization, Natural Language Processing Specialization
+    \item \textbf{Zero To Mastery (ZTM) Academy :} Complete PyTorch: Deep Learning and Artificial Intelligence, TensorFlow Developer Certificate 2024
+    \item \textbf{Langues :} Arabe (Maternelle), Anglais (Avancé), Français (Professionnel)
 \end{itemize}
-\textit{Tech : PyTorch Geometric, SBERT, FastAPI, PostgreSQL, GNN}
-}
-\vspace{12pt}
-
-%===========================
-\section{LANGUES}
-Arabe : Langue maternelle \quad|\quad Anglais : Avancé \quad|\quad Français : Professionnel
 
 \end{document}

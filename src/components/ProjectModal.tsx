@@ -2,6 +2,8 @@
 
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type ProjectModalProps = {
   open: boolean;
@@ -278,55 +280,58 @@ export default function ProjectModal({
             </div>
           )}
 
-          <div className='text-base md:text-lg leading-relaxed text-gray-200 space-y-10 max-w-5xl'>
-            {details.split('\n\n').map((section, sectionIdx) => {
-              const lines = section.split('\n').filter((l) => l.trim());
-              if (lines.length === 0) return null;
-
-              const firstLine = lines[0];
-              const isHeading = firstLine.endsWith(':');
-              if (isHeading) {
-                return (
-                  <div key={sectionIdx} className='space-y-6'>
-                    <div className='flex items-center gap-4'>
-                      <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
-                      <h3 className='text-xs md:text-sm font-bold text-[#00d9ff] uppercase tracking-[0.3em] display-font'>{firstLine}</h3>
-                    </div>
-                    <ul className='space-y-6 pl-6 border-l border-white/5 ml-2'>
-                      {lines.slice(1).map((line, lineIdx) => {
-                        const isBullet = line.trim().startsWith('•');
-                        const content = isBullet ? line.replace(/^•\s*/, '') : line;
-                        const parts = content.split(/(\([^)]+\))/g);
-
-                        return (
-                          <li key={lineIdx} className={`${isBullet ? 'flex gap-4' : 'block'} text-white/80 leading-relaxed font-light text-lg md:text-xl`}>
-                            {isBullet && <span className='text-[#00d9ff] mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#00d9ff]/40 shadow-[0_0_8px_#00d9ff66]'></span>}
-                            <span className='flex-1'>
-                              {parts.map((part, partIdx) => {
-                                if (part.match(/^\([^)]+\)$/)) {
-                                  return <span key={partIdx} className='font-bold text-[#00d9ff] tracking-tight'>{part}</span>;
-                                }
-                                return <span key={partIdx}>{part}</span>;
-                              })}
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
+          <div className='text-base md:text-lg leading-relaxed text-gray-200 max-w-5xl'>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                h2: ({ node, ...props }) => (
+                  <div className='flex items-center gap-4 mt-12 mb-6'>
+                    <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
+                    <h2 className='text-sm md:text-base font-bold text-[#00d9ff] uppercase tracking-[0.3em] display-font' {...props} />
                   </div>
-                );
-              } else {
-                return (
-                  <div key={sectionIdx} className='space-y-3'>
-                    {lines.map((line, lineIdx) => (
-                      <p key={lineIdx} className='text-white/60 leading-relaxed font-light text-xl italic'>
-                        {line}
-                      </p>
-                    ))}
+                ),
+                h3: ({ node, ...props }) => (
+                  <div className='flex items-center gap-4 mt-10 mb-5'>
+                    <span className='w-8 h-[1px] bg-[#00d9ff]/70'></span>
+                    <h3 className='text-xs md:text-sm font-bold text-[#00d9ff]/90 uppercase tracking-[0.2em] display-font' {...props} />
                   </div>
-                );
-              }
-            })}
+                ),
+                p: ({ node, ...props }) => (
+                  <p className='text-white/80 leading-relaxed font-light text-lg md:text-xl mb-6' {...props} />
+                ),
+                ul: ({ node, ...props }) => (
+                  <ul className='space-y-4 pl-6 border-l border-white/5 ml-2 mb-8' {...props} />
+                ),
+                li: ({ node, ...props }) => (
+                  <li className='text-white/80 leading-relaxed font-light text-lg md:text-xl relative' {...props}>
+                    <span className='absolute -left-6 top-3 text-[#00d9ff] flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#00d9ff]/40 shadow-[0_0_8px_#00d9ff66]'></span>
+                    {props.children}
+                  </li>
+                ),
+                strong: ({ node, ...props }) => (
+                  <strong className='font-bold text-[#00d9ff] tracking-tight' {...props} />
+                ),
+                code: ({ node, className, children, ...props }) => {
+                  const match = /language-(\w+)/.exec(className || "");
+                  return !match ? (
+                    <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-[#00d9ff]" {...props}>
+                      {children}
+                    </code>
+                  ) : (
+                    <pre className="bg-black/50 p-4 rounded-xl border border-white/10 overflow-x-auto mb-8 text-sm text-[#00d9ff] mt-4">
+                      <code className={className} {...props}>
+                        {children}
+                      </code>
+                    </pre>
+                  );
+                },
+                blockquote: ({ node, ...props }) => (
+                  <blockquote className="border-l-2 border-[#00d9ff]/50 pl-4 py-1 my-6 text-white/60 italic" {...props} />
+                )
+              }}
+            >
+              {details}
+            </ReactMarkdown>
           </div>
 
           {tech.length > 0 && (

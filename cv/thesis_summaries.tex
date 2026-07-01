@@ -1,0 +1,39 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+
+\begin{document}
+
+\begin{center}
+    \LARGE \textbf{Engineering \& Master's Thesis Summaries} \\
+    \vspace{0.2cm}
+    \large \textbf{Ismail Aissaoui} \\
+    \vspace{0.1cm}
+    \normalsize AI \& Data Science Engineer \\
+\end{center}
+
+\vspace{0.5cm}
+
+\section*{Master's Thesis: Cardiovascular Medical Digital Twin}
+\textbf{Focus:} Real-time Hemodynamic Inference, State-Space Models, Physics-Informed Neural Networks \\
+\textbf{Institution:} Higher School in Computer Science of Sidi Bel-Abbès (ESI-SBA)
+
+This thesis proposes the design and implementation of a highly scalable, low-latency \textbf{Cardiovascular Medical Digital Twin} capable of performing sub-millisecond inference on high-frequency, multivariate medical telemetry. The core architectural contribution is the \textbf{Medical\_MambaTS} framework, which leverages linear-time state-space models to solve long-sequence dependencies without the quadratic computational bottleneck of traditional Attention mechanisms.
+
+To bridge the gap between purely data-driven black boxes and rigid mathematical models, the thesis introduces the \textbf{PI-DeepONet} (Physics-Informed Deep Operator Network). By integrating 0D Windkessel fluid dynamics equations directly into the PyTorch Autograd training loop, the architecture mathematically enforces physical consistency upon the cardiovascular predictions. Furthermore, addressing the clinical reality of disjointed hospital sensors, the system integrates the \textbf{SST-KODA-MultiScale} pipeline to robustly impute missing telemetry across non-uniform sampling rates, culminating in a resilient, physics-grounded clinical decision support tool.
+
+\vspace{0.8cm}
+
+\section*{State Engineer Thesis: Gas Turbine Digital Twin}
+\textbf{Focus:} Industrial Predictive Maintenance, Time-Series Forecasting, Thermodynamics \\
+\textbf{Institution:} Higher School in Computer Science of Sidi Bel-Abbès (ESI-SBA)
+
+This thesis focuses on the development of an industrial-grade \textbf{Gas Turbine Digital Twin} designed for real-time sensor forecasting and thermodynamic state estimation. The primary objective is to prevent catastrophic failure in heavy machinery by anticipating structural anomalies and sensor drift across highly chaotic, non-stationary thermal environments.
+
+The project benchmarks and deploys a spectrum of advanced sequence modeling architectures, including \textbf{LSTMs}, \textbf{Transformers}, \textbf{Temporal Convolutional Networks (TCN)}, and the hybrid \textbf{ST-KDFormer}. The implemented architectures were rigorously evaluated against strict thermodynamic constraints, ensuring that predictions regarding temperature gradients, exhaust velocities, and pressure metrics adhered strictly to the laws of energy conservation. By establishing a direct mapping between raw telemetry signals and impending mechanical degradation, this digital twin serves as a highly reliable predictive maintenance engine for large-scale energy infrastructure.
+
+\end{document}

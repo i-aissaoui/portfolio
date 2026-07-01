@@ -246,7 +246,7 @@ export const site = {
       images: [
         "/ai-projects/gas_turbine_v2.png"
       ],
-      link: "sonatrach/README.md",
+      link: "/projects/gas-turbine-digital-twin",
     },
 
     // 0.5) Cardiovascular Medical Digital Twin
@@ -263,7 +263,7 @@ export const site = {
         de: "Physik-informierter medizinischer digitaler Zwilling zur Vorhersage des mittleren Blutdrucks (MBP) auf der Intensivstation unter Verwendung von VitalDB.",
       },
       details: {
-        en: "Core Architecture:\n• 0D Windkessel PINN: Integrates cardiovascular ODEs using PyTorch autograd loss regularizers for physiological compliance.\n• Medical_MambaTS: Selective State Space Model achieving linear complexity O(N) for resource-constrained bedside monitors.\n• SST_KODA_MultiScale: Dual-branch hybrid routing trends to Mamba and transients to Transformers.\n• PI_DeepONet: Solves cardiovascular ODEs in sub-0.05ms using branch and trunk networks.",
+        en: "# Cardiovascular Medical Digital Twin\n\n**Project Overview**\n\nThis project implements a physics‑informed digital twin for intensive‑care patients, forecasting arterial Mean Blood Pressure (MBP) in real‑time. It leverages the high‑frequency (100 Hz) VitalDB dataset, capturing ECG, PPG, and invasive arterial line signals.\n\n**Key Innovations**\n- **0D Windkessel PINN**: A physics‑informed neural network embeds the lumped‑parameter Windkessel ODE ( Q = C·dP/dt + P/R ) directly into the loss, enforcing realistic cardiovascular dynamics.\n- **Medical_MambaTS**: A selective state‑space model with linear‑time inference ( O(N) ) suited for bedside edge devices, handling 100 Hz streams with sub‑millisecond latency.\n- **SST_KODA_MultiScale**: Dual‑branch architecture routing slow trends to the MambaTS and rapid transients to a Transformer, achieving robust multi‑scale prediction.\n- **PI_DeepONet**: Operator learning that solves the ODE for arbitrary patient parameters, enabling zero‑retraining generalisation across patients.\n- **Missingness‑Aware Gate**: Graceful handling of sensor drop‑outs by masking missing channels without contaminating the model state.\n\n**Data Pipeline**\n- Raw CSVs converted to Apache Parquet with PyArrow for zero‑copy GPU loading.\n- Strict patient‑level 70/15/15 split prevents data leakage.\n- Micro‑glitch forward‑fill (≤30 ms) only; longer gaps are passed to the Missingness Gate.\n\n**Performance**\n- End‑to‑end prediction latency < 1.5 ms on an NVIDIA A100.\n- RMSE ≈ 3.76 mmHg (edge) vs. 2.39 mmHg (cloud) on the VitalDB test set.\n\n**Potential Impact**\nProvides clinicians with a proactive early‑warning system for hemodynamic shock, enabling timely interventions before catastrophic blood‑pressure drops.\n\n",
         fr: "Architecture principale :\n• PINN Windkessel 0D : Intègre les équations différentielles cardiovasculaires via autograd dans PyTorch.\n• Medical_MambaTS : Modèle State-Space sélectif à complexité linéaire O(N) pour moniteurs de chevet.\n• SST_KODA_MultiScale : Routage hybride double branche pour les tendances et pics de pression.\n• PI_DeepONet : Résout les équations différentielles cardiovasculaires en moins de 0,05ms.",
         de: "Hauptarchitektur:\n• 0D Windkessel PINN: Integriert kardiovaskuläre DGLs über PyTorch-Autograd für physiologische Konformität.\n• Medical_MambaTS: Selektives Zustandsraummodell mit linearer Komplexität O(N) für bettseitige Monitore.\n• SST_KODA_MultiScale: Dual-Branch-Modell für Trends und Blutdruckspitzen.\n• PI_DeepONet: Löst kardiovaskuläre DGLs in unter 0,05ms.",
       },
@@ -271,7 +271,7 @@ export const site = {
       images: [
         "/ai-projects/medical_v2.png"
       ],
-      link: "medical-digital-twin/README.md",
+      link: "/projects/medical-digital-twin",
     },
 
     // 0.7) Autonomous Cyber-Shield Platform
@@ -438,7 +438,7 @@ export const site = {
 
     // 5) AI Traffic Camera & License Plate Recognition
     {
-      category: "AI",
+      category: "Other",
       title: {
         en: "AI Traffic Camera & License Plate Recognition",
         fr: "Caméra de Trafic IA & Reconnaissance de Plaques",
@@ -459,7 +459,7 @@ export const site = {
 
     // 6) Safety Equipment Detection with YOLOv8
     {
-      category: "AI",
+      category: "Other",
       title: {
         en: "Safety Equipment Detection with YOLOv8",
         fr: "Détection d'Équipement de Sécurité avec YOLOv8",
@@ -480,7 +480,7 @@ export const site = {
 
     // 7) Geo RAG — Map-based RAG Demo
     {
-      category: "AI",
+      category: "Other",
       title: {
         en: "Geo RAG — Map-based RAG Demo",
         fr: "Geo RAG — Démo RAG Cartographique",
@@ -497,7 +497,7 @@ export const site = {
 
     // 8) Mini‑GPT & BERT (Foundational Transformers)
     {
-      category: "AI",
+      category: "Other",
       title: {
         en: "Foundational Transformers: Mini-GPT & BERT",
         fr: "Transformeurs Fondamentaux : Mini-GPT & BERT",
@@ -518,7 +518,7 @@ export const site = {
 
     // 9) Advanced NLP Optimization (Metaheuristics)
     {
-      category: "AI",
+      category: "Other",
       title: {
         en: "Advanced NLP Optimization (Metaheuristics)",
         fr: "Optimisation NLP Avancée (Métaheuristiques)",
@@ -539,7 +539,7 @@ export const site = {
 
     // 10) University Scheduling (NP-Complete Optimization)
     {
-      category: "AI",
+      category: "Other",
       title: {
         en: "University Scheduling Optimization",
         fr: "Optimisation de l'Emploi du Temps Universitaire",
