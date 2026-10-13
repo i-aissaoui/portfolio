@@ -1,28 +1,35 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Archivo, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
-const inter = Inter({
-  variable: "--font-inter",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
+});
+
+const jet = JetBrains_Mono({
+  variable: "--font-jet",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Aissaoui Ismail | AI Engineer",
-  description: "Elite AI & Full-Stack Engineer specializing in Deep Learning and Enterprise Architectures.",
+  title: "Aissaoui Ismail — AI & Data Science Engineer",
+  description:
+    "AI and Data Science engineer building digital twins, edge/cloud model systems, and physics-informed machine learning — from transformers written from scratch to industrial predictive maintenance.",
   icons: {
     icon: "/logo-bg.png",
     apple: "/logo-bg.png",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -31,12 +38,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
-        {/* Page content wrapper */}
-        <main style={{ position: "relative", zIndex: 10, padding: 0 }}>
-          {children}
-        </main>
+    <html lang="en">
+      <body className={`${archivo.variable} ${hanken.variable} ${jet.variable} antialiased`}>
+        <main style={{ position: "relative", zIndex: 10, padding: 0 }}>{children}</main>
         <SpeedInsights />
         <Analytics />
       </body>

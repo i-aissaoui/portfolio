@@ -8,9 +8,6 @@ import dynamic from "next/dynamic";
 import SiteNav from "@/components/SiteNav";
 
 const ProjectModal = dynamic(() => import("@/components/ProjectModal"), { ssr: false });
-const MagicBento = dynamic(() => import("@/components/MagicBento"), { ssr: false });
-const TextType = dynamic(() => import("@/components/TextType"), { ssr: false });
-const SplitText = dynamic(() => import("@/components/SplitText"), { ssr: false });
 
 function L(str: unknown, locale: Locale) {
   if (!str) return "";
@@ -19,9 +16,152 @@ function L(str: unknown, locale: Locale) {
   return s[locale] ?? s.en ?? "";
 }
 
+const copy = {
+  thesis: {
+    en: "I build models that have to run where it matters — an emergency shutdown on a PLC, a blood-pressure forecast at the bedside, a fleet-wide twin in the cloud. Transformers written from scratch, physics-informed digital twins, and the software that ships them.",
+    fr: "Je conçois des modèles qui tournent là où ça compte — un arrêt d'urgence sur un automate, une prévision de pression artérielle au chevet, un jumeau à l'échelle d'une flotte dans le cloud. Transformeurs écrits de zéro, jumeaux numériques informés par la physique, et le logiciel qui les déploie.",
+    de: "Ich baue Modelle, die dort laufen, wo es zählt — eine Notabschaltung auf einer SPS, eine Blutdruckprognose am Krankenbett, ein flottenweiter Zwilling in der Cloud. Von Grund auf geschriebene Transformer, physik-informierte digitale Zwillinge und die Software, die sie ausliefert.",
+  },
+  focus: {
+    en: "Deep Learning · Digital Twins · Edge AI",
+    fr: "Deep Learning · Jumeaux numériques · IA embarquée",
+    de: "Deep Learning · Digitale Zwillinge · Edge-KI",
+  },
+  openChannel: { en: "Open Channel", fr: "Ouvrir le canal", de: "Kanal öffnen" },
+  download: { en: "Download CV", fr: "Télécharger le CV", de: "Lebenslauf laden" },
+  availableFor: { en: "Available for", fr: "Disponible pour", de: "Verfügbar für" },
+  statusOpen: { en: "open", fr: "disponible", de: "offen" },
+};
+
+function SectionHead({
+  channel,
+  title,
+  subtitle,
+}: {
+  channel: string;
+  title: string;
+  subtitle?: string;
+}) {
+  return (
+    <div className="reveal mb-12">
+      <div className="mb-5 flex items-center gap-5">
+        <span className="eyebrow">{channel}</span>
+        <span className="rule flex-1" />
+      </div>
+      <h2 className="font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-paper md:text-6xl">
+        {title}
+      </h2>
+      {subtitle && (
+        <p className="mt-5 max-w-2xl text-base font-light leading-relaxed text-dim md:text-lg">
+          {subtitle}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type ProjectCardProps = {
+  index: number;
+  title: string;
+  description: string;
+  tech: string[];
+  images?: string[];
+  accent: "amber" | "blue";
+  code: string;
+  cta: string;
+  onOpen: (i: number, e: React.MouseEvent) => void;
+  featured?: boolean;
+};
+
+function ProjectCard({
+  index,
+  title,
+  description,
+  tech,
+  images,
+  accent,
+  code,
+  cta,
+  onOpen,
+  featured = false,
+}: ProjectCardProps) {
+  const image = images?.[0];
+  const short = description.length > 190 ? description.slice(0, 187) + "…" : description;
+  const accentText = accent === "amber" ? "text-amber" : "text-blue";
+  const titleHover =
+    accent === "amber" ? "group-hover:text-amber" : "group-hover:text-blue";
+
+  return (
+    <article
+      onClick={(e) => onOpen(index, e)}
+      className={`reveal panel panel-hover group flex cursor-pointer flex-col overflow-hidden ${
+        featured ? "md:flex-row" : ""
+      }`}
+    >
+      {image && (
+        <div className={`relative overflow-hidden border-grid ${featured ? "md:h-auto md:w-1/2 md:border-r" : "h-56 border-b"}`}>
+          <div className="relative h-full w-full">
+            {image.startsWith("/") || image.startsWith("https://images.unsplash.com") ? (
+              <Image
+                src={image}
+                alt={title}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover grayscale-[0.35] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.03]"
+              />
+            ) : (
+              <img
+                src={image}
+                alt={title}
+                className="h-full w-full object-cover grayscale-[0.35] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.03]"
+              />
+            )}
+          </div>
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(to top, rgba(11,14,18,0.82) 0%, rgba(11,14,18,0.1) 45%, transparent 100%)",
+            }}
+          />
+        </div>
+      )}
+
+      <div className={`flex flex-1 flex-col p-6 ${featured ? "md:p-10" : ""}`}>
+        <div className="mb-5 flex items-center justify-between gap-4">
+          <span className={`mono text-[10px] uppercase tracking-[0.28em] ${accentText}`}>{code}</span>
+          <span className="chip !text-[9px]">{tech[0]}</span>
+        </div>
+
+        <h3
+          className={`font-display font-bold leading-tight text-paper transition-colors ${titleHover} ${
+            featured ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"
+          }`}
+        >
+          {title}
+        </h3>
+        <p className="mt-4 flex-1 text-sm font-light leading-relaxed text-dim md:text-base">{short}</p>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {tech.slice(0, 5).map((t) => (
+            <span key={t} className="chip">
+              {t}
+            </span>
+          ))}
+          {tech.length > 5 && <span className="chip">+{tech.length - 5}</span>}
+        </div>
+
+        <div className={`mt-7 flex items-center gap-2 ${accentText}`}>
+          <span className="mono text-[10px] uppercase tracking-[0.24em]">{cta}</span>
+          <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function Home() {
   const router = useRouter();
-  // locale is now stateful so we can switch languages at runtime
   const [locale, setLocale] = useState<Locale>("en");
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<number | null>(null);
@@ -44,579 +184,497 @@ export default function Home() {
   }
 
   useEffect(() => {
-    // Wait for DOM to be ready
-    let observer: IntersectionObserver | null = null;
-
-    const timer = setTimeout(() => {
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            const el = entry.target as HTMLElement;
-            if (entry.isIntersecting) {
-              el.classList.add("opacity-100", "translate-y-0");
-              el.classList.remove("opacity-0", "translate-y-6");
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-
-      const cards = document.querySelectorAll(".project-card");
-      cards.forEach((el) => observer!.observe(el));
-    }, 100);
-
-    return () => {
-      clearTimeout(timer);
-      if (observer) observer.disconnect();
-    };
+    const els = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
+  const ctaView = locale === "fr" ? "Voir le dossier" : locale === "de" ? "Dossier öffnen" : "Open dossier";
+
+  const capabilityGroups = site.skillsGrouped.filter(
+    (g) => !["spoken", "frameworks", "viz"].includes(g.key)
+  );
+
+  const twins = site.projects.filter((p) => p.link?.includes("digital-twin"));
+  const aiProjects = site.projects.filter(
+    (p) => p.category === "AI" && !p.link?.includes("digital-twin")
+  );
+  const otherProjects = site.projects.filter((p) => p.category === "Other");
+
   return (
-    <div className='relative w-full text-foreground overflow-x-hidden min-h-screen'>
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-ink text-paper">
       <SiteNav locale={locale} onLocaleChange={(lang) => setLocale(lang)} />
-      <main className='relative z-10 mx-auto w-full max-w-[1920px]'>
-        {/* Hero Section - Elite AI Engineer Style */}
-        <section id='home' className='relative pt-40 pb-24 overflow-hidden'>
-          {/* Ambient Glows */}
-          <div className='absolute top-0 right-0 w-[500px] h-[500px] bg-[#00d9ff]/10 blur-[120px] rounded-full pointer-events-none'></div>
 
-          <div className='relative z-10 mx-auto px-6 sm:px-12 lg:px-24'>
+      <main className="relative z-10">
+        {/* ---------------- HERO ---------------- */}
+        <section id="home" className="relative border-b border-grid pt-28">
+          <div className="grid-field pointer-events-none absolute inset-0 opacity-40" />
+          <div className="relative mx-auto grid max-w-[1600px] gap-12 px-4 py-16 md:px-8 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div className="rise">
+              <div className="mb-8 flex items-center gap-5">
+                <span className="eyebrow">CH-00 / Profile</span>
+                <span className="rule w-24" />
+              </div>
 
-            <div className='absolute top-0 right-0 w-full lg:w-3/5 h-full opacity-60 pointer-events-none select-none overflow-hidden brain-visual-mask z-0'>
-              <Image
-                src="/mind.png"
-                alt="Brain Visual"
-                fill
-                priority={true}
-                className='object-contain object-center transform lg:-translate-x-24 scale-110 lg:scale-[1.4]'
-              />
-            </div>
-
-            <div className='relative z-20 max-w-4xl'>
-              <h1 className='text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9] display-font'>
-                <span className='block opacity-30 text-4xl md:text-5xl lg:text-7xl mb-4 font-medium tracking-normal'>
-                  {locale === "fr" ? "Je suis" : locale === "de" ? "Ich bin" : "I am"}
-                </span>
+              <h1 className="font-display text-[clamp(2.75rem,9vw,7.5rem)] font-extrabold leading-[0.86] tracking-tight text-paper">
                 {L(site.name, locale)}
               </h1>
 
-              <h2 className='text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-10'>
-                <span className='text-[#00d9ff]'>
-                  {locale === "fr"
-                    ? "Ingénieur en IA & Full-Stack"
-                    : locale === "de"
-                      ? "KI & Full-Stack Ingenieur"
-                      : "AI & Full-Stack Engineer"}
-                </span>
-              </h2>
-
-              <p className='text-white/60 text-lg md:text-2xl leading-relaxed mb-16 max-w-2xl font-light text-left'>
-                {locale === "fr"
-                  ? "Conception de systèmes d'IA de pointe, des architectures Transformers aux écosystèmes d'entreprise robustes. Spécialisé en Deep Learning et ingénierie logicielle."
-                  : locale === "de"
-                    ? "Entwicklung wegweisender KI-Systeme, von Transformer-Architekturen bis hin zu robusten Unternehmens-Ökosystemen. Spezialisiert auf Deep Learning und Software-Engineering."
-                    : "Architecting the next generation of intelligence, from foundational Transformer models to robust enterprise ecosystems. Specializing in Deep Learning and high-performance software engineering."}
+              <p className="mt-6 font-display text-xl font-semibold text-amber md:text-3xl">
+                {L(site.role, locale)}
               </p>
 
-              <div className='flex flex-wrap items-center gap-6'>
-                <a
-                  href='#contact'
-                  className='px-10 py-5 bg-[#00d9ff] text-black font-bold rounded-full hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(0,217,255,0.3)]'
-                >
-                  {L({ en: "Let's Collaborate", fr: "Collaborer", de: "Zusammenarbeiten" }, locale)}
-                </a>
+              <p className="mt-7 max-w-2xl text-base font-light leading-relaxed text-dim md:text-lg">
+                {copy.thesis[locale]}
+              </p>
 
-                <a
-                  href={locale === "fr" ? "/resume_fr.pdf" : locale === "de" ? "/resume_de.pdf" : "/resume_en.pdf"}
-                  download
-                  className='px-10 py-5 glass-card font-bold rounded-full hover:bg-white/10 transition-all duration-500 flex items-center gap-3 border-white/20 text-white'
-                >
-                  <span>{L({ en: "Download Resume", fr: "Curriculum Vitae", de: "Lebenslauf" }, locale)}</span>
-                  <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
-                  </svg>
+              <div className="mt-10 flex flex-wrap items-center gap-3">
+                <a href="#contact" className="btn btn-primary">
+                  {copy.openChannel[locale]}
                 </a>
+                <a
+                  href={
+                    locale === "fr" ? "/resume_fr.pdf" : locale === "de" ? "/resume_de.pdf" : "/resume_en.pdf"
+                  }
+                  download
+                  className="btn"
+                >
+                  {copy.download[locale]} ↓
+                </a>
+              </div>
+            </div>
+
+            {/* profile card */}
+            <div className="reveal is-in">
+              <div className="panel overflow-hidden">
+                <div className="flex items-center justify-between border-b border-grid px-4 py-3">
+                  <span className="mono text-[10px] uppercase tracking-[0.24em] text-dim">
+                    profile · dossier
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <span className="blink h-1.5 w-1.5 rounded-full bg-amber" />
+                    <span className="mono text-[10px] uppercase tracking-[0.2em] text-dim-2">
+                      {copy.statusOpen[locale]}
+                    </span>
+                  </span>
+                </div>
+
+                <div className="p-6 md:p-8">
+                  <p className="mono text-[10px] uppercase tracking-[0.24em] text-dim-2">
+                    {copy.availableFor[locale]}
+                  </p>
+                  <p className="mt-3 font-display text-2xl font-bold leading-tight text-paper md:text-3xl">
+                    {L(site.role, locale)}
+                  </p>
+
+                  <dl className="mt-8 divide-y divide-grid border-y border-grid">
+                    <div className="flex items-baseline justify-between gap-6 py-3">
+                      <dt className="mono text-[10px] uppercase tracking-[0.22em] text-dim-2">Location</dt>
+                      <dd className="text-right text-sm font-light text-paper">{site.location}</dd>
+                    </div>
+                    <div className="flex items-baseline justify-between gap-6 py-3">
+                      <dt className="mono text-[10px] uppercase tracking-[0.22em] text-dim-2">Focus</dt>
+                      <dd className="text-right text-sm font-light text-paper">{copy.focus[locale]}</dd>
+                    </div>
+                    <div className="flex items-baseline justify-between gap-6 py-3">
+                      <dt className="mono text-[10px] uppercase tracking-[0.22em] text-dim-2">Email</dt>
+                      <dd className="text-right">
+                        <a
+                          href={`mailto:${site.email}`}
+                          className="link-underline text-sm font-light text-amber"
+                        >
+                          {site.email}
+                        </a>
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {site.socials.map((s) => (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="chip"
+                      >
+                        {s.label} ↗
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Interactive Expertise Section - MagicBento */}
-        <section id='expertise' className='py-32'>
-          <div className='max-w-6xl mx-auto mb-20 px-6 sm:px-12'>
-            <div className='flex items-center gap-4 mb-4'>
-              <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
-              <span className='text-[#00d9ff] font-bold uppercase tracking-widest text-xs'>
-                {locale === "fr" ? "Compétences" : locale === "de" ? "Fähigkeiten" : "Expertise"}
-              </span>
-            </div>
-            <h2 className='text-5xl md:text-7xl font-bold text-white mb-6 display-font tracking-tighter'>
-              {locale === "fr"
-                ? "Moteurs d'Intelligence"
+        {/* ---------------- CAPABILITY ---------------- */}
+        <section id="capability" className="mx-auto max-w-[1600px] px-4 py-24 md:px-8 md:py-32">
+          <SectionHead
+            channel="CH-01 / Capability"
+            title={locale === "en" ? "Capability Matrix" : locale === "fr" ? "Matrice de Compétences" : "Kompetenzmatrix"}
+            subtitle={
+              locale === "fr"
+                ? "Une pile complète, de la manipulation de données massives à l'inférence à la frontière (edge)."
                 : locale === "de"
-                  ? "Intelligenz-Motoren"
-                  : "Motors of Intelligence"}
-            </h2>
-            <p className='text-white/50 text-lg max-w-2xl font-light'>
-              {locale === "fr"
-                ? "Une pile technologique complète pour l'ère de l'IA, de la manipulation de données massives au déploiement de modèles de pointe."
-                : locale === "de"
-                  ? "Ein umfassender Technologie-Stack für das KI-Zeitalter, von der Verarbeitung großer Datenmengen bis hin zum Einsatz modernster Modelle."
-                  : "A comprehensive technology stack for the AI era, from big data manipulation to cutting-edge model deployment."}
-            </p>
-          </div>
+                  ? "Ein durchgehender Stack, von der Verarbeitung großer Datenmengen bis zur Edge-Inferenz."
+                  : "One continuous stack, from big-data pipelines to edge inference."
+            }
+          />
 
-          <div className='relative min-h-[800px] md:min-h-[1000px] lg:min-h-[1200px] rounded-3xl overflow-visible mx-auto'>
-            <MagicBento
-              textAutoHide={false}
-              enableStars={true}
-              enableSpotlight={true}
-              enableBorderGlow={true}
-              enableTilt={true}
-              enableMagnetism={true}
-              clickEffect={true}
-              spotlightRadius={200}
-              particleCount={4}
-              glowColor="0, 217, 255"
-              customCards={site.skillsGrouped.map(group => ({
-                color: '#0c0c0c',
-                title: L(group.title, locale),
-                description: group.items.join(' • '),
-                label: group.key.toUpperCase()
-              }))}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {capabilityGroups.map((group, i) => (
+              <div key={group.key} className="reveal panel group p-6">
+                <div className="mb-5 flex items-center justify-between">
+                  <span className="mono text-[10px] uppercase tracking-[0.28em] text-dim-2">
+                    S-{String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="h-2 w-2 bg-amber/0 transition-colors group-hover:bg-amber" />
+                </div>
+                <h3 className="font-display text-lg font-bold text-paper">
+                  {L(group.title, locale)}
+                </h3>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span key={item} className="chip">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ---------------- SYSTEMS ---------------- */}
+        <section id="systems" className="border-y border-grid bg-panel/40">
+          <div className="mx-auto max-w-[1600px] px-4 py-24 md:px-8 md:py-32">
+            <SectionHead
+              channel="CH-02 / Systems"
+              title={locale === "en" ? "Deployed Systems" : locale === "fr" ? "Systèmes Déployés" : "Eingesetzte Systeme"}
+              subtitle={
+                locale === "fr"
+                  ? "Une sélection de travaux fusionnant IA de pointe et ingénierie logicielle robuste."
+                  : locale === "de"
+                    ? "Eine Auswahl an Arbeiten, die modernste KI mit robuster Software verbinden."
+                    : "A selection of work merging frontier AI with robust software engineering."
+              }
             />
-          </div>
-        </section>
 
-        {/* Projects Section - Elite AI Engineer Style */}
-        <section id='projects' className='py-32'>
-          <div className='max-w-6xl mx-auto mb-20 px-6 sm:px-12'>
-            <div className='flex items-center gap-4 mb-4'>
-              <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
-              <span className='text-[#00d9ff] font-bold uppercase tracking-widest text-xs'>
-                {locale === "fr" ? "Réalisations" : locale === "de" ? "Projekte" : "Portfolio"}
-              </span>
+            {/* 01 field systems */}
+            <div className="mb-16">
+              <div className="mb-8 flex items-center gap-5">
+                <span className="mono text-xs uppercase tracking-[0.28em] text-amber">
+                  01 / Field Systems
+                </span>
+                <span className="rule flex-1" />
+              </div>
+              <div className="grid gap-6 lg:grid-cols-2">
+                {twins.map((p) => {
+                  const i = site.projects.indexOf(p);
+                  return (
+                    <ProjectCard
+                      key={i}
+                      index={i}
+                      title={L(p.title, locale)}
+                      description={L(p.description, locale)}
+                      tech={p.tech}
+                      images={p.images}
+                      accent="amber"
+                      code={`SYS-${String(i + 1).padStart(2, "0")} · ${p.category}`}
+                      cta={ctaView}
+                      onOpen={openProject}
+                    />
+                  );
+                })}
+              </div>
             </div>
-            <h2 className='text-5xl md:text-7xl font-bold text-white mb-6 display-font tracking-tighter'>
-              {locale === "fr"
-                ? "Systèmes Déployés"
-                : locale === "de"
-                  ? "Eingesetzte Systeme"
-                  : "Deployed Systems"}
-            </h2>
-            <p className='text-white/50 text-lg max-w-2xl font-light'>
-              {locale === "fr"
-                ? "Une sélection de mes travaux les plus sophistiqués, fusionnant l'IA de pointe avec des solutions logicielles robustes."
-                : locale === "de"
-                  ? "Eine Auswahl meiner anspruchsvollsten Arbeiten, die modernste KI mit robusten Softwarelösungen verbindet."
-                  : "A curated selection of my most sophisticated work, merging cutting-edge AI with robust software solutions."}
-            </p>
-          </div>
 
-          
-          {/* Academic Theses */}
-          <div className='mb-24'>
-            <div className='flex items-center gap-6 mb-12 max-w-6xl mx-auto'>
-              <h3 className='text-2xl md:text-3xl font-bold text-white/90 display-font uppercase tracking-wider'>
-                01. {locale === "fr" ? "THÈSES ACADÉMIQUES" : locale === "de" ? "AKADEMISCHE ARBEITEN" : "ACADEMIC THESES"}
-              </h3>
-              <div className='h-[1px] flex-1 bg-white/5'></div>
+            {/* 02 AI engineering */}
+            <div className="mb-16">
+              <div className="mb-8 flex items-center gap-5">
+                <span className="mono text-xs uppercase tracking-[0.28em] text-blue">
+                  02 / AI Engineering
+                </span>
+                <span className="rule flex-1" />
+              </div>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {aiProjects.map((p) => {
+                  const i = site.projects.indexOf(p);
+                  return (
+                    <ProjectCard
+                      key={i}
+                      index={i}
+                      title={L(p.title, locale)}
+                      description={L(p.description, locale)}
+                      tech={p.tech}
+                      images={p.images}
+                      accent="blue"
+                      code={`SYS-${String(i + 1).padStart(2, "0")}`}
+                      cta={ctaView}
+                      onOpen={openProject}
+                    />
+                  );
+                })}
+              </div>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto'>
-              {site.projects.filter(p => p.link?.includes('digital-twin')).map((p) => {
-                const i = site.projects.indexOf(p);
-                const title = L(p.title, locale);
-                const desc = L(p.description, locale);
-                const shortDesc = desc.length > 150 ? desc.slice(0, 147) + "…" : desc;
-                const image = p.images?.[0] || "/window.svg";
-                return (
-                  <article
-                    key={i}
-                    onClick={(e) => openProject(i, e)}
-                    className='project-card group cursor-pointer rounded-3xl overflow-hidden bg-[#0c0c0c]/80 border border-white/5 hover:border-[#00d9ff]/30 backdrop-blur-xl opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,217,255,0.15)] flex flex-col h-full'
-                  >
-                    <div className='relative h-64 md:h-80 overflow-hidden'>
-                      {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
-                        <Image
-                          src={image}
-                          alt={title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className='object-cover transition-transform duration-500 group-hover:scale-110'
-                        />
-                      ) : (
-                        <img src={image} alt={title} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110' />
-                      )}
-                      <div className='absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-transparent to-transparent'></div>
-                    </div>
 
-                    <div className='p-6'>
-                      <div className='flex justify-between items-start mb-2'>
-                        <h3 className='text-xl font-bold text-white group-hover:text-[#00d9ff] transition-colors'>
-                          {title}
-                        </h3>
-                        <span className='px-2 py-0.5 rounded text-[10px] bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/20 font-bold uppercase'>AI/ML</span>
-                      </div>
-                      <p className='text-white/40 text-base md:text-lg mb-6 leading-relaxed font-light line-clamp-3'>
-                        {shortDesc}
-                      </p>
-
-                      <div className='flex flex-wrap gap-2 mb-4'>
-                        {p.tech.slice(0, 4).map((t) => (
-                          <span key={t} className='px-2 py-1 text-[10px] font-semibold uppercase rounded-md text-white/90 bg-white/5 border border-white/10'>{t}</span>
-                        ))}
-                        {p.tech.length > 4 && <span className='px-2 py-1 text-[10px] font-semibold text-white/60'>+{p.tech.length - 4}</span>}
-                      </div>
-
-                      <button
-                        onClick={(e) => openProject(i, e)}
-                        className='w-full px-4 py-2 rounded-lg bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/30 text-sm font-semibold hover:bg-[#00d9ff]/20 transition-all shadow-lg hover:shadow-[#00d9ff]/10'
-                      >
-                        {locale === "fr" ? "Voir le projet" : locale === "de" ? "Projekt ansehen" : "View Project"}
-                      </button>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* AI Engineering Projects */}
-          <div className='mb-24'>
-            <div className='flex items-center gap-6 mb-12 max-w-6xl mx-auto'>
-              <h3 className='text-2xl md:text-3xl font-bold text-white/90 display-font uppercase tracking-wider'>
-                02. {locale === "fr" ? "Ingénierie IA" : locale === "de" ? "KI-Engineering" : "AI Engineering"}
-              </h3>
-              <div className='h-[1px] flex-1 bg-white/5'></div>
-            </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto'>
-              {site.projects.filter(p => p.category === "AI" && !p.link?.includes('digital-twin')).map((p) => {
-                const i = site.projects.indexOf(p);
-                const title = L(p.title, locale);
-                const desc = L(p.description, locale);
-                const shortDesc = desc.length > 150 ? desc.slice(0, 147) + "…" : desc;
-                const image = p.images?.[0] || "/window.svg";
-                return (
-                  <article
-                    key={i}
-                    onClick={(e) => openProject(i, e)}
-                    className='project-card group cursor-pointer rounded-3xl overflow-hidden bg-[#0c0c0c]/80 border border-white/5 hover:border-[#00d9ff]/30 backdrop-blur-xl opacity-0 translate-y-6 transition-all duration-700 ease-out hover:transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,217,255,0.15)] flex flex-col h-full'
-                  >
-                    <div className='relative h-64 md:h-80 overflow-hidden'>
-                      {(image.startsWith("/") || image.startsWith("https://images.unsplash.com")) ? (
-                        <Image
-                          src={image}
-                          alt={title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className='object-cover transition-transform duration-500 group-hover:scale-110'
-                        />
-                      ) : (
-                        <img src={image} alt={title} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110' />
-                      )}
-                      <div className='absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-transparent to-transparent'></div>
-                    </div>
-
-                    <div className='p-6'>
-                      <div className='flex justify-between items-start mb-2'>
-                        <h3 className='text-xl font-bold text-white group-hover:text-[#00d9ff] transition-colors'>
-                          {title}
-                        </h3>
-                        <span className='px-2 py-0.5 rounded text-[10px] bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/20 font-bold uppercase'>AI/ML</span>
-                      </div>
-                      <p className='text-white/40 text-base md:text-lg mb-6 leading-relaxed font-light line-clamp-3'>
-                        {shortDesc}
-                      </p>
-
-                      <div className='flex flex-wrap gap-2 mb-4'>
-                        {p.tech.slice(0, 4).map((t) => (
-                          <span key={t} className='px-2 py-1 text-[10px] font-semibold uppercase rounded-md text-white/90 bg-white/5 border border-white/10'>{t}</span>
-                        ))}
-                        {p.tech.length > 4 && <span className='px-2 py-1 text-[10px] font-semibold text-white/60'>+{p.tech.length - 4}</span>}
-                      </div>
-
-                      <button
-                        onClick={(e) => openProject(i, e)}
-                        className='w-full px-4 py-2 rounded-lg bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/30 text-sm font-semibold hover:bg-[#00d9ff]/20 transition-all shadow-lg hover:shadow-[#00d9ff]/10'
-                      >
-                        {locale === "fr" ? "Voir le projet" : locale === "de" ? "Projekt ansehen" : "View Project"}
-                      </button>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Full-Stack & Enterprise Solutions */}
-          <div>
-            <div className='flex items-center gap-6 mb-12 max-w-6xl mx-auto'>
-              <h3 className='text-2xl md:text-3xl font-bold text-white/90 display-font uppercase tracking-wider'>
-                03. {locale === "fr" ? "Autres Solutions" : locale === "de" ? "Weitere Lösungen" : "Other Solutions"}
-              </h3>
-              <div className='h-[1px] flex-1 bg-white/5'></div>
-            </div>
-            <div className='flex flex-col gap-6 max-w-6xl mx-auto'>
-              {site.projects.filter(p => p.category === "Other").map((p) => {
-                const i = site.projects.indexOf(p);
-                const title = L(p.title, locale);
-                const desc = L(p.description, locale);
-                return (
-                  <article
-                    key={i}
-                    className='glass-card p-6 rounded-3xl bg-[#0c0c0c]/80 border border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4'
-                  >
-                    <div>
-                      <h3 className='text-xl font-bold text-white mb-2 display-font'>
-                        {title}
-                      </h3>
-                      <p className='text-white/40 text-sm md:text-base leading-relaxed font-light'>
-                        {desc}
-                      </p>
-                    </div>
-                    <div className='flex flex-wrap gap-2 md:justify-end shrink-0'>
-                      {p.tech.slice(0, 3).map(t => (
-                        <span key={t} className='px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-white/50 uppercase tracking-widest'>
-                          {t}
+            {/* 03 software */}
+            <div>
+              <div className="mb-8 flex items-center gap-5">
+                <span className="mono text-xs uppercase tracking-[0.28em] text-dim">
+                  03 / Software & Enterprise
+                </span>
+                <span className="rule flex-1" />
+              </div>
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {otherProjects.map((p) => {
+                  const i = site.projects.indexOf(p);
+                  return (
+                    <div
+                      key={i}
+                      onClick={(e) => openProject(i, e)}
+                      className="reveal panel panel-hover group flex cursor-pointer flex-col p-5"
+                    >
+                      <div className="mb-4 flex items-center justify-between">
+                        <span className="mono text-[10px] uppercase tracking-[0.28em] text-dim-2">
+                          SYS-{String(i + 1).padStart(2, "0")}
                         </span>
-                      ))}
+                        <span className="mono text-[10px] text-blue opacity-0 transition-opacity group-hover:opacity-100">
+                          →
+                        </span>
+                      </div>
+                      <h3 className="font-display text-base font-bold leading-snug text-paper">
+                        {L(p.title, locale)}
+                      </h3>
+                      <p className="mt-3 flex-1 text-sm font-light leading-relaxed text-dim">
+                        {L(p.description, locale)}
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {p.tech.slice(0, 3).map((t) => (
+                          <span key={t} className="chip !text-[9px]">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </article>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
-
-
         </section>
 
-        {/* Professional Experience Section */}
-        <section id='experience' className='py-32 bg-black/10'>
-          <div className='max-w-6xl mx-auto mb-20 px-6'>
-            <div className='flex items-center gap-4 mb-4'>
-              <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
-              <span className='text-[#00d9ff] font-bold uppercase tracking-widest text-xs display-font'>
-                {locale === "fr" ? "Expertise Industrielle" : locale === "de" ? "Industrielle Erfahrung" : "Industrial Intelligence"}
-              </span>
-            </div>
-            <h2 className='text-5xl md:text-8xl font-bold text-white mb-20 display-font tracking-tighter'>
-              Experience
-            </h2>
+        {/* ---------------- RECORD ---------------- */}
+        <section id="record" className="mx-auto max-w-[1600px] px-4 py-24 md:px-8 md:py-32">
+          <SectionHead
+            channel="CH-03 / Record"
+            title={locale === "en" ? "Record & Calibration" : locale === "fr" ? "Parcours & Calibration" : "Werdegang & Kalibrierung"}
+            subtitle={
+              locale === "fr"
+                ? "Jamais seulement le diplôme : les systèmes construits, les équipes avec lesquelles je les ai menés, et les problèmes qu'ils résolvent."
+                : locale === "de"
+                  ? "Nicht nur der Abschluss: die Systeme, die ich gebaut habe, die Teams, mit denen ich sie umgesetzt habe, und die Probleme, die sie lösen."
+                  : "Not just the credential — the systems built, the teams I built them with, and the problems they solve."
+            }
+          />
 
-            <div className='space-y-12'>
-              {site.experiences.map((exp, idx) => (
-                <div key={idx} className='group relative glass-card p-10 md:p-16 overflow-hidden rounded-[3rem] hover:border-[#00d9ff]/30 transition-all bg-[#0c0c0c]/80 backdrop-blur-3xl'>
-                  <div className='absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none'>
-                    <span className='text-9xl font-bold display-font'>0{idx + 1}</span>
-                  </div>
-                  <div className='relative z-10'>
-                    <div className='flex flex-wrap items-center justify-between gap-6 mb-8'>
-                      <h3 className='text-3xl md:text-5xl font-bold text-white display-font tracking-tight'>{L(exp.title, locale)}</h3>
-                      <div className='flex items-center gap-4'>
-                        <span className='w-8 h-[1px] bg-white/20'></span>
-                        <span className='text-xl md:text-2xl font-medium text-white/40 display-font uppercase tracking-widest'>{exp.period}</span>
-                      </div>
+          <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+            <div>
+              <div className="space-y-4">
+                {site.experiences.map((exp, idx) => (
+                  <div key={idx} className="reveal panel panel-hover p-6 md:p-8">
+                    <div className="flex flex-wrap items-center justify-between gap-4">
+                      <span className="mono text-[10px] uppercase tracking-[0.28em] text-amber">
+                        {exp.period}
+                      </span>
+                      <span className="mono text-[10px] uppercase tracking-[0.24em] text-dim-2">
+                        {exp.location}
+                      </span>
                     </div>
-                    <div className='flex flex-wrap items-center gap-6 mb-10 text-white/60'>
-                      <div className='flex items-center gap-2'>
-                        <span className='text-[#00d9ff] text-xl font-bold'>@</span>
-                        <span className='text-2xl font-bold text-white/90 underline decoration-[#00d9ff]/30 decoration-2 underline-offset-8'>{exp.company}</span>
-                      </div>
-                      <span className='hidden md:block w-1.5 h-1.5 rounded-full bg-[#00d9ff]/40'></span>
-                      <span className='text-xl font-light italic'>{exp.location}</span>
-                    </div>
-                    <p className='text-white/50 text-xl md:text-2xl leading-relaxed max-w-5xl font-light'>
+                    <h3 className="mt-4 font-display text-xl font-bold leading-snug text-paper md:text-2xl">
+                      {L(exp.title, locale)}
+                    </h3>
+                    <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.14em] text-blue">
+                      @ {exp.company}
+                    </p>
+                    <p className="mt-4 text-sm font-light leading-relaxed text-dim md:text-base">
                       {L(exp.description, locale)}
                     </p>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id='timeline' className='py-32 border-t border-white/5 bg-[#0c0c0c]'>
-          <div className='max-w-6xl mx-auto px-6'>
-            <div className='mb-20'>
-              <h2 className='text-5xl md:text-7xl font-bold text-white mb-4 display-font tracking-tighter'>
-                Chronology & Signals
-              </h2>
-              <p className='text-white/40 text-xl font-light max-w-2xl'>
-                Mapping the temporal evolution of logical frameworks and communication bandwidth.
-              </p>
-            </div>
-
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20'>
-              {/* System Trajectory - Timeline */}
-              <div className='lg:col-span-2 relative glass-card p-10 md:p-12 rounded-[2.5rem] bg-[#111111]/50 border-white/5'>
-                <div className='flex items-center gap-3 mb-10 opacity-60'>
-                  <svg className='w-5 h-5 text-[#00d9ff]' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z' />
-                  </svg>
-                  <h3 className='text-sm font-bold uppercase tracking-[0.2em] text-white'>System Trajectory</h3>
-                </div>
-
-                <div className='relative pl-12 border-l border-white/10 space-y-16'>
-                  {/* Item 1 */}
-                  <div className='relative'>
-                    <div className='absolute -left-[3.25rem] top-0 w-10 h-10 rounded-full bg-[#0c0c0c] border border-[#00d9ff] flex items-center justify-center shadow-[0_0_15px_rgba(0,217,255,0.2)]'>
-                      <div className='w-2 h-2 rounded-full bg-[#00d9ff] animate-pulse'></div>
-                    </div>
-                    <div>
-                      <span className='text-[10px] font-bold text-[#00d9ff] uppercase tracking-widest block mb-1'>Target 2026</span>
-                      <h4 className='text-3xl md:text-5xl font-bold text-white mb-4 display-font'>Engineering Degree in AI</h4>
-                      <p className='text-white/40 text-lg leading-relaxed max-w-xl'>
-                        École Supérieure en Informatique de Sidi Bel-Abbès (ESI-SBA). Specializing in advanced neural architectures, machine learning methodologies, and scalable intelligent systems.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Item 2 */}
-                  <div className='relative'>
-                    <div className='absolute -left-[3.25rem] top-0 w-10 h-10 rounded-full bg-[#0c0c0c] border border-white/10 flex items-center justify-center'>
-                      <div className='w-2 h-2 rounded-full bg-white/20'></div>
-                    </div>
-                    <div>
-                      <span className='text-[10px] font-bold text-white/30 uppercase tracking-widest block mb-1'>Origin 2021</span>
-                      <h4 className='text-3xl md:text-4xl font-bold text-white/80 mb-4 display-font'>Baccalaureate</h4>
-                      <p className='text-white/30 text-base leading-relaxed max-w-xl'>
-                        Mathematical Engineering. Foundational training in pure mathematics, algorithmic logic, and rigorous analytical thinking.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              {/* Linguistic Nodes - Skills */}
-              <div className='relative glass-card p-10 md:p-12 rounded-[2.5rem] bg-[#111111]/50 border-white/5'>
-                <div className='flex items-center gap-3 mb-12 opacity-60'>
-                  <svg className='w-5 h-5 text-[#00d9ff]' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9' />
-                  </svg>
-                  <h3 className='text-sm font-bold uppercase tracking-[0.2em] text-white'>Linguistic Nodes</h3>
+              <div className="reveal mt-8">
+                <div className="mb-6 flex items-center gap-5">
+                  <span className="mono text-xs uppercase tracking-[0.28em] text-dim">
+                    Trajectory
+                  </span>
+                  <span className="rule flex-1" />
                 </div>
-
-                <div className='space-y-10'>
+                <div className="grid gap-4 md:grid-cols-2">
                   {[
-                    { label: "Arabic", level: "Mother Tongue", width: "100%" },
-                    { label: "English", level: "Advanced", width: "95%" },
-                    { label: "French", level: "Conversational", width: "75%" },
-                  ].map((lang) => (
-                    <div key={lang.label}>
-                      <div className='flex justify-between items-end mb-3'>
-                        <span className='text-xs font-bold uppercase tracking-widest text-white/80'>{lang.label}</span>
-                        <span className='text-[10px] font-bold uppercase tracking-[0.2em] text-white/30'>{lang.level}</span>
-                      </div>
-                      <div className='h-1.5 w-full bg-white/5 rounded-full overflow-hidden'>
-                        <div
-                          className='h-full bg-gradient-to-r from-[#00d9ff]/50 to-[#00d9ff] rounded-full shadow-[0_0_10px_#00d9ff33]'
-                          style={{ width: lang.width }}
-                        ></div>
-                      </div>
+                    {
+                      tag: "TARGET · 2026",
+                      title: "Engineering Degree in AI",
+                      body: "École Supérieure en Informatique de Sidi Bel-Abbès (ESI-SBA). Advanced neural architectures, machine learning methods, scalable intelligent systems.",
+                    },
+                    {
+                      tag: "ORIGIN · 2021",
+                      title: "Baccalaureate — Mathematical Engineering",
+                      body: "Foundational training in pure mathematics, algorithmic logic, and rigorous analytical thinking.",
+                    },
+                  ].map((edu) => (
+                    <div key={edu.tag} className="panel border-l-2 border-l-amber p-6">
+                      <span className="mono text-[10px] uppercase tracking-[0.24em] text-amber">
+                        {edu.tag}
+                      </span>
+                      <h4 className="mt-3 font-display text-lg font-bold text-paper">{edu.title}</h4>
+                      <p className="mt-3 text-sm font-light leading-relaxed text-dim">{edu.body}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* Bottom Section - Quote & Connect */}
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-end pt-12 border-t border-white/5'>
-              <div>
-                <p className='text-4xl md:text-5xl font-bold text-white display-font tracking-tighter leading-tight'>
-                  &ldquo;Creativity solves problems. <br />
-                  <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#00d9ff] to-[#7c3aed]'>
-                    Communication builds legacy.&rdquo;
-                  </span>
-                </p>
+            <div className="reveal panel h-fit p-6 md:p-8">
+              <div className="mb-8 flex items-center justify-between">
+                <span className="mono text-[10px] uppercase tracking-[0.28em] text-dim">
+                  Calibration
+                </span>
+                <span className="mono text-[10px] uppercase tracking-[0.24em] text-dim-2">
+                  spoken
+                </span>
+              </div>
+              <div className="space-y-8">
+                {[
+                  { label: "Arabic", level: "Mother tongue", width: "100%" },
+                  { label: "English", level: "Advanced", width: "95%" },
+                  { label: "French", level: "Conversational", width: "72%" },
+                ].map((lang) => (
+                  <div key={lang.label}>
+                    <div className="mb-3 flex items-baseline justify-between">
+                      <span className="font-display text-sm font-bold text-paper">{lang.label}</span>
+                      <span className="mono text-[10px] uppercase tracking-[0.2em] text-dim-2">
+                        {lang.level}
+                      </span>
+                    </div>
+                    <div className="h-1 w-full bg-grid">
+                      <div className="h-full bg-blue" style={{ width: lang.width }} />
+                    </div>
+                  </div>
+                ))}
               </div>
 
+              <div className="mt-10 border-t border-grid pt-8">
+                <p className="font-display text-2xl font-bold leading-tight tracking-tight text-paper">
+                  &ldquo;Creativity solves problems.{" "}
+                  <span className="text-amber">Communication builds legacy.&rdquo;</span>
+                </p>
+              </div>
             </div>
           </div>
         </section>
-      </main>
 
-      {/* Footer - Elite AI Engineer Style */}
-      <footer id='contact' className='py-40 bg-[#0c0c0c] border-t border-white/5'>
-        <div className='max-w-6xl mx-auto px-6 text-center'>
-          <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00d9ff]/5 border border-[#00d9ff]/20 mb-8'>
-            <span className='w-2 h-2 rounded-full bg-[#00d9ff]'></span>
-            <span className='text-[10px] font-bold uppercase tracking-widest text-[#00d9ff]'>
-              {locale === "fr" ? "Prêt pour le déploiement" : locale === "de" ? "Bereit für den Einsatz" : "Ready for Deployment"}
-            </span>
-          </div>
+        {/* ---------------- CONTACT ---------------- */}
+        <section id="contact" className="border-t border-grid bg-panel/40">
+          <div className="mx-auto max-w-[1600px] px-4 py-24 md:px-8 md:py-32">
+            <div className="mb-10 flex items-center gap-5">
+              <span className="eyebrow">CH-04 / Open Channel</span>
+              <span className="rule flex-1" />
+            </div>
 
-          <h2 className='text-5xl md:text-8xl font-bold text-white mb-8 display-font tracking-tighter'>
-            {locale === "fr" ? "Initialiser le Contact" : locale === "de" ? "Kontakt Initialisieren" : "Initiate Contact"}
-          </h2>
+            <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr]">
+              <div className="reveal">
+                <h2 className="font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-paper md:text-6xl lg:text-7xl">
+                  {locale === "en"
+                    ? "Let's put a model where it matters."
+                    : locale === "fr"
+                      ? "Mettons un modèle là où ça compte."
+                      : "Bringen wir ein Modell dorthin, wo es zählt."}
+                </h2>
+                <p className="mt-6 max-w-xl text-base font-light leading-relaxed text-dim md:text-lg">
+                  {locale === "fr"
+                    ? "Disponible pour des projets critiques en IA et des architectures logicielles de haute performance."
+                    : locale === "de"
+                      ? "Verfügbar für kritische KI-Projekte und Hochleistungs-Softwarearchitekturen."
+                      : "Available for mission-critical AI projects and high-performance software architectures."}
+                </p>
 
-          <p className='text-white/40 text-xl max-w-2xl mx-auto mb-16 font-light'>
-            {locale === "fr"
-              ? "Disponible pour des projets critiques en IA et des architectures logicielles de haute performance."
-              : locale === "de"
-                ? "Verfügbar für kritische KI-Projekte und Hochleistungs-Softwarearchitekturen."
-                : "Available for mission-critical AI projects and high-performance software architectures."}
-          </p>
-
-          <div className='flex flex-wrap items-center gap-6 justify-center mb-24'>
-            <a
-              href={`mailto:${site.email}`}
-              className='p-5 glass-card rounded-full border-[#00d9ff]/20 hover:border-[#00d9ff]/50 transition-all shadow-[0_0_20px_rgba(0,217,255,0.1)]'
-              aria-label="Email"
-            >
-              <svg className='w-6 h-6 text-[#00d9ff]' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />
-              </svg>
-            </a>
-            <div className='flex gap-4'>
-              {site.socials.map((s) => {
-                const logoMap: { [key: string]: string } = {
-                  'GitHub': 'github.svg',
-                  'LinkedIn': 'linkedin.svg',
-                  'Twitter': 'twitter.svg',
-                  'Instagram': 'instagram.svg',
-                  'WhatsApp': 'whatsapp.svg',
-                };
-                const logoFile = logoMap[s.label] || 'globe.svg';
-                return (
-                  <a
-                    key={s.href}
-                    href={s.href}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='p-5 glass-card rounded-full hover:border-[#00d9ff]/50 transition-all'
-                  >
-                    <img src={`/${logoFile}`} alt={s.label} className='w-6 h-6 brightness-0 invert' />
+                <div className="mt-10 flex flex-wrap items-center gap-3">
+                  <a href={`mailto:${site.email}`} className="btn btn-primary">
+                    {site.email}
                   </a>
-                );
-              })}
+                  <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="btn">
+                    {site.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="reveal">
+                <span className="mono text-[10px] uppercase tracking-[0.28em] text-dim-2">
+                  network nodes
+                </span>
+                <div className="mt-5 grid grid-cols-1 gap-px overflow-hidden border border-grid bg-grid sm:grid-cols-2">
+                  {site.socials.map((s) => (
+                    <a
+                      key={s.href}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-between bg-panel px-5 py-4 transition-colors hover:bg-panel-2"
+                    >
+                      <span className="mono text-xs uppercase tracking-[0.18em] text-dim group-hover:text-paper">
+                        {s.label}
+                      </span>
+                      <span className="text-dim-2 transition-all group-hover:translate-x-0.5 group-hover:text-amber">
+                        ↗
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
+        </section>
 
-          <div className='pt-12 border-t border-white/5'>
-            <p className='text-xs text-white/20 uppercase tracking-[0.3em] font-bold'>
-              © 2025 ISMAIL AISSAOUI — ARCHITECTING INTELLIGENCE
-            </p>
+        <footer className="border-t border-grid">
+          <div className="mx-auto flex max-w-[1600px] flex-col items-center justify-between gap-4 px-4 py-8 md:flex-row md:px-8">
+            <span className="mono text-[10px] uppercase tracking-[0.28em] text-dim-2">
+              © 2025 Aissaoui Ismail
+            </span>
+            <span className="mono text-[10px] uppercase tracking-[0.28em] text-dim-2">
+              AI &amp; Data Science — Digital Twins
+            </span>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </main>
 
-      {
-        active !== null && (
-          <ProjectModal
-            open={open}
-            originRect={originRect}
-            onClose={() => setOpen(false)}
-            title={L(site.projects[active].title, locale)}
-            images={site.projects[active].images}
-            imageFolder={site.projects[active].imageFolder}
-            details={
-              site.projects[active].details?.[locale] ??
-              site.projects[active].description[locale]
-            }
-            tech={site.projects[active].tech}
-          />
-        )
-      }
-    </div >
+      {active !== null && (
+        <ProjectModal
+          open={open}
+          originRect={originRect}
+          onClose={() => setOpen(false)}
+          title={L(site.projects[active].title, locale)}
+          images={site.projects[active].images}
+          imageFolder={site.projects[active].imageFolder}
+          details={
+            site.projects[active].details?.[locale] ?? site.projects[active].description[locale]
+          }
+          tech={site.projects[active].tech}
+        />
+      )}
+    </div>
   );
 }

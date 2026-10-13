@@ -79,13 +79,9 @@ export default function ProjectModal({
     const scaleX = originRect.width / finalRect.width;
     const scaleY = originRect.height / finalRect.height;
     const translateX =
-      originRect.left -
-      finalRect.left +
-      (originRect.width - finalRect.width) / 2;
+      originRect.left - finalRect.left + (originRect.width - finalRect.width) / 2;
     const translateY =
-      originRect.top -
-      finalRect.top +
-      (originRect.height - finalRect.height) / 2;
+      originRect.top - finalRect.top + (originRect.height - finalRect.height) / 2;
 
     const anim = modal.animate(
       [
@@ -109,6 +105,7 @@ export default function ProjectModal({
       document.body.style.overflow = "auto";
       anim.cancel();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [originRect, open]);
 
   const handleScroll = useCallback(() => {
@@ -132,13 +129,9 @@ export default function ProjectModal({
     const scaleX = originRect.width / finalRect.width;
     const scaleY = originRect.height / finalRect.height;
     const translateX =
-      originRect.left -
-      finalRect.left +
-      (originRect.width - finalRect.width) / 2;
+      originRect.left - finalRect.left + (originRect.width - finalRect.width) / 2;
     const translateY =
-      originRect.top -
-      finalRect.top +
-      (originRect.height - finalRect.height) / 2;
+      originRect.top - finalRect.top + (originRect.height - finalRect.height) / 2;
 
     const anim = modal.animate(
       [
@@ -164,50 +157,54 @@ export default function ProjectModal({
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       const width = container.offsetWidth;
-      container.scrollTo({
-        left: index * width,
-        behavior: "smooth"
-      });
+      container.scrollTo({ left: index * width, behavior: "smooth" });
     }
     setActiveIndex(index);
   };
 
   return (
-    <div className='fixed inset-0 z-50 flex items-center justify-center'>
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
         ref={overlayRef}
-        className='absolute inset-0 bg-black/70 backdrop-blur-sm'
+        className="absolute inset-0 bg-ink/80 backdrop-blur-sm"
         onClick={closeWithAnimation}
       />
 
       <div
         ref={containerRef}
-        className='relative z-10 w-full h-full overflow-hidden bg-obsidian text-white flex flex-col'
+        className="relative z-10 flex h-full w-full flex-col overflow-hidden bg-ink text-paper"
       >
-        <div className='flex items-center justify-between p-8 md:p-12 lg:px-24 border-b border-white/5 bg-[#0c0c0c]/80 backdrop-blur-2xl'>
-          <h2 className='text-3xl md:text-7xl font-bold text-white display-font tracking-tighter leading-none line-clamp-1'>{title}</h2>
+        <div className="flex items-center justify-between gap-6 border-b border-grid bg-ink/90 px-6 py-5 backdrop-blur-2xl md:px-12">
+          <div className="flex min-w-0 flex-col">
+            <span className="eyebrow mb-2">Dossier</span>
+            <h2 className="line-clamp-1 font-display text-2xl font-extrabold tracking-tight text-paper md:text-4xl">
+              {title}
+            </h2>
+          </div>
           <button
-            aria-label='Close'
-            className='inline-flex items-center justify-center px-6 md:px-10 py-3 md:py-4 rounded-full text-black bg-[#00d9ff] hover:bg-white transition-all shadow-[0_0_20px_rgba(0,217,255,0.4)] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] whitespace-nowrap'
+            aria-label="Close"
+            className="btn shrink-0"
             onClick={closeWithAnimation}
           >
-            Close Window
+            Close
           </button>
         </div>
 
-        <div className='modal-body overflow-auto px-6 md:px-24 py-12 md:py-24 space-y-16 flex-1 bg-gradient-to-b from-transparent to-[#00d9ff]/5'>
+        <div className="modal-body flex-1 space-y-16 overflow-auto px-6 py-12 md:px-12 md:py-20">
           {gallery.length > 0 && (
-            <div className='space-y-10'>
-              <div className='flex items-center gap-3 mb-6'>
-                <div className='w-2 h-2 rounded-full bg-[#00d9ff]'></div>
-                <span className='text-[10px] font-bold uppercase tracking-[0.3em] text-white/40'>Visual Signals — UI/Architecture</span>
+            <div className="mx-auto w-full max-w-6xl space-y-8">
+              <div className="flex items-center gap-4">
+                <span className="mono text-[10px] uppercase tracking-[0.28em] text-dim">
+                  Visual Signals
+                </span>
+                <span className="rule flex-1" />
               </div>
 
-              <div className='relative group'>
+              <div className="group relative">
                 <div
                   ref={scrollContainerRef}
                   onScroll={handleScroll}
-                  className='w-full overflow-x-auto md:overflow-hidden snap-x snap-mandatory flex md:block scrollbar-hide gap-6 pb-6'
+                  className="scrollbar-hide flex w-full snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:block md:overflow-hidden"
                 >
                   {gallery.map((src, i) => {
                     const isLocal = src?.startsWith("/");
@@ -218,16 +215,18 @@ export default function ProjectModal({
                     return (
                       <div
                         key={i}
-                        className={`min-w-full md:min-w-0 snap-center transition-all duration-500 ${isActive ? 'opacity-100 scale-100' : 'opacity-20 scale-95 md:hidden'}`}
+                        className={`min-w-full snap-center transition-all duration-500 md:min-w-0 ${
+                          isActive ? "scale-100 opacity-100" : "scale-95 opacity-20 md:hidden"
+                        }`}
                       >
-                        <div className='relative w-full max-h-[60vh] md:max-h-[75vh] glass-card border-white/5 rounded-2xl md:rounded-[3rem] overflow-hidden shadow-2xl bg-black flex items-center justify-center'>
+                        <div className="relative flex max-h-[60vh] w-full items-center justify-center overflow-hidden border border-grid bg-panel md:max-h-[75vh]">
                           {canUseNextImage ? (
                             <Image
                               src={src}
                               alt={`screenshot-${i}`}
                               width={1920}
                               height={1080}
-                              className='w-full h-auto max-h-full object-contain'
+                              className="h-auto max-h-full w-full object-contain"
                               sizes="(max-width: 1024px) 100vw, 80vw"
                               priority={i === 0}
                             />
@@ -235,8 +234,8 @@ export default function ProjectModal({
                             <img
                               src={src}
                               alt={`screenshot-${i}`}
-                              loading='lazy'
-                              className='w-full h-auto max-h-full object-contain'
+                              loading="lazy"
+                              className="h-auto max-h-full w-full object-contain"
                             />
                           )}
                         </div>
@@ -245,34 +244,43 @@ export default function ProjectModal({
                   })}
                 </div>
 
-                <div className='hidden md:flex absolute inset-0 items-center justify-between pointer-events-none px-6'>
+                <div className="pointer-events-none absolute inset-0 hidden items-center justify-between px-4 md:flex">
                   <button
-                    type='button'
-                    aria-label='Previous image'
-                    onClick={() => scrollToImage(activeIndex === 0 ? gallery.length - 1 : activeIndex - 1)}
-                    className='p-5 rounded-full border border-white/5 bg-[#0c0c0c]/80 text-white/50 hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all backdrop-blur-md pointer-events-auto'
+                    type="button"
+                    aria-label="Previous image"
+                    onClick={() =>
+                      scrollToImage(activeIndex === 0 ? gallery.length - 1 : activeIndex - 1)
+                    }
+                    className="pointer-events-auto border border-grid bg-ink/80 p-4 text-dim backdrop-blur-md transition-colors hover:border-amber hover:text-amber"
                   >
-                    <svg className='w-8 h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M15 19l-7-7 7-7' /></svg>
+                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+                    </svg>
                   </button>
                   <button
-                    type='button'
-                    aria-label='Next image'
-                    onClick={() => scrollToImage(activeIndex === gallery.length - 1 ? 0 : activeIndex + 1)}
-                    className='p-5 rounded-full border border-white/5 bg-[#0c0c0c]/80 text-white/50 hover:text-[#00d9ff] hover:border-[#00d9ff]/30 transition-all backdrop-blur-md pointer-events-auto'
+                    type="button"
+                    aria-label="Next image"
+                    onClick={() =>
+                      scrollToImage(activeIndex === gallery.length - 1 ? 0 : activeIndex + 1)
+                    }
+                    className="pointer-events-auto border border-grid bg-ink/80 p-4 text-dim backdrop-blur-md transition-colors hover:border-amber hover:text-amber"
                   >
-                    <svg className='w-8 h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M9 5l7 7-7 7' /></svg>
+                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                    </svg>
                   </button>
                 </div>
               </div>
 
-              <div className='flex items-center justify-center gap-3'>
+              <div className="flex items-center justify-center gap-2">
                 {gallery.map((_, i) => (
                   <button
                     key={i}
-                    type='button'
+                    type="button"
                     onClick={() => scrollToImage(i)}
-                    className={`h-1.5 transition-all duration-500 rounded-full ${i === activeIndex ? 'w-16 bg-[#00d9ff]' : 'w-4 bg-white/10 hover:bg-white/20'
-                      }`}
+                    className={`h-1 transition-all duration-300 ${
+                      i === activeIndex ? "w-12 bg-amber" : "w-4 bg-grid hover:bg-grid-strong"
+                    }`}
                     aria-label={`Go to image ${i + 1}`}
                   />
                 ))}
@@ -280,45 +288,44 @@ export default function ProjectModal({
             </div>
           )}
 
-          <div className='text-base md:text-lg leading-relaxed text-gray-200 max-w-5xl'>
+          <div className="mx-auto max-w-6xl text-base leading-relaxed text-dim md:text-lg">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
                 h2: ({ node, ...props }) => (
-                  <div className='flex items-center gap-4 mt-12 mb-6'>
-                    <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
-                    <h2 className='text-sm md:text-base font-bold text-[#00d9ff] uppercase tracking-[0.3em] display-font' {...props} />
+                  <div className="mb-5 mt-12 flex items-center gap-4">
+                    <span className="mono text-xs uppercase tracking-[0.28em] text-amber" {...props} />
+                    <span className="rule flex-1" />
                   </div>
                 ),
                 h3: ({ node, ...props }) => (
-                  <div className='flex items-center gap-4 mt-10 mb-5'>
-                    <span className='w-8 h-[1px] bg-[#00d9ff]/70'></span>
-                    <h3 className='text-xs md:text-sm font-bold text-[#00d9ff]/90 uppercase tracking-[0.2em] display-font' {...props} />
+                  <div className="mb-4 mt-10 flex items-center gap-3">
+                    <span className="mono text-[11px] uppercase tracking-[0.22em] text-blue" {...props} />
                   </div>
                 ),
                 p: ({ node, ...props }) => (
-                  <p className='text-white/80 leading-relaxed font-light text-lg md:text-xl mb-6' {...props} />
+                  <p className="mb-6 text-lg font-light leading-relaxed text-dim md:text-xl" {...props} />
                 ),
                 ul: ({ node, ...props }) => (
-                  <ul className='space-y-4 pl-6 border-l border-white/5 ml-2 mb-8' {...props} />
+                  <ul className="mb-8 ml-2 space-y-4 border-l border-grid pl-6" {...props} />
                 ),
                 li: ({ node, ...props }) => (
-                  <li className='text-white/80 leading-relaxed font-light text-lg md:text-xl relative' {...props}>
-                    <span className='absolute -left-6 top-3 text-[#00d9ff] flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#00d9ff]/40 shadow-[0_0_8px_#00d9ff66]'></span>
+                  <li className="relative text-lg font-light leading-relaxed text-dim md:text-xl" {...props}>
+                    <span className="absolute -left-6 top-3 h-1.5 w-1.5 bg-amber/60" />
                     {props.children}
                   </li>
                 ),
                 strong: ({ node, ...props }) => (
-                  <strong className='font-bold text-[#00d9ff] tracking-tight' {...props} />
+                  <strong className="font-semibold text-paper" {...props} />
                 ),
                 code: ({ node, className, children, ...props }) => {
                   const match = /language-(\w+)/.exec(className || "");
                   return !match ? (
-                    <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-[#00d9ff]" {...props}>
+                    <code className="border border-grid bg-panel px-1.5 py-0.5 font-mono text-sm text-blue" {...props}>
                       {children}
                     </code>
                   ) : (
-                    <pre className="bg-black/50 p-4 rounded-xl border border-white/10 overflow-x-auto mb-8 text-sm text-[#00d9ff] mt-4">
+                    <pre className="mb-8 mt-4 overflow-x-auto border border-grid bg-panel p-4 font-mono text-sm text-blue">
                       <code className={className} {...props}>
                         {children}
                       </code>
@@ -326,8 +333,8 @@ export default function ProjectModal({
                   );
                 },
                 blockquote: ({ node, ...props }) => (
-                  <blockquote className="border-l-2 border-[#00d9ff]/50 pl-4 py-1 my-6 text-white/60 italic" {...props} />
-                )
+                  <blockquote className="my-6 border-l-2 border-amber/50 pl-4 py-1 italic text-dim" {...props} />
+                ),
               }}
             >
               {details}
@@ -335,17 +342,16 @@ export default function ProjectModal({
           </div>
 
           {tech.length > 0 && (
-            <div className='border-t border-white/5 pt-12 max-w-5xl'>
-              <div className='flex items-center gap-4 mb-8'>
-                <span className='w-12 h-[1px] bg-[#00d9ff]'></span>
-                <h3 className='text-xs md:text-sm font-bold text-[#00d9ff] uppercase tracking-[0.3em] display-font'>Industrial Stack</h3>
+            <div className="mx-auto max-w-6xl border-t border-grid pt-12">
+              <div className="mb-6 flex items-center gap-4">
+                <span className="mono text-xs uppercase tracking-[0.28em] text-amber">
+                  Stack
+                </span>
+                <span className="rule flex-1" />
               </div>
-              <div className='flex flex-wrap gap-4'>
+              <div className="flex flex-wrap gap-2">
                 {tech.map((t) => (
-                  <span
-                    key={t}
-                    className='px-6 py-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] rounded-xl text-[#00d9ff] bg-[#00d9ff]/5 border border-[#00d9ff]/10 hover:bg-[#00d9ff]/10 hover:border-[#00d9ff]/30 transition-all cursor-default'
-                  >
+                  <span key={t} className="chip">
                     {t}
                   </span>
                 ))}
@@ -354,6 +360,6 @@ export default function ProjectModal({
           )}
         </div>
       </div>
-    </div >
+    </div>
   );
 }

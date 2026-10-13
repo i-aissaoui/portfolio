@@ -1,19 +1,15 @@
 "use client";
 
 import React from "react";
-// removed usePathname as it's unused
 import type { Locale } from "@/data/site";
+import { site } from "@/data/site";
 
 const navItems = [
-  { id: "home", label: { en: "Home", fr: "Accueil", de: "Startseite" } },
-  { id: "projects", label: { en: "Projects", fr: "Projets", de: "Projekte" } },
-  { id: "expertise", label: { en: "Expertise", fr: "Expertise", de: "Expertise" } },
-  { id: "experience", label: { en: "Experience", fr: "Expérience", de: "Erfahrung" } },
-  { id: "education", label: { en: "Education", fr: "Formation", de: "Ausbildung" } },
+  { id: "capability", label: { en: "Capability", fr: "Capacités", de: "Fähigkeiten" } },
+  { id: "systems", label: { en: "Systems", fr: "Systèmes", de: "Systeme" } },
+  { id: "record", label: { en: "Record", fr: "Parcours", de: "Werdegang" } },
   { id: "contact", label: { en: "Contact", fr: "Contact", de: "Kontakt" } },
 ];
-
-// no resume item in navbar
 
 type SiteNavProps = {
   locale: Locale;
@@ -21,52 +17,66 @@ type SiteNavProps = {
 };
 
 export default function SiteNav({ locale, onLocaleChange }: SiteNavProps) {
-  const getSectionHref = (id: string) => `#${id}`;
-
   return (
-    <nav className='print:hidden fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl'>
-      <div className='bg-[#0c0c0c]/80 backdrop-blur-2xl border border-white/5 rounded-2xl px-6 md:px-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]'>
-        <div className='flex items-center justify-between h-20'>
-          <a
-            href="#home"
-            className='flex items-center gap-3 group'
-          >
-            <div className='w-10 h-10 rounded-xl bg-[#00d9ff]/10 border border-[#00d9ff]/20 flex items-center justify-center overflow-hidden p-1 group-hover:border-[#00d9ff]/50 transition-all'>
-              <img src="/logo-bg.png" alt="AI Logo" className='w-full h-full object-contain' />
-            </div>
-            <span className='text-sm font-bold text-white tracking-[0.3em] uppercase hidden md:block'>
-              ISMAIL
-            </span>
-          </a>
+    <header className="print:hidden fixed top-0 left-0 right-0 z-50">
+      {/* dual-track accent: measured (amber) / predicted (blue) */}
+      <div
+        className="h-[2px] w-full"
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, var(--trace-amber) 0%, var(--trace-amber) 42%, var(--grid-strong) 50%, var(--trace-blue) 58%, var(--trace-blue) 100%)",
+        }}
+      />
+      <div className="border-b border-grid bg-ink/85 backdrop-blur-xl">
+        <div className="mx-auto flex h-14 max-w-[1600px] items-center justify-between gap-6 px-4 md:px-8">
+          <div className="flex min-w-0 items-center gap-3 md:gap-5">
+            <a href="#home" className="group flex items-center gap-3">
+              <span className="flex h-8 w-8 items-center justify-center border border-grid bg-panel p-1 transition-colors group-hover:border-amber">
+                <img src="/logo-bg.png" alt="Aissaoui Ismail" className="h-full w-full object-contain" />
+              </span>
+              <span className="hidden flex-col leading-none sm:flex">
+                <span className="font-display text-sm font-bold tracking-tight text-paper">
+                  AISSAOUI ISMAIL
+                </span>
+                <span className="mono text-[9px] uppercase tracking-[0.28em] text-dim">
+                  AI · Data Science
+                </span>
+              </span>
+            </a>
+          </div>
 
-          <div className='hidden lg:flex items-center gap-10'>
+          <nav className="hidden items-center gap-8 lg:flex">
             {navItems.map((item) => (
               <a
                 key={item.id}
-                href={getSectionHref(item.id)}
-                className='text-[10px] font-bold text-white/40 hover:text-white uppercase tracking-[0.2em] transition-all relative group'
+                href={`#${item.id}`}
+                className="link-underline mono text-[10px] uppercase tracking-[0.24em] text-dim transition-colors hover:text-paper"
               >
                 {item.label[locale] ?? item.label.en}
-                <span className='absolute -bottom-2 left-0 w-0 h-0.5 bg-[#00d9ff] group-hover:w-full transition-all duration-500'></span>
               </a>
             ))}
-          </div>
+          </nav>
 
-          <div className='flex items-center gap-4'>
-            <div className='flex items-center p-1 bg-white/5 rounded-full border border-white/5'>
-              {["en", "fr", "de"].map((lang) => {
-                const typedLang = lang as Locale;
-                const isActive = locale === typedLang;
+          <div className="flex items-center gap-3 md:gap-5">
+            <div className="hidden items-center gap-2 md:flex">
+              <span className="blink h-1.5 w-1.5 rounded-full bg-amber" />
+              <span className="mono text-[10px] uppercase tracking-[0.2em] text-dim">
+                {site.location}
+              </span>
+            </div>
+
+            <div className="flex items-center border border-grid">
+              {(["en", "fr", "de"] as Locale[]).map((lang) => {
+                const isActive = locale === lang;
                 return (
                   <button
                     key={lang}
-                    type='button'
-                    onClick={() => onLocaleChange?.(typedLang)}
-                    className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase transition-all ${isActive
-                      ? "bg-[#00d9ff] text-black"
-                      : "text-white/40 hover:text-white"
-                      }`}
+                    type="button"
+                    onClick={() => onLocaleChange?.(lang)}
                     disabled={!onLocaleChange}
+                    className={`mono px-2.5 py-1.5 text-[10px] uppercase tracking-[0.15em] transition-colors ${
+                      isActive ? "bg-amber text-ink" : "text-dim hover:text-paper"
+                    }`}
                   >
                     {lang}
                   </button>
@@ -74,15 +84,12 @@ export default function SiteNav({ locale, onLocaleChange }: SiteNavProps) {
               })}
             </div>
 
-            <a
-              href="#contact"
-              className='hidden md:block px-6 py-2 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-[#00d9ff] transition-all'
-            >
-              Contact
+            <a href="#contact" className="btn btn-primary hidden !px-4 !py-2 md:inline-flex">
+              Open Channel
             </a>
           </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

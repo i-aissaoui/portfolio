@@ -22,7 +22,7 @@ export default function GenericProjectPage() {
   const [activeImage, setActiveImage] = useState(0);
 
   if (isNaN(id) || id < 0 || id >= site.projects.length) {
-    return <div className="min-h-screen bg-[#0c0c0c] text-white flex items-center justify-center">Project Not Found</div>;
+    return <div className="min-h-screen bg-ink text-paper flex items-center justify-center">Project Not Found</div>;
   }
 
   const project = site.projects[id];
@@ -32,18 +32,18 @@ export default function GenericProjectPage() {
   const images = project.images || ["/window.svg"];
 
   return (
-    <div className="min-h-screen bg-[#0c0c0c] text-white">
+    <div className="min-h-screen bg-ink text-paper">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#0c0c0c]/80 backdrop-blur-md border-b border-white/10 px-6 py-4">
+      <nav className="fixed top-0 w-full z-50 bg-ink/85 backdrop-blur-md border-b border-grid px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <button 
             onClick={() => router.back()}
-            className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+            className="flex items-center gap-2 text-dim hover:text-paper transition-colors"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
             <span className="font-semibold uppercase tracking-widest text-xs">Back to Portfolio</span>
           </button>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-[#00d9ff] border border-[#00d9ff]/30 px-3 py-1 rounded-full bg-[#00d9ff]/10">
+          <div className="text-[10px] font-bold uppercase tracking-widest text-amber border border-amber/40 px-3 py-1 rounded-full bg-amber/10">
             {project.category}
           </div>
         </div>
@@ -53,23 +53,23 @@ export default function GenericProjectPage() {
         
         {/* Header Section */}
         <div className="mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 display-font tracking-tight leading-tight text-white">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 display-font tracking-tight leading-tight text-paper">
             {title}
           </h1>
-          <p className="text-white/60 text-xl font-light max-w-3xl leading-relaxed">
+          <p className="text-dim text-xl font-light max-w-3xl leading-relaxed">
             {desc}
           </p>
         </div>
 
         {/* Gallery Section */}
         <div className="mb-20">
-          <div className="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-6 border border-white/10 shadow-[0_0_50px_rgba(0,217,255,0.1)]">
+          <div className="relative h-[400px] md:h-[600px] rounded overflow-hidden mb-6 border border-grid shadow-none">
             {images[activeImage].startsWith("/") || images[activeImage].startsWith("http") ? (
                 <Image 
                 src={images[activeImage]} 
                 alt="Project Visual" 
                 fill 
-                className="object-contain bg-[#111]"
+                className="object-contain bg-panel-2"
                 />
             ) : (
                 <img src={images[activeImage]} className="w-full h-full object-cover" />
@@ -81,7 +81,7 @@ export default function GenericProjectPage() {
                 <button 
                   key={idx}
                   onClick={() => setActiveImage(idx)}
-                  className={`relative w-32 h-24 rounded-xl overflow-hidden flex-shrink-0 border-2 transition-all ${activeImage === idx ? 'border-[#00d9ff] scale-105' : 'border-white/10 opacity-50 hover:opacity-100'}`}
+                  className={`relative w-32 h-24 rounded overflow-hidden flex-shrink-0 border-2 transition-all ${activeImage === idx ? 'border-amber scale-105' : 'border-grid opacity-50 hover:opacity-100'}`}
                 >
                   {img.startsWith("/") || img.startsWith("http") ? (
                     <Image src={img} alt={`Thumbnail ${idx}`} fill className="object-cover" />
@@ -98,18 +98,18 @@ export default function GenericProjectPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           
           <div className="lg:col-span-2 space-y-12">
-            <section className="prose prose-invert prose-lg max-w-none text-white/70 font-light">
+            <section className="prose prose-invert prose-lg max-w-none text-dim font-light">
                <ReactMarkdown>{detailsText}</ReactMarkdown>
             </section>
           </div>
 
           {/* Sidebar */}
           <div className="space-y-8">
-            <div className="glass-card p-8 rounded-3xl bg-white/5 border border-white/10">
-              <h3 className="text-lg font-bold uppercase tracking-widest text-white mb-6">Technologies Used</h3>
+            <div className="glass-card p-8 rounded bg-panel border border-grid">
+              <h3 className="text-lg font-bold uppercase tracking-widest text-paper mb-6">Technologies Used</h3>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map(t => (
-                  <span key={t} className="px-3 py-1.5 bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/20 rounded-md text-xs font-bold uppercase tracking-wider">
+                  <span key={t} className="px-3 py-1.5 bg-amber/10 text-amber border border-amber/30 rounded-md text-xs font-bold uppercase tracking-wider">
                     {t}
                   </span>
                 ))}
