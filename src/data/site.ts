@@ -360,52 +360,37 @@ export const site = {
       ],
     },
 
-    // 2) Elliptic++: Bitcoin Fraud Detection with GNNs
+    // 2) Elliptic++: Threat Intelligence Platform
     {
       category: "AI",
       title: {
-        en: "Elliptic++: Bitcoin Fraud Detection with GNNs",
-        fr: "Elliptic++ : Détection de Fraude Bitcoin avec GNN",
-        de: "Elliptic++: Bitcoin-Betrugserkennung mit GNNs",
+        en: "Elliptic++ Threat Intelligence Platform",
+        fr: "Elliptic++ — Plateforme de Threat Intelligence",
+        de: "Elliptic++ Threat-Intelligence-Plattform",
       },
       description: {
-        en: "Blockchain security project focused on detecting illicit actors and fraudulent transactions in the Bitcoin network using graph-based learning on over 200k transactions.",
-        fr: "Projet de sécurité blockchain axé sur la détection d'acteurs illicites et de transactions frauduleuses dans le réseau Bitcoin en utilisant l'apprentissage basé sur les graphes.",
-        de: "Blockchain-Sicherheitsprojekt zur Erkennung illegaler Akteure und betrügerischer Transaktionen im Bitcoin-Netzwerk mittels graphbasiertem Lernen.",
+        en: "Graph-native AML workspace with a GATv2 fraud model, an explainable 2-hop evidence map and a full banking operations console. Scores 203,769 Bitcoin transactions and turns alerts into reviewable cases.",
+        fr: "Espace AML natif graphe avec un modèle GATv2, une carte de preuves à 2 sauts explicable et une console bancaire complète. Évalue 203 769 transactions Bitcoin et transforme les alertes en dossiers examinables.",
+        de: "Graph-nativer AML-Arbeitsplatz mit GATv2-Betrugsmodell, erklärbarer 2-Hop-Beweiskarte und vollständiger Banking-Konsole. Bewertet 203.769 Bitcoin-Transaktionen und wandelt Alarme in prüfbare Fälle um.",
       },
       details: {
-        en: "Technical Scope:\n• Data: 203k Bitcoin transactions and 822k wallet addresses.\n• Graph Modeling: Capturing money flow (tx-tx) and actor interaction (addr-addr).\n• Classification: Fraud detection via Graph Neural Networks and Feature Importance analysis.",
-        fr: "Portée technique :\n• Données : 203k transactions Bitcoin et 822k adresses de portefeuilles.\n• Modélisation de graphes : Capture du flux d'argent (tx-tx) et de l'interaction des acteurs (addr-addr).",
-        de: "Technischer Umfang:\n• Daten: 203k Bitcoin-Transaktionen und 822k Wallet-Adressen.\n• Graph-Modellierung: Analyse des Geldflusses (tx-tx) und der Akteurinteraktion (addr-addr).",
+        en: "Model & data:\n• PyG EllipticBitcoinDataset: 203,769 transactions, 234,355 edges, 46,564 labelled nodes; temporal splits 1-34 / 35-42 / 43-49.\n• AdvancedTemporalGAT (GATv2 + sin/cos time-step projection); test F1 0.103 illicit, PR-AUC 0.075, ROC-AUC 0.779; F2-tuned threshold 0.55 selected on validation only.\n• GNNExplainer on relabelled 2-hop subgraphs returns feature/edge importance; lightweight SVG evidence map, no WebGL.\n\nServing & operations:\n• FastAPI, cached probabilities, WebSocket feed via Redis Streams with in-process fallback; optional Neo4j-backed subgraph queries.\n• Banking Console: double-entry ledger, RBAC + TOTP MFA, alerts/SLA, cases/evidence, model rollback, audit CSV and SQLite backups.\n• Local Ollama threat reports with deterministic fallback; 11 pytest tests plus frontend lint/build pass.",
+        fr: "Modèle et données :\n• PyG EllipticBitcoinDataset : 203 769 transactions, 234 355 arêtes, 46 564 nœuds étiquetés ; splits temporels 1-34 / 35-42 / 43-49.\n• AdvancedTemporalGAT (GATv2 + projection sinus/cosinus du pas de temps) ; F1 test 0.103 illicite, PR-AUC 0.075, ROC-AUC 0.779 ; seuil F2 0.55 choisi uniquement sur validation.\n• GNNExplainer sur sous-graphes relabelisés à 2 sauts renvoie l'importance des attributs et des arêtes ; carte SVG légère, sans WebGL.\n\nService et opérations :\n• FastAPI, probabilités mises en cache, flux WebSocket via Redis Streams avec repli en mémoire ; requêtes de graphe optionnelles via Neo4j.\n• Console bancaire : grand livre en partie double, RBAC + MFA TOTP, alertes/SLA, dossiers/preuves, rollback de modèle, audit CSV et sauvegardes SQLite.\n• Rapports de menace Ollama local avec repli déterministe ; 11 tests pytest et lint/build frontend réussis.",
+        de: "Modell & Daten:\n• PyG EllipticBitcoinDataset: 203.769 Transaktionen, 234.355 Kanten, 46.564 gelabelte Knoten; temporale Splits 1-34 / 35-42 / 43-49.\n• AdvancedTemporalGAT (GATv2 + Sin/Cos-Zeitschritt-Projektion); Test-F1 0.103 illegal, PR-AUC 0.075, ROC-AUC 0.779; F2-optimierter Schwellwert 0.55 nur auf Validierung gewählt.\n• GNNExplainer auf relabelten 2-Hop-Subgraphen liefert Feature-/Kantenwichtigkeit; leichte SVG-Beweiskarte ohne WebGL.\n\nServing & Betrieb:\n• FastAPI, gecachte Wahrscheinlichkeiten, WebSocket-Feed über Redis Streams mit In-Memory-Fallback; optionale Neo4j-Subgraph-Abfragen.\n• Banking-Konsole: doppeltes Hauptbuch, RBAC + TOTP-MFA, Alarme/SLA, Fälle/Beweise, Modell-Rollback, Audit-CSV und SQLite-Backups.\n• Lokale Ollama-Bedrohungsberichte mit deterministischem Fallback; 11 pytest-Tests sowie Frontend-Lint/Build erfolgreich.",
       },
-      tech: ["Graph Neural Networks", "Python", "NetworkX", "PyTorch Geometric", "Blockchain", "Data Mining"],
+      tech: ["GATv2", "PyTorch Geometric", "GNNExplainer", "FastAPI", "React", "Vite", "Redis Streams", "Neo4j", "SQLite", "Ollama", "WebSocket"],
+      imageFolder: "elliptic-plus-plus",
       images: [
-        "https://images.unsplash.com/photo-1518544801976-3e159e50e5bb?w=1600" /* bitcoin/blockchain */
+        "/elliptic-plus-plus/1.png",
+        "/elliptic-plus-plus/2.png",
+        "/elliptic-plus-plus/3.png",
+        "/elliptic-plus-plus/4.png",
+        "/elliptic-plus-plus/5.png",
+        "/elliptic-plus-plus/6.png",
+        "/elliptic-plus-plus/7.png",
+        "/elliptic-plus-plus/8.png",
       ],
-    },
-
-    // 3) Vision Transformer (ViT) Implementation
-    {
-      category: "AI",
-      title: {
-        en: "Vision Transformer (ViT) Implementation",
-        fr: "Implémentation de Vision Transformer (ViT)",
-        de: "Vision Transformer (ViT) Implementierung",
-      },
-      description: {
-        en: "Applied the power of Transformers to Computer Vision by treating images as sequences of patches. Built with pure PyTorch for state-of-the-art image identification.",
-        fr: "Application de la puissance des transformeurs à la vision par ordinateur en traitant les images comme des séquences de patchs.",
-        de: "Einsatz von Transformern in der Computer Vision durch die Behandlung von Bildern als Sequenzen von Patches.",
-      },
-      details: {
-        en: "Core Features:\n• Patch Embedding and [CLS] token integration.\n• Multi-Head Self-Attention for global dependency learning.\n• Pure PyTorch implementation with fine-tuning on ImageNet data.",
-        fr: "Fonctionnalités clés :\n• Embedding de patchs et intégration du token [CLS].\n• Self-Attention multi-têtes pour l'apprentissage des dépendances globales.",
-        de: "Kernfunktionen:\n• Patch-Embedding und [CLS]-Token-Integration.\n• Multi-Head Self-Attention für globales Abhängigkeitslernen.",
-      },
-      tech: ["PyTorch", "Transformers", "Computer Vision", "Deep Learning", "GELU"],
-      images: [
-        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600" /* neural network viz */
-      ],
+      link: "#",
     },
 
     // 4) Recognizini: Semi-Supervised Facial Recognition
@@ -434,27 +419,6 @@ export const site = {
         "/recognizini/3.png",
       ],
       link: "recognizini/README.md",
-    },
-
-    // 5) AI Traffic Camera & License Plate Recognition
-    {
-      category: "Other",
-      title: {
-        en: "AI Traffic Camera & License Plate Recognition",
-        fr: "Caméra de Trafic IA & Reconnaissance de Plaques",
-        de: "KI-Verkehrskamera & Kennzeichenerkennung",
-      },
-      description: {
-        en: "Intelligent monitoring system featuring vehicle detection, tracking, counting, speed estimation via perspective transform, and LPR (EasyOCR).",
-        fr: "Système de surveillance intelligent comprenant la détection de véhicules, le suivi, le comptage et l'estimation de la vitesse.",
-        de: "Intelligentes Überwachungssystem mit Fahrzeugerkennung, Tracking, Zählung und Geschwindigkeitsschätzung.",
-      },
-      tech: ["YOLOv8", "OpenCV", "ByteTrack", "EasyOCR", "PyTorch", "CUDA", "Computer Vision"],
-      images: [
-        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600",
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600",
-      ],
-      link: "#",
     },
 
     // 6) Safety Equipment Detection with YOLOv8
@@ -493,27 +457,6 @@ export const site = {
       },
       tech: ["ChromaDB", "LangChain", "Ollama", "Folium", "Streamlit", "Python", "RAG"],
       images: ["/geo-rag/1.png", "/geo-rag/2.png", "/geo-rag/3.png"],
-    },
-
-    // 8) Mini‑GPT & BERT (Foundational Transformers)
-    {
-      category: "Other",
-      title: {
-        en: "Foundational Transformers: Mini-GPT & BERT",
-        fr: "Transformeurs Fondamentaux : Mini-GPT & BERT",
-        de: "Grundlagen-Transformer: Mini-GPT & BERT",
-      },
-      description: {
-        en: "Pure PyTorch implementations of Decoder-only (GPT) and Encoder-only (BERT) architectures from scratch for creative text generation and sentiment analysis.",
-        fr: "Implémentations pures PyTorch des architectures GPT et BERT à partir de zéro.",
-        de: "Reine PyTorch-Implementierungen von GPT- und BERT-Architekturen von Grund auf.",
-      },
-      tech: ["PyTorch", "Transformers", "NLP", "Causal Attention", "MLM", "Python"],
-      imageFolder: "mini-gpt",
-      images: [
-        "/mini-gpt/mini-gpt-01.png",
-        "/bert-sentiment/bert-sentiment-01.png",
-      ],
     },
 
     // 9) Advanced NLP Optimization (Metaheuristics)

@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private job applications, PhD files, and supporting documents — never commit or push
+/data/
+/job/
+/jobs/
+/applications/
+/adum/
+/phd/
+/phd_scanner/
+/digital_twin_phd/
+/"digital_twin_phd
+/luxemburg_phds/
+/presentations/
+/cv/
+/skills/
+/thesis/
+/resume-en.md
+/resume-fr.md
+/PHD_TRACKER.md
+/generate_tracker.py
+/.env.example
